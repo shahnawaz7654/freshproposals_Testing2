@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freshproposals.selenium.Collapse_Controls">
+      <class name="com.freshproposals.selenium.UseThis_Checkversions">
         <methods>
+          <include name="UseThisProp"/>
           <include name="openBrowser"/>
-          <include name="grid"/>
-          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- com.freshproposals.selenium.Collapse_Controls -->
+      </class> <!-- com.freshproposals.selenium.UseThis_Checkversions -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

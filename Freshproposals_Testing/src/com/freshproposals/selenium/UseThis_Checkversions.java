@@ -39,7 +39,7 @@ public class UseThis_Checkversions extends Common_Methods {
   
   @Test(priority = 1)
   public void UseThisTemp() throws InterruptedException, AWTException {
-	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/787");
+	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1145;editor=true");
 	  Thread.sleep(2000);
 	  driver.findElement(By.className("sectionlist-name")).click();
 	  Thread.sleep(2000);
@@ -52,7 +52,7 @@ public class UseThis_Checkversions extends Common_Methods {
       robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
 	  Thread.sleep(2000);
 	  //check version
-	  driver.findElement(By.xpath("//div[@class='pro-create']//li[1]")).click();
+	  driver.findElement(By.xpath("//li[2]//div[3]//img[1]")).click();
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//button[contains(text(),'Push')]")).click();
 	  Thread.sleep(2000);
@@ -71,7 +71,7 @@ public class UseThis_Checkversions extends Common_Methods {
   
   @Test(priority = 2)
   public void UseThisProp() throws InterruptedException, AWTException {
-	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1116;editor=true");
+	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/806");
 	  Thread.sleep(2000);
 	  driver.findElement(By.className("sectionlist-name")).click();
 	  Thread.sleep(2000);
@@ -84,7 +84,7 @@ public class UseThis_Checkversions extends Common_Methods {
       robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
 	  Thread.sleep(2000);
 	  //check version
-	  driver.findElement(By.xpath("//div[@class='pro-create']//li[1]")).click();
+	  driver.findElement(By.xpath("//li[2]//div[3]//img[1]")).click();
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//button[contains(text(),'Push')]")).click();
 	  Thread.sleep(2000);

@@ -12,11 +12,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Existing_Template {
+public class Existing_Template extends Common_Methods {
 	WebDriver driver;
 	String fname = "SEL";
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
@@ -31,10 +32,11 @@ public class Existing_Template {
 		driver.get("http://beta1.freshproposals.com");
 	}
   
-  @Test(priority = 0)
-  public void login() {
-		driver.findElement(By.id("textbox_0")).sendKeys("shahnawaz@zenincloud.com");
-		driver.findElement(By.id("textbox_1")).sendKeys("Shahnawaz@123");
+@Test(dataProvider = "User1" , priority = 0)
+  
+  public void login(String unm, String pwd) {
+	    driver.findElement(By.id("textbox_0")).sendKeys(unm);
+		driver.findElement(By.id("textbox_1")).sendKeys(pwd);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 	}
 	
@@ -48,7 +50,21 @@ public class Existing_Template {
   public void properties() throws InterruptedException {
 	  Thread.sleep(3000);
 	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
-	  System.out.println( driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).getCssValue("z-index"));	 
+	  String actual_textvalue = driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).getText();
+	  String expected_textvalue ="hi";
+	  // Assert.assertEquals(actual_textvalue, expected_textvalue);  
+	  //System.out.println(actual_textvalue);
+	  //System.out.println( driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).getCssValue("z-index"));	 
+	  if(actual_textvalue .equals(expected_textvalue))
+	  {
+		  System.out.println(actual_textvalue);
+	  }
+	  else
+	  {
+		  System.out.println("Actual Value is " + actual_textvalue + " Fail");
+		  Thread.sleep(2000);
+		  driver.close();
+	  }
 	  //width
 	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[1]/div/ejs-numerictextbox/span/input[1]")).clear();
 	  Thread.sleep(1000);
@@ -130,7 +146,7 @@ public class Existing_Template {
   public void paragraphStyle() throws InterruptedException {
 	  Thread.sleep(2000);
 	  //paragraph button
-	  driver.findElement(By.id("paragraphStyle-1")).click();
+	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.linkText("Heading 1")).click();
   }

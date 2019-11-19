@@ -3,7 +3,6 @@
 <suite name="Suite">
   <test name="Analytics" thread-count="1" parallel="none">
     <classes>
-       <class name="com.freshproposals.selenium.Analytics"/>
        <class name="com.freshproposals.selenium.Check_Versions"/>
        <class name="com.freshproposals.selenium.ClientContact"/>
        <class name="com.freshproposals.selenium.Collapse_Controls"/>
@@ -28,6 +27,15 @@
        <class name="com.freshproposals.selenium.SectionQuotePropertiesInPreview"/>
        <class name="com.freshproposals.selenium.Send_Proposal_Temp"/>
        <class name="com.freshproposals.selenium.Signature"/>
+       <class name="com.freshproposals.selenium.TextBox_Top_Properties"/>
+       <class name="com.freshproposals.selenium.Verify_Color"/>
+       <class name="com.freshproposals.selenium.Verify_Position_with_Preview"/>
+       <class name="com.freshproposals.selenium.Select_Search_Tab"/>
+       <class name="com.freshproposals.selenium.UseThis_Checkversions"/>
+       <class name="com.freshproposals.selenium.Won_Proposal_Verification"/>
+       <class name="com.freshproposals.selenium.Lost_Proposal_Verification"/>
+       <class name="com.freshproposals.selenium.Analytics"/>
+       <class name="com.freshproposals.selenium.Analytics_Tabchange"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

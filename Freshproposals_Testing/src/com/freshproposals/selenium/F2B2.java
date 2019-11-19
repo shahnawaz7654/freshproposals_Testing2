@@ -44,11 +44,16 @@ public class F2B2 extends Common_Methods {
 	 Actions action = new Actions(driver);
 	 //image - backward
 	 action.contextClick(driver.findElement(By.xpath("//div[@class='resizers']//img"))).perform();
+	 String Bimg_z = driver.findElement(By.xpath("//div[@id='page1-fpImage1031201911175112mainDivTransformSafeStyle']")).getCssValue("z-index");
+	 System.out.println("Before backward img, z index = "+Bimg_z);
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
+	 driver.findElement(By.xpath("//button[contains(text(),'Position')]")).getCssValue("z-index");
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("//li[contains(text(),'Send a step backward')]")).click();
-	 //System.out.println(driver.findElement(By.xpath("//div[@class='resizers']//img")).getCssValue("z-index") );
+	 String Aimg_z = driver.findElement(By.xpath("//div[@id='page1-fpImage1031201911175112mainDivTransformSafeStyle']")).getCssValue("z-index");
+	 System.out.println("After backward img, z index = "+Aimg_z);
+
 	 }
  
  @Test(priority = 2)
@@ -57,11 +62,15 @@ public class F2B2 extends Common_Methods {
 	 Actions action = new Actions(driver);
 	 //signature - back
 	 action.contextClick(driver.findElement(By.xpath("//div[@id='page1-fpSign1031201911163941']"))).perform();
+	 String Bsign_z = driver.findElement(By.xpath("//div[@id='page1-fpSign1031201911163941mainDivTransformSafeStyle']")).getCssValue("z-index");
+	 System.out.println("Before back signature, z index = "+Bsign_z);
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("//li[contains(text(),'Send to back')]")).click();
-	 System.out.println(driver.findElement(By.xpath("//div[@id='page1-fpSign1031201911163941']")).getCssValue("z-index") );
+	 String Asign_z = driver.findElement(By.xpath("//div[@id='page1-fpSign1031201911163941mainDivTransformSafeStyle']")).getCssValue("z-index");
+	 System.out.println("After back signature, z index = "+Asign_z);
+	
 	 
 	  }
 
@@ -70,13 +79,16 @@ public class F2B2 extends Common_Methods {
 public void Front() throws InterruptedException {
 	 Thread.sleep(1000);
 	 Actions action = new Actions(driver);
-	 //signature - front
+	 //img - front
 	 action.contextClick(driver.findElement(By.xpath("//div[@class='resizers']//img"))).perform();
+	 String Bimg2_z = driver.findElement(By.xpath("//div[@id='page1-fpImage1031201911175112mainDivTransformSafeStyle']")).getCssValue("z-index");
+	 System.out.println("Before Front img, z index = "+Bimg2_z);
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("//li[contains(text(),'Bring to front')]")).click();
-	 System.out.println(driver.findElement(By.xpath("//div[@class='resizers']//img")).getCssValue("z-index") );
+	 String Aimg2_z = driver.findElement(By.xpath("//div[@id='page1-fpImage1031201911175112mainDivTransformSafeStyle']")).getCssValue("z-index");
+	 System.out.println("After front img, z index = "+Aimg2_z);
 	 
 	  }
 
@@ -85,13 +97,16 @@ public void Front() throws InterruptedException {
 public void Forward() throws InterruptedException {
 	 Thread.sleep(1000);
 	 Actions action = new Actions(driver);
-	 //rectangle - front
+	 //textbox - forward
 	 action.contextClick(driver.findElement(By.xpath("//div[@class='fr-element fr-view']"))).perform();
+	 String Btextbox_z = driver.findElement(By.xpath("//div[@id='page1-fpText103120191116468mainDivTransformSafeStyle']")).getCssValue("z-index");
+	 System.out.println("Before Front textbox, z index = "+Btextbox_z);
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("//li[contains(text(),'Bring a step forward')]")).click();
-	 System.out.println(driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).getCssValue("z-index") );
+	 String Atextbox_z = driver.findElement(By.xpath("//div[@id='page1-fpText103120191116468mainDivTransformSafeStyle']")).getCssValue("z-index");
+	 System.out.println("Before Front textbox, z index = "+Atextbox_z);
 	  }
 
 @AfterTest

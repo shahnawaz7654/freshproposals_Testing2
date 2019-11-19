@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freshproposals.selenium.UseThis_Checkversions">
+      <class name="com.freshproposals.selenium.Registration">
         <methods>
-          <include name="UseThisProp"/>
           <include name="openBrowser"/>
+          <include name="Register"/>
         </methods>
-      </class> <!-- com.freshproposals.selenium.UseThis_Checkversions -->
+      </class> <!-- com.freshproposals.selenium.Registration -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

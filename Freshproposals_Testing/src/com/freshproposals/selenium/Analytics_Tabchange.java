@@ -15,7 +15,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class Analytics extends Common_Methods {
+public class Analytics_Tabchange extends Common_Methods {
 	WebDriver driver;
 	String fname = "SEL";
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
@@ -111,13 +111,20 @@ public class Analytics extends Common_Methods {
 	  ((JavascriptExecutor)driver).executeScript("window.open()");
    	  ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
  	  driver.switchTo().window(tabs.get(1));
- 	  driver.get("http://beta1.freshproposals.com/home/viewproposal/1169/304f7a3c-8497-4a5b-a86b-e8ba9af2c62d");
+ 	  driver.get("https://beta.freshproposals.com/home/viewproposal/352/2c36943b-43bf-43cf-9fa1-a3f92dc9b1dc");
 	  Thread.sleep(60000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 2')]")).click();
 	  Thread.sleep(60000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 3')]")).click();
 	  Thread.sleep(70000);
-//		//open analytics tab
+	//shift main tab
+	  driver.switchTo().window(tabs.get(0));
+	//shift temporary tab
+   	Thread.sleep(6000);
+	driver.switchTo().window(tabs.get(1));
+	//open analytics tab
+	Thread.sleep(60000);
+//	//open analytics tab
 	driver.get("http://beta1.freshproposals.com/home/proposals/summary/1169");
 	Thread.sleep(1000);
     driver.findElement(By.id("ngb-tab-2")).click();
@@ -135,7 +142,7 @@ public class Analytics extends Common_Methods {
 	String lastview = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[4]/div[2]")).getText();
 	System.out.println("TIME SINCE LAST VIEWED " + lastview);
 	//compare time
-	String expected = "3 m 10 s";
+	String expected = "7 m 8 s";
 	String actual = time;
 	
 	if (expected .equals (actual)) {
@@ -155,3 +162,4 @@ public class Analytics extends Common_Methods {
   
   
 }
+

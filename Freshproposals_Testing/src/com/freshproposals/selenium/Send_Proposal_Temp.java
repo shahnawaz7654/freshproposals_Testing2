@@ -50,7 +50,7 @@ public class Send_Proposal_Temp extends Common_Methods{
   public void contentLibrary() throws InterruptedException {
 	  Thread.sleep(3000);
 		//content library
-	    driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//button[@class='btn add-sect-btn']")).click();
+	    driver.findElement(By.xpath("//button[@class='btn add-sect-btn proposal-add-sec']//i[@class='fa fa-plus-circle']")).click();
 		//use this
 	    Thread.sleep(3000);
 	    driver.findElement(By.xpath("//img[@src='../../../assets/use-this.svg']")).click();
@@ -86,7 +86,11 @@ public class Send_Proposal_Temp extends Common_Methods{
   public void calender() throws InterruptedException  {
 	  Thread.sleep(3000);
 	  driver.findElement(By.xpath("//img[@src='../../../assets/calendar.svg']")).click();
-	  driver.findElement(By.xpath("//*[@id=\"content\"]/div/app-edit-proposal/div[1]/div/div/div/div[1]/div[5]/div[1]/div/ngb-datepicker/div[2]/div/ngb-datepicker-month-view/div[6]/div[1]/div")).click();
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//div[@class='ngb-dp-arrow right']//button[@class='btn btn-link ngb-dp-arrow-btn']")).click();
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//div[contains(text(),'31')]")).click();
+	  Thread.sleep(2000);
 	  driver.findElement(By.linkText("Next")).click();
   }
   

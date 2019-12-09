@@ -1,5 +1,6 @@
 package com.freshproposals.selenium;
 
+import java.security.cert.PKIXRevocationChecker.Option;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -47,84 +48,66 @@ public class Existing_Template extends Common_Methods {
 	}
   
   @Test(priority = 2)
-  public void properties() throws InterruptedException {
+  public void verify_name() throws InterruptedException {
+	  
 	  Thread.sleep(3000);
 	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
 	  String actual_textvalue = driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).getText();
-	  String expected_textvalue ="hi";
-	  // Assert.assertEquals(actual_textvalue, expected_textvalue);  
-	  //System.out.println(actual_textvalue);
-	  //System.out.println( driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).getCssValue("z-index"));	 
-	  if(actual_textvalue .equals(expected_textvalue))
-	  {
-		  System.out.println(actual_textvalue);
-	  }
-	  else
-	  {
-		  System.out.println("Actual Value is " + actual_textvalue + " Fail");
-		  Thread.sleep(2000);
-		  driver.close();
-	  }
-	  //width
+	  String expected_textvalue ="Shahnawaz";
+	  Assert.assertEquals(actual_textvalue, expected_textvalue);
+  }
+	  
+	  @Test(priority = 3)
+	  public void width() throws InterruptedException {
+		
+	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[1]/div/ejs-numerictextbox/span/input[1]")).clear();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[1]/div/ejs-numerictextbox/span/input[1]")).sendKeys("650");
-	  //height
+	  String actual_width =  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[1]/div/ejs-numerictextbox/span/input[1]")).getAttribute("value");
+	  String expected_width = "650";
+	  Assert.assertEquals(actual_width,expected_width);
+	  }
+	  
+	  @Test(priority = 4)
+      public void height() throws InterruptedException {
+		
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[2]/div/ejs-numerictextbox/span/input[1]")).clear();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[2]/div/ejs-numerictextbox/span/input[1]")).sendKeys("600");
-	  //rotate
-	  Thread.sleep(1000);
+	  String actual_height = driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[2]/div/ejs-numerictextbox/span/input[1]")).getAttribute("value");
+	  String expected_height = "600";
+	  Assert.assertEquals(actual_height,expected_height);
+	  }
+	  
+	  @Test(priority = 5)
+      public void rotate() throws InterruptedException {
+	
+	  Thread.sleep(1000);	  
 	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[4]/div/ejs-numerictextbox/span/input[1]")).clear();
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[4]/div/ejs-numerictextbox/span/input[1]")).sendKeys("5");
-	  //color
-	  Thread.sleep(1000);
+	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[4]/div/ejs-numerictextbox/span/input[1]")).sendKeys("5"); 
+	  String actual_rotate = driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[4]/div/ejs-numerictextbox/span/input[1]")).getAttribute("value"); 
+	  String expected_rotate = "5";
+	  Assert.assertEquals(actual_rotate,expected_rotate);
+	  }
+	  
+	  @Test(priority = 6)
+      public void color() throws InterruptedException {
+		
+	  Thread.sleep(1000);	  
 	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-text-properties[1]/form[1]/div[1]/div[1]/div[1]/ngb-accordion[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
 	  Thread.sleep(1000);
-	  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first e-handle-start']"));
+	  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-hue-slider e-control e-slider e-lib']//div[@class='e-handle e-handle-first']"));
 	  resize(r1, 75,75);
 	  Thread.sleep(1000);
 	  driver.findElement(By.className("e-hsv-color")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[@title='Apply']")).click();
-	  Thread.sleep(1000);
-	  //opacity
-	  WebElement r = driver.findElement(By.name("opacity"));
-	  resize(r,25,25);
-	  Thread.sleep(2000);
-	  //border
-	  driver.findElement(By.name("border")).click();
-	  Thread.sleep(1000);
-      //driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[8]/div[2]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
-      //border width
-	  driver.findElement(By.xpath("//div[@class='row']//div[@class='row']//input[@class='ng-untouched ng-pristine ng-valid e-control e-numerictextbox e-lib e-input']")).clear();
-	  driver.findElement(By.xpath("//div[@class='row']//div[@class='row']//input[@class='ng-untouched ng-pristine ng-valid e-control e-numerictextbox e-lib e-input']")).sendKeys("10");
-	  Thread.sleep(1000);
-	  //border style
-	  Select select = new Select(driver.findElement(By.name("borderStyle")));
-	  select.selectByIndex(6);
-	  Thread.sleep(1000);
-	  //padding
-	  driver.findElement(By.name("padding")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.name("paddingTop")).clear();
-	  driver.findElement(By.name("paddingTop")).sendKeys("30");
-	  Thread.sleep(1000);
-	  driver.findElement(By.name("paddingLeft")).clear();
-	  driver.findElement(By.name("paddingLeft")).sendKeys("30");
-	  Thread.sleep(1000);
-	  driver.findElement(By.name("paddingBottom")).clear();
-	  driver.findElement(By.name("paddingBottom")).sendKeys("30");
-	  Thread.sleep(1000);
-	  driver.findElement(By.name("paddingRight")).click();
-	  driver.findElement(By.name("paddingRight")).sendKeys("30");
-	 
-	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
-  }
-  
-  public void resize(WebElement elementToResize, int xOffset, int yOffset) {
+	  }
+	  
+	  public void resize(WebElement elementToResize, int xOffset, int yOffset) {
 		try {
 			if (elementToResize.isDisplayed()) {
 				Actions action = new Actions(driver);
@@ -139,28 +122,108 @@ public class Existing_Template extends Common_Methods {
 		} catch (Exception e) {
 			System.out.println("Unable to resize" + elementToResize + " - "	+ e.getStackTrace());
 		}
-  }
-		
-  
-  @Test(priority = 3)
-  public void paragraphStyle() throws InterruptedException {
+	  }
+	  
+	  @Test(priority = 7)
+      public void opacity() throws InterruptedException {
+	  
+	  Thread.sleep(1000);
+	  WebElement r = driver.findElement(By.name("opacity"));
+ 	  resize2(r,25,25);
+ 	  String actual_opacity = driver.findElement(By.name("opacity")).getAttribute("value");
+ 	  String expected_opacity = "64";
+ 	  Assert.assertEquals(actual_opacity, expected_opacity);
+ 	  Thread.sleep(1000);
+ 	  
+	  }
+	  public void resize2(WebElement elementToResize, int xOffset, int yOffset) {
+			try {
+				if (elementToResize.isDisplayed()) {
+					Actions action = new Actions(driver);
+					action.clickAndHold(elementToResize).moveByOffset(xOffset, yOffset).release().build().perform();
+				} else {
+					System.out.println("Element was not displayed to drag");
+				}
+			} catch (StaleElementReferenceException e) {
+				System.out.println("Element with " + elementToResize + "is not attached to the page document "	+ e.getStackTrace());
+			} catch (NoSuchElementException e) {
+				System.out.println("Element " + elementToResize + " was not found in DOM " + e.getStackTrace());
+			} catch (Exception e) {
+				System.out.println("Unable to resize" + elementToResize + " - "	+ e.getStackTrace());
+			}
+	  }
+	  
+	  @Test(priority = 8)
+      public void border_Width() throws InterruptedException {
+	 
+      driver.findElement(By.name("border")).click();
+      Thread.sleep(1000);
+	   //border width
+	  driver.findElement(By.xpath("//div[@class='row']//div[@class='row']//input[@class='ng-untouched ng-pristine ng-valid e-control e-numerictextbox e-lib e-input']")).clear();
+	  driver.findElement(By.xpath("//div[@class='row']//div[@class='row']//input[@class='ng-untouched ng-pristine ng-valid e-control e-numerictextbox e-lib e-input']")).sendKeys("10");
+	  String actual_border_width =  driver.findElement(By.xpath("//div[@class='row']//div[@class='row']//input[@class='ng-untouched ng-pristine ng-valid e-control e-numerictextbox e-lib e-input']")).getAttribute("value");
+	  String expected_border_width = "10"; 
+	  Assert.assertEquals(actual_border_width, expected_border_width);
+	  Thread.sleep(1000);
+	  }
+	  
+	  @Test(priority = 9)
+      public void border_Style() throws InterruptedException {
+	  
+		  Select select = new Select(driver.findElement(By.name("borderStyle")));
+		  select.selectByIndex(6);
+		  Thread.sleep(1000);
+	  }
+
+	  @Test(priority = 10)
+      public void padding() throws InterruptedException {
+	  
+	  driver.findElement(By.name("padding")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.name("paddingTop")).clear();
+	  driver.findElement(By.name("paddingTop")).sendKeys("30");
+	  Thread.sleep(1000);
+	  driver.findElement(By.name("paddingLeft")).clear();
+	  driver.findElement(By.name("paddingLeft")).sendKeys("30");
+	  Thread.sleep(1000);
+	  driver.findElement(By.name("paddingBottom")).clear();
+	  driver.findElement(By.name("paddingBottom")).sendKeys("30");
+	  Thread.sleep(1000);
+	  driver.findElement(By.name("paddingRight")).click();
+	  driver.findElement(By.name("paddingRight")).sendKeys("30");
+	 }
+	  
+	  @Test(priority = 11)
+      public void paragraphStyle() throws InterruptedException {
+	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
 	  Thread.sleep(2000);
-	  //paragraph button
 	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.linkText("Heading 1")).click();
-  }
-  
-  @Test(priority = 4)
-  public void setting() throws InterruptedException {
+	  String actual_heading =  driver.findElement(By.linkText("Heading 1")).getAttribute("title");
+	  String expected_heading = "Heading 1";
+	  Assert.assertEquals(actual_heading,expected_heading);
+	  
+	  }
+
+	  @Test(priority = 12)
+      public void setting() throws InterruptedException {
 	  driver.findElement(By.xpath("//img[@src='../../../../../assets/setting-icon.svg']")).click();
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//span[contains(text(),'TEXT SETTING')]")).click();
-	  //font size
+	  }
+
+	  @Test(priority = 13)
+      public void font_Size() throws InterruptedException {
 	  Thread.sleep(2000);
 	  Select select = new Select(driver.findElement(By.name("fontSize")));
 	  select.selectByIndex(15);
 	  Thread.sleep(2000);
+  }
+	  
+	  @Test(priority = 14)
+      public void BIU() throws InterruptedException {
+
 	  //underline
 	  driver.findElement(By.xpath("//i[@class='fa fa-underline pt-2']")).click();
 	  //bold
@@ -168,6 +231,11 @@ public class Existing_Template extends Common_Methods {
 	  //italic
 	  driver.findElement(By.xpath("//i[@name='fontStyle']")).click();
 	  Thread.sleep(2000);
+	  }
+	  
+	  @Test(priority = 15)
+      public void align() throws InterruptedException {
+
 	  driver.findElement(By.xpath("//img[@src='../../../../../assets/align-table-left.svg']")).click();
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//img[@src='../../../../../assets/align-table-right.svg']")).click();
@@ -176,10 +244,14 @@ public class Existing_Template extends Common_Methods {
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//img[@src='../../../../../assets/align-table-justify.svg']")).click();
 	  Thread.sleep(2000);
-	  //write on text box
-	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).sendKeys(" I am from Selenium, How are you ???");
-      Thread.sleep(3000);
-  }
+	  }
+	  
+	  @Test(priority = 16)
+      public void write() throws InterruptedException {
+
+	 driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).sendKeys(" I am from Selenium, How are you ???");
+	  }
+	  
   
   @AfterTest
   public void closeBrowser() throws InterruptedException {

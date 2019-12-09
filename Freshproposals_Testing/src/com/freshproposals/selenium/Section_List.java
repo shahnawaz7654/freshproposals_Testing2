@@ -46,26 +46,26 @@ public class Section_List extends Common_Methods {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
   }
-  @Test(priority = 2)
-  public void AddSection() throws InterruptedException {
-	  Thread.sleep(2000);
-	  //+
-	  driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//button[@class='btn add-sect-btn']")).click();
-	  //add new
-	  Thread.sleep(2000);
-	  driver.findElement(By.className("create-prop-temp-box")).click();
-	  //name
-	  Thread.sleep(1000);
-	  driver.findElement(By.name("name")).sendKeys(fname+" SectionName "+timestamp);
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//button[@type='submit']")).click();
-	  Thread.sleep(1000);
-	  //close
-	  driver.findElement(By.xpath("//img[@src='../../../assets/cancel.svg']")).click();
-	  //section name
-	  driver.findElement(By.className("sectionlist-name")).click();
-	  
-  }
+//  @Test(priority = 2)
+//  public void AddSection() throws InterruptedException {
+//	  Thread.sleep(2000);
+//	  //+
+//	  driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//button[@class='btn add-sect-btn']")).click();
+//	  //add new
+//	  Thread.sleep(2000);
+//	  driver.findElement(By.className("create-prop-temp-box")).click();
+//	  //name
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.name("name")).sendKeys(fname+" SectionName "+timestamp);
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.xpath("//button[@type='submit']")).click();
+//	  Thread.sleep(1000);
+//	  //close
+//	  driver.findElement(By.xpath("//img[@src='../../../assets/cancel.svg']")).click();
+//	  //section name
+//	  driver.findElement(By.className("sectionlist-name")).click();
+//	  
+//  }
   
   @Test(priority = 3)
   public void EditSection() throws InterruptedException {

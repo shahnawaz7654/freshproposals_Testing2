@@ -10,6 +10,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -79,7 +80,7 @@ public class Lost_Proposal_Verification extends Common_Methods {
 		
 	}
   
-  @Test(priority = 3)
+  @Test(enabled = false)
   public void contentLibrary() throws InterruptedException {
   Thread.sleep(3000);
 	//content library
@@ -122,12 +123,9 @@ public class Lost_Proposal_Verification extends Common_Methods {
 	  Verify_Lost = driver.findElement(By.xpath("//div[@class='row']//div[1]//div[1]//div[1]//div[3]//div[2]//p[1]")).getText();
 	  System.out.println("After Lost "+Verify_Lost);
 	  
-	  if(Get_Lost != Verify_Lost) {
-		  System.out.println("PASS");
-	  }
-	  else {
-		  System.out.println("FAIL");
-	  }
+	  Assert.assertNotEquals(Get_Lost, Verify_Lost);
+	  
+
 	  
   }
 	

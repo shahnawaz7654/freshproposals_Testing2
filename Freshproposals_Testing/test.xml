@@ -34,14 +34,8 @@
        <class name="com.freshproposals.selenium.UseThis_Checkversions"/>
        <class name="com.freshproposals.selenium.Won_Proposal_Verification"/>
        <class name="com.freshproposals.selenium.Lost_Proposal_Verification"/>
-       <class name="com.freshproposals.selenium.variables"/>
-       <class name="com.freshproposals.selenium.ZoomLevelTesting"/>
-       <class name="com.freshproposals.selenium.UpdateUserProfile"/>
-       <class name="com.freshproposals.selenium.ShapeRectangleProperties"/>
-       <class name="com.freshproposals.selenium.ShapeLineProperties "/>
        <class name="com.freshproposals.selenium.Analytics"/>
        <class name="com.freshproposals.selenium.Analytics_Tabchange"/>
-       
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

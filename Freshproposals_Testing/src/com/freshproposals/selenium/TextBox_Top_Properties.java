@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -54,12 +55,19 @@ public class TextBox_Top_Properties extends Common_Methods {
 	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.linkText("Heading 1")).click();
+	  String actual_heading1 = driver.findElement(By.linkText("Heading 1")).getAttribute("title");
+	  String expected_heading1 = "Heading 1";
+	  Assert.assertEquals(actual_heading1, expected_heading1);
+	  
 	  
 	  Thread.sleep(1000);
 	  //paragraph button
 	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.linkText("Heading 2")).click();
+	  String actual_heading2 = driver.findElement(By.linkText("Heading 2")).getAttribute("title");
+	  String expected_heading2 = "Heading 2";
+	  Assert.assertEquals(actual_heading2, expected_heading2);
 	  
 	  
 	  Thread.sleep(1000);
@@ -67,6 +75,9 @@ public class TextBox_Top_Properties extends Common_Methods {
 	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.linkText("Heading 3")).click();
+	  String actual_heading3 = driver.findElement(By.linkText("Heading 3")).getAttribute("title");
+	  String expected_heading3 = "Heading 3";
+	  Assert.assertEquals(actual_heading3, expected_heading3);
 	  
 	  
 	  Thread.sleep(1000);
@@ -74,6 +85,9 @@ public class TextBox_Top_Properties extends Common_Methods {
 	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.linkText("Heading 4")).click();
+	  String actual_heading4 = driver.findElement(By.linkText("Heading 4")).getAttribute("title");
+	  String expected_heading4 = "Heading 4";
+	  Assert.assertEquals(actual_heading4, expected_heading4);
 	  
 	  
 	  Thread.sleep(1000);
@@ -81,6 +95,9 @@ public class TextBox_Top_Properties extends Common_Methods {
 	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.linkText("Body")).click();
+	  String actual_body = driver.findElement(By.linkText("Body")).getAttribute("title");
+	  String expected_body = "Body";
+	  Assert.assertEquals(actual_body, expected_body);
 	  
 	  
 	  Thread.sleep(1000);
@@ -88,11 +105,14 @@ public class TextBox_Top_Properties extends Common_Methods {
 	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.linkText("Quote")).click();
+	  String actual_quote = driver.findElement(By.linkText("Quote")).getAttribute("title");
+	  String expected_quote = "Quote";
+	  Assert.assertEquals(actual_quote, expected_quote);
 	  
 	 }
   
   @Test(enabled = false)
-  public void fonrSize() throws InterruptedException {
+  public void fontSize() throws InterruptedException {
 	  Thread.sleep(1000);
 	  //paragraph button
 	  driver.findElement(By.xpath("//button[starts-with(@id,'fontSize')]")).click();
@@ -150,26 +170,41 @@ public class TextBox_Top_Properties extends Common_Methods {
 	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.linkText("Default")).click();
+	  String actual_default = driver.findElement(By.linkText("Default")).getAttribute("title");
+	  String expected_default = "Default";
+	  Assert.assertEquals(actual_default, expected_default);
 	  
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.linkText("Single")).click();
+	  String actual_single = driver.findElement(By.linkText("Single")).getAttribute("title");
+	  String expected_single = "Single";
+	  Assert.assertEquals(actual_single, expected_single);
 	  
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.linkText("1.15")).click();
+	  String actual_digit1 = driver.findElement(By.linkText("1.15")).getAttribute("title");
+	  String expected_digit1 = "1.15";
+	  Assert.assertEquals(actual_digit1, expected_digit1);
 	  
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.linkText("1.5")).click();
+	  String actual_digit2 = driver.findElement(By.linkText("1.5")).getAttribute("title");
+	  String expected_digit2 = "1.5";
+	  Assert.assertEquals(actual_digit2, expected_digit2);
 	  
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.linkText("Double")).click();
+	  String actual_double = driver.findElement(By.linkText("Double")).getAttribute("title");
+	  String expected_double = "Double";
+	  Assert.assertEquals(actual_double, expected_double);
 	  
 	}
   
@@ -179,6 +214,7 @@ public class TextBox_Top_Properties extends Common_Methods {
 	  driver.findElement(By.xpath("//button[starts-with(@id,'align')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//a[@title='Align Left']")).click();
+	  //System.out.println(driver.findElement(By.xpath("//a[@title='Align Left']")).getCssValue("text-align"));
 	  
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[starts-with(@id,'align')]")).click();
@@ -205,31 +241,50 @@ public class TextBox_Top_Properties extends Common_Methods {
 	  driver.findElement(By.xpath("//button[starts-with(@id,'formatOLOptions')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//div[@id='dropdown-menu-formatOLOptions-1']//a[@class='fr-command'][contains(text(),'Default')]")).click();
+	  String actual_default = driver.findElement(By.xpath("//div[@id='dropdown-menu-formatOLOptions-1']//a[@class='fr-command'][contains(text(),'Default')]")).getAttribute("title");
+	  String expected_default = "Default";
+	  Assert.assertEquals(actual_default, expected_default);
+	  
 	  
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[starts-with(@id,'formatOLOptions')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Lower Alpha')]")).click();
+	  String actual_loweralpha = driver.findElement(By.xpath("//a[contains(text(),'Lower Alpha')]")).getAttribute("title");
+	  String expected_loweralpha = "Lower Alpha";
+	  Assert.assertEquals(actual_loweralpha, expected_loweralpha);
 	  
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[starts-with(@id,'formatOLOptions')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Lower Greek')]")).click();
+	  String actual_lowergreek = driver.findElement(By.xpath("//a[contains(text(),'Lower Greek')]")).getAttribute("title");
+	  String expected_lowergreek = "Lower Greek";
+	  Assert.assertEquals(actual_lowergreek, expected_lowergreek);
 	  
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[starts-with(@id,'formatOLOptions')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Lower Roman')]")).click();
+	  String actual_lowerroman = driver.findElement(By.xpath("//a[contains(text(),'Lower Roman')]")).getAttribute("title");
+	  String expected_lowerroman = "Lower Roman";
+	  Assert.assertEquals(actual_lowerroman, expected_lowerroman);
 	  
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[starts-with(@id,'formatOLOptions')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Upper Alpha')]")).click();
+	  String actual_upperalpha = driver.findElement(By.xpath("//a[contains(text(),'Upper Alpha')]")).getAttribute("title");
+	  String expected_upperalpha = "Upper Alpha";
+	  Assert.assertEquals(actual_upperalpha, expected_upperalpha);
 	  
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[starts-with(@id,'formatOLOptions')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Upper Roman')]")).click();
+	  String actual_upperroman = driver.findElement(By.xpath("//a[contains(text(),'Upper Roman')]")).getAttribute("title");
+	  String expected_upperroman = "Upper Roman";
+	  Assert.assertEquals(actual_upperroman, expected_upperroman);
   }
   
   @Test(priority = 8)
@@ -238,21 +293,33 @@ public class TextBox_Top_Properties extends Common_Methods {
 	  driver.findElement(By.xpath("//button[starts-with(@id,'formatULOptions')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//div[@id='dropdown-menu-formatULOptions-1']//a[@class='fr-command'][contains(text(),'Default')]")).click();
+	  String actual_default = driver.findElement(By.xpath("//div[@id='dropdown-menu-formatULOptions-1']//a[@class='fr-command'][contains(text(),'Default')]")).getAttribute("title");
+	  String expected_default = "Default";
+	  Assert.assertEquals(actual_default, expected_default);
 	  
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[starts-with(@id,'formatULOptions')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Circle')]")).click();
+	  String actual_circle = driver.findElement(By.xpath("//a[contains(text(),'Circle')]")).getAttribute("title");
+	  String expected_circle = "Circle";
+	  Assert.assertEquals(actual_circle, expected_circle);
 	  
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[starts-with(@id,'formatULOptions')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Disc')]")).click();
+	  String actual_disc = driver.findElement(By.xpath("//a[contains(text(),'Disc')]")).getAttribute("title");
+	  String expected_disc = "Disc";
+	  Assert.assertEquals(actual_disc, expected_disc);
 	  
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[starts-with(@id,'formatULOptions')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Square')]")).click();
+	  String actual_square = driver.findElement(By.xpath("//a[contains(text(),'Square')]")).getAttribute("title");
+	  String expected_square = "Square";
+	  Assert.assertEquals(actual_square, expected_square);
 	
   }
   
@@ -262,8 +329,12 @@ public class TextBox_Top_Properties extends Common_Methods {
 	  driver.findElement(By.xpath("//button[starts-with(@id,'insertLink')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.name("href")).sendKeys("www.google.com");
-	  Thread.sleep(1000);
+//	  String actual_link = driver.findElement(By.name("href")).getText();
+//	  String expected_link = "www.google.com";
+//	  Assert.assertEquals(actual_link, expected_link);
+//	  Thread.sleep(1000);
 	  driver.findElement(By.name("text")).sendKeys("Google");
+//	  System.out.println(driver.findElement(By.name("text")).getText());
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[contains(text(),'Insert')]")).click();
 	  

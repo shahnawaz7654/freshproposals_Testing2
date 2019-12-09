@@ -1,36 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="1" ignored="0" total="8" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="21535" started-at="2019-11-19T12:14:19 IST" finished-at="2019-11-19T12:14:41 IST">
+  <suite name="Default suite" duration-ms="108269" started-at="2019-12-09T12:33:18 IST" finished-at="2019-12-09T12:35:07 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="21535" started-at="2019-11-19T12:14:19 IST" finished-at="2019-11-19T12:14:41 IST">
-      <class name="com.freshproposals.selenium.Registration">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.freshproposals.selenium.Registration@66480dd7]" name="openBrowser" is-config="true" duration-ms="12667" started-at="2019-11-19T12:14:19 IST" finished-at="2019-11-19T12:14:32 IST">
+    <test name="Default test" duration-ms="108269" started-at="2019-12-09T12:33:18 IST" finished-at="2019-12-09T12:35:07 IST">
+      <class name="com.freshproposals.selenium.Send_Proposal_Temp">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.freshproposals.selenium.Send_Proposal_Temp@3632be31]" name="openBrowser" is-config="true" duration-ms="8652" started-at="2019-12-09T12:33:18 IST" finished-at="2019-12-09T12:33:27 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="FAIL" signature="Register()[pri:1, instance:com.freshproposals.selenium.Registration@66480dd7]" name="Register" duration-ms="8798" started-at="2019-11-19T12:14:32 IST" finished-at="2019-11-19T12:14:41 IST">
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.freshproposals.selenium.Send_Proposal_Temp@3632be31]" name="login" duration-ms="562" started-at="2019-12-09T12:33:27 IST" data-provider="User1" finished-at="2019-12-09T12:33:28 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[shahnawaz@zenincloud.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Shahnawaz@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="createTemplate()[pri:1, instance:com.freshproposals.selenium.Send_Proposal_Temp@3632be31]" name="createTemplate" duration-ms="9184" started-at="2019-12-09T12:33:28 IST" finished-at="2019-12-09T12:33:37 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTemplate -->
+        <test-method status="FAIL" signature="contentLibrary()[pri:2, instance:com.freshproposals.selenium.Send_Proposal_Temp@3632be31]" name="contentLibrary" duration-ms="53067" started-at="2019-12-09T12:33:37 IST" finished-at="2019-12-09T12:34:30 IST">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Cannot locate an element using id=textbox_3
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='btn add-sect-btn proposal-add-sec']//i[@class='fa fa-plus-circle']"}
+  (Session info: chrome=78.0.3904.108)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'DESKTOP-0FSTDRC', ip: '192.168.0.11', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_25'
-Driver info: driver.version: RemoteWebDriver]]>
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.108, chrome: {chromedriverVersion: 78.0.3904.105 (60e2d8774a81..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:50341}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: cb211f6c84a11fd91d1616d5645b13f6
+*** Element info: {Using=xpath, value=//button[@class='btn add-sect-btn proposal-add-sec']//i[@class='fa fa-plus-circle']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate an element using id=textbox_3
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='btn add-sect-btn proposal-add-sec']//i[@class='fa fa-plus-circle']"}
+  (Session info: chrome=78.0.3904.108)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
 System info: host: 'DESKTOP-0FSTDRC', ip: '192.168.0.11', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_25'
-Driver info: driver.version: RemoteWebDriver
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-at org.openqa.selenium.By$ById.findElement(By.java:188)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.108, chrome: {chromedriverVersion: 78.0.3904.105 (60e2d8774a81..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:50341}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: cb211f6c84a11fd91d1616d5645b13f6
+*** Element info: {Using=xpath, value=//button[@class='btn add-sect-btn proposal-add-sec']//i[@class='fa fa-plus-circle']}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at com.freshproposals.selenium.Registration.Register(Registration.java:30)
+at com.freshproposals.selenium.Send_Proposal_Temp.contentLibrary(Send_Proposal_Temp.java:53)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -43,7 +81,7 @@ at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at org.testng.TestRunner$$Lambda$242/1418555530.accept(Unknown Source)
+at org.testng.TestRunner$$Lambda$242/889891977.accept(Unknown Source)
 at java.util.ArrayList.forEach(Unknown Source)
 at org.testng.TestRunner.privateRun(TestRunner.java:770)
 at org.testng.TestRunner.run(TestRunner.java:591)
@@ -65,8 +103,32 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Register -->
-      </class> <!-- com.freshproposals.selenium.Registration -->
+        </test-method> <!-- contentLibrary -->
+        <test-method status="PASS" signature="generateProposal()[pri:3, instance:com.freshproposals.selenium.Send_Proposal_Temp@3632be31]" name="generateProposal" duration-ms="7354" started-at="2019-12-09T12:34:30 IST" finished-at="2019-12-09T12:34:37 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateProposal -->
+        <test-method status="PASS" signature="client()[pri:4, instance:com.freshproposals.selenium.Send_Proposal_Temp@3632be31]" name="client" duration-ms="3249" started-at="2019-12-09T12:34:37 IST" finished-at="2019-12-09T12:34:40 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- client -->
+        <test-method status="PASS" signature="scrollWindow()[pri:5, instance:com.freshproposals.selenium.Send_Proposal_Temp@3632be31]" name="scrollWindow" duration-ms="3050" started-at="2019-12-09T12:34:40 IST" finished-at="2019-12-09T12:34:43 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scrollWindow -->
+        <test-method status="PASS" signature="calender()[pri:6, instance:com.freshproposals.selenium.Send_Proposal_Temp@3632be31]" name="calender" duration-ms="9703" started-at="2019-12-09T12:34:43 IST" finished-at="2019-12-09T12:34:53 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calender -->
+        <test-method status="PASS" signature="sendEmail()[pri:7, instance:com.freshproposals.selenium.Send_Proposal_Temp@3632be31]" name="sendEmail" duration-ms="8236" started-at="2019-12-09T12:34:53 IST" finished-at="2019-12-09T12:35:01 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendEmail -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.freshproposals.selenium.Send_Proposal_Temp@3632be31]" name="closeBrowser" is-config="true" duration-ms="5103" started-at="2019-12-09T12:35:01 IST" finished-at="2019-12-09T12:35:07 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.freshproposals.selenium.Send_Proposal_Temp -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

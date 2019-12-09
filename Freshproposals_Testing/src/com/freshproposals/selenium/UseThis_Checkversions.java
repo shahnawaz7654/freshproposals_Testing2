@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -38,7 +39,7 @@ public class UseThis_Checkversions extends Common_Methods {
 	}
   
   @Test(priority = 1)
-  public void UseThisTemp() throws InterruptedException, AWTException {
+  public void UseThisProp() throws InterruptedException, AWTException {
 	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1145;editor=true");
 	  Thread.sleep(2000);
 	  driver.findElement(By.className("sectionlist-name")).click();
@@ -70,7 +71,7 @@ public class UseThis_Checkversions extends Common_Methods {
   }
   
   @Test(priority = 2)
-  public void UseThisProp() throws InterruptedException, AWTException {
+  public void UseThisTemp() throws InterruptedException, AWTException {
 	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/806");
 	  Thread.sleep(2000);
 	  driver.findElement(By.className("sectionlist-name")).click();
@@ -100,5 +101,11 @@ public class UseThis_Checkversions extends Common_Methods {
       driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
 	   
   }
+  
+  @AfterTest
+  public void closeBrowser() throws InterruptedException {
+  Thread.sleep(3000);
+  driver.close();
+}
   
 }

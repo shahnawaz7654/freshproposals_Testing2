@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -40,23 +41,48 @@ public class Signature extends Common_Methods {
 	}
   
   @Test(priority = 1)
-  public void properties() throws InterruptedException {
+  public void open_Proposal() throws InterruptedException {
 	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1109;editor=true");
 	  Thread.sleep(3000);
 	  driver.findElement(By.xpath("//div[@class='signature-sec ui-resizable ui-resizable-autohide']")).click();
-	  //System.out.println(driver.findElement(By.xpath("//div[@class='signature-sec ui-resizable ui-resizable-autohide']")).getCssValue("z-index"));
-	 //width
+	  
+  }
+  
+  @Test(priority = 2)
+  public void width() throws InterruptedException {
+	//width
 	  Thread.sleep(1000);
 	  driver.findElement(By.name("textWidth11")).clear();
 	  driver.findElement(By.name("textWidth11")).sendKeys("300");
-	  //height
+	  String actual_width = driver.findElement(By.name("textWidth11")).getAttribute("value");
+	  String expected_width = "300";
+	  Assert.assertEquals(actual_width, expected_width);
+  }
+  
+  @Test(priority = 3)
+  public void height() throws InterruptedException {
+	//height
 	  Thread.sleep(1000);
 	  driver.findElement(By.name("height11")).clear();
 	  driver.findElement(By.name("height11")).sendKeys("70");
-      //corner
+	  String actual_height = driver.findElement(By.name("height11")).getAttribute("value");
+	  String expected_height = "70";
+	  Assert.assertEquals(actual_height, expected_height);
+  }
+  
+  @Test(priority = 4)
+  public void corner() throws InterruptedException {
+	  //corner
 	  Thread.sleep(1000);
 	  driver.findElement(By.name("corners")).clear();
 	  driver.findElement(By.name("corners")).sendKeys("30");
+	  String actual_corner = driver.findElement(By.name("corners")).getAttribute("value");
+	  String expected_corner = "30";
+	  Assert.assertEquals(actual_corner, expected_corner);
+  }
+  
+  @Test(priority = 5)
+  public void color() throws InterruptedException {
 	  //color   
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-signature-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]\n")).click();
@@ -71,36 +97,84 @@ public class Signature extends Common_Methods {
 	  driver.findElement(By.name("border")).click();
 	  Thread.sleep(1000);
       //border width
+  }
+  
+  @Test(priority = 6)
+  public void border_width() throws InterruptedException {
+	  
+	  //border width
 	  driver.findElement(By.name("borderWidth")).clear();
 	  driver.findElement(By.name("borderWidth")).sendKeys("10");
+	  String actual_border_width = driver.findElement(By.name("borderWidth")).getAttribute("value");
+	  String expected_border_width = "10";
+	  Assert.assertEquals(actual_border_width, expected_border_width);
 	  Thread.sleep(1000);
-	  //border style
+  }
+  
+  @Test(priority = 7)
+  public void border_style() throws InterruptedException {
+	//border style
 	  Select select = new Select(driver.findElement(By.name("borderStyle")));
 	  select.selectByIndex(6);
+	  String actual_border_style = select.getFirstSelectedOption().getText();
+	  String expected_border_style = "inset";
+	  Assert.assertEquals(actual_border_style, expected_border_style);
 	  Thread.sleep(1000);
+  }
+  
+  @Test(priority = 8)
+  public void padding_top() throws InterruptedException {
 	  //padding
 	  driver.findElement(By.name("padding")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.name("paddingTop")).clear();
 	  driver.findElement(By.name("paddingTop")).sendKeys("10");
+	  String actual_padding_top = driver.findElement(By.name("paddingTop")).getAttribute("value");
+	  String expected_padding_top = "10";
+	  Assert.assertEquals(actual_padding_top, expected_padding_top);
+  }
+  
+  @Test(priority = 9)
+  public void padding_left() throws InterruptedException {
 	  Thread.sleep(1000);
 	  driver.findElement(By.name("paddingLeft")).clear();
 	  driver.findElement(By.name("paddingLeft")).sendKeys("10");
+	  String actual_padding_left = driver.findElement(By.name("paddingLeft")).getAttribute("value");
+	  String expected_padding_left = "10";
+	  Assert.assertEquals(actual_padding_left, expected_padding_left);
+  }
+  
+  @Test(priority = 10)
+  public void pading_bottom() throws InterruptedException {
 	  Thread.sleep(1000);
 	  driver.findElement(By.name("paddingBottom")).clear();
 	  driver.findElement(By.name("paddingBottom")).sendKeys("70");
+	  String actual_padding_bottom = driver.findElement(By.name("paddingBottom")).getAttribute("value");
+	  String expected_padding_bottom = "70";
+	  Assert.assertEquals(actual_padding_bottom, expected_padding_bottom);
+  }
+  
+  @Test(priority = 11)
+  public void padding_right() throws InterruptedException {
 	  Thread.sleep(1000);
 	  driver.findElement(By.name("paddingRight")).clear();
 	  driver.findElement(By.name("paddingRight")).sendKeys("10");
+	  String actual_padding_right = driver.findElement(By.name("paddingRight")).getAttribute("value");
+	  String expected_padding_right = "10";
+	  Assert.assertEquals(actual_padding_right,expected_padding_right);
+  }
+  
+  @Test(priority = 12)
+  public void signee() throws InterruptedException {
 	  //signee
 	  Select select1 = new Select(driver.findElement(By.name("signee")));
 	  select1.selectByValue("0: Object");
+	  String actual_signee = select1.getFirstSelectedOption().getText();
+	  String expeted_signee = "Rahul Sharma";
+	  Assert.assertEquals(actual_signee, expeted_signee);
 	  //check
 	  Thread.sleep(1000);
-	  //driver.findElement(By.name("border")).click();
-	  
-	 
-	 }
+  }
   
   public void resize(WebElement elementToResize, int xOffset, int yOffset) {
 		try {

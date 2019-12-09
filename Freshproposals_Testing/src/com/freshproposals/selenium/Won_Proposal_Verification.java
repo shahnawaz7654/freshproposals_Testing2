@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -78,11 +79,11 @@ public class Won_Proposal_Verification extends Common_Methods {
 		
 	}
   
-  @Test(priority = 3)
+  @Test(enabled = false)
   public void contentLibrary() throws InterruptedException {
   Thread.sleep(3000);
 	//content library
-    driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//button[@class='btn add-sect-btn']")).click();
+    driver.findElement(By.xpath("//button[@class='btn add-sect-btn template-add-sec']")).click();
 	//use this
     Thread.sleep(3000);
     driver.findElement(By.xpath("//img[@src='../../../assets/use-this.svg']")).click();
@@ -128,13 +129,11 @@ public class Won_Proposal_Verification extends Common_Methods {
 	  driver.get("http://beta1.freshproposals.com/home/dashboard");
 	  Verify_Won = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-dashboard[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/p[1]")).getText();
 	  System.out.println("After Won "+Verify_Won);
+	  //String Verify_Won_plus = Get_Won + 1;
 	  
-	  if(Get_Won != Verify_Won) {
-		  System.out.println("PASS");
-	  }
-	  else {
-		  System.out.println("FAIL");
-	  }
+	  Assert.assertNotEquals(Get_Won, Verify_Won);
+	  
+
 	  
   }
 	

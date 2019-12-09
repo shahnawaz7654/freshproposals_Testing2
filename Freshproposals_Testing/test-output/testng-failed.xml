@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freshproposals.selenium.Registration">
+      <class name="com.freshproposals.selenium.Send_Proposal_Temp">
         <methods>
           <include name="openBrowser"/>
-          <include name="Register"/>
+          <include name="contentLibrary"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- com.freshproposals.selenium.Registration -->
+      </class> <!-- com.freshproposals.selenium.Send_Proposal_Temp -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

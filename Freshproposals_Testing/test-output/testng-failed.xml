@@ -3,14 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freshproposals.selenium.ShapeLineProperties">
+      <class name="com.freshproposals.selenium.ResizeTextBox">
         <methods>
-          <include name="shapeResize"/>
           <include name="openBrowser"/>
-          <include name="LineProperties"/>
-          <include name="login"/>
+          <include name="teardown"/>
+          <include name="ResizeTextBoxandVerify"/>
+          <include name="login" invocation-numbers="0"/>
+          <include name="Resizeback"/>
         </methods>
-      </class> <!-- com.freshproposals.selenium.ShapeLineProperties -->
+      </class> <!-- com.freshproposals.selenium.ResizeTextBox -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

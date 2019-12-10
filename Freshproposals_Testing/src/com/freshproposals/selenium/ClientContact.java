@@ -39,7 +39,8 @@ public class ClientContact extends Common_Methods {
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			WebElement Client =driver.findElement(By.xpath("//li[@class='clients']"));
 			Client.click();
-			WebElement Button = driver.findElement(By.xpath("//div[@class='btn btn-outline-light add-client-btn']"));
+			Thread.sleep(5000);
+			WebElement Button = driver.findElement(By.xpath("//div[@class='btn add-client-btn']//img"));
 			Button.click();
 			driver.findElement(By.xpath("//input[@formcontrolname='Name']")).sendKeys("Freshproposals");
 			driver.findElement(By.xpath("//input[@formcontrolname='WebSiteUrl']")).sendKeys("www.freshproposals.com");

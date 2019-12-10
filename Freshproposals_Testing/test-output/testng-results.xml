@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="73406" started-at="2019-11-19T16:05:18 IST" finished-at="2019-11-19T16:06:31 IST">
+  <suite name="Default suite" duration-ms="57235" started-at="2019-12-10T12:12:12 IST" finished-at="2019-12-10T12:13:09 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="73406" started-at="2019-11-19T16:05:18 IST" finished-at="2019-11-19T16:06:31 IST">
-      <class name="com.freshproposals.selenium.ShapeLineProperties">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.freshproposals.selenium.ShapeLineProperties@2eda0940]" name="openBrowser" is-config="true" duration-ms="18113" started-at="2019-11-19T16:05:18 IST" finished-at="2019-11-19T16:05:36 IST">
+    <test name="Default test" duration-ms="57235" started-at="2019-12-10T12:12:12 IST" finished-at="2019-12-10T12:13:09 IST">
+      <class name="com.freshproposals.selenium.ResizeTextBox">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.freshproposals.selenium.ResizeTextBox@954b04f]" name="openBrowser" is-config="true" duration-ms="18161" started-at="2019-12-10T12:12:12 IST" finished-at="2019-12-10T12:12:30 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.freshproposals.selenium.ShapeLineProperties@2eda0940]" name="login" duration-ms="489" started-at="2019-11-19T16:05:36 IST" data-provider="User2" finished-at="2019-11-19T16:05:36 IST">
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.freshproposals.selenium.ResizeTextBox@954b04f]" name="login" duration-ms="2737" started-at="2019-12-10T12:12:30 IST" data-provider="User2" finished-at="2019-12-10T12:12:33 IST">
           <params>
             <param index="0">
               <value>
@@ -27,15 +27,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="LineProperties()[pri:1, instance:com.freshproposals.selenium.ShapeLineProperties@2eda0940]" name="LineProperties" duration-ms="52624" started-at="2019-11-19T16:05:36 IST" finished-at="2019-11-19T16:06:29 IST">
+        <test-method status="PASS" signature="ResizeTextBoxandVerify()[pri:1, instance:com.freshproposals.selenium.ResizeTextBox@954b04f]" name="ResizeTextBoxandVerify" duration-ms="25804" started-at="2019-12-10T12:12:33 IST" finished-at="2019-12-10T12:12:59 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LineProperties -->
-        <test-method status="PASS" signature="shapeResize()[pri:2, instance:com.freshproposals.selenium.ShapeLineProperties@2eda0940]" name="shapeResize" duration-ms="2123" started-at="2019-11-19T16:06:29 IST" finished-at="2019-11-19T16:06:31 IST">
+        </test-method> <!-- ResizeTextBoxandVerify -->
+        <test-method status="PASS" signature="Resizeback()[pri:2, instance:com.freshproposals.selenium.ResizeTextBox@954b04f]" name="Resizeback" duration-ms="7652" started-at="2019-12-10T12:12:59 IST" finished-at="2019-12-10T12:13:07 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- shapeResize -->
-      </class> <!-- com.freshproposals.selenium.ShapeLineProperties -->
+        </test-method> <!-- Resizeback -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.freshproposals.selenium.ResizeTextBox@954b04f]" name="teardown" is-config="true" duration-ms="2814" started-at="2019-12-10T12:13:07 IST" finished-at="2019-12-10T12:13:09 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.freshproposals.selenium.ResizeTextBox -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

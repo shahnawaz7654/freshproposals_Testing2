@@ -11,11 +11,6 @@
        <class name="com.freshproposals.selenium.ZoomLevelTesting">
        <class name="com.freshproposals.selenium.ShapeRectangleProperties">
        <class name="com.freshproposals.selenium.">
-       
-       
-    	
-      
-      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

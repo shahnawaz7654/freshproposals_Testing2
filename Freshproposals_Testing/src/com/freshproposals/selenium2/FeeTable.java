@@ -1,4 +1,4 @@
-package com.freshproposals.selenium;
+package com.freshproposals.selenium2;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -14,7 +14,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class FeeTableVerificationFeature extends Common_Methods {
+import com.freshproposals.selenium.Common_Methods;
+
+public class FeeTable extends Common_Methods{
+	
 	WebDriver driver;
 	
 	 @BeforeClass
@@ -34,7 +37,7 @@ public class FeeTableVerificationFeature extends Common_Methods {
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
 		
 		}
-	 @Test(priority=1,enabled = false)
+	 @Test(priority=1,dependsOnMethods = {"login"})
 	 public void AddRow() {
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
 		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
@@ -60,7 +63,7 @@ public class FeeTableVerificationFeature extends Common_Methods {
 		
 			 
 		 }
-	 @Test(priority=2,enabled = false)
+	 @Test(priority=2,dependsOnMethods = {"login"})
 	 public void DeleteRow() throws InterruptedException {
 		 List<WebElement> BeforeNumberofrows =driver.findElements(By.className("contentInside"));
 		  int numberofrowsBefore = BeforeNumberofrows.size();
@@ -83,7 +86,7 @@ public class FeeTableVerificationFeature extends Common_Methods {
 				}
 				
 	 }
-	 @Test(priority=3,enabled = false)
+	 @Test(priority=3,dependsOnMethods = {"login"})
 	 public  void SelectRowType() throws InterruptedException {
 		 WebElement ClickonRow =driver.findElement(By.xpath("//div[@id='content']//div[5]//div[2]"));
 		 ClickonRow.click();
@@ -144,7 +147,7 @@ public class FeeTableVerificationFeature extends Common_Methods {
 			 Assert.assertTrue(false);
 		 }
 	 }
-	 @Test(priority=4,enabled = false)
+	 @Test(priority=4,dependsOnMethods = {"login"})
 	 public void AddRowDiscount() {
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
 		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
@@ -168,7 +171,7 @@ public class FeeTableVerificationFeature extends Common_Methods {
 		}
 		 
 	 }
-	 @Test(priority = 5,enabled=false)
+	 @Test(priority = 5,dependsOnMethods = {"login"})
 	 public void TableDiscount() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
 		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
@@ -201,7 +204,7 @@ public class FeeTableVerificationFeature extends Common_Methods {
 		}
 
 	 }
-	 @Test(priority=6,enabled=false)
+	 @Test(priority=6,dependsOnMethods = {"login"})
 		public void AddTableTax1() throws InterruptedException {
 		WebElement tabletax1 = driver.findElement(By.xpath("//label[@class='fees-prop-header'][contains(text(),'Tax 1')]//img"));
 		tabletax1.click();
@@ -226,7 +229,7 @@ public class FeeTableVerificationFeature extends Common_Methods {
 			tabletax1.click();
 
 		}
-	 @Test(priority = 7,enabled=false)
+	 @Test(priority = 7,dependsOnMethods = {"login"})
 	 public void AddTax2() throws InterruptedException {
 		 WebElement Tabletax2 = driver.findElement(By.xpath("//label[@class='fees-prop-header'][contains(text(),'Tax 2')]//img"));
 		 Thread.sleep(5000);
@@ -249,7 +252,7 @@ public class FeeTableVerificationFeature extends Common_Methods {
 	}
 				 
 	 }
-	 @Test(priority=8)
+	 @Test(priority=8,dependsOnMethods = {"login"})
 	 public void TableOption() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
 		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
@@ -286,3 +289,6 @@ public class FeeTableVerificationFeature extends Common_Methods {
 	 }
 
 }
+
+
+

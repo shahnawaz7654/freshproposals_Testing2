@@ -7,8 +7,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.Color;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -16,7 +18,7 @@ import org.testng.annotations.Test;
 public class SectionBodyProperties extends Common_Methods {
 	WebDriver driver;
 	
-	 @BeforeTest
+	 @BeforeClass
 	  public void openBrowser() {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 			driver = new ChromeDriver();
@@ -45,7 +47,7 @@ public class SectionBodyProperties extends Common_Methods {
 //			Thread.sleep(1000);
 //			driver.findElement(By.xpath("//button[@class='button float-right e-control e-progress-btn e-lib e-btn e-spin-right']")).click();	
 //	}
-	  @Test(priority=1)
+	  @Test(priority=1,dependsOnMethods = {"login"})
 	  public void ReadtextFontsize() {
 			driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675");
 			String Actualfont =driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("font-size");
@@ -54,7 +56,7 @@ public class SectionBodyProperties extends Common_Methods {
 			String expected ="14px";
 			Assert.assertEquals(Actualfont,expected);	
 		}
-	  @Test(priority=2)
+	  @Test(priority=2,dependsOnMethods = {"login"})
 	  public void ReadFontColor() {
 			String color =driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("color");
 			System.out.println(color);
@@ -64,7 +66,7 @@ public class SectionBodyProperties extends Common_Methods {
 			Assert.assertEquals(actual,expected);
 		  
 	  }
-	  @Test(priority=3)
+	  @Test(priority=3,dependsOnMethods = {"login"})
 	  public void FontStyle() {
 		  String actualstyle =driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("font-style");
 			// System.out.println("Font style is ="+style);
@@ -72,51 +74,35 @@ public class SectionBodyProperties extends Common_Methods {
 				Assert.assertEquals(actualstyle,expected);
 
 	  }
-	  @Test(priority=4)
+	  @Test(priority=4,dependsOnMethods = {"login"})
 	  public void FontAlignment() {
 		  String ActualAlign=driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("text-align");
 			// System.out.println("Alignment of the text is="+Align);
 			 String expected ="left";
 				Assert.assertEquals(ActualAlign,expected);
 	  }
-	  @Test(priority=5)
+	  @Test(priority=5,dependsOnMethods = {"login"})
 	  public void Fontfamily() {
 		  String ActualFontfamily=driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("font-family");
 			// System.out.println("Font family is="+family);
 		  String expected ="Roboto";
 			Assert.assertEquals(ActualFontfamily,expected);
 	  }
-	  @Test(priority=6)
+	  @Test(priority=6,dependsOnMethods = {"login"})
 	  public void FontWeight() {
 		  String ActualFontWeight =driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("font-weight");
 			 //System.out.println("Weight of the font is="+Weight);
 		  String expected ="400";
 			Assert.assertEquals(ActualFontWeight,expected);
 	  }
-	  @AfterTest
+	  @AfterClass
 	  public void closeBrowser() {
 		  driver.close();
 	  }
 	 
-//	  @BeforeTest
-//	  public void setup() {
-//			System.setProperty("webdriver.chrome.driver","D:\\Nikeeta\\chromedriver.exe");
-//				driver= new ChromeDriver();
-//				driver.manage().window().maximize();
-//				driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-//				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
-//		}
-//	  
 
-	  @BeforeSuite
-	  public void beforeSuite() {
-		  System.out.println("Before suite");
-	  }
 
-	  @AfterSuite
-	  public void afterSuite() {
-		  System.out.println("After suite");
-	  }
+	
 
 	}
 

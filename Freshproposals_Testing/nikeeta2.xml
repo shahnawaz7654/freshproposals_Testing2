@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="SectionProperties" thread-count="1" parallel="none">
+    <classes>
+       <class name="com.freshproposals.selenium.SectionBodyProperties"/>
+       <class name="com.freshproposals.selenium.SectionBodyPropertiesInPreview"/>
+       <class name="com.freshproposals.selenium.SectionHeading1Properties"/>
+       <class name="com.freshproposals.selenium.SectionHeading1PropertiesInPreview"/>
+       <class name="com.freshproposals.selenium.SectionHeading2Properties"/>
+       <class name="com.freshproposals.selenium.SectionHeading2PropertiesInPreview"/>
+       <class name="com.freshproposals.selenium.SectionHeading3Properties"/>
+       <class name="com.freshproposals.selenium.SectionHeading3PropertiesInPreview"/>
+       <class name="com.freshproposals.selenium.SectionHeading4Properties"/>
+       <class name="com.freshproposals.selenium.SectionHeading4PropertiesInPreview"/>
+       <class name="com.freshproposals.selenium.SectionQuoteProperties"/>
+       <class name="com.freshproposals.selenium.SectionQuotePropertiesInPreview"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+

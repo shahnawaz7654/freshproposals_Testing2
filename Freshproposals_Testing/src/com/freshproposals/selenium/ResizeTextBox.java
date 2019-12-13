@@ -57,10 +57,6 @@ public class ResizeTextBox extends Common_Methods{
 			savebtn.click();
 			Thread.sleep(5000);
 	  		}
-	
-		 
-		 
-	 
 	 		@Test(priority=2)
 	 		public void Resizeback() throws InterruptedException {
 	 			 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");

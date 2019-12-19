@@ -40,7 +40,7 @@ public class UseThis_Checkversions extends Common_Methods {
   
   @Test(priority = 1)
   public void UseThisProp() throws InterruptedException, AWTException {
-	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1145;editor=true");
+	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1693;editor=true#section6445");
 	  Thread.sleep(2000);
 	  driver.findElement(By.className("sectionlist-name")).click();
 	  Thread.sleep(2000);
@@ -72,7 +72,7 @@ public class UseThis_Checkversions extends Common_Methods {
   
   @Test(priority = 2)
   public void UseThisTemp() throws InterruptedException, AWTException {
-	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/806");
+	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1243#section6446");
 	  Thread.sleep(2000);
 	  driver.findElement(By.className("sectionlist-name")).click();
 	  Thread.sleep(2000);

@@ -3,80 +3,24 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Analytics(failed)">
     <classes>
-      <class name="com.freshproposals.Analytics">
-        <methods>
-          <include name="copyLink"/>
-          <include name="calender"/>
-          <include name="contentLibrary"/>
-          <include name="scrollWindow"/>
-          <include name="closeBrowser"/>
-          <include name="openBrowser"/>
-          <include name="client"/>
-          <include name="generateProposal"/>
-          <include name="createTemplate"/>
-          <include name="login"/>
-        </methods>
-      </class> <!-- com.freshproposals.Analytics -->
-      <class name="com.freshproposals.FeetableAll">
-        <methods>
-          <include name="RowDiscount"/>
-          <include name="RowTypeSelected"/>
-          <include name="AddTax1"/>
-          <include name="TableDiscount"/>
-          <include name="FeesLibraryExport"/>
-          <include name="setup"/>
-          <include name="login"/>
-          <include name="AddTax2"/>
-          <include name="readtable"/>
-        </methods>
-      </class> <!-- com.freshproposals.FeetableAll -->
-      <class name="com.freshproposals.Email_Template">
+      <class name="com.freshproposals.selenium.Email_Template">
         <methods>
           <include name="closeBrowser"/>
           <include name="openBrowser"/>
-          <include name="login"/>
-          <include name="createEmailTemplate"/>
+          <include name="paragraph_Style"/>
         </methods>
-      </class> <!-- com.freshproposals.Email_Template -->
-      <class name="com.freshproposals.Send_Proposal_Temp">
+      </class> <!-- com.freshproposals.selenium.Email_Template -->
+      <class name="com.freshproposals.selenium.Existing_Template">
         <methods>
-          <include name="createTemplate"/>
-          <include name="login"/>
-          <include name="client"/>
-          <include name="generateProposal"/>
-          <include name="openBrowser"/>
-          <include name="contentLibrary"/>
-          <include name="calender"/>
-          <include name="sendEmail"/>
           <include name="closeBrowser"/>
-          <include name="scrollWindow"/>
-        </methods>
-      </class> <!-- com.freshproposals.Send_Proposal_Temp -->
-      <class name="com.freshproposals.ClientContact">
-        <methods>
-          <include name="login"/>
-          <include name="ClientUpdated"/>
-          <include name="afterSuite"/>
-          <include name="beforeSuite"/>
-          <include name="ContactUpdated"/>
-          <include name="setup"/>
-          <include name="ClientDeleted"/>
-          <include name="CreateNewClient"/>
-          <include name="newContactaddedintoexistingClient"/>
-          <include name="CreatenewContact"/>
-        </methods>
-      </class> <!-- com.freshproposals.ClientContact -->
-      <class name="com.freshproposals.Existing_Template">
-        <methods>
-          <include name="properties"/>
+          <include name="font_Size"/>
+          <include name="write"/>
           <include name="openBrowser"/>
+          <include name="BIU"/>
           <include name="setting"/>
-          <include name="login"/>
-          <include name="closeBrowser"/>
-          <include name="openExistTemplate"/>
-          <include name="paragraphStyle"/>
+          <include name="align"/>
         </methods>
-      </class> <!-- com.freshproposals.Existing_Template -->
+      </class> <!-- com.freshproposals.selenium.Existing_Template -->
     </classes>
   </test> <!-- Analytics(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -50,7 +50,9 @@ public class Send_Proposal_Temp extends Common_Methods{
   public void contentLibrary() throws InterruptedException {
 	  Thread.sleep(3000);
 		//content library
-	    driver.findElement(By.xpath("//button[@class='btn add-sect-btn proposal-add-sec']//i[@class='fa fa-plus-circle']")).click();
+	   //System.out.println(driver.findElement(By.className("btn add-sect-btn proposal-add-sec")).toString()); 
+	   driver.findElement(By.className("btn.add-sect-btn.proposal-add-page"));
+	   //driver.findElement(By.cssSelector("div.wrapper div.main-no-sidebar:nth-child(5) div.apply-hidden.styling-mode-effect div.section-editor-box div.fixed-sidebar.left-zero.col-lg-2.p-0:nth-child(1) div.sidebar-editor-left div.sidebar-editor-left-contents > button.btn.add-sect-btn.add-page:nth-child(2)")).click();
 		//use this
 	    Thread.sleep(3000);
 	    driver.findElement(By.xpath("//img[@src='../../../assets/use-this.svg']")).click();

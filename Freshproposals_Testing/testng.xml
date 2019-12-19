@@ -3,13 +3,13 @@
 <suite name="Suite">
   <test name="Analytics" thread-count="1" parallel="none">
     <classes>
-       <class name="com.freshproposals.selenium.Check_Versions"/>
+      <!--   <class name="com.freshproposals.selenium.Check_Versions"/>
        <class name="com.freshproposals.selenium.ClientContact"/>
-       <class name="com.freshproposals.selenium.Collapse_Controls"/>
-       <class name="com.freshproposals.selenium.Email_Template"/>
+       <class name="com.freshproposals.selenium.Collapse_Controls"/>-->
+     <class name="com.freshproposals.selenium.Email_Template"/>
        <class name="com.freshproposals.selenium.Existing_Single_Image"/>
        <class name="com.freshproposals.selenium.Existing_Template"/>
-       <class name="com.freshproposals.selenium.F2B2_Multiple"/>
+    <!--    <class name="com.freshproposals.selenium.F2B2_Multiple"/>
        <class name="com.freshproposals.selenium.F2B2"/>
        <class name="com.freshproposals.selenium.FeetableAll"/>
        <class name="com.freshproposals.selenium.Section_List"/>
@@ -40,7 +40,7 @@
        <class name="com.freshproposals.selenium.ShapeRectangleProperties"/>
        <class name="com.freshproposals.selenium.ShapeLineProperties "/>
        <class name="com.freshproposals.selenium.Analytics"/>
-       <class name="com.freshproposals.selenium.Analytics_Tabchange"/>
+       <class name="com.freshproposals.selenium.Analytics_Tabchange"/> -->
        
     </classes>
   </test> <!-- Test -->

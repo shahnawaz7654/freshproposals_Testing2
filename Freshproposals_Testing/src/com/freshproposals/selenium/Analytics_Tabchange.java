@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -19,6 +20,26 @@ public class Analytics_Tabchange extends Common_Methods {
 	WebDriver driver;
 	String fname = "SEL";
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
+	
+	//variables
+		String time;
+		String view;
+		String average;
+		String lastview;
+		String g_time;
+		String g_view;
+		String g_average;
+		String g_lastview;
+		int g_conversion_time;
+		int conversion_time;
+		int total_time;
+		int expected_total_time;
+		int g_view_int;
+		int view_int; 
+		int total_view;
+		int total_average_time;
+		int expected_total_average_time;
+		
 	
   @BeforeTest
   public void openBrowser() {
@@ -38,64 +59,29 @@ public class Analytics_Tabchange extends Common_Methods {
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 	
 	}
+  
+  @Test(priority = 1)
+  public void getData() throws InterruptedException {
+	  driver.get("http://beta1.freshproposals.com/home/proposals/summary/1169");
+		Thread.sleep(1000);
+	    driver.findElement(By.id("ngb-tab-2")).click();
+	    //get time
+	    Thread.sleep(5000);
+	    g_time =  driver.findElement(By.className("proposal-analytics-timespent-value")).getText();
+		System.out.println("B TOTAL TIME SPENT VIEWING " +  g_time);
+		//times viewed
+		g_view = driver.findElement(By.cssSelector("div.wrapper div.main:nth-child(5) div.apply-hidden.styling-mode-effect div.proposal-summary div.container:nth-child(3) div.tabs-underlined.proposal-summary-tab div.tab-content div.tab-pane.active div.proposal-analytics div.row.proposal-analytics-box:nth-child(2) div.proposal-analytics-box-timespent div.proposal-analytics-timespent div:nth-child(2) > div.proposal-analytics-timespent-value")).getText();
+		System.out.println("B TIMES VIEWED " + g_view);
+		//average time
+		g_average = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[3]/div[2]")).getText();
+		System.out.println("B AVERAGE TIME VIEWING " + g_average);				
+		//time since last view
+		g_lastview = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[4]/div[2]")).getText();
+		System.out.println("B TIME SINCE LAST VIEWED " + g_lastview);
+  }
    
   
-//  @Test(priority = 1)
-//  public void createTemplate() throws InterruptedException {
-//		driver.findElement(By.linkText("TEMPLATES")).click();
-//		Thread.sleep(3000);
-//		//template name
-//		driver.findElement(By.linkText("Create your Template")).click();
-//		driver.findElement(By.name("name")).sendKeys(fname+" CLTemp "+timestamp);
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath("//button[@type='submit']")).click();
-//  }
-//  
-//  @Test(priority = 2)
-//  public void contentLibrary() throws InterruptedException {
-//	  Thread.sleep(3000);
-//		//content library
-//	    driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//button[@class='btn add-sect-btn']")).click();
-//		//use this
-//	    Thread.sleep(3000);
-//	    driver.findElement(By.xpath("//img[@src='../../../assets/use-this.svg']")).click();
-//		//close content library
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//img[@src='../../../assets/cancel.svg']")).click();
-//  }
-//  
-//  @Test(priority = 3)
-//  public void generateProposal() throws InterruptedException {
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath("//button[contains(text(), 'Generate Proposal' )]")).click();
-//		driver.findElement(By.name("name")).sendKeys(fname+" CLProp "+timestamp);
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath("//button[@type='submit']")).click();
-//	  }
-//  
-//  @Test(priority = 4)
-//  public void client() throws InterruptedException  {
-//	  Thread.sleep(3000);
-//	  driver.findElement(By.xpath("//*[@id=\"headingSelectClient\"]/h2/button")).click();
-//	  driver.findElement(By.xpath("//*[@id=\"collapseSelectClient\"]/div/div/app-clients/div[2]/div/div/div/div[2]/label/span")).click();
-//  }
-//  
-//  @Test(priority = 5)
-//  public void scrollWindow() throws InterruptedException  {
-//	  Thread.sleep(3000);
-//	  JavascriptExecutor js = (JavascriptExecutor) driver;
-//	  js.executeScript("window.scrollBy(0,1000)");
-//  }
-//  
-//  @Test(priority = 6)
-//  public void calender() throws InterruptedException  {
-//	  Thread.sleep(3000);
-//	  driver.findElement(By.xpath("//img[@src='../../../assets/calendar.svg']")).click();
-//	  driver.findElement(By.xpath("//*[@id=\"content\"]/div/app-edit-proposal/div[1]/div/div/div/div[1]/div[5]/div[1]/div/ngb-datepicker/div[2]/div/ngb-datepicker-month-view/div[6]/div[1]/div")).click();
-//	  driver.findElement(By.linkText("Next")).click();
-//  }
-//  
-  @Test(priority = 7)
+  @Test(priority = 2)
   public void copyLink() throws InterruptedException {
 	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1169;editor=true");
 	  //next
@@ -112,47 +98,178 @@ public class Analytics_Tabchange extends Common_Methods {
    	  ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
  	  driver.switchTo().window(tabs.get(1));
  	  driver.get("https://beta.freshproposals.com/home/viewproposal/352/2c36943b-43bf-43cf-9fa1-a3f92dc9b1dc");
-	  Thread.sleep(60000);
+	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 2')]")).click();
-	  Thread.sleep(60000);
+	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 3')]")).click();
-	  Thread.sleep(70000);
+	  Thread.sleep(1000);
 	//shift main tab
 	  driver.switchTo().window(tabs.get(0));
 	//shift temporary tab
    	Thread.sleep(6000);
 	driver.switchTo().window(tabs.get(1));
 	//open analytics tab
-	Thread.sleep(60000);
+	Thread.sleep(1000);
 //	//open analytics tab
 	driver.get("http://beta1.freshproposals.com/home/proposals/summary/1169");
 	Thread.sleep(1000);
     driver.findElement(By.id("ngb-tab-2")).click();
     //get time
     Thread.sleep(5000);
-    String time =  driver.findElement(By.className("proposal-analytics-timespent-value")).getText();
+    time =  driver.findElement(By.className("proposal-analytics-timespent-value")).getText();
 	System.out.println("TOTAL TIME SPENT VIEWING " +  time);
 	//times viewed
-	String view = driver.findElement(By.cssSelector("div.wrapper div.main:nth-child(5) div.apply-hidden.styling-mode-effect div.proposal-summary div.container:nth-child(3) div.tabs-underlined.proposal-summary-tab div.tab-content div.tab-pane.active div.proposal-analytics div.row.proposal-analytics-box:nth-child(2) div.proposal-analytics-box-timespent div.proposal-analytics-timespent div:nth-child(2) > div.proposal-analytics-timespent-value")).getText();
+	view = driver.findElement(By.cssSelector("div.wrapper div.main:nth-child(5) div.apply-hidden.styling-mode-effect div.proposal-summary div.container:nth-child(3) div.tabs-underlined.proposal-summary-tab div.tab-content div.tab-pane.active div.proposal-analytics div.row.proposal-analytics-box:nth-child(2) div.proposal-analytics-box-timespent div.proposal-analytics-timespent div:nth-child(2) > div.proposal-analytics-timespent-value")).getText();
 	System.out.println("TIMES VIEWED " + view);
 	//average time
-	String average = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[3]/div[2]")).getText();
+	average = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[3]/div[2]")).getText();
 	System.out.println("AVERAGE TIME VIEWING " + average);				
 	//time since last view
-	String lastview = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[4]/div[2]")).getText();
+	lastview = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[4]/div[2]")).getText();
 	System.out.println("TIME SINCE LAST VIEWED " + lastview);
-	//compare time
-	String expected = "7 m 8 s";
-	String actual = time;
 	
-	if (expected .equals (actual)) {
-		System.out.println("PASS");
-	}
-	else {
-		System.out.println("FAIL");
-		}
+	
+	   //compare g_time
+    char[]	g_tempArr = g_time.toCharArray();
+	int g_totalChars = g_tempArr.length;
+	//System.out.println("TotalChars "+g_totalChars);
+	
+	int g_hrsIndex = g_time.lastIndexOf("h");
+	int g_minIndex = g_time.lastIndexOf("m");
+	int g_secsIndex = g_time.lastIndexOf("s");
 
+	//System.out.println("HrsIndex"+g_hrsIndex+" MinIndex"+g_minIndex+" SecsIndex : "+g_secsIndex);
+
+	int g_secs=0;
+	int g_mins=0;
+	int g_hrs=0;
+
+	if(g_hrsIndex < 0){
+		{
+			if(g_minIndex < 0) {
+				if(g_secsIndex < 0) {
+					g_secs=0;
+				}else {
+					g_secs=  Integer.parseInt(g_time.substring(g_minIndex+2, g_secsIndex-1));
+					//System.out.println("Secs String:"+g_time.substring(g_minIndex+2, g_secsIndex-1));
+					//System.out.println(" Secs: "+g_secs);
+				}
+			}else {
+				
+				if(g_secsIndex < 0) {
+					g_secs=0;
+				}else {
+					g_secs=  Integer.parseInt(g_time.substring(g_minIndex+2, g_secsIndex-1));
+					//System.out.println("Secs String:"+g_time.substring(g_minIndex+2, g_secsIndex-1));
+					//System.out.println(" Secs: "+g_secs);
+				}
+
+				g_mins=  Integer.parseInt(g_time.substring(0, g_minIndex-1));
+				//System.out.println(" Mins: "+g_mins);			
+			}
+		}
+	}else {
+		
+		g_hrs=  Integer.parseInt(g_time.substring(0, g_hrsIndex-1));
+		//System.out.println(" Hrs: "+g_hrs);
+	}
+		
+	System.out.println("G_H:"+g_hrs+" G_M:"+g_mins+" G_S: "+g_secs);
+
+	
+	 //compare _time
+    char[]	tempArr = g_time.toCharArray();
+	int totalChars = tempArr.length;
+	//System.out.println("TotalChars "+totalChars);
+	
+	int hrsIndex = time.lastIndexOf("h");
+	int minIndex = time.lastIndexOf("m");
+	int secsIndex = time.lastIndexOf("s");
+
+	//System.out.println("HrsIndex"+hrsIndex+" MinIndex"+minIndex+" SecsIndex : "+secsIndex);
+
+	int secs=0;
+	int mins=0;
+	int hrs=0;
+
+	if(hrsIndex < 0){
+		{
+			if(minIndex < 0) {
+				if(secsIndex < 0) {
+					secs=0;
+				}else {
+					secs=  Integer.parseInt(time.substring(minIndex+2, secsIndex-1));
+					//System.out.println("Secs String:"+time.substring(minIndex+2, secsIndex-1));
+					//System.out.println(" Secs: "+secs);
+				}
+			}else {
+				
+				if(secsIndex < 0) {
+					secs=0;
+				}else {
+					secs=  Integer.parseInt(time.substring(minIndex+2, secsIndex-1));
+					//System.out.println("Secs String:"+time.substring(minIndex+2, secsIndex-1));
+					//System.out.println(" Secs: "+secs);
+				}
+
+				mins=  Integer.parseInt(time.substring(0, minIndex-1));
+				//System.out.println(" Mins: "+mins);			
+			}
+		}
+	}else {
+		
+		hrs=  Integer.parseInt(time.substring(0, hrsIndex-1));
+		//System.out.println(" Hrs: "+hrs);
+	}
+		
+	System.out.println("H:"+hrs+" M:"+mins+" Secs: "+secs);
+	//get
+	g_conversion_time = g_mins * 60 + g_mins;
+	System.out.println("G Time = "+g_conversion_time);
+	//normal 
+	conversion_time = mins * 60 + secs;
+	System.out.println("Time = "+conversion_time);
+	
+	total_time = conversion_time - g_conversion_time;
+	System.out.println("Total Time = "+total_time);
+	
+	expected_total_time = 180;
+	Assert.assertEquals(total_time, expected_total_time);
+	
+	
+	
+	}
+  
+  @Test(priority = 9)
+  public void Times_View() {
+	  System.out.println("G View= "+g_view);
+	  System.out.println("View= "+view);
+	  
+	  g_view_int = Integer.parseInt(g_view);
+	  view_int = Integer.parseInt(view);
+	  
+	  
+	  total_view = view_int - g_view_int;
+	  System.out.println("Total View= "+total_view);
+	  
+	  //int expected_total_view = 1;
+	  Assert.assertTrue(total_view==1);
+	  
+	  
   }
+  
+  @Test(priority = 10)
+  public void Average_Time() {
+	  System.out.println(g_average);
+	  System.out.println(average);
+	  
+	  total_average_time = g_conversion_time / view_int;
+	  System.out.println(total_average_time);
+	  
+	  expected_total_average_time = total_average_time;
+	  Assert.assertEquals(total_average_time, expected_total_average_time);
+	  
+	  }
   
   @AfterTest
   public void closeBrowser() throws InterruptedException {
@@ -162,4 +279,3 @@ public class Analytics_Tabchange extends Common_Methods {
   
   
 }
-

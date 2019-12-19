@@ -16,32 +16,30 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class Analytics extends Common_Methods {
+public class Analytics_Feestable extends Common_Methods {
 	WebDriver driver;
 	String fname = "SEL";
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
 	
 	//variables
-	String time;
-	String view;
-	String average;
-	String lastview;
-	String g_time;
-	String g_view;
-	String g_average;
-	String g_lastview;
-	int g_conversion_time;
-	int conversion_time;
-	int total_time;
-	int expected_total_time;
-	int g_view_int;
-	int view_int; 
-	int total_view;
-	int total_average_time;
-	int expected_total_average_time;
-	
-	
-	
+		String time;
+		String view;
+		String average;
+		String lastview;
+		String g_time;
+		String g_view;
+		String g_average;
+		String g_lastview;
+		int g_conversion_time;
+		int conversion_time;
+		int total_time;
+		int expected_total_time;
+		int g_view_int;
+		int view_int; 
+		int total_view;
+		int total_average_time;
+		int expected_total_average_time;
+		
 	
   @BeforeTest
   public void openBrowser() {
@@ -62,7 +60,6 @@ public class Analytics extends Common_Methods {
 	
 	}
    
-  
   @Test(priority = 7)
   public void getData() throws InterruptedException {
 	  driver.get("http://beta1.freshproposals.com/home/proposals/summary/1169");
@@ -84,9 +81,9 @@ public class Analytics extends Common_Methods {
   }
   
   
-  @Test(priority = 8)
+  @Test(priority = 7)
   public void copyLink() throws InterruptedException {
-	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1169;editor=true");
+	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1673;editor=true");
 	  //next
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
@@ -100,32 +97,32 @@ public class Analytics extends Common_Methods {
 	  ((JavascriptExecutor)driver).executeScript("window.open()");
    	  ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
  	  driver.switchTo().window(tabs.get(1));
- 	  driver.get("http://beta1.freshproposals.com/home/viewproposal/1169/304f7a3c-8497-4a5b-a86b-e8ba9af2c62d");
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 2')]")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 3')]")).click();
-	  Thread.sleep(1000);
+ 	  driver.get("http://beta1.freshproposals.com/home/viewproposal/1673/a414397b-e592-429d-8ce7-a26794596b10");
+ 	  Thread.sleep(3000);
+ 	//change quantity
+	  driver.findElement(By.name("feequantity")).clear();
+	  driver.findElement(By.name("feequantity")).sendKeys("5");
+	  Thread.sleep(5000);
+	  driver.findElement(By.xpath("//a[contains(text(),'Second Page')]")).click();
+	  Thread.sleep(5000);
 //		//open analytics tab
-	driver.get("http://beta1.freshproposals.com/home/proposals/summary/1169");
+	driver.get("http://beta1.freshproposals.com/home/proposals/summary/1673");
 	Thread.sleep(1000);
     driver.findElement(By.id("ngb-tab-2")).click();
     //get time
     Thread.sleep(5000);
     time =  driver.findElement(By.className("proposal-analytics-timespent-value")).getText();
-	System.out.println("A TOTAL TIME SPENT VIEWING " +  time);
+	System.out.println("TOTAL TIME SPENT VIEWING " +  time);
 	//times viewed
 	view = driver.findElement(By.cssSelector("div.wrapper div.main:nth-child(5) div.apply-hidden.styling-mode-effect div.proposal-summary div.container:nth-child(3) div.tabs-underlined.proposal-summary-tab div.tab-content div.tab-pane.active div.proposal-analytics div.row.proposal-analytics-box:nth-child(2) div.proposal-analytics-box-timespent div.proposal-analytics-timespent div:nth-child(2) > div.proposal-analytics-timespent-value")).getText();
-	System.out.println("A TIMES VIEWED " + view);
+	System.out.println("TIMES VIEWED " + view);
 	//average time
 	average = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[3]/div[2]")).getText();
-	System.out.println("A AVERAGE TIME VIEWING " + average);				
+	System.out.println("AVERAGE TIME VIEWING " + average);				
 	//time since last view
 	lastview = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[4]/div[2]")).getText();
-	System.out.println("A TIME SINCE LAST VIEWED " + lastview);
-
-
-   //compare g_time
+	System.out.println("TIME SINCE LAST VIEWED " + lastview);
+	 //compare g_time
     char[]	g_tempArr = g_time.toCharArray();
 	int g_totalChars = g_tempArr.length;
 	//System.out.println("TotalChars "+g_totalChars);
@@ -265,7 +262,8 @@ public class Analytics extends Common_Methods {
 	  expected_total_average_time = total_average_time;
 	  Assert.assertEquals(total_average_time, expected_total_average_time);
 	  
-	  }
+	  
+ }
   
   @AfterTest
   public void closeBrowser() throws InterruptedException {
@@ -275,3 +273,4 @@ public class Analytics extends Common_Methods {
   
   
 }
+

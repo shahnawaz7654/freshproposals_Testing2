@@ -29,7 +29,7 @@ public class X_Y_Position extends Common_Methods {
 	    driver.findElement(By.id("textbox_0")).sendKeys(unm);
 		driver.findElement(By.id("textbox_1")).sendKeys(pwd);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
-	}
+	} 
 
   	@Test (priority = 1)
   	

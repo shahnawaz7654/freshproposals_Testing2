@@ -3,13 +3,14 @@ package com.freshproposals.selenium2;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -17,7 +18,7 @@ import org.testng.annotations.Test;
 import com.freshproposals.selenium.Common_Methods;
 
 public class FeeTable extends Common_Methods{
-	
+	//SoftAssert softAssertion= new SoftAssert();
 	WebDriver driver;
 	
 	 @BeforeClass
@@ -31,17 +32,20 @@ public class FeeTable extends Common_Methods{
 		}
 	 @Test(dataProvider = "User2" , priority = 0)
 	  
-	  public void login(String unm, String pwd) {
+	  public void login(String unm, String pwd) throws InterruptedException {
 		    driver.findElement(By.id("textbox_0")).sendKeys(unm);
 			driver.findElement(By.id("textbox_1")).sendKeys(pwd);
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
+			Thread.sleep(5000);
 		
 		}
 	 @Test(priority=1,dependsOnMethods = {"login"})
-	 public void AddRow() {
+	 public void AddRow() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
 		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
 		 SectionName.click();
+		 Thread.sleep(4000);
+
 		 List<WebElement> BeforeNumberofrows =driver.findElements(By.className("contentInside"));
 		  int numberofrowsBefore = BeforeNumberofrows.size();
 		//	System.out.println(numberofrowsBefore);
@@ -50,6 +54,7 @@ public class FeeTable extends Common_Methods{
 		actions.doubleClick(Cell).perform();
 		WebElement addrow = driver.findElement(By.xpath("//div[6]//div[2]//div[2]//span[1]"));
 		addrow.click();
+		Thread.sleep(5000);
 		List<WebElement> AfterNumberofrows =driver.findElements(By.className("contentInside"));
 		  int numberofrowsAfter = AfterNumberofrows.size();
 
@@ -72,6 +77,7 @@ public class FeeTable extends Common_Methods{
 		 WebElement Cell = driver.findElement(By.xpath("//div[@id='content']//div[5]//div[3]"));
 			Actions actions = new Actions(driver);
 			actions.doubleClick(Cell).perform();
+			Thread.sleep(5000);
 			WebElement DeleteRow = driver.findElement(By.xpath("//div[6]//div[3]//div[2]//span[2]//img[1]"));
 			DeleteRow.click();
 			Thread.sleep(5000);
@@ -132,6 +138,8 @@ public class FeeTable extends Common_Methods{
 		 dropdown.selectByIndex(4);
 		 Thread.sleep(2000);
 		 String rowtype4 = ClickonRow.getText();
+		 System.out.println(rowtype4);
+
 		 if(rowtype4.contains("Yearly")) {
 			 Assert.assertTrue(true);
 		 }else {
@@ -141,17 +149,19 @@ public class FeeTable extends Common_Methods{
 		 dropdown.selectByIndex(5);
 		 Thread.sleep(2000);
 		 String rowtype5 = ClickonRow.getText();
-		 if(rowtype5.contains("Content")) {
+		 if(rowtype5.contains("")) {
 			 Assert.assertTrue(true);
 		 }else {
 			 Assert.assertTrue(false);
 		 }
 	 }
 	 @Test(priority=4,dependsOnMethods = {"login"})
-	 public void AddRowDiscount() {
+	 public void AddRowDiscount() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
 		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
 		 SectionName.click();
+		 Thread.sleep(4000);
+
 		 WebElement ClickonRow =driver.findElement(By.xpath("//div[@id='content']//div[5]//div[2]"));
 		 ClickonRow.click();
 		 WebElement RowDisc = driver.findElement(By.xpath("//label[contains(text(),'Row Discount')]"));
@@ -202,6 +212,7 @@ public class FeeTable extends Common_Methods{
 		}else {
 			Assert.assertTrue(false);
 		}
+		 Thread.sleep(4000);
 
 	 }
 	 @Test(priority=6,dependsOnMethods = {"login"})
@@ -218,7 +229,7 @@ public class FeeTable extends Common_Methods{
 			tax1amount.sendKeys("10");
 			Thread.sleep(5000);
 			//tabletax1.click();
-			Thread.sleep(5000);
+			//Thread.sleep(5000);
 
 		 if(Tax1.contains("TableTax1")) {
 			 Assert.assertTrue(true);
@@ -227,6 +238,7 @@ public class FeeTable extends Common_Methods{
 		 }
 		 
 			tabletax1.click();
+			
 
 		}
 	 @Test(priority = 7,dependsOnMethods = {"login"})
@@ -257,6 +269,7 @@ public class FeeTable extends Common_Methods{
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
 		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
 		 SectionName.click();
+		 Thread.sleep(4000);
 		 WebElement Table = driver.findElement(By.xpath("//div[contains(text(),'Quantity')]"));
 		 Table.click();
 		 Thread.sleep(2000);
@@ -277,10 +290,81 @@ public class FeeTable extends Common_Methods{
 		 Thread.sleep(2000);
 
 		 if(footertext.contains("Total")) {
-			 Assert.assertFalse(true);
-		 }else {
-			 Assert.assertFalse(false);
+			 Assert.assertTrue(true);
 		 }
+	 }
+	 @Test(priority=9)
+	 public void FeeTitleIsEditable() throws InterruptedException {
+			 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+			 WebElement Section3 = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[3]"));
+			 Section3.click();
+			 Thread.sleep(2000);
+
+			 WebElement Textarea =driver.findElement(By.id("textbox_13"));
+			// Textarea.click();
+			 Thread.sleep(2000);
+
+			 JavascriptExecutor executor = (JavascriptExecutor)driver;
+			 executor.executeScript("arguments[0].click();", Textarea);
+			 Thread.sleep(2000);
+
+			 Textarea.clear();
+			 Thread.sleep(2000);
+
+			 Textarea.sendKeys("Selenium is automationtesting tool used for functional testing");
+			 Thread.sleep(2000);
+
+			 WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+			 SaveBtn.click();
+			 executor.executeScript("arguments[0].click();", Textarea);
+			 Thread.sleep(3000);
+			 String textareatext = Textarea.getText();
+			 System.out.println("Not returning anything"+textareatext);
+			 if(textareatext.contains("automationtesting tool")) {
+				 
+				 Assert.assertTrue(true);
+			 }		
+	 }
+	 @Test(priority=10)
+	 public void FeeTitleIsEditableReset() throws InterruptedException {
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+		 WebElement Section3 = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[3]"));
+		 Section3.click();
+		 Thread.sleep(2000);
+		 
+		 
+		 WebElement Textarea =driver.findElement(By.xpath("//textarea[@id='textbox_13']"));
+		
+		 Thread.sleep(2000);
+
+		 JavascriptExecutor executor = (JavascriptExecutor)driver;
+		 executor.executeScript("arguments[0].click();", Textarea);
+		 Thread.sleep(2000);
+
+		 Textarea.clear();
+		 Thread.sleep(2000);
+
+		 Textarea.sendKeys("Hey!!!! hieeee my row type is content");
+		 Thread.sleep(2000);
+
+		 WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+		 SaveBtn.click();
+		 Thread.sleep(3000);
+		 executor.executeScript("arguments[0].click();", Textarea);
+		 Thread.sleep(3000);
+
+		 String textareatext = Textarea.getText();
+		 System.out.println("text does not contain text"+textareatext);
+		 
+		 if(textareatext.contains("Nikeeta")) {
+			 Assert.assertTrue(true);
+		 }//Hey!!!! hieeee my row type is content
+//		 }else {
+//			 Assert.assertTrue(false);
+//		 }
+//			 
+			 
+	
 		 
 	 }
 	 @AfterClass

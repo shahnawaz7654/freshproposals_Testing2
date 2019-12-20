@@ -1,4 +1,4 @@
-package com.freshproposals.selenium;
+package com.freshproposals.selenium2;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,15 +9,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
+import com.freshproposals.selenium.Common_Methods;
 
 public class TempRead  extends Common_Methods {
 	WebDriver driver;
 	 SoftAssert Assert= new SoftAssert();
 
-	 @BeforeTest
+	 @BeforeClass
 	  public void openBrowser() {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 			driver = new ChromeDriver();

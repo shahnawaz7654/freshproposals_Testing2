@@ -1,4 +1,4 @@
-package com.freshproposals.selenium;
+package com.freshproposals.SectionProperties;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,6 +14,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.freshproposals.selenium.Common_Methods;
 
 public class SectionQuoteProperties extends Common_Methods {
 	WebDriver driver;

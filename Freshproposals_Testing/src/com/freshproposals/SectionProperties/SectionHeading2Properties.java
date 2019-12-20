@@ -1,4 +1,4 @@
-package com.freshproposals.selenium;
+package com.freshproposals.SectionProperties;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,10 +16,12 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class SectionBodyPropertiesInPreview extends Common_Methods {
+import com.freshproposals.selenium.Common_Methods;
+
+public class SectionHeading2Properties extends Common_Methods {
 	WebDriver driver;
 	
-	 @BeforeClass
+	@BeforeClass
 	  public void openBrowser() {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 			driver = new ChromeDriver();
@@ -28,8 +30,8 @@ public class SectionBodyPropertiesInPreview extends Common_Methods {
 			driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
 			driver.get("http://beta1.freshproposals.com");
 		}
-	 
-	 @Test(dataProvider = "User2" , priority = 0)
+	  
+	  @Test(dataProvider = "User2" , priority = 0)
 	  
 	  public void login(String unm, String pwd) {
 		    driver.findElement(By.id("textbox_0")).sendKeys(unm);
@@ -37,21 +39,20 @@ public class SectionBodyPropertiesInPreview extends Common_Methods {
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
 		
 		}
-		
 	  @Test(priority=1,dependsOnMethods = {"login"})
 	  public void ReadtextFontsize() {
-			driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675/true");
-			String Actualfont =driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("font-size");
+			driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675");
+			String Actualfont =driver.findElement(By.xpath("//p[contains(text(),'Heading2')]")).getCssValue("font-size");
 			//System.out.println("Font Size of the text is"+font);
 			//  <test thread-count="5" name="Test" parallel="classes"> 
-			String expected ="14px";
+			String expected ="28px";
 			Assert.assertEquals(Actualfont,expected);	
 		}
 	  @Test(priority=2,dependsOnMethods = {"login"})
 	  public void ReadFontColor() {
-			String color =driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("color");
+			String color =driver.findElement(By.xpath("//p[contains(text(),'Heading2')]")).getCssValue("color");
 			System.out.println(color);
-			String expected ="#000000";
+			String expected ="#00422d";
 			String actual = Color.fromString(color).asHex();
 			//System.out.println("Font color is ="+hex);
 			Assert.assertEquals(actual,expected);
@@ -59,7 +60,7 @@ public class SectionBodyPropertiesInPreview extends Common_Methods {
 	  }
 	  @Test(priority=3,dependsOnMethods = {"login"})
 	  public void FontStyle() {
-		  String actualstyle =driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("font-style");
+		  String actualstyle =driver.findElement(By.xpath("//p[contains(text(),'Heading2')]")).getCssValue("font-style");
 			// System.out.println("Font style is ="+style);
 			 String expected ="normal";
 				Assert.assertEquals(actualstyle,expected);
@@ -67,33 +68,31 @@ public class SectionBodyPropertiesInPreview extends Common_Methods {
 	  }
 	  @Test(priority=4,dependsOnMethods = {"login"})
 	  public void FontAlignment() {
-		  String ActualAlign=driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("text-align");
+		  String ActualAlign=driver.findElement(By.xpath("//p[contains(text(),'Heading2')]")).getCssValue("text-align");
 			// System.out.println("Alignment of the text is="+Align);
 			 String expected ="left";
 				Assert.assertEquals(ActualAlign,expected);
 	  }
 	  @Test(priority=5,dependsOnMethods = {"login"})
 	  public void Fontfamily() {
-		  String ActualFontfamily=driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("font-family");
+		  String ActualFontfamily=driver.findElement(By.xpath("//p[contains(text(),'Heading2')]")).getCssValue("font-family");
 			// System.out.println("Font family is="+family);
-		  String expected ="Roboto";
+		  String expected ="Montserrat";
 			Assert.assertEquals(ActualFontfamily,expected);
 	  }
 	  @Test(priority=6,dependsOnMethods = {"login"})
 	  public void FontWeight() {
-		  String ActualFontWeight =driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("font-weight");
+		  String ActualFontWeight =driver.findElement(By.xpath("//p[contains(text(),'Heading2')]")).getCssValue("font-weight");
 			 //System.out.println("Weight of the font is="+Weight);
-		  String expected ="400";
+		  String expected ="700";
 			Assert.assertEquals(ActualFontWeight,expected);
 	  }
 	  @AfterClass
 	  public void closeBrowser() {
 		  driver.quit();
 	  }
-	  
-
 	
 
 	}
 
-
+ 

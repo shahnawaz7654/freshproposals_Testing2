@@ -11,10 +11,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class CheckPositionOfTheTextcomponent extends Common_Methods {
 	WebDriver driver;
-	// SoftAssert Assert= new SoftAssert();
+	 SoftAssert Assert= new SoftAssert();
 
 	 @BeforeClass
 	  public void openBrowser() {
@@ -27,11 +28,12 @@ public class CheckPositionOfTheTextcomponent extends Common_Methods {
 		}
 	 @Test(dataProvider = "User2" , priority = 0)
 	  
-	  public void login(String unm, String pwd) {
+	  public void login(String unm, String pwd) throws InterruptedException {
 		    driver.findElement(By.id("textbox_0")).sendKeys(unm);
 			driver.findElement(By.id("textbox_1")).sendKeys(pwd);
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
-		
+			Thread.sleep(5000);
+
 		}
 	
 	
@@ -54,8 +56,8 @@ public class CheckPositionOfTheTextcomponent extends Common_Methods {
 		int ycord1 =point1.getY();
 		System.out.println(xcord1);
 		System.out.println(ycord1);
-		//Assert.assertEquals(xcord, 392);
-		//Assert.assertEquals(ycord, 196);
+		//Assert.assertEquals(xcord1, 392);
+		//Assert.assertEquals(ycord1, 196);
 		Thread.sleep(3000);
 		WebElement SaveBtn=driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
 		SaveBtn.click();
@@ -68,10 +70,10 @@ public class CheckPositionOfTheTextcomponent extends Common_Methods {
         Point point2=textbox2.getLocation();
          int xcord2 = point2.getX();
 		int ycord2 =point2.getY();
-		System.out.println(xcord2);
-		System.out.println(ycord2);
-		//Assert.assertEquals(xcord2, 292);
-		//Assert.assertEquals(ycord2, 96);
+		//System.out.println(xcord2);
+		//System.out.println(ycord2);
+		Assert.assertEquals(xcord2, 292);
+		Assert.assertEquals(ycord2, 96);
 		WebElement SaveBtn2=driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
 		
 		SaveBtn2.click();
@@ -82,10 +84,10 @@ public class CheckPositionOfTheTextcomponent extends Common_Methods {
 		//System.out.println(xcord3);
 		//System.out.println(ycord3);
 		
-		//Assert.assertEquals(xcord3, 292);
-		//Assert.assertEquals(ycord3, 96);
+		Assert.assertEquals(xcord3, 292);
+		Assert.assertEquals(ycord3, 96);
 		//driver.quit();
-
+		Assert.assertAll();
 		
 	}
 

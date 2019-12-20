@@ -1,6 +1,6 @@
 package com.freshproposals.selenium;
 
-import static org.testng.Assert.assertEquals;
+
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -34,7 +35,7 @@ public class ExistingVariable extends Common_Methods{
 		}
 	  @Test(priority=1)
 	  public void verifyVeriable() {
-		  String[] expected = new String[] {"Freshproposal","nikeeta3011@gmail.com","1234545","abcd","Fresh proposals.com","Nikeeta","Shelar","nikeeta@zenincloud.com","SeleniumVariableTesting"};
+		  String[] expected = new String[] {"Freshproposal","nikeeta3011@gmail.com","1234545","abcd","Fresh proposals.com","Nikeeta","Shelar1","nikeeta@zenincloud.com","SeleniumVariableTesting"};
 
 		  driver.get("http://beta1.freshproposals.com/home/viewproposal/1259/preview/proposals");
 		  List<WebElement> var=driver.findElements(By.xpath("//div[@id='froalapage1-fpText1119201917471418']//p"));
@@ -48,10 +49,14 @@ public class ExistingVariable extends Common_Methods{
 			 
 			  
 		  }
-		  driver.quit();
-		  
+		
 		  
 	  }
+	@AfterClass
+	public void teardown() {
+		  driver.quit();
+		  
+	}
 	
 	
 	

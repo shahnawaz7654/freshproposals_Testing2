@@ -40,293 +40,489 @@ public class FeeTable extends Common_Methods{
 			Thread.sleep(5000);
 		
 		}
-//	 @Test(priority=1,dependsOnMethods = {"login"})
-//	 public void AddRow() throws InterruptedException {
-//		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
-//		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
-//		 SectionName.click();
-//		 Thread.sleep(4000);
-//
-//		 List<WebElement> BeforeNumberofrows =driver.findElements(By.className("contentInside"));
-//		  int numberofrowsBefore = BeforeNumberofrows.size();
-//		//	System.out.println(numberofrowsBefore);
-//		WebElement Cell = driver.findElement(By.xpath("//div[@id='content']//div[5]//div[2]"));
-//		Actions actions = new Actions(driver);
-//		actions.doubleClick(Cell).perform();
-//		WebElement addrow = driver.findElement(By.xpath("//div[6]//div[2]//div[2]//span[1]"));
-//		addrow.click();
-//		Thread.sleep(5000);
-//		List<WebElement> AfterNumberofrows =driver.findElements(By.className("contentInside"));
-//		  int numberofrowsAfter = AfterNumberofrows.size();
-//
-//		//System.out.println(numberofrowsAfter);
-//		if(numberofrowsAfter>numberofrowsBefore) {
-//			Assert.assertTrue(true);
-//		}else {
-//			Assert.assertTrue(false);
-//		}
+	 @Test(priority=1,dependsOnMethods = {"login"})
+	 public void AddRow() throws InterruptedException {
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
+		 SectionName.click();
+		 Thread.sleep(4000);
+		WebElement Cell = driver.findElement(By.xpath("//div[@id='content']//div[5]//div[2]"));
+		Actions actions = new Actions(driver);
+		actions.doubleClick(Cell).perform();
+		WebElement addrow = driver.findElement(By.xpath("//div[6]//div[2]//div[2]//span[1]"));
+		addrow.click();
+		Thread.sleep(3000);
+		WebElement SecondRow = driver.findElement(By.xpath("//div[@id='content']//div[5]//div[3]"));
+		SecondRow.click();
+		WebElement RowType =driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
+		Select dropdown = new Select(RowType);
+		 Thread.sleep(1000);
+		 dropdown.selectByIndex(3);
+		 Thread.sleep(5000);
+		 WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+		 SaveBtn.click();
+		 Thread.sleep(3000);
+
+		
+		
+			WebElement SecondRow2 = driver.findElement(By.xpath("//div[@id='content']//div[5]//div[3]"));
+			SecondRow2.click();
+			 WebElement Price = driver.findElement(By.xpath("//div[@class='rectangle selected']//div[@id='contentInside1']//input[@name='feePrice']"));
+			 Price.clear();
+			 Price.sendKeys("10000");
+			 Thread.sleep(3000);
+			WebElement AddRowDiscount =driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//label[@class='fees-prop-header'][contains(text(),'Row Discount')]//img"));
+			AddRowDiscount.click();
+			WebElement DiscountName = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//input[@placeholder='Discount']"));
+			DiscountName.clear();
+			DiscountName.sendKeys("RowDisc");
+			WebElement DiscAmount = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//input[@id='discount']"));
+			DiscAmount.clear();
+			DiscAmount.sendKeys("10");
+			 Thread.sleep(1000);
+			 AddRowDiscount.click();
+			 Thread.sleep(3000);
+			// ChangeQuantity.clear();
+			// ChangeQuantity.sendKeys("10");
+			 WebElement DiscAmt = driver.findElement(By.xpath("//div[@id='section_section5970']//div[6]//div[3]//div[1]"));
+			String DiscforQuantity1= DiscAmt.getText();
+			 WebElement SaveBtn2 = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+			 SaveBtn2.click();
+			 Thread.sleep(3000);
+			 WebElement ChangeQuantity = driver.findElement(By.xpath("//div[@class='rectangle selected']//div[@id='contentInside1']//input[@name='feequantity']"));
+			 ChangeQuantity.clear();
+			 ChangeQuantity.sendKeys("79");
+			 Thread.sleep(3000);
+			 
+			
+			Thread.sleep(2000);
+			 WebElement SaveBtn3 = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+			 SaveBtn3.click();
+			Thread.sleep(2000);
+			 WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+			 BackBtn.click();
+			 Thread.sleep(3000);
+			 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+			 Thread.sleep(3000);
+			 WebElement SectionName2 = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
+			 SectionName2.click();
+			 Thread.sleep(4000);
+			 WebElement Row2text = driver.findElement(By.xpath("//div[@id='section_section5970']//div[5]//div[3]"));
+			String RowT= Row2text.getText();
+			softAssertion.assertEquals(RowT, "Monthly");
+			 WebElement DiscAmt2 = driver.findElement(By.xpath("//div[@id='section_section5970']//div[6]//div[3]//div[1]"));
+				String DiscforQuantity79= DiscAmt2.getText();
+			 softAssertion.assertEquals(DiscforQuantity1, DiscforQuantity79);
+			 
+			 WebElement SecondRow3 = driver.findElement(By.xpath("//div[@id='content']//div[5]//div[3]"));
+				actions.doubleClick(SecondRow3).perform();
+				 WebElement DeleteRow = driver.findElement(By.xpath("//div[6]//div[3]//div[2]//span[2]//img[1]"));
+				 DeleteRow.click();
+				 Thread.sleep(4000);
+				 
+				 WebElement SaveBtn4 = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+				 SaveBtn4.click();
+				Thread.sleep(2000);
+			 
+		 }
+
+	 @Test(priority=2,dependsOnMethods = {"login"},enabled=false)
+	 public  void SelectRowType() throws InterruptedException {
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+		 Thread.sleep(4000);
+		 WebElement SectionTable2 = driver.findElement(By.xpath("//a[contains(text(),'FeeTable2')]"));
+		 SectionTable2.click();
+		 Thread.sleep(2000);
+		 WebElement Row1 = driver.findElement(By.xpath("//div[@id='section_section6609']//div[5]//div[2]"));
+		 Row1.click();
+		 Thread.sleep(1000);
+		WebElement RowType = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
+		 Select dropdown = new Select(RowType);
+		 Thread.sleep(1000);
+		 dropdown.selectByIndex(0);
+		 Thread.sleep(1000);
+		 WebElement Row2 = driver.findElement(By.xpath("//div[@id='section_section6609']//div[5]//div[3]"));
+		 Row2.click();
+		 Thread.sleep(1000);
+			WebElement RowType1 = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
+			Select dropdown1 = new Select(RowType1);
+		 dropdown1.selectByIndex(1);
+		 Thread.sleep(1000);
+		 WebElement Row3 = driver.findElement(By.xpath("//div[@id='section_section6609']//div[5]//div[4]"));
+		 Row3.click();
+		 Thread.sleep(1000);
+			WebElement RowType2 = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
+			Select dropdown2 = new Select(RowType2);
+		 dropdown2.selectByIndex(2);
+		 Thread.sleep(1000);
+		 WebElement Row4 = driver.findElement(By.xpath("//div[@id='section_section6609']//div[5]//div[5]"));
+		 Row4.click();
+		 Thread.sleep(1000);
+			WebElement RowType3 = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
+			Select dropdown3 = new Select(RowType3);
+		 dropdown3.selectByIndex(3);
+		 Thread.sleep(1000);
+		 WebElement Row5 = driver.findElement(By.xpath("//div[@id='section_section6609']//div[5]//div[6]"));
+		 Row5.click();
+		 Thread.sleep(1000);
+			WebElement RowType4 = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
+			Select dropdown4 = new Select(RowType4);
+		 dropdown4.selectByIndex(4);
+		 Thread.sleep(1000);
+		 WebElement Row6 = driver.findElement(By.xpath("//div[@id='section_section6609']//div[5]//div[7]"));
+		 Row6.click();
+		 Thread.sleep(1000);
+			WebElement RowType5 = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
+			Select dropdown5 = new Select(RowType5);
+		 dropdown5.selectByIndex(5);
+		 Thread.sleep(1000);
+		 WebElement Table = driver.findElement(By.id("page1-fpFees1220201911525134"));
+		 Table.click();
+		 Thread.sleep(1000);
+		 WebElement TableOption = driver.findElement(By.linkText("Total Options"));
+		 TableOption.click();
+		 WebElement SeprateRecurringFee = driver.findElement(By.xpath("//div[@class='switch-btn text-position']//label[@class='tgl-btn']"));
+		 SeprateRecurringFee.click();
+		 Thread.sleep(2000);
+
+		 WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+		 SaveBtn.click();
+		 Thread.sleep(3000);
+		 WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+		 BackBtn.click();
+		 Thread.sleep(3000);
+
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+		 Thread.sleep(4000);
+		 WebElement SectionTable2Reset = driver.findElement(By.xpath("//a[contains(text(),'FeeTable2')]"));
+		 SectionTable2Reset.click();
+		 Thread.sleep(2000);
+		 WebElement Row1Reset = driver.findElement(By.xpath("//div[@id='section_section6609']//div[5]//div[2]"));
+		 WebElement Row2Reset = driver.findElement(By.xpath("//div[@id='section_section6609']//div[5]//div[3]"));
+		 WebElement Row3Reset = driver.findElement(By.xpath("//div[@id='section_section6609']//div[5]//div[4]"));
+		 WebElement Row4Reset = driver.findElement(By.xpath("//div[@id='section_section6609']//div[5]//div[5]"));
+		 WebElement Row5Reset = driver.findElement(By.xpath("//div[@id='section_section6609']//div[5]//div[6]"));
+		 WebElement Row6Reset = driver.findElement(By.xpath("//div[@id='section_section6609']//div[5]//div[7]"));
+		 softAssertion.assertEquals(Row1Reset.getText(), "UnitQty");
+		 softAssertion.assertEquals(Row2Reset.getText(), "Fixed");
+		 softAssertion.assertEquals(Row3Reset.getText(), "Hourly");
+		 softAssertion.assertEquals(Row4Reset.getText(), "Monthly");
+		 softAssertion.assertEquals(Row5Reset.getText(), "Yearly");
+		 softAssertion.assertEquals(Row6Reset.getText(), "");
+
+	List <WebElement> tablefooter= driver.findElements(By.xpath("//div[@id=\"page1-fpFees1220201911525134\"]//div[@class=\"fees-table-footer\"]//div[@class=\"fees-total\"]"));
+	int FooterRow = tablefooter.size(); 
+		softAssertion.assertEquals(FooterRow, 3);
+	WebElement TableFooter =driver.findElement(By.xpath("//div[@id='page1-fpFees1220201911525134']//div[@class='fees-table-footer']"));
+	String footertext = TableFooter.getText();
+	System.out.println(footertext);
+	if(footertext.contains("Sub Total per year 20.00")) {
+		softAssertion.assertTrue(true);
+	}
+	if(footertext.contains("Sub Total per month 4,000.00")) {
+		softAssertion.assertTrue(true);
+	}
+	if(footertext.contains("Sub Total per hour 500.00")) {
+		softAssertion.assertTrue(true);
+	}
+		 WebElement TableReset = driver.findElement(By.id("page1-fpFees1220201911525134"));
+		 TableReset.click();
+		 Thread.sleep(1000);
+		 WebElement TableOptionReset = driver.findElement(By.linkText("Total Options"));
+		 TableOptionReset.click();
+		 WebElement SeprateRecurringFeeReset = driver.findElement(By.xpath("//div[@class='switch-btn text-position']//label[@class='tgl-btn']"));
+		 SeprateRecurringFeeReset.click();
+		 Thread.sleep(2000);
+		
+		
+		
+		 Thread.sleep(1000);
+		 Row1Reset.click();
+		 Thread.sleep(1000);
+		WebElement RowType1Reset = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
+		 Select dropdown1Reset = new Select(RowType1Reset);
+		 Thread.sleep(1000);
+		 dropdown1Reset.selectByIndex(0);
+		 Thread.sleep(1000);
+
+		 Row2Reset.click();
+		 Thread.sleep(1000);
+		 WebElement RowType2Reset = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
+		Select dropdown2Reset = new Select(RowType2Reset);
+		dropdown2Reset.selectByIndex(0);
+		Thread.sleep(1000);
+
+		 Row3Reset.click();
+		 Thread.sleep(1000);
+			WebElement RowType3Reset = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
+			Select dropdown3Reset = new Select(RowType3Reset);
+		 dropdown3Reset.selectByIndex(0);
+		 Thread.sleep(1000);
+		 Row4Reset.click();
+		 Thread.sleep(1000);
+
+			WebElement RowType4Reset = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
+			Select dropdown4Reset = new Select(RowType4Reset);
+			dropdown4Reset.selectByIndex(0);
+		 Thread.sleep(1000);
+		 Row5Reset.click();
+		 Thread.sleep(1000);
+			WebElement RowType5Reset = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
+			Select dropdown5Reset = new Select(RowType5Reset);
+		 dropdown5Reset.selectByIndex(0);
+		 Thread.sleep(1000);
+		 Row6Reset.click();
+		 Thread.sleep(1000);
+			WebElement RowType6Reset = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
+			Select dropdown6Reset = new Select(RowType6Reset);
+		 dropdown6Reset.selectByIndex(0);
+		 Thread.sleep(1000);
+		 WebElement SaveBtn1 = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+		 SaveBtn1.click();
+		 Thread.sleep(3000);
+		 softAssertion.assertEquals(Row1Reset.getText(), "UnitQty");
+		 softAssertion.assertEquals(Row2Reset.getText(), "UnitQty");
+		 softAssertion.assertEquals(Row3Reset.getText(), "UnitQty");
+		 softAssertion.assertEquals(Row4Reset.getText(), "UnitQty");
+		 softAssertion.assertEquals(Row5Reset.getText(), "UnitQty");
+		 softAssertion.assertEquals(Row6Reset.getText(), "UnitQty");
+
+		 
+		 
+		 WebElement BackBtn1 = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+		 BackBtn1.click();
+		 Thread.sleep(3000);
+		 
+		 softAssertion.assertAll();
+	 }	 
+		
+	 @Test(priority = 3,dependsOnMethods = {"login"})
+	 public void TableDiscount() throws InterruptedException {
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
+		 SectionName.click();
+		 Thread.sleep(4000);
+		 WebElement feetable = driver.findElement(By.xpath("//div[contains(text(),'Price')]"));
+		 	feetable.click();
+		 WebElement tableDisc = driver.findElement(By.xpath("//label[contains(text(),'Table Discount')]//img"));
+		 tableDisc.click();
+		 
+		 WebElement ShowDisc =driver.findElement(By.xpath("//input[@name='showTableDiscount']"));
+		 ShowDisc.click();
+		WebElement  DiscName  = driver.findElement(By.xpath("//input[@placeholder='Discount Name']"));
+		DiscName.clear();
+		DiscName.sendKeys("TableDisc");
+		WebElement DiscAmount = driver.findElement(By.xpath("//input[@name='discount']"));
+		DiscAmount.clear();
+		DiscAmount.sendKeys("10");
+		Thread.sleep(3000);
+		 tableDisc.click();
+			Thread.sleep(5000);
+			WebElement tabletax1 = driver.findElement(By.xpath("//label[@class='fees-prop-header'][contains(text(),'Tax 1')]//img"));
+			tabletax1.click();
+			 driver.findElement(By.xpath("//input[@name='showTax1']")).click();
+			 WebElement TaxName = driver.findElement(By.xpath("//input[@placeholder='Tax1 Name']"));
+			 TaxName.clear();
+			 TaxName.sendKeys("SGST");
+			 
+			 WebElement tax1amount = driver.findElement(By.xpath("//input[@name='tax1Value']"));
+				tax1amount.sendKeys("10");
+				Thread.sleep(5000);
+				Thread.sleep(4000);
+				 WebElement Tabletax2 = driver.findElement(By.xpath("//label[@class='fees-prop-header'][contains(text(),'Tax 2')]//img"));
+				 Thread.sleep(2000);
+					tabletax1.click();
+
+				 Tabletax2.click();
+				 WebElement ShowTax2 = driver.findElement(By.xpath("//input[@name='showTax2']"));
+				 Thread.sleep(5000);
+				 ShowTax2.click();
+				 WebElement Tax2Name = driver.findElement(By.xpath("//input[@placeholder='Tax2 Name']"));
+				 Tax2Name.clear();
+				 Tax2Name.sendKeys("HGST");
+			WebElement tax2amount = driver.findElement(By.xpath("//input[@name='tax2Value']"));		
+			tax2amount.sendKeys("10");
+			Thread.sleep(5000);
+			WebElement Row1 = driver.findElement(By.xpath("//div[@id='section_section5970']//div[6]//div[2]//div[1]"));
+			Actions action = new Actions(driver);
+			action.doubleClick(Row1).perform();
+			Thread.sleep(3000);
+			WebElement ExportFee = driver.findElement(By.xpath("//div[6]//div[2]//div[2]//span[4]//img[1]"));
+			ExportFee.click();
+			
+			Thread.sleep(1000);
+			WebElement FeeLibrary = driver.findElement(By.xpath("//div[@class='tabs-underlined fees-row-content']//ul[@class='nav nav-tabs nav-justified']//a //div[contains(text(),'Fees Library')]"));
+			FeeLibrary.click();
+			Thread.sleep(2000);
+			action.doubleClick(Row1).perform();
+			WebElement ImportFee = driver.findElement(By.xpath("//div[6]//div[2]//div[2]//span[3]//img[1]"));
+			ImportFee.click();
+			Thread.sleep(1000);
+			WebElement Checkbox1 = driver.findElement(By.xpath("//div[@class=\"form-check\"]//input[@name=\"checkbox\"] "));
+			Checkbox1.click();
+			WebElement Addfee = driver.findElement(By.xpath("//button[@class='btn']"));
+			Addfee.click();
+			Thread.sleep(1000);
+
+			WebElement Fee1 = driver.findElement(By.xpath("//div[@class='form-check']"));
+			action.moveToElement(Fee1).perform();
+			Thread.sleep(1000);
+			WebElement DeleteFee = driver.findElement(By.xpath("//div[@class='fees-delete']//img"));
+			DeleteFee.click();
+			Thread.sleep(10000);
+			WebElement Row2 = driver.findElement(By.xpath("//div[@id='section_section5970']//div[6]//div[3]//div[1]"));
+			action.doubleClick(Row2).perform();
+			WebElement DeleteRow2 = driver.findElement(By.xpath("//div[6]//div[3]//div[2]//span[2]//img[1]"));
+			DeleteRow2.click();
+
+			
+			
+			
+			
+			 WebElement discountamount = driver.findElement(By.xpath("//div[@id='section_section5970']//div[@class='total-fee-calculator']//div[2]//p[1]"));
+				String DiscountName = discountamount.getText();
+				System.out.println(DiscountName);
+				softAssertion.assertEquals(DiscountName, "TableDisc ( 10 % )");
+			
+			 WebElement Table = driver.findElement(By.xpath("//div[contains(text(),'Quantity')]"));
+			 Table.click();
+			 Thread.sleep(2000);
+			 WebElement TableOption = driver.findElement(By.linkText("Total Options"));
+			 TableOption.click();
+			 Thread.sleep(2000);
+	
+			 WebElement tablesubtotal =	 driver.findElement(By.xpath("//div[@class='col-lg-5 offset-lg-2 p-0']//label[@class='tgl-btn']"));
+			 tablesubtotal.click();
+			 Thread.sleep(2000);
+	
+			 WebElement tabletotal = driver.findElement(By.xpath("//label[@for='tableTotal']"));
+			 tabletotal.click();
+			 Thread.sleep(2000);
+			 
+			 WebElement tableDiscount = driver.findElement(By.xpath("//div[@class='col-lg-5 p-0']//label[@class='tgl-btn']"));
+			 tableDiscount.click();
+			 Thread.sleep(2000);
+			
+			
+			
+			
+			 WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+			 SaveBtn.click();
+			 Thread.sleep(3000);
+			 
+			
+			
+			 
+			 
+			 
+		 WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+		 BackBtn.click();
+		 Thread.sleep(3000);
+			
+			this.TableDiscountReset();
+			
+			
+	 }
+	 public void TableDiscountReset() throws InterruptedException {
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
+		 SectionName.click();
+		 Thread.sleep(4000);
+		 WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+
+		 WebElement feetable = driver.findElement(By.xpath("//div[contains(text(),'Price')]"));
+		 feetable.click();
 //		
-//		
-//			 
-//		 }
-//	 @Test(priority=2,dependsOnMethods = {"login"})
-//	 public void DeleteRow() throws InterruptedException {
-//		 List<WebElement> BeforeNumberofrows =driver.findElements(By.className("contentInside"));
-//		  int numberofrowsBefore = BeforeNumberofrows.size();
-//			System.out.println(numberofrowsBefore);
-//
-//		 WebElement Cell = driver.findElement(By.xpath("//div[@id='content']//div[5]//div[3]"));
-//			Actions actions = new Actions(driver);
-//			actions.doubleClick(Cell).perform();
-//			Thread.sleep(5000);
-//			WebElement DeleteRow = driver.findElement(By.xpath("//div[6]//div[3]//div[2]//span[2]//img[1]"));
-//			DeleteRow.click();
-//			Thread.sleep(5000);
-//			List<WebElement> AfterNumberofrows =driver.findElements(By.className("contentInside"));
-//			  int numberofrowsAfter = AfterNumberofrows.size();
-//				//System.out.println(numberofrowsAfter);
-//
-//			  if(numberofrowsAfter<numberofrowsBefore) {
-//					Assert.assertTrue(true);
-//				}else {
-//					Assert.assertTrue(false);
-//				}
-//				
-//	 }
-//	 @Test(priority=3,dependsOnMethods = {"login"})
-//	 public  void SelectRowType() throws InterruptedException {
-//		 WebElement ClickonRow =driver.findElement(By.xpath("//div[@id='content']//div[5]//div[2]"));
-//		 ClickonRow.click();
-//		WebElement RowType = driver.findElement(By.xpath("//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
-//		 Select dropdown = new Select(RowType);
-//		 Thread.sleep(2000);
-//		 dropdown.selectByIndex(0);
-//		 String rowtype0 = ClickonRow.getText();
-//		 Thread.sleep(2000);
-//		 if(rowtype0.contains("UnitQty")) {
-//			 Assert.assertTrue(true);
-//		 }else {
-//			 Assert.assertTrue(false);
-//		 }
-//
-//		 dropdown.selectByIndex(1);
-//		 Thread.sleep(2000);
-//
-//		 String rowtype1 = ClickonRow.getText();
-//		 if(rowtype1.contains("Fixed")) {
-//			 Assert.assertTrue(true);
-//		 }else {
-//			 Assert.assertTrue(false);
-//		 }
-//		 
-//		 dropdown.selectByIndex(2);		
-//		 Thread.sleep(2000);
-//		 String rowtype2 = ClickonRow.getText();
-//		 if(rowtype2.contains("Hourly")) {
-//			 Assert.assertTrue(true);
-//		 }else {
-//			 Assert.assertTrue(false);
-//		 }
-//		 dropdown.selectByIndex(3);
-//		 Thread.sleep(2000);
-//		 String rowtype3 = ClickonRow.getText();
-//		 if(rowtype3.contains("Monthly")) {
-//			 Assert.assertTrue(true);
-//		 }else {
-//			 Assert.assertTrue(false);
-//		 }
-//		 
-//		 dropdown.selectByIndex(4);
-//		 Thread.sleep(2000);
-//		 String rowtype4 = ClickonRow.getText();
-//		 System.out.println(rowtype4);
-//
-//		 if(rowtype4.contains("Yearly")) {
-//			 Assert.assertTrue(true);
-//		 }else {
-//			 Assert.assertTrue(false);
-//		 }
-//		 
-//		 dropdown.selectByIndex(5);
-//		 Thread.sleep(2000);
-//		 String rowtype5 = ClickonRow.getText();
-//		 if(rowtype5.contains("")) {
-//			 Assert.assertTrue(true);
-//		 }else {
-//			 Assert.assertTrue(false);
-//		 }
-//	 }
-//	 @Test(priority=4,dependsOnMethods = {"login"})
-//	 public void AddRowDiscount() throws InterruptedException {
-//		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
-//		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
-//		 SectionName.click();
-//		 Thread.sleep(4000);
-//
-//		 WebElement ClickonRow =driver.findElement(By.xpath("//div[@id='content']//div[5]//div[2]"));
-//		 ClickonRow.click();
-//		 WebElement RowDisc = driver.findElement(By.xpath("//label[contains(text(),'Row Discount')]"));
-//		 RowDisc.click();
-//		 WebElement DiscName = driver.findElement(By.xpath("//input[@placeholder='Discount']"));
-//		 DiscName.click();
-//		 DiscName.sendKeys("SGST");
-//		 WebElement DiscPercentage = driver.findElement(By.xpath("//input[@id='discount']"));
-//		 DiscPercentage.clear();
-//		 DiscPercentage.sendKeys("10");
-//		 WebElement SubtatalField = driver.findElement(By.xpath("//div[6]//div[2]//div[1]"));
-//		String IsDiscApplied = SubtatalField.getText();
-//		if(IsDiscApplied.contains("SGST")) {
-//			Assert.assertTrue(true);
-//		}else {
-//			Assert.assertTrue(false);
-//		}
-//		 
-//	 }
-//	 @Test(priority = 5,dependsOnMethods = {"login"})
-//	 public void TableDiscount() throws InterruptedException {
-//		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
-//		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
-//		 SectionName.click();
-//		 Thread.sleep(4000);
-//		 WebElement feetable = driver.findElement(By.xpath("//div[contains(text(),'Price')]"));
-//		 feetable.click();
-//		 WebElement tableDisc = driver.findElement(By.xpath("//label[contains(text(),'Table Discount')]//img"));
-//		 tableDisc.click();
-//		 
-//		 WebElement ShowDisc =driver.findElement(By.xpath("//input[@name='showTableDiscount']"));
-//		 ShowDisc.click();
-//		WebElement  DiscName  = driver.findElement(By.xpath("//input[@placeholder='Discount Name']"));
-//		//DiscName.clear();
-//		DiscName.sendKeys("TableDisc");
-//		WebElement DiscAmount = driver.findElement(By.xpath("//input[@name='discount']"));
-//		//DiscAmount.clear();
-//		DiscAmount.sendKeys("10");
-//		WebElement IsDiscapplied  = driver.findElement(By.xpath("//div[@class='fees-table-footer']//div[2]"));
-//		String TableDiscapplied = IsDiscapplied.getText();
-//		Thread.sleep(5000);
-//		 tableDisc.click();
-//			Thread.sleep(5000);
-//
-//
-//		if (TableDiscapplied.contains("TableDisc")) {
-//			Assert.assertTrue(true);
-//		}else {
-//			Assert.assertTrue(false);
-//		}
-//		 Thread.sleep(4000);
-//
-//	 }
-//	 @Test(priority=6,dependsOnMethods = {"login"})
-//		public void AddTableTax1() throws InterruptedException {
-//		WebElement tabletax1 = driver.findElement(By.xpath("//label[@class='fees-prop-header'][contains(text(),'Tax 1')]//img"));
-//		tabletax1.click();
-//		 driver.findElement(By.xpath("//input[@name='showTax1']")).click();
-//		 WebElement TaxName = driver.findElement(By.xpath("//input[@placeholder='Tax1 Name']"));
-//		 //TaxName.clear();
-//		 TaxName.sendKeys("TableTax1");
-//		 
-//		 String Tax1 =driver.findElement(By.xpath("//div[@class='fees-table-footer']//div[3]")).getText();
-//		 WebElement tax1amount = driver.findElement(By.xpath("//input[@name='tax1Value']"));
-//			tax1amount.sendKeys("10");
-//			Thread.sleep(5000);
-//			//tabletax1.click();
-//			//Thread.sleep(5000);
-//
-//		 if(Tax1.contains("TableTax1")) {
-//			 Assert.assertTrue(true);
-//		 }else {
-//			 Assert.assertTrue(false);
-//		 }
-//		 
-//			tabletax1.click();
-//			
-//
-//		}
-//	 @Test(priority = 7,dependsOnMethods = {"login"})
-//	 public void AddTax2() throws InterruptedException {
-//		 WebElement Tabletax2 = driver.findElement(By.xpath("//label[@class='fees-prop-header'][contains(text(),'Tax 2')]//img"));
-//		 Thread.sleep(5000);
-//		 Tabletax2.click();
-//		 WebElement ShowTax2 = driver.findElement(By.xpath("//input[@name='showTax2']"));
-//		 Thread.sleep(5000);
-//		 ShowTax2.click();
-//		 WebElement Tax2Name = driver.findElement(By.xpath("//input[@placeholder='Tax2 Name']"));
-//		 //Tax2Name.clear();
-//		 Tax2Name.sendKeys("TableTax2");
-//	WebElement tax2amount = driver.findElement(By.xpath("//input[@name='tax2Value']"));
-//	String TaxName = driver.findElement(By.xpath("//div[@class='fees-table-footer']//div[4]")).getText();
-//
-//	tax2amount.sendKeys("10");
-//	Thread.sleep(5000);
-//	if(TaxName.contains("TableTax2")) {
-//		Assert.assertTrue(true);
-//	}else {
-//		Assert.assertTrue(false);
-//	}
-//				 
-//	 }
-//	 @Test(priority=8,dependsOnMethods = {"login"})
-//	 public void TableOption() throws InterruptedException {
-//		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
-//		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
-//		 SectionName.click();
-//		 Thread.sleep(4000);
-//		 WebElement Table = driver.findElement(By.xpath("//div[contains(text(),'Quantity')]"));
-//		 Table.click();
-//		 Thread.sleep(2000);
-//		 WebElement TableOption = driver.findElement(By.xpath("//div[@class='card-body properties-box fees-table-properties mb-0']//li[2]"));
-//		 TableOption.click();
-//		 Thread.sleep(2000);
-//
-//		 WebElement tablesubtotal =	 driver.findElement(By.xpath("//div[@class='col-lg-5 offset-lg-2 p-0']//label[@class='tgl-btn']"));
-//		 tablesubtotal.click();
-//		 Thread.sleep(2000);
-//
-//		 WebElement tabletotal = driver.findElement(By.xpath("//label[@for='tableTotal']"));
-//		 tabletotal.click();
-//		 Thread.sleep(2000);
-//
-//		 WebElement FeeTableFooter = driver.findElement(By.xpath("//div[@class='total-fee-calculator']"));
-//		 String footertext = FeeTableFooter.getText();
-//		 Thread.sleep(2000);
-//
-//		 if(footertext.contains("Total")) {
-//			 Assert.assertTrue(true);
-//		 }
-//	 }
-//	 @Test(priority=9)
-//	 public void FeeTitleIsEditable() throws InterruptedException {
-//			 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
-//			 WebElement Section3 = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[3]"));
-//			 Section3.click();
-//			 Thread.sleep(2000);
-//
-//			 WebElement Textarea =driver.findElement(By.id("textbox_13"));
-//			// Textarea.click();
-//			 Thread.sleep(2000);
-//
-//			 JavascriptExecutor executor = (JavascriptExecutor)driver;
-//			 executor.executeScript("arguments[0].click();", Textarea);
-//			 Thread.sleep(2000);
-//
-//			 Textarea.clear();
-//			 Thread.sleep(2000);
-//
-//			 Textarea.sendKeys("Selenium is automationtesting tool used for functional testing");
-//			 Thread.sleep(2000);
-//
-//			 WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
-//			 SaveBtn.click();
-//			 executor.executeScript("arguments[0].click();", Textarea);
-//			 Thread.sleep(3000);
-//			 String textareatext = Textarea.getText();
-//			 System.out.println("Not returning anything"+textareatext);
-//			 if(textareatext.contains("automationtesting tool")) {
-//				 
-//				 Assert.assertTrue(true);
-//			 }		
-//	 }
-	 @Test(priority=11)
+		// softAssertion.assertEquals(DiscountAmount, "TableDisc ( 10 % ) 1,000.00");
+		 
+		//div[@id='section_section5970']//div[@class='total-fee-calculator']//div[1]//p[2]
+		 WebElement tax1amount = driver.findElement(By.xpath("//div[@id='section_section5970']//div[@class='total-fee-calculator']//div[1]//p[1]"));
+		 String Tax1Amount = tax1amount.getText();
+		 //System.out.println(Tax1Amount);
+		 softAssertion.assertEquals(Tax1Amount, "SGST ( 10 % )");
+
+		
+		 WebElement tax2amount = driver.findElement(By.xpath("//div[@id='section_section5970']//div[@class='fees-table-footer']//div[2]//p[1]"));
+		 String Tax2Amount = tax2amount.getText();
+		 softAssertion.assertEquals(Tax2Amount, "HGST ( 10 % )");
+		// System.out.println(Tax2Amount);
+		
+		 Thread.sleep(4000);
+		 WebElement tableDisc = driver.findElement(By.xpath("//label[contains(text(),'Table Discount')]//img"));
+		 tableDisc.click();
+		 
+		
+		WebElement  DiscName  = driver.findElement(By.xpath("//input[@placeholder='Discount Name']"));
+		DiscName.clear();
+		//DiscName.sendKeys("TableDisc");
+		WebElement DiscAmount = driver.findElement(By.xpath("//input[@name='discount']"));
+		DiscAmount.clear();
+		 WebElement ShowDisc =driver.findElement(By.xpath("//input[@name='showTableDiscount']"));
+		 ShowDisc.click();
+		//DiscAmount.sendKeys("10");
+		//WebElement IsDiscapplied  = driver.findElement(By.xpath("//div[@class='fees-table-footer']//div[2]"));
+		Thread.sleep(5000);
+		 tableDisc.click();
+			Thread.sleep(5000);
+			WebElement tabletax1 = driver.findElement(By.xpath("//label[@class='fees-prop-header'][contains(text(),'Tax 1')]//img"));
+			tabletax1.click();
+			 driver.findElement(By.xpath("//input[@name='showTax1']")).click();
+			 WebElement TaxName = driver.findElement(By.xpath("//input[@placeholder='Tax1 Name']"));
+			 TaxName.clear();	
+			 WebElement tax1Amount = driver.findElement(By.xpath("//input[@name='tax1Value']"));
+				tax1Amount.clear();
+				SaveBtn.click();
+				tabletax1.click();
+
+				Thread.sleep(5000);
+				 WebElement Tabletax2 = driver.findElement(By.xpath("//label[@class='fees-prop-header'][contains(text(),'Tax 2')]//img"));
+				 Thread.sleep(2000);
+				 Tabletax2.click();
+				
+				 WebElement Tax2Name = driver.findElement(By.xpath("//input[@placeholder='Tax2 Name']"));
+				 Tax2Name.clear();
+			WebElement tax2Amount = driver.findElement(By.xpath("//input[@name='tax2Value']"));
+			tax2Amount.clear();
+
+			Thread.sleep(5000);
+			 WebElement ShowTax2 = driver.findElement(By.xpath("//input[@name='showTax2']"));
+			 ShowTax2.click();
+			 Thread.sleep(5000);
+
+			 WebElement TableFooter = driver.findElement(By.xpath("//div[@id='page1-fpFees12220191152473']//div[@class='total-fee-calculator']"));
+			 String footertext = TableFooter.getText();
+			 System.out.println("Footer text is "+footertext);
+			 softAssertion.assertEquals(footertext, "");
+			 SaveBtn.click();
+
+			 WebElement Table = driver.findElement(By.xpath("//div[contains(text(),'Quantity')]"));
+			 Table.click();
+			 Thread.sleep(2000);
+			 WebElement TableOption = driver.findElement(By.xpath("//div[@class='card-body properties-box fees-table-properties mb-0']//li[2]"));
+			 TableOption.click();
+			 Thread.sleep(2000);
+	
+			 WebElement tablesubtotal =	 driver.findElement(By.xpath("//div[@class='col-lg-5 offset-lg-2 p-0']//label[@class='tgl-btn']"));
+			 tablesubtotal.click();
+			 Thread.sleep(2000);
+	
+			 WebElement tabletotal = driver.findElement(By.xpath("//label[@for='tableTotal']"));
+			 tabletotal.click();
+			 Thread.sleep(2000);
+			 
+			 WebElement tableDiscount = driver.findElement(By.xpath("//div[@class='col-lg-5 p-0']//label[@class='tgl-btn']"));
+			 tableDiscount.click();
+			 Thread.sleep(2000);
+			 SaveBtn.click();
+			 Thread.sleep(3000);
+			 WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+			 BackBtn.click();
+			 Thread.sleep(3000);
+			 softAssertion.assertAll();
+	 }
+
+
+	 @Test(priority=4,enabled=false)
 	 public void FeeRowisoptional() throws InterruptedException {
 		 
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");

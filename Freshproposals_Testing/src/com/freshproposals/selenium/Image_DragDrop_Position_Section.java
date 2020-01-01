@@ -15,7 +15,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Image_DragDrop_Position extends Common_Methods {
+public class Image_DragDrop_Position_Section extends Common_Methods {
  
 	WebDriver driver;
 	
@@ -41,7 +41,7 @@ public class Image_DragDrop_Position extends Common_Methods {
   @Test(priority = 1)
   public void openExistTemplate() throws InterruptedException {
   Thread.sleep(3000);
-  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1137");
+  driver.get("http://beta1.freshproposals.com/home/sections/editSection/6630");
 	}
   
   @Test(priority = 2)
@@ -55,7 +55,7 @@ public class Image_DragDrop_Position extends Common_Methods {
 	 System.out.println("Before Drag and Drop Y "+editor_y);
 	 
 	  Thread.sleep(2000);
-	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1137/true");
+	  driver.get("http://beta1.freshproposals.com/home/sections/editSection/6630/true");
 	  Point preview_img_location = driver.findElement(By.xpath("//div[@class='resizers']//img")).getLocation();
 	  int preview_x = preview_img_location.getX();
 	  int preview_y = preview_img_location.getY();
@@ -65,16 +65,18 @@ public class Image_DragDrop_Position extends Common_Methods {
 	  
 	  Assert.assertEquals(editor_x, preview_x);
 	  Assert.assertEquals(editor_y, preview_y);
-	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1137");
+	 
 	  
   }
   
   @Test(priority = 3)
    public void DragDrop() throws InterruptedException {
 	  Thread.sleep(3000);
+	  driver.get("http://beta1.freshproposals.com/home/sections/editSection/6630");
+	  Thread.sleep(2000);
 	  Actions action = new Actions(driver);
 	  WebElement source = driver.findElement(By.xpath("//div[@class='resizers']//img"));
-	  WebElement des = driver.findElement(By.xpath("//div[@id='sectionPage_5950page1']"));
+	  WebElement des = driver.findElement(By.xpath("//div[@id='sectionPage_6630page1']"));
 	  action.clickAndHold(source).moveToElement(des, 50, 50).release().build().perform();
   }
   
@@ -90,7 +92,7 @@ public class Image_DragDrop_Position extends Common_Methods {
 	  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
  
 	  Thread.sleep(2000);
-	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1137/true");
+	  driver.get("http://beta1.freshproposals.com/home/sections/editSection/6630/true");
 	  Point after_preview_img_location = driver.findElement(By.xpath("//div[@class='resizers']//img")).getLocation();
 	  int after_preview_x = after_preview_img_location.getX();
 	  int after_preview_y = after_preview_img_location.getY();
@@ -105,10 +107,10 @@ public class Image_DragDrop_Position extends Common_Methods {
   @Test(priority = 5)
    public void Reset() throws InterruptedException {
 	  Thread.sleep(2000);
-	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1137");
+	  driver.get("http://beta1.freshproposals.com/home/sections/editSection/6630");
 	  Actions action = new Actions(driver);
 	  WebElement source = driver.findElement(By.xpath("//div[@class='resizers']//img"));
-	  WebElement des = driver.findElement(By.xpath("//div[@id='sectionPage_5950page1']"));
+	  WebElement des = driver.findElement(By.xpath("//div[@id='sectionPage_6630page1']"));
 	  action.clickAndHold(source).moveToElement(des, -50, -50).release().build().perform();
 	  Thread.sleep(3000);
 	  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();

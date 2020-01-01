@@ -3,62 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freshproposals.selenium.TextBox_Top_Properties2">
+      <class name="com.freshproposals.selenium.Template_TextBox_2">
         <methods>
-          <include name="delete_all"/>
-          <include name="closeBrowser"/>
-          <include name="click_reflect_double"/>
-          <include name="align_left"/>
-          <include name="orderList_default"/>
-          <include name="unorderlist_circle"/>
-          <include name="orderlist_lower_roman"/>
-          <include name="unorderlist_default"/>
-          <include name="click_reflect_1point15"/>
-          <include name="Save_align"/>
-          <include name="unorderlist_square"/>
-          <include name="orderlist_lower_alpha"/>
-          <include name="click_reflect_default"/>
-          <include name="Save_line_height"/>
-          <include name="orderlist_lower_greek"/>
-          <include name="Save_ol6"/>
-          <include name="Save_ol3"/>
-          <include name="Save_ol5"/>
-          <include name="Save_ol2"/>
-          <include name="click_reflect_quote"/>
-          <include name="Save_ol1"/>
-          <include name="Save_ul2"/>
-          <include name="Save_paragraph_style"/>
-          <include name="Save_ul3"/>
-          <include name="Save_ol4"/>
-          <include name="Save_ul1"/>
-          <include name="Save_ul4"/>
-          <include name="delete_all_7"/>
-          <include name="orderlist_upper_roman"/>
-          <include name="insert_link"/>
-          <include name="delete_all_8"/>
-          <include name="delete_all_3"/>
-          <include name="align_center"/>
-          <include name="delete_all_6"/>
-          <include name="delete_all_9"/>
-          <include name="orderlist_upper_alpha"/>
-          <include name="Save_final"/>
-          <include name="click_reflect_single"/>
-          <include name="delete_all_4"/>
-          <include name="delete_all_2"/>
-          <include name="delete_all_5"/>
-          <include name="click_reflect_1point5"/>
-          <include name="unorderlist_disc"/>
-          <include name="align_right"/>
-          <include name="Save_link"/>
-          <include name="delete_all_14"/>
-          <include name="align_justify"/>
-          <include name="delete_all_13"/>
-          <include name="delete_all_10"/>
-          <include name="delete_all_12"/>
+          <include name="Reset"/>
+          <include name="advance"/>
           <include name="openBrowser"/>
-          <include name="delete_all_11"/>
+          <include name="closeBrowser"/>
+          <include name="color"/>
         </methods>
-      </class> <!-- com.freshproposals.selenium.TextBox_Top_Properties2 -->
+      </class> <!-- com.freshproposals.selenium.Template_TextBox_2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

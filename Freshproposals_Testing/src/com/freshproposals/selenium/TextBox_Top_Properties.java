@@ -39,7 +39,7 @@ public class TextBox_Top_Properties extends Common_Methods {
 	  Thread.sleep(1000);
 	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1178;editor=true");
 	  Thread.sleep(1000);
-	  //textbox click
+	  //textbox click 
 	  driver.findElement(By.xpath("//div[@id='froalapage1-fpText1114201911184033']")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[starts-with(@id,'bold')]")).click();
@@ -63,115 +63,220 @@ public class TextBox_Top_Properties extends Common_Methods {
 	  String expected_underline = "underline solid rgb(51, 51, 51)";
 	  Assert.assertEquals(actual_underline, expected_underline);
 	  
+	  
 	  }
   
   @Test(priority = 2)
-  public void click_reflect_h1() throws InterruptedException {
+  public void fontsize36() throws InterruptedException {
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//button[@id='fontSize-1']//*[@class='fr-svg']")).click();
+	  Thread.sleep(2000);
+	  driver.findElement(By.linkText("36")).click();
 	  Thread.sleep(1000);
-	  //paragraph button
-	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.linkText("Heading 1")).click();
-	  String actual_heading1 = driver.findElement(By.linkText("Heading 1")).getAttribute("title");
-	  String expected_heading1 = "Heading 1";
-	  Assert.assertEquals(actual_heading1, expected_heading1);
+	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p")).sendKeys("I am 36");
+	  String actual_font_size = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//span")).getCssValue("font-size");
+	  System.out.println(actual_font_size);
+	  String expected_font_size = "36px";
+	  Assert.assertEquals(actual_font_size, expected_font_size);
 	  
-	  //reflect
-	  String actual_reflect_h1 = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("font-size");
-	  System.out.println(actual_reflect_h1);
-	  String expected_reflect_h1 = "36px";
-	  Assert.assertEquals(actual_reflect_h1, expected_reflect_h1);
-  }	
+	 }
   
   @Test(priority = 3)
-  public void click_reflect_h2() throws InterruptedException {
-	  Thread.sleep(1000);
-	  //paragraph button
-	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.linkText("Heading 2")).click();
-	  String actual_heading2 = driver.findElement(By.linkText("Heading 2")).getAttribute("title");
-	  String expected_heading2 = "Heading 2";
-	  Assert.assertEquals(actual_heading2, expected_heading2);
+  public void Save_36() throws InterruptedException {
+	  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
+	  Thread.sleep(3000);
+	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1178;editor=true");
 	  
-	//reflect
-	  String actual_reflect_h2 = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("font-size");
-	  System.out.println(actual_reflect_h2);
-	  String expected_reflect_h2 = "28px";
-	  Assert.assertEquals(actual_reflect_h2, expected_reflect_h2);
-  }
+ }
   
   @Test(priority = 4)
-  public void click_reflect_h3() throws InterruptedException {
+  public void delete_all36() throws InterruptedException {
+	  driver.findElement(By.xpath("//div[@id='froalapage1-fpText1114201911184033']")).click();
 	  Thread.sleep(1000);
-	  //paragraph button
-	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.linkText("Heading 3")).click();
-	  String actual_heading3 = driver.findElement(By.linkText("Heading 3")).getAttribute("title");
-	  String expected_heading3 = "Heading 3";
-	  Assert.assertEquals(actual_heading3, expected_heading3);
-	  
-	//reflect
-	  String actual_reflect_h3 = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("font-size");
-	  System.out.println(actual_reflect_h3);
-	  String expected_reflect_h3 = "20px";
-	  Assert.assertEquals(actual_reflect_h3, expected_reflect_h3);
+	 // driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).sendKeys(Keys.chord(Keys.CONTROL, "a"));
+	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).clear();
   }
   
   @Test(priority = 5)
-  public void click_reflect_h4() throws InterruptedException {
+  public void fontsize60() throws InterruptedException {
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//div[@id='froalapage1-fpText1114201911184033']")).click();
+	  driver.findElement(By.xpath("//button[@id='fontSize-1']//*[@class='fr-svg']")).click();
+	  Thread.sleep(2000);
+	  driver.findElement(By.linkText("60")).click();
 	  Thread.sleep(1000);
-	  //paragraph button
-	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.linkText("Heading 4")).click();
-	  String actual_heading4 = driver.findElement(By.linkText("Heading 4")).getAttribute("title");
-	  String expected_heading4 = "Heading 4";
-	  Assert.assertEquals(actual_heading4, expected_heading4);
+	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p")).sendKeys("I am 60");
+	  String actual_font_size = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//span")).getCssValue("font-size");
+	  System.out.println(actual_font_size);
+	  String expected_font_size = "60px";
+	  Assert.assertEquals(actual_font_size, expected_font_size);
 	  
-	//reflect
-	  String actual_reflect_h4 = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("font-size");
-	  System.out.println(actual_reflect_h4);
-	  String expected_reflect_h4 = "16px";
-	  Assert.assertEquals(actual_reflect_h4, expected_reflect_h4);
-  }
+	 }
   
-  @Test(priority = 6)
-  public void click_reflect_body() throws InterruptedException {
-	  Thread.sleep(1000);
-	  //paragraph button
-	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.linkText("Body")).click();
-	  String actual_body = driver.findElement(By.linkText("Body")).getAttribute("title");
-	  String expected_body = "Body";
-	  Assert.assertEquals(actual_body, expected_body);
+   @Test(priority = 6)
+  public void Save_60() throws InterruptedException {
+	  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
+	  Thread.sleep(3000);
+	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1178;editor=true");
 	  
-	//reflect
-	  String actual_reflect_body = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("font-size");
-	  System.out.println(actual_reflect_body);
-	  String expected_reflect_body = "14px";
-	  Assert.assertEquals(actual_reflect_body, expected_reflect_body);
-  }
+ }
   
   @Test(priority = 7)
-  public void click_reflect_quote() throws InterruptedException {
+  public void delete_all60() throws InterruptedException {
+	  driver.findElement(By.xpath("//div[@id='froalapage1-fpText1114201911184033']")).click();
 	  Thread.sleep(1000);
-	  //paragraph button
-	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.linkText("Quote")).click();
-	  String actual_quote = driver.findElement(By.linkText("Quote")).getAttribute("title");
-	  String expected_quote = "Quote";
-	  Assert.assertEquals(actual_quote, expected_quote);
-	  
-	//reflect
-	  String actual_reflect_quote = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("font-size");
-	  System.out.println(actual_reflect_quote);
-	  String expected_reflect_quote = "14px";
-	  Assert.assertEquals(actual_reflect_quote, expected_reflect_quote);
+	 // driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).sendKeys(Keys.chord(Keys.CONTROL, "a"));
+	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).clear();
   }
+  
+  @Test(priority = 8)
+  public void fontsize96() throws InterruptedException {
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//div[@id='froalapage1-fpText1114201911184033']")).click();
+	  driver.findElement(By.xpath("//button[@id='fontSize-1']//*[@class='fr-svg']")).click();
+	  Thread.sleep(2000);
+	  driver.findElement(By.linkText("96")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p")).sendKeys("I am 96");
+	  String actual_font_size = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//span")).getCssValue("font-size");
+	  System.out.println(actual_font_size);
+	  String expected_font_size = "96px";
+	  Assert.assertEquals(actual_font_size, expected_font_size);
+	  
+	 }
+  
+  @Test(priority = 9)
+  public void Save_96() throws InterruptedException {
+	  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
+	  Thread.sleep(3000);
+	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1178;editor=true");
+	  
+ }
+  
+  @Test(priority = 10)
+  public void delete_all96() throws InterruptedException {
+	  driver.findElement(By.xpath("//div[@id='froalapage1-fpText1114201911184033']")).click();
+	  Thread.sleep(1000);
+	 // driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).sendKeys(Keys.chord(Keys.CONTROL, "a"));
+	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).clear();
+  }
+  
+  
+  
+  
+//  @Test(priority = 2)
+//  public void click_reflect_h1() throws InterruptedException {
+//	  Thread.sleep(1000);
+//	  //paragraph button
+//	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.linkText("Heading 1")).click();
+//	  String actual_heading1 = driver.findElement(By.linkText("Heading 1")).getAttribute("title");
+//	  String expected_heading1 = "Heading 1";
+//	  Assert.assertEquals(actual_heading1, expected_heading1);
+//	  
+//	  //reflect
+//	  String actual_reflect_h1 = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("font-size");
+//	  System.out.println(actual_reflect_h1);
+//	  String expected_reflect_h1 = "36px";
+//	  Assert.assertEquals(actual_reflect_h1, expected_reflect_h1);
+//  }	
+//  
+//  @Test(priority = 3)
+//  public void click_reflect_h2() throws InterruptedException {
+//	  Thread.sleep(1000);
+//	  //paragraph button
+//	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.linkText("Heading 2")).click();
+//	  String actual_heading2 = driver.findElement(By.linkText("Heading 2")).getAttribute("title");
+//	  String expected_heading2 = "Heading 2";
+//	  Assert.assertEquals(actual_heading2, expected_heading2);
+//	  
+//	//reflect
+//	  String actual_reflect_h2 = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("font-size");
+//	  System.out.println(actual_reflect_h2);
+//	  String expected_reflect_h2 = "28px";
+//	  Assert.assertEquals(actual_reflect_h2, expected_reflect_h2);
+//  }
+//  
+//  @Test(priority = 4)
+//  public void click_reflect_h3() throws InterruptedException {
+//	  Thread.sleep(1000);
+//	  //paragraph button
+//	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.linkText("Heading 3")).click();
+//	  String actual_heading3 = driver.findElement(By.linkText("Heading 3")).getAttribute("title");
+//	  String expected_heading3 = "Heading 3";
+//	  Assert.assertEquals(actual_heading3, expected_heading3);
+//	  
+//	//reflect
+//	  String actual_reflect_h3 = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("font-size");
+//	  System.out.println(actual_reflect_h3);
+//	  String expected_reflect_h3 = "20px";
+//	  Assert.assertEquals(actual_reflect_h3, expected_reflect_h3);
+//  }
+//  
+//  @Test(priority = 5)
+//  public void click_reflect_h4() throws InterruptedException {
+//	  Thread.sleep(1000);
+//	  //paragraph button
+//	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.linkText("Heading 4")).click();
+//	  String actual_heading4 = driver.findElement(By.linkText("Heading 4")).getAttribute("title");
+//	  String expected_heading4 = "Heading 4";
+//	  Assert.assertEquals(actual_heading4, expected_heading4);
+//	  
+//	//reflect
+//	  String actual_reflect_h4 = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("font-size");
+//	  System.out.println(actual_reflect_h4);
+//	  String expected_reflect_h4 = "16px";
+//	  Assert.assertEquals(actual_reflect_h4, expected_reflect_h4);
+//  }
+//  
+//  @Test(priority = 6)
+//  public void click_reflect_body() throws InterruptedException {
+//	  Thread.sleep(1000);
+//	  //paragraph button
+//	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.linkText("Body")).click();
+//	  String actual_body = driver.findElement(By.linkText("Body")).getAttribute("title");
+//	  String expected_body = "Body";
+//	  Assert.assertEquals(actual_body, expected_body);
+//	  
+//	//reflect
+//	  String actual_reflect_body = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("font-size");
+//	  System.out.println(actual_reflect_body);
+//	  String expected_reflect_body = "14px";
+//	  Assert.assertEquals(actual_reflect_body, expected_reflect_body);
+//  }
+//  
+//  @Test(priority = 7)
+//  public void click_reflect_quote() throws InterruptedException {
+//	  Thread.sleep(1000);
+//	  //paragraph button
+//	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.linkText("Quote")).click();
+//	  String actual_quote = driver.findElement(By.linkText("Quote")).getAttribute("title");
+//	  String expected_quote = "Quote";
+//	  Assert.assertEquals(actual_quote, expected_quote);
+//	  
+//	//reflect
+//	  String actual_reflect_quote = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("font-size");
+//	  System.out.println(actual_reflect_quote);
+//	  String expected_reflect_quote = "14px";
+//	  Assert.assertEquals(actual_reflect_quote, expected_reflect_quote);
+//  }
 	  
 	 
 	  
@@ -223,84 +328,84 @@ public class TextBox_Top_Properties extends Common_Methods {
 //	  
 //  }
 //  
-  @Test(priority = 8)
-  public void click_reflect_default() throws InterruptedException {
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p")).sendKeys("Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
-	  		+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make "
-	  		+ "a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. "
-	  		+ "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing"
-	  		+ " software like Aldus PageMaker including versions of Lorem Ipsum");
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.linkText("Default")).click();
-	  String actual_default = driver.findElement(By.linkText("Default")).getAttribute("title");
-	  String expected_default = "Default";
-	  Assert.assertEquals(actual_default, expected_default);
-   
-	  String actual_line_height = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("line-height");
-	  System.out.println("default "+actual_line_height);
-	  
-  }
-  
-  @Test(priority = 9)
-  public void click_reflect_single() throws InterruptedException {
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.linkText("Single")).click();
-	  String actual_single = driver.findElement(By.linkText("Single")).getAttribute("title");
-	  String expected_single = "Single";
-	  Assert.assertEquals(actual_single, expected_single);
-	  
-	  String actual_line_height = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("line-height");
-	  System.out.println("single "+actual_line_height);
-  }
-  
-  @Test(priority = 10)
-  public void click_reflect_1point15() throws InterruptedException {
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.linkText("1.15")).click();
-	  String actual_digit1 = driver.findElement(By.linkText("1.15")).getAttribute("title");
-	  String expected_digit1 = "1.15";
-	  Assert.assertEquals(actual_digit1, expected_digit1);
-	  
-	  String actual_line_height = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("line-height");
-	  System.out.println("1.15 "+actual_line_height);
-  }
-  
-  @Test(priority = 11)
-  public void click_reflect_1point5() throws InterruptedException {
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.linkText("1.5")).click();
-	  String actual_digit2 = driver.findElement(By.linkText("1.5")).getAttribute("title");
-	  String expected_digit2 = "1.5";
-	  Assert.assertEquals(actual_digit2, expected_digit2);
-	  
-	  String actual_line_height = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("line-height");
-	  System.out.println("1.5 "+actual_line_height);
-	  
-  }
-  
-  @Test(priority = 12)
-  public void click_reflect_double() throws InterruptedException {
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.linkText("Double")).click();
-	  String actual_double = driver.findElement(By.linkText("Double")).getAttribute("title");
-	  String expected_double = "Double";
-	  Assert.assertEquals(actual_double, expected_double);
-	  
-	  String actual_line_height = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("line-height");
-	  System.out.println("double "+actual_line_height);
-  }
-  
+//  @Test(priority = 8)
+//  public void click_reflect_default() throws InterruptedException {
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p")).sendKeys("Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+//	  		+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make "
+//	  		+ "a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. "
+//	  		+ "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing"
+//	  		+ " software like Aldus PageMaker including versions of Lorem Ipsum");
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.linkText("Default")).click();
+//	  String actual_default = driver.findElement(By.linkText("Default")).getAttribute("title");
+//	  String expected_default = "Default";
+//	  Assert.assertEquals(actual_default, expected_default);
+//   
+//	  String actual_line_height = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("line-height");
+//	  System.out.println("default "+actual_line_height);
+//	  
+//  }
+//  
+//  @Test(priority = 9)
+//  public void click_reflect_single() throws InterruptedException {
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.linkText("Single")).click();
+//	  String actual_single = driver.findElement(By.linkText("Single")).getAttribute("title");
+//	  String expected_single = "Single";
+//	  Assert.assertEquals(actual_single, expected_single);
+//	  
+//	  String actual_line_height = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("line-height");
+//	  System.out.println("single "+actual_line_height);
+//  }
+//  
+//  @Test(priority = 10)
+//  public void click_reflect_1point15() throws InterruptedException {
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.linkText("1.15")).click();
+//	  String actual_digit1 = driver.findElement(By.linkText("1.15")).getAttribute("title");
+//	  String expected_digit1 = "1.15";
+//	  Assert.assertEquals(actual_digit1, expected_digit1);
+//	  
+//	  String actual_line_height = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("line-height");
+//	  System.out.println("1.15 "+actual_line_height);
+//  }
+//  
+//  @Test(priority = 11)
+//  public void click_reflect_1point5() throws InterruptedException {
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.linkText("1.5")).click();
+//	  String actual_digit2 = driver.findElement(By.linkText("1.5")).getAttribute("title");
+//	  String expected_digit2 = "1.5";
+//	  Assert.assertEquals(actual_digit2, expected_digit2);
+//	  
+//	  String actual_line_height = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("line-height");
+//	  System.out.println("1.5 "+actual_line_height);
+//	  
+//  }
+//  
+//  @Test(priority = 12)
+//  public void click_reflect_double() throws InterruptedException {
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.xpath("//button[starts-with(@id,'lineHeight')]")).click();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.linkText("Double")).click();
+//	  String actual_double = driver.findElement(By.linkText("Double")).getAttribute("title");
+//	  String expected_double = "Double";
+//	  Assert.assertEquals(actual_double, expected_double);
+//	  
+//	  String actual_line_height = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p//u")).getCssValue("line-height");
+//	  System.out.println("double "+actual_line_height);
+//  }
+//  
  	  
 //	}
 //  

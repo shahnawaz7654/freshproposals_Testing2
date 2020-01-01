@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 
-public class Section_List extends Common_Methods {
+public class Section_List_Template extends Common_Methods {
 	WebDriver driver;
 	String fname = "SEL";
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
@@ -68,21 +68,23 @@ public class Section_List extends Common_Methods {
 //  }
   
   @Test(priority = 3)
-  public void EditSection() throws InterruptedException {
+  public void rename() throws InterruptedException {
 	  //driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/754");
-	  Thread.sleep(1000);
+	  Thread.sleep(5000);
 	  //add page
 	  driver.findElement(By.xpath("//img[@src='../../assets/add-icon.svg']")).click();
 	  driver.findElement(By.xpath("//img[@src='../../assets/add-icon.svg']")).click();
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath(" //button[@id='dropdownBasic1'] //img[ 1 ]")).click();
+	  driver.findElement(By.xpath(" //button[@id='dropdownBasic1'] //img")).click();
 	  Thread.sleep(2000);
 	  //rename
-	  driver.findElement(By.xpath("//li[1]//div[1]//div[1]//div[1]//button[1]")).click();
+	  driver.findElement(By.xpath("//button[contains(text(),'Rename')]")).click();
 	  Thread.sleep(1000);
 	  //name change
 	  driver.findElement(By.xpath("//li[1]//input[1]")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
-	  driver.findElement(By.xpath("//li[1]//input[1]")).sendKeys("I am from Script");
+	  driver.findElement(By.xpath("//li[1]//input[1]")).sendKeys(fname+" SECName "+timestamp);
+	  driver.findElement(By.xpath("//div[@class='rename-section']//div//img[@class='img-fluid']")).click();
+	  Thread.sleep(5000);
 	  //save
 	  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
 	  Thread.sleep(1000);
@@ -91,22 +93,52 @@ public class Section_List extends Common_Methods {
 	  //reopen
 	  Thread.sleep(3000);
 	  driver.findElement(By.xpath("//img[@src='../../assets/edit-pen-blue.svg']")).click();
-	  //drag and drop
-//	  WebElement from =  driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[1]"));
-//	  WebElement to =  driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
-//	  action.dragAndDrop(from, to).build().perform();
-	  //copy
+	
+	 
+	 
+   }
+  
+  @Test(priority = 4)
+  public void copy() throws InterruptedException {
 	  driver.findElement(By.xpath("//img[@src='../../assets/add-icon.svg']")).click();
-	  driver.findElement(By.xpath(" //button[@id='dropdownBasic1'] //img[ 1 ]")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.xpath(" //button[@id='dropdownBasic1'] //img")).click();
+	  driver.findElement(By.xpath(" //button[contains(text(),'Make a Copy')]")).click();
 	  Thread.sleep(2000); 
-	  driver.findElement(By.xpath("//li[1]//div[1]//div[1]//div[1]//button[2]")).click();
+	  //save
+	  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+	  Thread.sleep(1000);
+	  //back
+	  driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
+	  //reopen
 	  Thread.sleep(3000);
-	  driver.findElement(By.xpath("//li[1]//div[1]//div[1]//div[1]//button[3]")).click();
+	  driver.findElement(By.xpath("//img[@src='../../assets/edit-pen-blue.svg']")).click();
+	  
+  }
+  
+  @Test(priority = 5)
+  public void delete() throws InterruptedException {
+	  driver.findElement(By.xpath("//img[@src='../../assets/add-icon.svg']")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.xpath(" //button[@id='dropdownBasic1'] //img")).click();
+	  Thread.sleep(1000);
+	 
+      driver.findElement(By.xpath("//button[contains(text(),'Delete')]")).click();
 	  //ok button
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+	  Thread.sleep(2000);
+	//save
+	  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+	  Thread.sleep(1000);
+	  //back
+	  driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
+	  //reopen
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("//img[@src='../../assets/edit-pen-blue.svg']")).click();
 	  
-	   }
+  }
+  
   
   @AfterTest
   public void closeBrowser() throws InterruptedException {

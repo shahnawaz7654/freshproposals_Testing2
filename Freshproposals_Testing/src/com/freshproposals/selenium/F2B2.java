@@ -44,24 +44,24 @@ public class F2B2 extends Common_Methods {
  public void Backward() throws InterruptedException {
 	 driver.get("http://beta1.freshproposals.com/home/sections/editSection/4775");
 	 Thread.sleep(2000);
-//	 Actions action = new Actions(driver);
-//	 
-//	 System.out.println("1");
-//	 String B_Backward_img = driver.findElement(By.xpath("//div[@id='page1-fpImage1031201911175112mainDivTransformSafeStyle']")).getCssValue("z-index");
-//	 System.out.println("Before Backward Img "+B_Backward_img);
-//	 String B_Backward_text = driver.findElement(By.xpath("//div[@id='page1-fpText103120191116468mainDivTransformSafeStyle']")).getCssValue("z-index");
-//     System.out.println("Before Backward Img, Text "+B_Backward_text);
-//     
-//	 //image - backward
-//	
-//     driver.findElement(By.xpath("//div[@class='resizers']//img")).click();
-//     action.contextClick(driver.findElement(By.xpath("//div[@class='resizers']//img"))).perform();
-//     Thread.sleep(3000);
-//	 driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
+	 Actions action = new Actions(driver);
+	 
+	 System.out.println("1");
+	 String B_Backward_img = driver.findElement(By.xpath("//div[@id='page1-fpImage1031201911175112mainDivTransformSafeStyle']")).getCssValue("z-index");
+	 System.out.println("Before Backward Img "+B_Backward_img);
+	 String B_Backward_text = driver.findElement(By.xpath("//div[@id='page1-fpText103120191116468mainDivTransformSafeStyle']")).getCssValue("z-index");
+     System.out.println("Before Backward Img, Text "+B_Backward_text);
+     
+	 //image - backward
+	
+     driver.findElement(By.xpath("//div[@class='resizers']//img")).click();
+     action.contextClick(driver.findElement(By.xpath("//div[@class='resizers']//img"))).perform();
+     Thread.sleep(3000);
+	 //driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
+	 Thread.sleep(3000);
+	 //driver.findElement(By.xpath("//button[contains(text(),'Position')]")).getCssValue("z-index");
 //	 Thread.sleep(3000);
-//	 driver.findElement(By.xpath("//button[contains(text(),'Position')]")).getCssValue("z-index");
-//	 Thread.sleep(3000);
-//	 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[3]")).click();
+//	 //driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[3]")).click();
 //	 Thread.sleep(3000);
 //	 String A_Backward_img = driver.findElement(By.xpath("//div[@id='page1-fpImage1031201911175112mainDivTransformSafeStyle']")).getCssValue("z-index");
 //	 System.out.println("After Backward Img "+A_Backward_img);
@@ -74,43 +74,43 @@ public class F2B2 extends Common_Methods {
 //     Assert.assertTrue(text>img);
      }
  
-// 
- @Test(priority = 2)
- public void Back() throws InterruptedException {
-	 Thread.sleep(1000);
-	 Actions action = new Actions(driver);
-	 
-	 System.out.println("2");
-	 String B_Back_sign = driver.findElement(By.xpath("//div[@id='page1-fpSign1031201911163941mainDivTransformSafeStyle']")).getCssValue("z-index");
-	 System.out.println("Before Back Signature "+B_Back_sign);
-	 String B_Back_shape = driver.findElement(By.xpath("//div[@id='page1-fpShape1031201911162297mainDivTransformSafeStyle']")).getCssValue("z-index");
-	 System.out.println("Before Back Signature, Shape "+B_Back_shape);
-	 
-	 //signature - back
-	 //action.contextClick(driver.findElement(By.xpath("//div[@id='page1-fpSign1031201911163941']"))).perform();
-	 action.contextClick(driver.findElement(By.id("page1-fpSign1031201911163941"))).perform();
-	 Thread.sleep(1000);
-	 //driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
-	 driver.findElement(By.cssSelector("div.wrapper div.main-no-sidebar:nth-child(5) div.apply-hidden.styling-mode-effect div.section-editor-box div.editor-top-margin.col-lg-8.offset-lg-2:nth-child(2) div.page-scalemargin- div.editor-card-box div.page-wrapper div.page.effect8 div.card div.context-menu:nth-child(6) ul.context-menu li.dropdown-submenu ul.dropdown-menu > li.dropdown-item:nth-child(4)")).click();
-	 Thread.sleep(1000);
-	 //driver.findElement(By.xpath("//li[contains(text(),'Send to back')]")).click();
-	 
-	 String A_Back_sign = driver.findElement(By.xpath("//div[@id='page1-fpSign1031201911163941mainDivTransformSafeStyle']")).getCssValue("z-index");
-	 System.out.println("After Back Signature "+A_Back_sign);
-	 String A_Back_shape = driver.findElement(By.xpath("//div[@id='page1-fpShape1031201911162297mainDivTransformSafeStyle']")).getCssValue("z-index");
-	 System.out.println("After Back Shape "+A_Back_shape);
-	 
-	 String A_Back_img = driver.findElement(By.xpath("//div[@id='page1-fpImage1031201911175112mainDivTransformSafeStyle']")).getCssValue("z-index");
-	 System.out.println("After Back Signature,Img "+A_Back_img);
-	 String A_Back_text = driver.findElement(By.xpath("//div[@id='page1-fpText103120191116468mainDivTransformSafeStyle']")).getCssValue("z-index");
-     System.out.println("After Back Signature,Text "+A_Back_text);
-     
-     int sign = Integer.parseInt(A_Back_sign);
-     int shape = Integer.parseInt(A_Back_shape);
-     
-     Assert.assertTrue(shape>sign);
-     
-	  }
+
+// @Test(priority = 2)
+// public void Back() throws InterruptedException {
+//	 Thread.sleep(1000);
+//	 Actions action = new Actions(driver);
+//	 
+//	 System.out.println("2");
+//	 String B_Back_sign = driver.findElement(By.xpath("//div[@id='page1-fpSign1031201911163941mainDivTransformSafeStyle']")).getCssValue("z-index");
+//	 System.out.println("Before Back Signature "+B_Back_sign);
+//	 String B_Back_shape = driver.findElement(By.xpath("//div[@id='page1-fpShape1031201911162297mainDivTransformSafeStyle']")).getCssValue("z-index");
+//	 System.out.println("Before Back Signature, Shape "+B_Back_shape);
+//	 
+//	 //signature - back
+//	 //action.contextClick(driver.findElement(By.xpath("//div[@id='page1-fpSign1031201911163941']"))).perform();
+//	 action.contextClick(driver.findElement(By.id("page1-fpSign1031201911163941"))).perform();
+//	 Thread.sleep(1000);
+//	 driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
+//	 //driver.findElement(By.cssSelector("div.wrapper div.main-no-sidebar:nth-child(5) div.apply-hidden.styling-mode-effect div.section-editor-box div.editor-top-margin.col-lg-8.offset-lg-2:nth-child(2) div.page-scalemargin- div.editor-card-box div.page-wrapper div.page.effect8 div.card div.context-menu:nth-child(6) ul.context-menu li.dropdown-submenu ul.dropdown-menu > li.dropdown-item:nth-child(4)")).click();
+//	 Thread.sleep(1000);
+//	 driver.findElement(By.xpath("//li[contains(text(),'Send to back')]")).click();
+//	 
+//	 String A_Back_sign = driver.findElement(By.xpath("//div[@id='page1-fpSign1031201911163941mainDivTransformSafeStyle']")).getCssValue("z-index");
+//	 System.out.println("After Back Signature "+A_Back_sign);
+//	 String A_Back_shape = driver.findElement(By.xpath("//div[@id='page1-fpShape1031201911162297mainDivTransformSafeStyle']")).getCssValue("z-index");
+//	 System.out.println("After Back Shape "+A_Back_shape);
+//	 
+//	 String A_Back_img = driver.findElement(By.xpath("//div[@id='page1-fpImage1031201911175112mainDivTransformSafeStyle']")).getCssValue("z-index");
+//	 System.out.println("After Back Signature,Img "+A_Back_img);
+//	 String A_Back_text = driver.findElement(By.xpath("//div[@id='page1-fpText103120191116468mainDivTransformSafeStyle']")).getCssValue("z-index");
+//     System.out.println("After Back Signature,Text "+A_Back_text);
+//     
+//     int sign = Integer.parseInt(A_Back_sign);
+//     int shape = Integer.parseInt(A_Back_shape);
+//     
+//     Assert.assertTrue(shape>sign);
+//     
+//	  }
 
 //
 // @Test(priority = 3)

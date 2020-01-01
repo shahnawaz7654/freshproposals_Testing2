@@ -140,10 +140,10 @@ public class Existing_Template extends Common_Methods {
       public void rotate() throws InterruptedException {
 	
 	  Thread.sleep(1000);	  
-	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[4]/div/ejs-numerictextbox/span/input[1]")).clear();
+	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-text-properties[1]/form[1]/div[1]/div[1]/div[1]/ngb-accordion[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/ejs-numerictextbox[1]/span[1]/input[1]")).clear();
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[4]/div/ejs-numerictextbox/span/input[1]")).sendKeys(rotate); 
-	  String actual_rotate = driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[4]/div/ejs-numerictextbox/span/input[1]")).getAttribute("value"); 
+	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-text-properties[1]/form[1]/div[1]/div[1]/div[1]/ngb-accordion[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/ejs-numerictextbox[1]/span[1]/input[1]")).sendKeys(rotate); 
+	  String actual_rotate = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-text-properties[1]/form[1]/div[1]/div[1]/div[1]/ngb-accordion[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/ejs-numerictextbox[1]/span[1]/input[1]")).getAttribute("value"); 
 	  
 	  Assert.assertEquals(actual_rotate,rotate);
 	  }
@@ -322,28 +322,28 @@ public class Existing_Template extends Common_Methods {
 	 }
 	  
 	  
-//	  @Test(priority = 19)
-//	  public void reflect_rotate() {
-//		  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
-//		  String actual_reflect_rotate = driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).getCssValue("rotate");
-//		  System.out.println("Rrotate "+actual_reflect_rotate);
-//		  String expected_reflect_rotate = rotate+"px";
-//		  System.out.println("reflect rotate "+expected_reflect_rotate);
-//		  Assert.assertEquals(actual_reflect_rotate, expected_reflect_rotate);
-//		  
-//	  }
+	  @Test(priority = 19)
+	  public void reflect_rotate() {
+		  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
+		  String actual_reflect_rotate = driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).getCssValue("rotate");
+		  System.out.println("Rrotate "+actual_reflect_rotate);
+		  String expected_reflect_rotate = rotate+"px";
+		  System.out.println("reflect rotate "+expected_reflect_rotate);
+		  Assert.assertEquals(actual_reflect_rotate, expected_reflect_rotate);
+		  
+	  }
 	  
-//	  @Test(priority = 20)
-//	  public void reflect_opacity() {
-//		  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
-//		  String actual_reflect_opacity = driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).getCssValue("opacity");
-//		  System.out.println(actual_reflect_opacity);
-//		  String expected_reflect_opacity = opacity+"px";
-//		  System.out.println("reflect opacity "+expected_reflect_opacity);
-//		  Assert.assertEquals(actual_reflect_opacity, expected_reflect_opacity);
-//		  
-//	  }
-//	
+	  @Test(priority = 20)
+	  public void reflect_opacity() {
+		  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
+		  String actual_reflect_opacity = driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).getCssValue("opacity");
+		  System.out.println(actual_reflect_opacity);
+		  String expected_reflect_opacity = opacity+"px";
+		  System.out.println("reflect opacity "+expected_reflect_opacity);
+		  Assert.assertEquals(actual_reflect_opacity, expected_reflect_opacity);
+		  
+	  }
+	
 	  @Test(priority = 21)
 	  public void reflect_border_width() throws InterruptedException {
 		  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
@@ -417,16 +417,16 @@ public class Existing_Template extends Common_Methods {
 		  driver.findElement(By.name("border")).click();
 		  
 		  //color
-//		  Thread.sleep(1000);	  
-//		  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-text-properties[1]/form[1]/div[1]/div[1]/div[1]/ngb-accordion[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
-//		  Thread.sleep(1000);
-//		  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-hue-slider e-control e-slider e-lib']//div[@class='e-handle e-handle-first']"));
-//		  resize3(r1, 5,5);
-//		  Thread.sleep(1000);
-//		  driver.findElement(By.className("e-hsv-color")).click();
-//		  Thread.sleep(1000);
-//		  driver.findElement(By.xpath("//button[@title='Apply']")).click();
-//		  
+		  Thread.sleep(1000);	  
+		  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-text-properties[1]/form[1]/div[1]/div[1]/div[1]/ngb-accordion[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
+		  Thread.sleep(1000);
+		  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-hue-slider e-control e-slider e-lib']//div[@class='e-handle e-handle-first']"));
+		  resize3(r1, 5,5);
+		  Thread.sleep(1000);
+		  driver.findElement(By.className("e-hsv-color")).click();
+		  Thread.sleep(1000);
+		  driver.findElement(By.xpath("//button[@title='Apply']")).click();
+		  
 		  
 			//opacity
 			
@@ -492,7 +492,7 @@ public class Existing_Template extends Common_Methods {
 							}
 					 }
 	  
-	  
+//	  
   
   @AfterClass
   public void closeBrowser() throws InterruptedException {

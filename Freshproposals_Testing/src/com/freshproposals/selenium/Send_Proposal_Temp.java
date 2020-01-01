@@ -46,7 +46,7 @@ public class Send_Proposal_Temp extends Common_Methods{
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
   }
   
-  @Test(priority = 2)
+  @Test(enabled = false)
   public void contentLibrary() throws InterruptedException {
 	  Thread.sleep(3000);
 		//content library
@@ -74,7 +74,8 @@ public class Send_Proposal_Temp extends Common_Methods{
   public void client() throws InterruptedException  {
 	  Thread.sleep(3000);
 	  driver.findElement(By.xpath("//*[@id=\"headingSelectClient\"]/h2/button")).click();
-	  driver.findElement(By.xpath("//*[@id=\"collapseSelectClient\"]/div/div/app-clients/div[2]/div/div/div/div[2]/label/span")).click();
+	  driver.findElement(By.xpath("//div[11]//div[2]//label[1]//span[1]")).click();
+	  //driver.findElement(By.xpath("//*[@id=\"collapseSelectClient\"]/div/div/app-clients/div[2]/div/div/div/div[2]/label/span")).click();
   }
   
   @Test(priority = 5)

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="60" passed="57">
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="338635" started-at="2019-12-19T18:09:05 IST" finished-at="2019-12-19T18:14:44 IST">
+  <suite name="Default suite" duration-ms="81640" started-at="2019-12-31T16:14:06 IST" finished-at="2019-12-31T16:15:28 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="338635" started-at="2019-12-19T18:09:05 IST" finished-at="2019-12-19T18:14:44 IST">
-      <class name="com.freshproposals.selenium.TextBox_Top_Properties2">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="openBrowser" is-config="true" duration-ms="8619" started-at="2019-12-19T18:09:05 IST" finished-at="2019-12-19T18:09:14 IST">
+    <test name="Default test" duration-ms="81640" started-at="2019-12-31T16:14:06 IST" finished-at="2019-12-31T16:15:28 IST">
+      <class name="com.freshproposals.selenium.Template_TextBox_2">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.freshproposals.selenium.Template_TextBox_2@370736d9]" name="openBrowser" is-config="true" duration-ms="9483" started-at="2019-12-31T16:14:06 IST" finished-at="2019-12-31T16:14:15 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="login" duration-ms="719" started-at="2019-12-19T18:09:14 IST" data-provider="User1" finished-at="2019-12-19T18:09:15 IST">
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.freshproposals.selenium.Template_TextBox_2@370736d9]" name="login" duration-ms="588" started-at="2019-12-31T16:14:16 IST" data-provider="User1" finished-at="2019-12-31T16:14:16 IST">
           <params>
             <param index="0">
               <value>
@@ -27,235 +27,39 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="url()[pri:1, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="url" duration-ms="8560" started-at="2019-12-19T18:09:15 IST" finished-at="2019-12-19T18:09:23 IST">
+        <test-method status="PASS" signature="openExistTemplate()[pri:1, instance:com.freshproposals.selenium.Template_TextBox_2@370736d9]" name="openExistTemplate" duration-ms="10186" started-at="2019-12-31T16:14:16 IST" finished-at="2019-12-31T16:14:26 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- url -->
-        <test-method status="PASS" signature="click_reflect_h1()[pri:3, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="click_reflect_h1" duration-ms="6565" started-at="2019-12-19T18:09:23 IST" finished-at="2019-12-19T18:09:30 IST">
+        </test-method> <!-- openExistTemplate -->
+        <test-method status="PASS" signature="color()[pri:2, instance:com.freshproposals.selenium.Template_TextBox_2@370736d9]" name="color" duration-ms="6565" started-at="2019-12-31T16:14:26 IST" finished-at="2019-12-31T16:14:33 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- click_reflect_h1 -->
-        <test-method status="PASS" signature="click_reflect_h2()[pri:4, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="click_reflect_h2" duration-ms="3708" started-at="2019-12-19T18:09:30 IST" finished-at="2019-12-19T18:09:34 IST">
+        </test-method> <!-- color -->
+        <test-method status="PASS" signature="corner()[pri:3, instance:com.freshproposals.selenium.Template_TextBox_2@370736d9]" name="corner" duration-ms="2532" started-at="2019-12-31T16:14:33 IST" finished-at="2019-12-31T16:14:35 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- click_reflect_h2 -->
-        <test-method status="PASS" signature="click_reflect_h3()[pri:5, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="click_reflect_h3" duration-ms="3732" started-at="2019-12-19T18:09:34 IST" finished-at="2019-12-19T18:09:37 IST">
+        </test-method> <!-- corner -->
+        <test-method status="PASS" signature="advance()[pri:4, instance:com.freshproposals.selenium.Template_TextBox_2@370736d9]" name="advance" duration-ms="7566" started-at="2019-12-31T16:14:35 IST" finished-at="2019-12-31T16:14:43 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- click_reflect_h3 -->
-        <test-method status="PASS" signature="click_reflect_h4()[pri:6, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="click_reflect_h4" duration-ms="3658" started-at="2019-12-19T18:09:37 IST" finished-at="2019-12-19T18:09:41 IST">
+        </test-method> <!-- advance -->
+        <test-method status="PASS" signature="gradient()[pri:5, instance:com.freshproposals.selenium.Template_TextBox_2@370736d9]" name="gradient" duration-ms="4302" started-at="2019-12-31T16:14:43 IST" finished-at="2019-12-31T16:14:47 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- click_reflect_h4 -->
-        <test-method status="PASS" signature="click_reflect_body()[pri:7, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="click_reflect_body" duration-ms="3593" started-at="2019-12-19T18:09:41 IST" finished-at="2019-12-19T18:09:45 IST">
+        </test-method> <!-- gradient -->
+        <test-method status="PASS" signature="Save()[pri:6, instance:com.freshproposals.selenium.Template_TextBox_2@370736d9]" name="Save" duration-ms="10453" started-at="2019-12-31T16:14:47 IST" finished-at="2019-12-31T16:14:58 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- click_reflect_body -->
-        <test-method status="PASS" signature="click_reflect_quote()[pri:8, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="click_reflect_quote" duration-ms="3618" started-at="2019-12-19T18:09:45 IST" finished-at="2019-12-19T18:09:48 IST">
+        </test-method> <!-- Save -->
+        <test-method status="PASS" signature="Reset()[pri:7, instance:com.freshproposals.selenium.Template_TextBox_2@370736d9]" name="Reset" duration-ms="22783" started-at="2019-12-31T16:14:58 IST" finished-at="2019-12-31T16:15:21 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- click_reflect_quote -->
-        <test-method status="PASS" signature="Save_paragraph_style()[pri:9, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_paragraph_style" duration-ms="7440" started-at="2019-12-19T18:09:48 IST" finished-at="2019-12-19T18:09:56 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_paragraph_style -->
-        <test-method status="PASS" signature="delete_all()[pri:10, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="delete_all" duration-ms="2347" started-at="2019-12-19T18:09:56 IST" finished-at="2019-12-19T18:09:58 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_all -->
-        <test-method status="PASS" signature="click_reflect_default()[pri:11, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="click_reflect_default" duration-ms="7565" started-at="2019-12-19T18:09:58 IST" finished-at="2019-12-19T18:10:06 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- click_reflect_default -->
-        <test-method status="PASS" signature="click_reflect_single()[pri:12, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="click_reflect_single" duration-ms="4983" started-at="2019-12-19T18:10:06 IST" finished-at="2019-12-19T18:10:11 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- click_reflect_single -->
-        <test-method status="PASS" signature="click_reflect_1point15()[pri:13, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="click_reflect_1point15" duration-ms="4933" started-at="2019-12-19T18:10:11 IST" finished-at="2019-12-19T18:10:16 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- click_reflect_1point15 -->
-        <test-method status="PASS" signature="click_reflect_1point5()[pri:14, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="click_reflect_1point5" duration-ms="5211" started-at="2019-12-19T18:10:16 IST" finished-at="2019-12-19T18:10:21 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- click_reflect_1point5 -->
-        <test-method status="PASS" signature="click_reflect_double()[pri:15, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="click_reflect_double" duration-ms="4973" started-at="2019-12-19T18:10:21 IST" finished-at="2019-12-19T18:10:26 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- click_reflect_double -->
-        <test-method status="PASS" signature="Save_line_height()[pri:16, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_line_height" duration-ms="7227" started-at="2019-12-19T18:10:26 IST" finished-at="2019-12-19T18:10:33 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_line_height -->
-        <test-method status="PASS" signature="delete_all_2()[pri:17, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="delete_all_2" duration-ms="2060" started-at="2019-12-19T18:10:33 IST" finished-at="2019-12-19T18:10:35 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_all_2 -->
-        <test-method status="PASS" signature="align_left()[pri:18, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="align_left" duration-ms="7523" started-at="2019-12-19T18:10:35 IST" finished-at="2019-12-19T18:10:43 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- align_left -->
-        <test-method status="PASS" signature="align_center()[pri:19, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="align_center" duration-ms="4900" started-at="2019-12-19T18:10:43 IST" finished-at="2019-12-19T18:10:47 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- align_center -->
-        <test-method status="PASS" signature="align_right()[pri:20, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="align_right" duration-ms="4863" started-at="2019-12-19T18:10:47 IST" finished-at="2019-12-19T18:10:52 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- align_right -->
-        <test-method status="PASS" signature="align_justify()[pri:21, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="align_justify" duration-ms="4860" started-at="2019-12-19T18:10:52 IST" finished-at="2019-12-19T18:10:57 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- align_justify -->
-        <test-method status="PASS" signature="Save_align()[pri:22, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_align" duration-ms="7324" started-at="2019-12-19T18:10:57 IST" finished-at="2019-12-19T18:11:05 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_align -->
-        <test-method status="PASS" signature="delete_all_3()[pri:23, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="delete_all_3" duration-ms="2367" started-at="2019-12-19T18:11:05 IST" finished-at="2019-12-19T18:11:07 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_all_3 -->
-        <test-method status="PASS" signature="orderList_default()[pri:24, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="orderList_default" duration-ms="10645" started-at="2019-12-19T18:11:07 IST" finished-at="2019-12-19T18:11:18 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- orderList_default -->
-        <test-method status="PASS" signature="Save_ol1()[pri:25, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_ol1" duration-ms="7056" started-at="2019-12-19T18:11:18 IST" finished-at="2019-12-19T18:11:25 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_ol1 -->
-        <test-method status="PASS" signature="delete_all_4()[pri:26, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="delete_all_4" duration-ms="2148" started-at="2019-12-19T18:11:25 IST" finished-at="2019-12-19T18:11:27 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_all_4 -->
-        <test-method status="PASS" signature="orderlist_lower_alpha()[pri:27, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="orderlist_lower_alpha" duration-ms="10509" started-at="2019-12-19T18:11:27 IST" finished-at="2019-12-19T18:11:37 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- orderlist_lower_alpha -->
-        <test-method status="PASS" signature="Save_ol2()[pri:28, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_ol2" duration-ms="7136" started-at="2019-12-19T18:11:37 IST" finished-at="2019-12-19T18:11:44 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_ol2 -->
-        <test-method status="PASS" signature="delete_all_5()[pri:29, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="delete_all_5" duration-ms="2200" started-at="2019-12-19T18:11:44 IST" finished-at="2019-12-19T18:11:47 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_all_5 -->
-        <test-method status="PASS" signature="orderlist_lower_greek()[pri:30, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="orderlist_lower_greek" duration-ms="10595" started-at="2019-12-19T18:11:47 IST" finished-at="2019-12-19T18:11:57 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- orderlist_lower_greek -->
-        <test-method status="PASS" signature="Save_ol3()[pri:31, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_ol3" duration-ms="7190" started-at="2019-12-19T18:11:57 IST" finished-at="2019-12-19T18:12:04 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_ol3 -->
-        <test-method status="PASS" signature="delete_all_6()[pri:32, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="delete_all_6" duration-ms="2291" started-at="2019-12-19T18:12:04 IST" finished-at="2019-12-19T18:12:07 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_all_6 -->
-        <test-method status="PASS" signature="orderlist_lower_roman()[pri:33, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="orderlist_lower_roman" duration-ms="10007" started-at="2019-12-19T18:12:07 IST" finished-at="2019-12-19T18:12:17 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- orderlist_lower_roman -->
-        <test-method status="PASS" signature="Save_ol4()[pri:34, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_ol4" duration-ms="7142" started-at="2019-12-19T18:12:17 IST" finished-at="2019-12-19T18:12:24 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_ol4 -->
-        <test-method status="PASS" signature="delete_all_7()[pri:35, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="delete_all_7" duration-ms="2199" started-at="2019-12-19T18:12:24 IST" finished-at="2019-12-19T18:12:26 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_all_7 -->
-        <test-method status="PASS" signature="orderlist_upper_alpha()[pri:36, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="orderlist_upper_alpha" duration-ms="9676" started-at="2019-12-19T18:12:26 IST" finished-at="2019-12-19T18:12:36 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- orderlist_upper_alpha -->
-        <test-method status="PASS" signature="Save_ol5()[pri:37, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_ol5" duration-ms="7153" started-at="2019-12-19T18:12:36 IST" finished-at="2019-12-19T18:12:43 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_ol5 -->
-        <test-method status="PASS" signature="delete_all_8()[pri:38, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="delete_all_8" duration-ms="2032" started-at="2019-12-19T18:12:43 IST" finished-at="2019-12-19T18:12:45 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_all_8 -->
-        <test-method status="PASS" signature="orderlist_upper_roman()[pri:39, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="orderlist_upper_roman" duration-ms="8689" started-at="2019-12-19T18:12:45 IST" finished-at="2019-12-19T18:12:54 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- orderlist_upper_roman -->
-        <test-method status="PASS" signature="Save_ol6()[pri:40, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_ol6" duration-ms="7070" started-at="2019-12-19T18:12:54 IST" finished-at="2019-12-19T18:13:01 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_ol6 -->
-        <test-method status="PASS" signature="delete_all_9()[pri:41, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="delete_all_9" duration-ms="1924" started-at="2019-12-19T18:13:01 IST" finished-at="2019-12-19T18:13:03 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_all_9 -->
-        <test-method status="PASS" signature="unorderlist_default()[pri:42, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="unorderlist_default" duration-ms="9907" started-at="2019-12-19T18:13:03 IST" finished-at="2019-12-19T18:13:13 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- unorderlist_default -->
-        <test-method status="PASS" signature="Save_ul1()[pri:43, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_ul1" duration-ms="7163" started-at="2019-12-19T18:13:13 IST" finished-at="2019-12-19T18:13:20 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_ul1 -->
-        <test-method status="PASS" signature="delete_all_10()[pri:44, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="delete_all_10" duration-ms="2042" started-at="2019-12-19T18:13:20 IST" finished-at="2019-12-19T18:13:22 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_all_10 -->
-        <test-method status="PASS" signature="unorderlist_circle()[pri:45, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="unorderlist_circle" duration-ms="9788" started-at="2019-12-19T18:13:22 IST" finished-at="2019-12-19T18:13:32 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- unorderlist_circle -->
-        <test-method status="PASS" signature="Save_ul2()[pri:46, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_ul2" duration-ms="7125" started-at="2019-12-19T18:13:32 IST" finished-at="2019-12-19T18:13:39 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_ul2 -->
-        <test-method status="PASS" signature="delete_all_11()[pri:47, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="delete_all_11" duration-ms="2067" started-at="2019-12-19T18:13:39 IST" finished-at="2019-12-19T18:13:41 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_all_11 -->
-        <test-method status="PASS" signature="unorderlist_disc()[pri:48, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="unorderlist_disc" duration-ms="9792" started-at="2019-12-19T18:13:41 IST" finished-at="2019-12-19T18:13:50 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- unorderlist_disc -->
-        <test-method status="PASS" signature="Save_ul3()[pri:49, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_ul3" duration-ms="7305" started-at="2019-12-19T18:13:50 IST" finished-at="2019-12-19T18:13:58 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_ul3 -->
-        <test-method status="PASS" signature="delete_all_12()[pri:50, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="delete_all_12" duration-ms="1987" started-at="2019-12-19T18:13:58 IST" finished-at="2019-12-19T18:14:00 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_all_12 -->
-        <test-method status="PASS" signature="unorderlist_square()[pri:51, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="unorderlist_square" duration-ms="9678" started-at="2019-12-19T18:14:00 IST" finished-at="2019-12-19T18:14:09 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- unorderlist_square -->
-        <test-method status="PASS" signature="Save_ul4()[pri:52, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_ul4" duration-ms="7203" started-at="2019-12-19T18:14:09 IST" finished-at="2019-12-19T18:14:17 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_ul4 -->
-        <test-method status="PASS" signature="delete_all_13()[pri:53, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="delete_all_13" duration-ms="1975" started-at="2019-12-19T18:14:17 IST" finished-at="2019-12-19T18:14:19 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_all_13 -->
-        <test-method status="PASS" signature="insert_link()[pri:54, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="insert_link" duration-ms="3824" started-at="2019-12-19T18:14:19 IST" finished-at="2019-12-19T18:14:22 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- insert_link -->
-        <test-method status="PASS" signature="Save_link()[pri:55, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_link" duration-ms="7208" started-at="2019-12-19T18:14:22 IST" finished-at="2019-12-19T18:14:30 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_link -->
-        <test-method status="PASS" signature="delete_all_14()[pri:58, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="delete_all_14" duration-ms="2033" started-at="2019-12-19T18:14:30 IST" finished-at="2019-12-19T18:14:32 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete_all_14 -->
-        <test-method status="PASS" signature="Save_final()[pri:59, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="Save_final" duration-ms="7064" started-at="2019-12-19T18:14:32 IST" finished-at="2019-12-19T18:14:39 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save_final -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.freshproposals.selenium.TextBox_Top_Properties2@5abca1e0]" name="closeBrowser" is-config="true" duration-ms="5266" started-at="2019-12-19T18:14:39 IST" finished-at="2019-12-19T18:14:44 IST">
+        </test-method> <!-- Reset -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.freshproposals.selenium.Template_TextBox_2@370736d9]" name="closeBrowser" is-config="true" duration-ms="7096" started-at="2019-12-31T16:15:21 IST" finished-at="2019-12-31T16:15:28 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.freshproposals.selenium.TextBox_Top_Properties2 -->
+      </class> <!-- com.freshproposals.selenium.Template_TextBox_2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

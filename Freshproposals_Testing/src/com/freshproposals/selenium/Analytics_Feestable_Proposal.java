@@ -16,7 +16,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class Analytics_Tabchange extends Common_Methods {
+public class Analytics_Feestable_Proposal extends Common_Methods {
 	WebDriver driver;
 	String fname = "SEL";
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
@@ -59,10 +59,10 @@ public class Analytics_Tabchange extends Common_Methods {
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 	
 	}
-  
-  @Test(priority = 1)
+   
+  @Test(priority = 7)
   public void getData() throws InterruptedException {
-	  driver.get("http://beta1.freshproposals.com/home/proposals/summary/1169");
+	  driver.get("http://beta1.freshproposals.com/home/proposals/summary/1673");
 		Thread.sleep(1000);
 	    driver.findElement(By.id("ngb-tab-2")).click();
 	    //get time
@@ -79,11 +79,11 @@ public class Analytics_Tabchange extends Common_Methods {
 		g_lastview = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[4]/div[2]")).getText();
 		System.out.println("B TIME SINCE LAST VIEWED " + g_lastview);
   }
-   
   
-  @Test(priority = 2)
+  
+  @Test(priority = 8)
   public void copyLink() throws InterruptedException {
-	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1169;editor=true");
+	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1673;editor=true");
 	  //next
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
@@ -97,21 +97,16 @@ public class Analytics_Tabchange extends Common_Methods {
 	  ((JavascriptExecutor)driver).executeScript("window.open()");
    	  ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
  	  driver.switchTo().window(tabs.get(1));
- 	  driver.get("https://beta.freshproposals.com/home/viewproposal/352/2c36943b-43bf-43cf-9fa1-a3f92dc9b1dc");
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 2')]")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 3')]")).click();
-	  Thread.sleep(1000);
-	//shift main tab
-	  driver.switchTo().window(tabs.get(0));
-	//shift temporary tab
-   	Thread.sleep(6000);
-	driver.switchTo().window(tabs.get(1));
-	//open analytics tab
-	Thread.sleep(1000);
-//	//open analytics tab
-	driver.get("http://beta1.freshproposals.com/home/proposals/summary/1169");
+ 	  driver.get("http://beta1.freshproposals.com/home/viewproposal/1673/a414397b-e592-429d-8ce7-a26794596b10");
+ 	  Thread.sleep(10000);
+ 	//change quantity
+	  driver.findElement(By.name("feequantity")).clear();
+	  driver.findElement(By.name("feequantity")).sendKeys("5");
+	  Thread.sleep(5000);
+	  driver.findElement(By.xpath("//a[contains(text(),'Second Page')]")).click();
+	  Thread.sleep(5000);
+//		//open analytics tab
+	driver.get("http://beta1.freshproposals.com/home/proposals/summary/1673");
 	Thread.sleep(1000);
     driver.findElement(By.id("ngb-tab-2")).click();
     //get time
@@ -127,9 +122,7 @@ public class Analytics_Tabchange extends Common_Methods {
 	//time since last view
 	lastview = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[4]/div[2]")).getText();
 	System.out.println("TIME SINCE LAST VIEWED " + lastview);
-	
-	
-	   //compare g_time
+	 //compare g_time
     char[]	g_tempArr = g_time.toCharArray();
 	int g_totalChars = g_tempArr.length;
 	//System.out.println("TotalChars "+g_totalChars);
@@ -224,7 +217,7 @@ public class Analytics_Tabchange extends Common_Methods {
 		
 	System.out.println("H:"+hrs+" M:"+mins+" Secs: "+secs);
 	//get
-	g_conversion_time = g_mins * 60 + g_mins;
+	g_conversion_time = g_mins * 60 + g_secs;
 	System.out.println("G Time = "+g_conversion_time);
 	//normal 
 	conversion_time = mins * 60 + secs;
@@ -233,7 +226,7 @@ public class Analytics_Tabchange extends Common_Methods {
 	total_time = conversion_time - g_conversion_time;
 	System.out.println("Total Time = "+total_time);
 	
-	expected_total_time = 180;
+	expected_total_time = 20;
 	Assert.assertEquals(total_time, expected_total_time);
 	
 	
@@ -269,7 +262,8 @@ public class Analytics_Tabchange extends Common_Methods {
 	  expected_total_average_time = total_average_time;
 	  Assert.assertEquals(total_average_time, expected_total_average_time);
 	  
-	  }
+	  
+ }
   
   @AfterTest
   public void closeBrowser() throws InterruptedException {
@@ -279,3 +273,4 @@ public class Analytics_Tabchange extends Common_Methods {
   
   
 }
+

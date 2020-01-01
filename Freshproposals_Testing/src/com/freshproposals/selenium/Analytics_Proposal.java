@@ -16,7 +16,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class Analytics extends Common_Methods {
+public class Analytics_Proposal extends Common_Methods {
 	WebDriver driver;
 	String fname = "SEL";
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
@@ -101,7 +101,7 @@ public class Analytics extends Common_Methods {
    	  ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
  	  driver.switchTo().window(tabs.get(1));
  	  driver.get("http://beta1.freshproposals.com/home/viewproposal/1169/304f7a3c-8497-4a5b-a86b-e8ba9af2c62d");
-	  Thread.sleep(1000);
+	  Thread.sleep(5000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 2')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 3')]")).click();
@@ -220,7 +220,10 @@ public class Analytics extends Common_Methods {
 		
 	System.out.println("H:"+hrs+" M:"+mins+" Secs: "+secs);
 	//get
-	g_conversion_time = g_mins * 60 + g_mins;
+	g_conversion_time = g_mins * 60 + g_secs;
+	System.out.println(g_mins);
+	System.out.println(g_secs);
+	
 	System.out.println("G Time = "+g_conversion_time);
 	//normal 
 	conversion_time = mins * 60 + secs;
@@ -229,7 +232,7 @@ public class Analytics extends Common_Methods {
 	total_time = conversion_time - g_conversion_time;
 	System.out.println("Total Time = "+total_time);
 	
-	expected_total_time = 180;
+	expected_total_time = 7;
 	Assert.assertEquals(total_time, expected_total_time);
 	
 	

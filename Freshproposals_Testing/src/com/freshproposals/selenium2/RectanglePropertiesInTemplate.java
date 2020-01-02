@@ -7,15 +7,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.freshproposals.selenium.Common_Methods;
 
 public class RectanglePropertiesInTemplate extends Common_Methods{
+	SoftAssert softAssertion= new SoftAssert();
+
 	WebDriver driver;
 
 	String width ="491";
@@ -39,7 +43,92 @@ public class RectanglePropertiesInTemplate extends Common_Methods{
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
 			Thread.sleep(4000);
 		}
-	 @Test(priority =1)
+	 
+	 @Test(priority=4)
+	 public void BackgroundColorandGradient() throws InterruptedException {
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
+			Thread.sleep(3000);
+			WebElement Shape = driver.findElement(By.id("page1-fpShape1213201912522970"));
+			Thread.sleep(2000);
+			Shape.click();
+			WebElement Section3 = driver.findElement(By.xpath("//a[contains(text(),'New1')]"));
+			Section3.click();
+			Thread.sleep(2000);
+			WebElement textbox = driver.findElement(By.xpath("//div[@id='section_section6857']//div[9]//div[1]"));
+			textbox.click();
+			Thread.sleep(2000);
+			WebElement  BackgroundColor = driver.findElement(By.xpath("//span[@class='e-btn-icon e-icons e-caret']"));
+			BackgroundColor.click();
+			Thread.sleep(2000);
+			WebElement ColorCode = driver.findElement(By.xpath("//input[@class='e-hex']"));
+			ColorCode.clear();
+			ColorCode.sendKeys("#3bece0");
+			Thread.sleep(2000);
+			WebElement ApplyBtn = driver.findElement(By.xpath("//button[@class='e-btn e-css e-flat e-primary e-small e-apply']"));
+			ApplyBtn.click();
+			String BackColor = textbox.getCssValue("background").replace("none repeat scroll 0% 0% / auto padding-box border-box", "");
+			
+			String actual = Color.fromString(BackColor).asHex();
+			//System.out.println(actual);
+			softAssertion.assertEquals(actual, "#3bece0");
+				WebElement Gradient = driver.findElement(By.xpath("//div[@class='form-group form-check gradient-label']//input[@name='gradient']"));
+				Gradient.click();
+				Thread.sleep(2000);
+			
+					WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+					SaveBtn.click();
+					Thread.sleep(3000);
+					WebElement BackBtn =driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+					BackBtn.click();
+					Thread.sleep(3000);
+					this.VerifyBackgroundColorandGradient();
+					this.ResetBackgroundColorandGradient();
+					softAssertion.assertAll();
+	 }
+	 public void VerifyBackgroundColorandGradient() throws InterruptedException {
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
+			Thread.sleep(3000);
+			WebElement Section3 = driver.findElement(By.xpath("//a[contains(text(),'New1')]"));
+			Section3.click();
+			Thread.sleep(2000);
+			WebElement textbox = driver.findElement(By.xpath("//div[@id='section_section6857']//div[9]//div[1]"));
+			textbox.click();
+			Thread.sleep(2000);
+			String grad = textbox.getCssValue("background").replace("repeat scroll 0% 0% / auto padding-box border-box", "");
+			Thread.sleep(5000);
+			softAssertion.assertEquals(grad, "rgba(0, 0, 0, 0) linear-gradient(rgb(59, 236, 224) 0%, rgb(32, 117, 171) 100%) ");
+			Thread.sleep(5000);
+	 }
+	 public void ResetBackgroundColorandGradient() throws InterruptedException {
+		 WebElement textbox = driver.findElement(By.xpath("//div[@id='section_section6857']//div[9]//div[1]"));
+			textbox.click();
+			Thread.sleep(2000);
+			WebElement Gradient = driver.findElement(By.xpath("//div[@class='form-group form-check gradient-label']//input[@name='gradient']"));
+			Gradient.click();
+			Thread.sleep(5000);
+			WebElement  BackgroundColor = driver.findElement(By.xpath("//span[@class='e-btn-icon e-icons e-caret']"));
+			BackgroundColor.click();
+			Thread.sleep(2000);
+			WebElement ColorCode = driver.findElement(By.xpath("//input[@class='e-hex']"));
+			ColorCode.clear();
+			ColorCode.sendKeys("#86263c");
+			Thread.sleep(2000);
+			WebElement ApplyBtn = driver.findElement(By.xpath("//button[@class='e-btn e-css e-flat e-primary e-small e-apply']"));
+			ApplyBtn.click();
+			String BackColor = textbox.getCssValue("background").replace("none repeat scroll 0% 0% / auto padding-box border-box", "");
+			
+			String actual = Color.fromString(BackColor).asHex();
+			//System.out.println(actual);
+			softAssertion.assertEquals(actual, "#86263c");
+			WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+			SaveBtn.click();
+			Thread.sleep(3000);
+			WebElement BackBtn =driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+			BackBtn.click();
+			Thread.sleep(3000);
+	 }
+	 
+	 @Test(priority =1,enabled=false)
 	 public void ChangeRectangleWidthandHeight() throws InterruptedException {
 		driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
 		Thread.sleep(3000);
@@ -65,9 +154,8 @@ public class RectanglePropertiesInTemplate extends Common_Methods{
 		 SaveBtn.click();
 			Thread.sleep(3000);
 
-		
+		this.VerifyHeightandWidth();
 	 }
-	 @Test(priority=2)
 	 public void VerifyHeightandWidth() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
 			Thread.sleep(3000);
@@ -78,9 +166,8 @@ public class RectanglePropertiesInTemplate extends Common_Methods{
 			int height1=Shape.getSize().getHeight();
 			Assert.assertEquals(width1,491);
 			Assert.assertEquals(height1,567);	 
-		 
+		 this.ResetHeightandWidth();
 	 }
-	 @Test(priority=3)
 	 public void ResetHeightandWidth() throws InterruptedException {
 			Thread.sleep(3000);
 			WebElement Shape = driver.findElement(By.id("page1-fpShape1213201912522970"));
@@ -102,7 +189,7 @@ public class RectanglePropertiesInTemplate extends Common_Methods{
 			Thread.sleep(5000);
 			WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
 			SaveBtn.click();
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			
 			driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
 			Thread.sleep(3000);
@@ -114,31 +201,43 @@ public class RectanglePropertiesInTemplate extends Common_Methods{
 		  Assert.assertEquals(height, 400);
 		 
 	 }
-	 @Test(priority=4)
+	 @Test(priority=2,enabled=false)
 	 	public void ApplyCornerandRotation() throws InterruptedException {
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
+			Thread.sleep(3000);
 		 WebElement Rectangle = driver.findElement(By.id("page1-fpShape1213201912522970"));
 			Thread.sleep(2000);
 			Rectangle.click();
-		 WebElement Shape = driver.findElement(By.xpath("//div[9]//div[1]"));
-		 WebElement RectangleShapeCorner = driver.findElement(By.xpath("//input[@name='corners']"));
-		RectangleShapeCorner.clear();
-		Thread.sleep(2000);
-
-		RectangleShapeCorner.sendKeys("50");
-		Thread.sleep(2000);
-		String str = Shape.getCssValue("border-radius");
-		Assert.assertEquals(str, "50px");
-	//	WebElement Shape1 = driver.findElement(By.xpath("//div[@id='page1-fpShape1213201912522970']"));
+		 WebElement Shape = driver.findElement(By.xpath("//div[@id='section_section6468']//div[9]//div[1]"));
+//			Actions dragger = new Actions(driver);
+//		 WebElement RectangleShapeCorner = driver.findElement(By.xpath("//input[@name='corners']"));
+//		 
+//		 
+//	
+//			int numberOfPixelsToDragTheScrollbarDown =10;
+//			Thread.sleep(2000);
+//
+//			dragger.moveToElement(RectangleShapeCorner).clickAndHold().moveByOffset(numberOfPixelsToDragTheScrollbarDown,0).release().build().perform();
+//			//dragger.perform();
+//			Thread.sleep(5000);
+//			Thread.sleep(2000);
+//
+//
+//		Thread.sleep(2000);
+//		String str = Shape.getCssValue("border-radius");
+//		System.out.println(str);
+//		//Assert.assertEquals(Sir, "45px");
+		WebElement Shape1 = driver.findElement(By.xpath("//div[@id='page1-fpShape1213201912522970']"));
 		WebElement Rectanglerotate=driver.findElement(By.xpath("//input[@name='rotate']"));
 		Rectanglerotate.clear();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		Rectanglerotate.sendKeys("90");
-		Thread.sleep(5000);
-		
-		WebElement BorderCheckBox = driver.findElement(By.xpath("//div[@class='form-group form-check']//input"));
+		Thread.sleep(2000);
+		//input[@name='rotate']
+		WebElement BorderCheckBox = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-shape-properties[1]/form[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/input[1]"));
 		BorderCheckBox.click();
 		Thread.sleep(2000);
-		BorderCheckBox.click();
+		//BorderCheckBox.click();
 		Thread.sleep(2000);
 		WebElement BorderWidth = driver.findElement(By.xpath("//input[@name='borderWidth']"));
 		BorderWidth.clear();
@@ -152,8 +251,12 @@ public class RectanglePropertiesInTemplate extends Common_Methods{
 		WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
 		SaveBtn.click();
 		Thread.sleep(3000);
+		WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+		BackBtn.click();
+		Thread.sleep(3000);
+		this.verifyApplyCornerandRotation();
+		this.ResetApplyCornerandRotation();
 	 }
-	 @Test(priority=5)
 	 public void verifyApplyCornerandRotation() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
 			Thread.sleep(3000);
@@ -172,18 +275,17 @@ public class RectanglePropertiesInTemplate extends Common_Methods{
 		//System.out.println("BorderStyle"+borderstyle);
 		Assert.assertEquals(borderstyle, "double");
 	 }
-	 @Test(priority=6)
 		public void ResetApplyCornerandRotation() throws InterruptedException {
 		 WebElement Shape = driver.findElement(By.xpath("//div[9]//div[1]"));
 		 Shape.click();
 		 Thread.sleep(3000);
-		 WebElement RectangleShapeCorner = driver.findElement(By.xpath("//input[@name='corners']"));
-		RectangleShapeCorner.clear();
-		Thread.sleep(2000);
-		RectangleShapeCorner.sendKeys("0");
-		Thread.sleep(2000);
-		String str = Shape.getCssValue("border-radius");
-		Assert.assertEquals(str, "0px");
+//		 WebElement RectangleShapeCorner = driver.findElement(By.xpath("//input[@name='corners']"));
+//		RectangleShapeCorner.clear();
+//		Thread.sleep(2000);
+//		RectangleShapeCorner.sendKeys("0");
+//		Thread.sleep(2000);
+//		String str = Shape.getCssValue("border-radius");
+//		Assert.assertEquals(str, "0px");
 		
 		WebElement Rectanglerotate=driver.findElement(By.xpath("//input[@name='rotate']"));
 		Rectanglerotate.clear();
@@ -191,8 +293,7 @@ public class RectanglePropertiesInTemplate extends Common_Methods{
 		Rectanglerotate.sendKeys("0");
 		Thread.sleep(2000);
 		
-		//WebElement BorderCheckBox = driver.findElement(By.xpath("//div[@class='form-group form-check']//input"));
-		//BorderCheckBox.click();
+		WebElement BorderCheckBox = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-shape-properties[1]/form[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/input[1]"));
 		Thread.sleep(2000);
 		WebElement BorderWidth = driver.findElement(By.xpath("//input[@name='borderWidth']"));
 		BorderWidth.clear();
@@ -201,6 +302,9 @@ public class RectanglePropertiesInTemplate extends Common_Methods{
 		Select dropdown = new Select(driver.findElement(By.name("borderStyle")));
 		dropdown.selectByIndex(2);
 		Thread.sleep(1000);
+		BorderCheckBox.click();
+		Thread.sleep(2000);
+
 		WebElement GetShapeBorder=driver.findElement(By.xpath("//div[@id='section_section6468']//div[9]//div[1]"));
 		String borderstyle =GetShapeBorder.getCssValue("border-style");
 		Assert.assertEquals(borderstyle, "solid");
@@ -222,7 +326,7 @@ public class RectanglePropertiesInTemplate extends Common_Methods{
 		 
 	 }
 	 
-	 @Test(priority=7)
+	 @Test(priority=3,enabled=false)
 	 public void LineProperties() throws InterruptedException {
 		WebElement Section2 = driver.findElement(By.xpath("//a[contains(text(),'Section2Line')]"));
 		Section2.click();
@@ -259,8 +363,9 @@ public class RectanglePropertiesInTemplate extends Common_Methods{
 		WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
 		SaveBtn.click();
 		Thread.sleep(3000);
+		this.verifyLineProperties();
+		this.ResetLineProperties();
 	 }
-	 @Test(priority=8)
 	 public void verifyLineProperties() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
 			Thread.sleep(3000);
@@ -288,7 +393,6 @@ public class RectanglePropertiesInTemplate extends Common_Methods{
 			}
 		 
 	 }
-	 @Test(priority=9)
 	 public void ResetLineProperties() throws InterruptedException {
 			WebElement Line = driver.findElement(By.xpath("//div[@id='page1-fpShape1214201914374145']"));
 			Line.click();

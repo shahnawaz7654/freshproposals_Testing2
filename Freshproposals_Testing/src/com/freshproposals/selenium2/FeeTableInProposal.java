@@ -1,6 +1,5 @@
 package com.freshproposals.selenium2;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -18,7 +17,8 @@ import org.testng.asserts.SoftAssert;
 
 import com.freshproposals.selenium.Common_Methods;
 
-public class FeeTable extends Common_Methods{
+public class FeeTableInProposal extends Common_Methods{
+	
 	SoftAssert softAssertion= new SoftAssert();
 	WebDriver driver;
 	
@@ -44,7 +44,11 @@ public class FeeTable extends Common_Methods{
 	 public void AddRow() throws InterruptedException {
 		 Thread.sleep(5000);
 
-		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
+		 WebElement NextBtn = driver.findElement(By.linkText("Next"));
+		 NextBtn.click();
+		 Thread.sleep(3000);
+
 		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
 		 SectionName.click();
 		 Thread.sleep(4000);
@@ -106,8 +110,10 @@ public class FeeTable extends Common_Methods{
 			 WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
 			 BackBtn.click();
 			 Thread.sleep(3000);
-			 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+			 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
 			 Thread.sleep(3000);
+			 WebElement NextBtn1 = driver.findElement(By.linkText("Next"));
+			 NextBtn1.click();
 			 WebElement SectionName2 = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
 			 SectionName2.click();
 			 Thread.sleep(4000);
@@ -134,8 +140,12 @@ public class FeeTable extends Common_Methods{
 	 public  void SelectRowType() throws InterruptedException {
 		 Thread.sleep(5000);
 
-		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
 		 Thread.sleep(4000);
+		 WebElement NextBtn = driver.findElement(By.linkText("Next"));
+		 NextBtn.click();
+		 Thread.sleep(3000);
+
 		 WebElement SectionTable2 = driver.findElement(By.xpath("//a[contains(text(),'FeeTable2')]"));
 		 SectionTable2.click();
 		 Thread.sleep(2000);
@@ -198,8 +208,12 @@ public class FeeTable extends Common_Methods{
 		 BackBtn.click();
 		 Thread.sleep(3000);
 
-		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
 		 Thread.sleep(4000);
+		 WebElement NextBtn1 = driver.findElement(By.linkText("Next"));
+		 NextBtn1.click();
+		 Thread.sleep(3000);
+
 		 WebElement SectionTable2Reset = driver.findElement(By.xpath("//a[contains(text(),'FeeTable2')]"));
 		 SectionTable2Reset.click();
 		 Thread.sleep(2000);
@@ -306,7 +320,11 @@ public class FeeTable extends Common_Methods{
 	 public void TableDiscount() throws InterruptedException {
 		 Thread.sleep(5000);
 
-		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
+		 WebElement NextBtn = driver.findElement(By.linkText("Next"));
+		 NextBtn.click();
+		 Thread.sleep(3000);
+
 		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
 		 SectionName.click();
 		 Thread.sleep(4000);
@@ -432,7 +450,10 @@ public class FeeTable extends Common_Methods{
 			
 	 }
 	 public void TableDiscountReset() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
+		 WebElement NextBtn = driver.findElement(By.linkText("Next"));
+		 NextBtn.click();
+		 Thread.sleep(3000);
 		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
 		 SectionName.click();
 		 Thread.sleep(4000);
@@ -533,7 +554,10 @@ public class FeeTable extends Common_Methods{
 	 @Test(priority=4)
 	 public void FeeRowisoptional() throws InterruptedException {
 		 Thread.sleep(5000);
-		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
+		 WebElement NextBtn = driver.findElement(By.linkText("Next"));
+		 NextBtn.click();
+		 Thread.sleep(3000);
 		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
 		 SectionName.click();
 		 Thread.sleep(4000);
@@ -552,10 +576,10 @@ public class FeeTable extends Common_Methods{
 		WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
 		BackBtn.click();
 		 Thread.sleep(3000);
-		 
-		driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143/true");
+		driver.get("http://beta1.freshproposals.com/home/viewproposal/1868/preview/proposals");
 		 Thread.sleep(3000);
-		 WebElement Table2SectionPreview = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
+		 
+		 WebElement Table2SectionPreview = driver.findElement(By.xpath("//a[contains(text(),'FeesTable')]"));
 		 Table2SectionPreview.click();
 		 Thread.sleep(3000);
 		 WebElement footer = driver.findElement(By.xpath("//div[@id='page1-fpFees12220191152473']//div[@class='fees-table-footer']"));
@@ -582,7 +606,11 @@ public class FeeTable extends Common_Methods{
 		 Thread.sleep(2000);
 
 		 
-		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
+		 Thread.sleep(3000);
+		 WebElement NextBtn1 = driver.findElement(By.linkText("Next"));
+		 NextBtn1.click();
+		 Thread.sleep(3000);
 		 WebElement SectionNameReset = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
 		 SectionNameReset.click();
 		 WebElement Row6Reset = driver.findElement(By.xpath("//div[@id='section_section5970']//div[6]//div[2]//div[1]"));
@@ -601,7 +629,7 @@ public class FeeTable extends Common_Methods{
 	 }
 	 @Test(priority=10,enabled=false)
 	 public void FeeTitleIsEditableReset() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
+		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
 		 WebElement Section3 = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[3]"));
 		 Section3.click();
 		 Thread.sleep(2000);
@@ -646,7 +674,8 @@ public class FeeTable extends Common_Methods{
 		 driver.quit();
 	 }
 
+	
+	
+	
+
 }
-
-
-

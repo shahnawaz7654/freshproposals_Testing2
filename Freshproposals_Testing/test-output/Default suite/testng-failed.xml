@@ -3,15 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freshproposals.selenium.Template_TextBox_2">
+      <class name="com.freshproposals.selenium.Existing_Single_Image_Proposal">
         <methods>
-          <include name="Reset"/>
-          <include name="advance"/>
-          <include name="openBrowser"/>
+          <include name="reflect_rotate"/>
           <include name="closeBrowser"/>
-          <include name="color"/>
+          <include name="openBrowser"/>
         </methods>
-      </class> <!-- com.freshproposals.selenium.Template_TextBox_2 -->
+      </class> <!-- com.freshproposals.selenium.Existing_Single_Image_Proposal -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

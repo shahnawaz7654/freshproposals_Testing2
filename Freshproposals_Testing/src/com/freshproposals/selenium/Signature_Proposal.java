@@ -20,7 +20,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Signature extends Common_Methods {
+public class Signature_Proposal extends Common_Methods {
 	WebDriver driver;
 	String fname = "SEL";
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
@@ -153,14 +153,18 @@ public class Signature extends Common_Methods {
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-signature-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]\n")).click();
 	  Thread.sleep(1000);
-	  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
-	  resize(r1, 75,75);
+	  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
+	  //resize(r1, 75,75);
+	  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
 	  Thread.sleep(1000);
-	  driver.findElement(By.className("e-hsv-color")).click();
+	  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#000000");
+	  Thread.sleep(2000);
+	  //driver.findElement(By.className("e-hsv-color")).click();
+	  driver.findElement(By.xpath("//span[@class='e-handler']")).click();
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//button[@title='Apply']")).click();
+	  driver.findElement(By.xpath("//button[@class='e-btn e-css e-flat e-primary e-small e-apply']")).click();
 	  Thread.sleep(1000);
-	  System.out.println(driver.findElement(By.className("e-hsv-color")).getText());
+	  //System.out.println(driver.findElement(By.className("e-hsv-color")).getText());
 
   }
   
@@ -379,14 +383,30 @@ public class Signature extends Common_Methods {
 	  driver.findElement(By.name("padding")).click();
 	  
 	  Thread.sleep(1000);
+//	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-signature-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]\n")).click();
+//	  Thread.sleep(1000);
+//	  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-hue-slider e-control e-slider e-lib']//div[@class='e-slider-track']"));
+//	  resize(r1, 75,75);
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.xpath("//span[@class='e-handler']")).click();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.xpath("//button[@title='Apply']")).click();
+//	  Thread.sleep(1000);
+	  
+	  //color
+	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-signature-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]\n")).click();
 	  Thread.sleep(1000);
-	  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-hue-slider e-control e-slider e-lib']//div[@class='e-slider-track']"));
-	  resize(r1, 75,75);
+	  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
+	  //resize(r1, 75,75);
+	  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
 	  Thread.sleep(1000);
+	  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#ffffff");
+	  Thread.sleep(2000);
+	  //driver.findElement(By.className("e-hsv-color")).click();
 	  driver.findElement(By.xpath("//span[@class='e-handler']")).click();
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//button[@title='Apply']")).click();
+	  driver.findElement(By.xpath("//button[@class='e-btn e-css e-flat e-primary e-small e-apply']")).click();
 	  Thread.sleep(1000);
 	  
 	  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();

@@ -22,7 +22,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Existing_Single_Image extends Common_Methods {
+public class Image_Template extends Common_Methods {
 	WebDriver driver;
 	String fname = "SEL";
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
@@ -59,7 +59,7 @@ public class Existing_Single_Image extends Common_Methods {
   @Test(priority = 1)
   public void openExistTemplate() throws InterruptedException {
 	  Thread.sleep(3000);
-	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1058;editor=true");
+	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1382");
 	}
   
   @Test(priority = 2)
@@ -82,7 +82,7 @@ public class Existing_Single_Image extends Common_Methods {
 	  Thread.sleep(3000);
 	  driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
 	  Thread.sleep(3000);
-	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1058;editor=true");
+	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1382");
 	  Thread.sleep(3000);
 	  
  }
@@ -104,13 +104,31 @@ public class Existing_Single_Image extends Common_Methods {
 	  driver.findElement(By.xpath("//div[@class='resizers']//img")).click();
 	  driver.findElement(By.name("width11")).clear();
 	  Thread.sleep(1000);
-	  driver.findElement(By.name("width11")).sendKeys("100");
+	  driver.findElement(By.name("width11")).sendKeys("250");
 	  
  }
   
-  
   @Test(priority = 6)
-  public void rotate() throws InterruptedException {
+  public void color() throws InterruptedException {
+	 
+  Thread.sleep(1000);
+  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
+  Thread.sleep(1000);
+  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
+  //resize(r1, 75,75);
+  Thread.sleep(1000);
+  //driver.findElement(By.className("e-hsv-color")).click();
+  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
+  Thread.sleep(1000);
+  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#000000");
+  Thread.sleep(2000);
+  driver.findElement(By.xpath("//button[@title='Apply']")).click();
+  Thread.sleep(1000);
+  }
+  
+  
+  @Test(priority = 7)
+  public void rotate() throws InterruptedException, AWTException {
 	  
 	  Thread.sleep(1000);
 	  driver.findElement(By.name("rotate")).clear();
@@ -119,60 +137,36 @@ public class Existing_Single_Image extends Common_Methods {
 	  String actual_rotate = driver.findElement(By.name("rotate")).getAttribute("value");
 	  Assert.assertEquals(actual_rotate,rotate);
 	  Thread.sleep(1000);
+	  
+	  Robot robot = new Robot();
+	  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
   }
   
-//  @Test(priority = 7)
-//  public void color() throws InterruptedException {
-//	 
-//	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
-//	  System.out.println(driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]")).getCssValue("color"));
-//	  Thread.sleep(1000);
-//	  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first e-handle-start']"));
-//	  System.out.println(driver.findElement(By.xpath("//div[@class='e-handle e-handle-first e-handle-start']")).getCssValue("color"));
-//	  resize(r1, 75,75);
-//	  Thread.sleep(1000);
-//	  driver.findElement(By.className("e-hsv-color")).click();
-//	  driver.findElement(By.className("e-hsv-color")).getCssValue("color");
-//	  Thread.sleep(1000);
-//	  driver.findElement(By.xpath("//button[@title='Apply']")).click();
-//  }
-//  public void resize(WebElement elementToResize, int xOffset, int yOffset) {
-//		try {
-//			if (elementToResize.isDisplayed()) {
-//				Actions action = new Actions(driver);
-//				action.clickAndHold(elementToResize).moveByOffset(xOffset, yOffset).release().build().perform();
-//			} else {
-//				System.out.println("Element was not displayed to drag");
-//			}
-//		} catch (StaleElementReferenceException e) {
-//			System.out.println("Element with " + elementToResize + "is not attached to the page document "	+ e.getStackTrace());
-//		} catch (NoSuchElementException e) {
-//			System.out.println("Element " + elementToResize + " was not found in DOM " + e.getStackTrace());
-//		} catch (Exception e) {
-//			System.out.println("Unable to resize" + elementToResize + " - "	+ e.getStackTrace());
-//		}
-//	  }
+ 
   
   @Test(priority = 8)
   public void corner() throws InterruptedException {
 	  //corner
-	  driver.findElement(By.name("corners")).clear();
-	  driver.findElement(By.name("corners")).sendKeys(corner);
-	  String actual_corner = driver.findElement(By.name("corners")).getAttribute("value");
-	  Assert.assertEquals(actual_corner, corner);
+//	  driver.findElement(By.name("corners")).clear();
+//	  driver.findElement(By.name("corners")).sendKeys(corner);
+//	  String actual_corner = driver.findElement(By.name("corners")).getAttribute("value");
+//	  Assert.assertEquals(actual_corner, corner);
+	  WebElement r = driver.findElement(By.name("corners"));
+	  resize(r, 50, 50);
 	  Thread.sleep(1000);
+	  
   }
   
-  @Test(priority = 9)
-  public void opacity() {
-	  
-	  //opacity
-	  WebElement r = driver.findElement(By.name("opacity"));
-	  resize(r,25,25);
-	  String actual_opacity = driver.findElement(By.name("opacity")).getAttribute("value");
-	  String expected_opacity = "64";
-	  Assert.assertEquals(actual_opacity, expected_opacity);
-	 }
+//  @Test(priority = 9)
+//  public void opacity() {
+//	  
+//	  //opacity
+//	  WebElement r = driver.findElement(By.name("opacity"));
+//	  resize(r,25,25);
+//	  String actual_opacity = driver.findElement(By.name("opacity")).getAttribute("value");
+//	  String expected_opacity = "64";
+//	  Assert.assertEquals(actual_opacity, expected_opacity);
+//	 }
   
   @Test(priority = 10)
   public void border_width() throws InterruptedException {
@@ -232,7 +226,7 @@ public class Existing_Single_Image extends Common_Methods {
 	  String actual_padding_bottom = driver.findElement(By.name("paddingBottom")).getAttribute("value");
 	  Assert.assertEquals(actual_padding_bottom, padding_bottom);
 	  Thread.sleep(1000);
-  }
+  }   
   
   @Test(priority = 15)
   public void padding_right() throws InterruptedException {
@@ -244,34 +238,15 @@ public class Existing_Single_Image extends Common_Methods {
   }
   
   @Test(priority = 16)
-  public void greyscale() throws InterruptedException {
+  public void flip() throws InterruptedException {
 	  //grayscale
-	  Thread.sleep(2000);
-	  WebElement rgreyscale = driver.findElement(By.name("grayscale"));
-	  resize(rgreyscale,100,100);
+//	  Thread.sleep(2000);
+//	  WebElement rgreyscale = driver.findElement(By.name("grayscale"));
+//	  resize(rgreyscale,100,100);
 	  Thread.sleep(1000);
 	  driver.findElement(By.name("flip1")).click();
 	  
 }
-
-	  //opacity method
-	  public void resize(WebElement elementToResize, int xOffset, int yOffset) {
-			try {
-				if (elementToResize.isDisplayed()) {
-					Actions action = new Actions(driver);
-					action.clickAndHold(elementToResize).moveByOffset(xOffset, yOffset).release().build().perform();
-				} else {
-					System.out.println("Element was not displayed to drag");
-				}
-			} catch (StaleElementReferenceException e) {
-				System.out.println("Element with " + elementToResize + "is not attached to the page document "	+ e.getStackTrace());
-			} catch (NoSuchElementException e) {
-				System.out.println("Element " + elementToResize + " was not found in DOM " + e.getStackTrace());
-			} catch (Exception e) {
-				System.out.println("Unable to resize" + elementToResize + " - "	+ e.getStackTrace());
-			}
-			
-		}
 	  
 	  @Test(priority = 17)
 	  public void save() throws InterruptedException {
@@ -279,7 +254,7 @@ public class Existing_Single_Image extends Common_Methods {
 		  Thread.sleep(3000);
 		  driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
 		  Thread.sleep(3000);
-		  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1058;editor=true");
+		  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1382");
 		  
 	 }
 	  
@@ -364,8 +339,9 @@ public class Existing_Single_Image extends Common_Methods {
 			  Thread.sleep(1000);
 			  driver.findElement(By.name("rotate")).sendKeys("0"); 
 			  
-			  driver.findElement(By.name("corners")).clear();
-			  driver.findElement(By.name("corners")).sendKeys("0");
+			  WebElement r = driver.findElement(By.name("corners"));
+			  resize(r, -100, -100);
+			  Thread.sleep(1000);
 
 		  Thread.sleep(5000);
 		  //border width
@@ -377,16 +353,18 @@ public class Existing_Single_Image extends Common_Methods {
 		  driver.findElement(By.name("border")).click();
 		  
 		  //color
-//		  Thread.sleep(1000);	  
-//		  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-text-properties[1]/form[1]/div[1]/div[1]/div[1]/ngb-accordion[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
-//		  Thread.sleep(1000);
-//		  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-hue-slider e-control e-slider e-lib']//div[@class='e-handle e-handle-first']"));
-//		  resize3(r1, 5,5);
-//		  Thread.sleep(1000);
-//		  driver.findElement(By.className("e-hsv-color")).click();
-//		  Thread.sleep(1000);
-//		  driver.findElement(By.xpath("//button[@title='Apply']")).click();
-//		  
+		  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
+		  Thread.sleep(1000);
+		  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
+		  //resize(r1, 75,75);
+		  Thread.sleep(1000);
+		  //driver.findElement(By.className("e-hsv-color")).click();
+		  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
+		  Thread.sleep(1000);
+		  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#ffffff");
+		  Thread.sleep(2000);
+		  driver.findElement(By.xpath("//button[@title='Apply']")).click();
+		  Thread.sleep(1000);
 
 		  Robot robot = new Robot();
 		  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
@@ -406,10 +384,40 @@ public class Existing_Single_Image extends Common_Methods {
 		  
 		  driver.findElement(By.name("padding")).click();
 		  
+		  Thread.sleep(1000);
+		  driver.findElement(By.name("flip1")).click();
+		  
+		  //opacity
+//		  WebElement r = driver.findElement(By.name("opacity"));
+//		  resize(r,25,25);
+//		  
+//		  //greyscale
+//		  WebElement rgreyscale = driver.findElement(By.name("grayscale"));
+//		  resize(rgreyscale,-100,-100);
+		  Thread.sleep(5000);
          		  
 		  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
 		  
 	  }
+	  
+	  //opacity method
+	  public void resize(WebElement elementToResize, int xOffset, int yOffset) {
+			try {
+				if (elementToResize.isDisplayed()) {
+					Actions action = new Actions(driver);
+					action.clickAndHold(elementToResize).moveByOffset(xOffset, yOffset).release().build().perform();
+				} else {
+					System.out.println("Element was not displayed to drag");
+				}
+			} catch (StaleElementReferenceException e) {
+				System.out.println("Element with " + elementToResize + "is not attached to the page document "	+ e.getStackTrace());
+			} catch (NoSuchElementException e) {
+				System.out.println("Element " + elementToResize + " was not found in DOM " + e.getStackTrace());
+			} catch (Exception e) {
+				System.out.println("Unable to resize" + elementToResize + " - "	+ e.getStackTrace());
+			}
+			
+		}
 			  
 			 
   @AfterClass

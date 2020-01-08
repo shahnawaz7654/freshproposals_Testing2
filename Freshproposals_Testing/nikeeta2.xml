@@ -3,21 +3,18 @@
 <suite name="Suite">
   <test name="SectionProperties" thread-count="1" parallel="none">
     <classes>
-       <class name="com.freshproposals.SectionProperties.SectionBodyProperties"/>
-       <class name="com.freshproposals.SectionProperties.SectionBodyPropertiesInPreview"/>
-       <class name="com.freshproposals.selenium.SectionHeading1Properties"/>
-       <class name="com.freshproposals.selenium.SectionHeading1PropertiesInPreview"/>
-       <class name="com.freshproposals.selenium.SectionHeading2Properties"/>
-       <class name="com.freshproposals.selenium.SectionHeading2PropertiesInPreview"/>
-       <class name="com.freshproposals.selenium.SectionHeading3Properties"/>
-       <class name="com.freshproposals.selenium.SectionHeading3PropertiesInPreview"/>
-       <class name="com.freshproposals.selenium.SectionHeading4Properties"/>
-       <class name="com.freshproposals.selenium.SectionHeading4PropertiesInPreview"/>
-       <class name="com.freshproposals.selenium.SectionQuoteProperties"/>
-       <class name="com.freshproposals.selenium.SectionQuotePropertiesInPreview"/>
-       <class name="com.freshproposals.selenium2.RepeaterAll"/>
+      
         <class name="com.freshproposals.selenium2.FeeTable"/>
         <class name="com.freshproposals.selenium2.TempRead"/>
+        <class name="com.freshproposals.selenium2.FontPropertiesInProposal"/>
+        <class name="com.freshproposals.selenium2.FontPropertiesInSection"/>
+        <class name="com.freshproposals.selenium2.FontPropertiesinTemplate"/>
+        <class name="com.freshproposals.selenium2.RectangleandLinepropertiesInSection"/>
+        <class name="com.freshproposals.selenium2.RectangleandLinepropertiesInSection"/>
+        
+        
+        
+        
         
        
        

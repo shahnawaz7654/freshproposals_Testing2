@@ -43,7 +43,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1267");
 
 	 }
-	 @Test(priority=1,enabled=false)
+	 @Test(priority=1)
 	 public void ResizeTextComponent() throws InterruptedException {
 		 WebElement textblock =driver.findElement(By.id("page1-fpText1218201910165868"));
 		 textblock.click();
@@ -53,7 +53,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 		 	softAssertion.assertEquals(HeightBefore, 50);
 		 	softAssertion.assertAll();
 	 }
-	 @Test(priority=2,enabled=false)
+	 @Test(priority=2)
 	 	public void resizetext() throws InterruptedException {
 		 WebElement textblock =driver.findElement(By.id("page1-fpText1218201910165868"));
 		 textblock.click();
@@ -67,7 +67,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 			Thread.sleep(4000);
 		 
 	 }
-	 @Test(priority=3,enabled=false)
+	 @Test(priority=3)
 	 public void Resizetextverification() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1267");
 		Thread.sleep(5000);
@@ -80,7 +80,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 		 softAssertion.assertAll();
 	 }
 	 
-	 @Test(priority=4,enabled=false)
+	 @Test(priority=4)
 		public void Resizeback() throws InterruptedException {
 			 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1267");
 			 WebElement textblock =driver.findElement(By.id("page1-fpText1218201910165868"));
@@ -108,7 +108,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 			
 		}
 	
-		 	@Test(priority=3,enabled=false)
+		 	@Test(priority=5,enabled=false)
 	 	public void ResizeImage() throws InterruptedException {
 	 		WebElement SectionClick = driver.findElement(By.xpath("//a[contains(text(),'SeleniumImageResizeSection')]"));
 	 		SectionClick.click();
@@ -127,7 +127,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 			Thread.sleep(5000);
 	 			
 	 	}
-	 	@Test(priority=4,enabled=false)
+	 	@Test(priority=6,enabled=false)
 	 	public void ResizeImageVerification() throws InterruptedException {
 	 		driver.findElement(By.xpath("//div[2]//div[1]//div[2]//a[1]//img[1]")).click();
 			Thread.sleep(3000);
@@ -145,7 +145,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 		 	softAssertion.assertEquals(HeightBefore, 455);
 		 	softAssertion.assertAll();
 	 	}
-	 	@Test(priority=5,enabled=false)
+	 	@Test(priority=7,enabled=false)
 	 	public void ResizeImage2() throws InterruptedException {
 	 		WebElement SectionClick = driver.findElement(By.xpath("//a[contains(text(),'SeleniumImageResizeSection')]"));
 	 		SectionClick.click();
@@ -164,7 +164,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 			Thread.sleep(5000);
 	 		
 	 	}
-	 	@Test(priority=6,enabled=false)
+	 	@Test(priority=8,enabled=false)
 	 	public void ResizeImage2Verification() throws InterruptedException {
 	 		driver.findElement(By.xpath("//div[2]//div[1]//div[2]//a[1]//img[1]")).click();
 			Thread.sleep(3000);
@@ -182,7 +182,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 			softAssertion.assertEquals(HeightBefore, 361);
 			softAssertion.assertAll();
 	 	}
-	 	@Test(priority=7,enabled=false)
+	 	@Test(priority=9,enabled=false)
 	 	public void ImageReResize() throws InterruptedException {
 	 		WebElement SectionClick = driver.findElement(By.xpath("//a[contains(text(),'SeleniumImageResizeSection')]"));
 	 		SectionClick.click();
@@ -212,8 +212,9 @@ public class ResizingOfAllComponent extends Common_Methods{
 			savebtn.click();
 			Thread.sleep(5000);
 	 	}
-	 	@Test(priority=8,enabled=false)
+	 	@Test(priority=10)
 	 	public void RectangleResize() throws InterruptedException {
+	 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1267");
 	 	WebElement Section3 = driver.findElement(By.xpath("//a[contains(text(),'SeleniumRectangleResizeSection')]"));
 	 	Section3.click();
 	 	Thread.sleep(2000);
@@ -240,7 +241,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 		softAssertion.assertAll();
 		
 	 	}
-	 	@Test(priority=9,enabled=false)
+	 	@Test(priority=11)
 	 	public void Rect1Verify() throws InterruptedException {
 	 		driver.findElement(By.xpath("//div[2]//div[1]//div[2]//a[1]//img[1]")).click();
 			Thread.sleep(3000);
@@ -259,7 +260,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 	 	}
 	 	
 	 	
-	 	@Test(priority=10,enabled=false)
+	 	@Test(priority=12)
 	 	public void Rect2() throws InterruptedException {
 	 		WebElement Section3 = driver.findElement(By.xpath("//a[contains(text(),'SeleniumRectangleResizeSection')]"));
 		 	Section3.click();
@@ -279,7 +280,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 
 	 		
 	 	}
-	 	@Test(priority=11,enabled=false)
+	 	@Test(priority=13)
 	 	public void RectangleResizeVerification() throws InterruptedException {
 	 		driver.findElement(By.xpath("//div[2]//div[1]//div[2]//a[1]//img[1]")).click();
 			Thread.sleep(3000);
@@ -296,7 +297,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 
 	 	}
 	 	
-	 	@Test(priority=12,enabled=false)
+	 	@Test(priority=14)
 	 	public void RectangleReResize() throws InterruptedException {
 	 		WebElement Section3 = driver.findElement(By.xpath("//a[contains(text(),'SeleniumRectangleResizeSection')]"));
 		 	Section3.click();

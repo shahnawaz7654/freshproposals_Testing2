@@ -1,4 +1,4 @@
-package com.freshproposals.selenium;
+package com.freshproposals.SectionProperties;
 
 import java.util.concurrent.TimeUnit;
 
@@ -8,15 +8,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.Color;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.freshproposals.selenium.Common_Methods;
+
 public class SectionHeading1PropertiesInPreview extends Common_Methods {
   WebDriver driver;
-  @BeforeTest
+  @BeforeClass
   public void openBrowser() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -35,7 +39,7 @@ public class SectionHeading1PropertiesInPreview extends Common_Methods {
 	
 	}
  
-    @Test(priority=1)
+    @Test(priority=1,dependsOnMethods = {"login"})
     public void ReadtextFontsize() {
   		driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675/true");
   		String Actualfont =driver.findElement(By.xpath("//p[contains(text(),'Heading1')]")).getCssValue("font-size");
@@ -44,7 +48,7 @@ public class SectionHeading1PropertiesInPreview extends Common_Methods {
 
   		Assert.assertEquals("36px", Actualfont);	
   	}
-    @Test(priority=2)
+    @Test(priority=2,dependsOnMethods = {"login"})
     public void ReadFontColor() {
   		String color =driver.findElement(By.xpath("//p[contains(text(),'Heading1')]")).getCssValue("color");
   		System.out.println(color);
@@ -54,7 +58,7 @@ public class SectionHeading1PropertiesInPreview extends Common_Methods {
   		Assert.assertEquals(expected,actual);
   	  
     }
-    @Test(priority=3)
+    @Test(priority=3,dependsOnMethods = {"login"})
     public void FontStyle() {
   	  String actualstyle =driver.findElement(By.xpath("//p[contains(text(),'Heading1')]")).getCssValue("font-style");
   		// System.out.println("Font style is ="+style);
@@ -62,41 +66,33 @@ public class SectionHeading1PropertiesInPreview extends Common_Methods {
   			Assert.assertEquals(expected,actualstyle);
 
     }
-    @Test(priority=4)
+    @Test(priority=4,dependsOnMethods = {"login"})
     public void FontAlignment() {
   	  String ActualAlign=driver.findElement(By.xpath("//p[contains(text(),'Heading1')]")).getCssValue("text-align");
   		// System.out.println("Alignment of the text is="+Align);
   		 String expected ="left";
   			Assert.assertEquals(expected,ActualAlign);
     }
-    @Test(priority=5)
+    @Test(priority=5,dependsOnMethods = {"login"})
     public void Fontfamily() {
   	  String ActualFontfamily=driver.findElement(By.xpath("//p[contains(text(),'Heading1')]")).getCssValue("font-family");
   		// System.out.println("Font family is="+family);
   	  String expected ="Nunito";
   		Assert.assertEquals(expected,ActualFontfamily);
     }
-    @Test(priority=6)
+    @Test(priority=6,dependsOnMethods = {"login"})
     public void FontWeight() {
   	  String ActualFontWeight =driver.findElement(By.xpath("//p[contains(text(),'Heading1')]")).getCssValue("font-weight");
   		 //System.out.println("Weight of the font is="+Weight);
   	  String expected ="400";
   		Assert.assertEquals(expected,ActualFontWeight);
     }
-    @AfterTest
+    @AfterClass
     public void closeBrowser() {
   	  driver.quit();
     }
    
-    @BeforeSuite
-    public void beforeSuite() {
-  	  System.out.println("Before suite");
-    }
-
-    @AfterSuite
-    public void afterSuite() {
-  	  System.out.println("After suite");
-    }
+   
 
   }
 

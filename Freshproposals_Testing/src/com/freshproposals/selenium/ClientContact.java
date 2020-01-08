@@ -12,10 +12,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 
 public class ClientContact extends Common_Methods {
 	WebDriver driver;
-	 @BeforeTest
+	 @BeforeClass
 	  public void openBrowser() {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 			driver = new ChromeDriver();
@@ -27,11 +28,11 @@ public class ClientContact extends Common_Methods {
 	  
 	  @Test(dataProvider = "User2" , priority = 0)
 	  
-	  public void login(String unm, String pwd) {
+	  public void login(String unm, String pwd) throws InterruptedException {
 		    driver.findElement(By.id("textbox_0")).sendKeys(unm);
 			driver.findElement(By.id("textbox_1")).sendKeys(pwd);
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
-		
+		Thread.sleep(4000);
 		}
 	@Test(priority=1,dependsOnMethods = {"login"})
 	  public void CreateNewClient() throws InterruptedException {
@@ -39,7 +40,8 @@ public class ClientContact extends Common_Methods {
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			WebElement Client =driver.findElement(By.xpath("//li[@class='clients']"));
 			Client.click();
-			WebElement Button = driver.findElement(By.xpath("//div[@class='btn btn-outline-light add-client-btn']"));
+			Thread.sleep(5000);
+			WebElement Button = driver.findElement(By.xpath("//div[@class='btn add-client-btn']//img"));
 			Button.click();
 			driver.findElement(By.xpath("//input[@formcontrolname='Name']")).sendKeys("Freshproposals");
 			driver.findElement(By.xpath("//input[@formcontrolname='WebSiteUrl']")).sendKeys("www.freshproposals.com");
@@ -109,17 +111,5 @@ public class ClientContact extends Common_Methods {
 			
 			}
 			
-
-  @BeforeSuite
-  public void beforeSuite() {
-	  System.out.println("Suite start");
-  }
-
-  @AfterSuite
-  public void afterSuite() {
-	  System.out.println("Suite End");
-	  driver.quit();
-  }
-
 }
 

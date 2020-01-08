@@ -1,4 +1,4 @@
-package com.freshproposals.selenium;
+package com.freshproposals.SectionProperties;
 
 import java.util.concurrent.TimeUnit;
 
@@ -8,16 +8,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.Color;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class SectionBodyProperties extends Common_Methods {
+import com.freshproposals.selenium.Common_Methods;
+
+public class SectionHeading4PropertiesInPreview extends Common_Methods {
 	WebDriver driver;
-	
-	 @BeforeTest
+	@BeforeClass
 	  public void openBrowser() {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 			driver = new ChromeDriver();
@@ -26,8 +29,8 @@ public class SectionBodyProperties extends Common_Methods {
 			driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
 			driver.get("http://beta1.freshproposals.com");
 		}
-	
-	 @Test(dataProvider = "User2" , priority = 0)
+	  
+	  @Test(dataProvider = "User2" , priority = 0)
 	  
 	  public void login(String unm, String pwd) {
 		    driver.findElement(By.id("textbox_0")).sendKeys(unm);
@@ -35,91 +38,65 @@ public class SectionBodyProperties extends Common_Methods {
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
 		
 		}
-	
-//    @Test(enabled=false)
-//	  public void login() throws InterruptedException {
-//			//driver.get("http://beta1.freshproposals.com/");
-//			WebElement Email=driver.findElement(By.id("textbox_0"));
-//			Email.sendKeys("nikeeta3011@gmail.com");
-//			WebElement Password =driver.findElement(By.id("textbox_1"));
-//			Password.sendKeys("Nikeeta@123");
-//			Thread.sleep(1000);
-//			driver.findElement(By.xpath("//button[@class='button float-right e-control e-progress-btn e-lib e-btn e-spin-right']")).click();	
-//	}
-	  @Test(priority=1)
+	  @Test(priority=1,dependsOnMethods = {"login"})
 	  public void ReadtextFontsize() {
-			driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675");
-			String Actualfont =driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("font-size");
+			driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675/true");
+			String Actualfont =driver.findElement(By.xpath("//p[contains(text(),'Heading4')]")).getCssValue("font-size");
 			//System.out.println("Font Size of the text is"+font);
 			//  <test thread-count="5" name="Test" parallel="classes"> 
-			String expected ="14px";
+			String expected ="16px";
 			Assert.assertEquals(Actualfont,expected);	
 		}
-	  @Test(priority=2)
+	  @Test(priority=2,dependsOnMethods = {"login"})
 	  public void ReadFontColor() {
-			String color =driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("color");
+			String color =driver.findElement(By.xpath("//p[contains(text(),'Heading4')]")).getCssValue("color");
 			System.out.println(color);
-			String expected ="#000000";
+			String expected ="#c93c62";
 			String actual = Color.fromString(color).asHex();
 			//System.out.println("Font color is ="+hex);
 			Assert.assertEquals(actual,expected);
 		  
 	  }
-	  @Test(priority=3)
+	  @Test(priority=3,dependsOnMethods = {"login"})
 	  public void FontStyle() {
-		  String actualstyle =driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("font-style");
+		  String actualstyle =driver.findElement(By.xpath("//p[contains(text(),'Heading4')]")).getCssValue("font-style");
 			// System.out.println("Font style is ="+style);
 			 String expected ="normal";
 				Assert.assertEquals(actualstyle,expected);
 
 	  }
-	  @Test(priority=4)
+	  @Test(priority=4,dependsOnMethods = {"login"})
 	  public void FontAlignment() {
-		  String ActualAlign=driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("text-align");
+		  String ActualAlign=driver.findElement(By.xpath("//p[contains(text(),'Heading4')]")).getCssValue("text-align");
 			// System.out.println("Alignment of the text is="+Align);
 			 String expected ="left";
 				Assert.assertEquals(ActualAlign,expected);
 	  }
-	  @Test(priority=5)
+	  @Test(priority=5,dependsOnMethods = {"login"})
 	  public void Fontfamily() {
-		  String ActualFontfamily=driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("font-family");
+		  String ActualFontfamily=driver.findElement(By.xpath("//p[contains(text(),'Heading4')]")).getCssValue("font-family");
 			// System.out.println("Font family is="+family);
-		  String expected ="Roboto";
+		  String expected ="Poppins";
 			Assert.assertEquals(ActualFontfamily,expected);
 	  }
-	  @Test(priority=6)
+	  @Test(priority=6,dependsOnMethods = {"login"})
 	  public void FontWeight() {
-		  String ActualFontWeight =driver.findElement(By.xpath("//p[contains(text(),'Body')]")).getCssValue("font-weight");
+		  String ActualFontWeight =driver.findElement(By.xpath("//p[contains(text(),'Heading4')]")).getCssValue("font-weight");
 			 //System.out.println("Weight of the font is="+Weight);
 		  String expected ="400";
 			Assert.assertEquals(ActualFontWeight,expected);
 	  }
-	  @AfterTest
+	  @AfterClass
 	  public void closeBrowser() {
-		  driver.close();
+		  driver.quit();
 	  }
+	
 	 
-//	  @BeforeTest
-//	  public void setup() {
-//			System.setProperty("webdriver.chrome.driver","D:\\Nikeeta\\chromedriver.exe");
-//				driver= new ChromeDriver();
-//				driver.manage().window().maximize();
-//				driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-//				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
-//		}
-//	  
-
-	  @BeforeSuite
-	  public void beforeSuite() {
-		  System.out.println("Before suite");
-	  }
-
-	  @AfterSuite
-	  public void afterSuite() {
-		  System.out.println("After suite");
-	  }
 
 	}
+
+
+
 
 
 

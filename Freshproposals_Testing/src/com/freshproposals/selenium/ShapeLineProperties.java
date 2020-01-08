@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class ShapeLineProperties {
+public class ShapeLineProperties extends Common_Methods {
 	WebDriver driver;
 	
 	 @BeforeTest

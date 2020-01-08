@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="SectionProperties" thread-count="1" parallel="none">
+    <classes>
+      
+        <class name="com.freshproposals.selenium2.FeeTable"/>
+        <class name="com.freshproposals.selenium2.TempRead"/>
+        <class name="com.freshproposals.selenium2.FontPropertiesInProposal"/>
+        <class name="com.freshproposals.selenium2.FontPropertiesInSection"/>
+        <class name="com.freshproposals.selenium2.FontPropertiesinTemplate"/>
+        <class name="com.freshproposals.selenium2.RectangleandLinepropertiesInSection"/>
+        <class name="com.freshproposals.selenium2.RectangleandLinepropertiesInSection"/>
+        
+        
+        
+        
+        
+       
+       
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+

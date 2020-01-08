@@ -267,6 +267,7 @@ public class FeeTable extends Common_Methods{	SoftAssert softAssertion= new Soft
 		 Thread.sleep(1000);
 		 Row5Reset.click();
 		 Thread.sleep(1000);
+		 //
 			WebElement RowType5Reset = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//div[@class='col-lg-10']//select[@class='form-control ng-untouched ng-pristine ng-valid']"));
 			Select dropdown5Reset = new Select(RowType5Reset);
 		 dropdown5Reset.selectByIndex(0);

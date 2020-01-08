@@ -39,7 +39,7 @@ public class FeeTable extends Common_Methods{
 			Thread.sleep(5000);
 		
 		}
-	 @Test(priority=5,dependsOnMethods = {"login"},enabled=false)
+	 @Test(priority=5,dependsOnMethods = {"login"})
 	 public void AddRowRowDiscountandChangeType() throws InterruptedException {
 		 Thread.sleep(5000);
 
@@ -63,9 +63,6 @@ public class FeeTable extends Common_Methods{
 		 WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
 		 SaveBtn.click();
 		 Thread.sleep(3000);
-
-		
-		
 			WebElement SecondRow2 = driver.findElement(By.xpath("//div[@id='content']//div[5]//div[3]"));
 			SecondRow2.click();
 			 WebElement Price = driver.findElement(By.xpath("//div[@class='rectangle selected']//div[@id='contentInside1']//input[@name='feePrice']"));
@@ -126,10 +123,9 @@ public class FeeTable extends Common_Methods{
 				 WebElement SaveBtn4 = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
 				 SaveBtn4.click();
 				Thread.sleep(2000);
-			 
 		 }
 
-	 @Test(priority=1,dependsOnMethods = {"login"},enabled=false)
+	 @Test(priority=1,dependsOnMethods = {"login"})
 	 public  void SelectRowType() throws InterruptedException {
 		 Thread.sleep(5000);
 
@@ -532,7 +528,7 @@ public class FeeTable extends Common_Methods{
 	 }
 
 
-	 @Test(priority=4,enabled=false)
+	 @Test(priority=4)
 	 public void FeeRowisoptional() throws InterruptedException {
 		 Thread.sleep(5000);
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");

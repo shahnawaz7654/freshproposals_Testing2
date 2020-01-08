@@ -70,7 +70,7 @@ public class FeeTable extends Common_Methods{
 			 Price.sendKeys("10000");
 			 Thread.sleep(3000);
 				SecondRow2.click();
-
+//
 			WebElement AddRowDiscount =driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//label[@class='fees-prop-header'][contains(text(),'Row Discount')]//img"));
 			AddRowDiscount.click();
 			WebElement DiscountName = driver.findElement(By.xpath("//div[@class='fees-library-tab-content']//input[@placeholder='Discount']"));

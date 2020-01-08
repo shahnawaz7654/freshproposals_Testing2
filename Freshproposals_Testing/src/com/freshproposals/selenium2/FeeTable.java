@@ -184,7 +184,7 @@ public class FeeTable extends Common_Methods{	SoftAssert softAssertion= new Soft
 		 WebElement SeprateRecurringFee = driver.findElement(By.xpath("//div[@class='switch-btn text-position']//label[@class='tgl-btn']"));
 		 SeprateRecurringFee.click();
 		 Thread.sleep(2000);
-
+//
 		 WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
 		 SaveBtn.click();
 		 Thread.sleep(3000);

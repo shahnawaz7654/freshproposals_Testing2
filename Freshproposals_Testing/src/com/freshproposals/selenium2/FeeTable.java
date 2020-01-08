@@ -1,6 +1,5 @@
 package com.freshproposals.selenium2;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -40,8 +39,8 @@ public class FeeTable extends Common_Methods{
 			Thread.sleep(5000);
 		
 		}
-	 @Test(priority=5,dependsOnMethods = {"login"})
-	 public void AddRow() throws InterruptedException {
+	 @Test(priority=5,dependsOnMethods = {"login"},enabled=false)
+	 public void AddRowRowDiscountandChangeType() throws InterruptedException {
 		 Thread.sleep(5000);
 
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
@@ -130,7 +129,7 @@ public class FeeTable extends Common_Methods{
 			 
 		 }
 
-	 @Test(priority=1,dependsOnMethods = {"login"})
+	 @Test(priority=1,dependsOnMethods = {"login"},enabled=false)
 	 public  void SelectRowType() throws InterruptedException {
 		 Thread.sleep(5000);
 
@@ -312,20 +311,22 @@ public class FeeTable extends Common_Methods{
 		 Thread.sleep(4000);
 		 WebElement feetable = driver.findElement(By.xpath("//div[contains(text(),'Price')]"));
 		 	feetable.click();
+			 Thread.sleep(2000);
+
 		 WebElement tableDisc = driver.findElement(By.xpath("//label[contains(text(),'Table Discount')]//img"));
 		 tableDisc.click();
 		 
 		 WebElement ShowDisc =driver.findElement(By.xpath("//input[@name='showTableDiscount']"));
 		 ShowDisc.click();
-		WebElement  DiscName  = driver.findElement(By.xpath("//input[@placeholder='Discount Name']"));
+		WebElement  DiscName  = driver.findElement(By.name("discountName"));
 		DiscName.clear();
 		DiscName.sendKeys("TableDisc");
 		WebElement DiscAmount = driver.findElement(By.xpath("//input[@name='discount']"));
 		DiscAmount.clear();
 		DiscAmount.sendKeys("10");
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		 tableDisc.click();
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 			WebElement tabletax1 = driver.findElement(By.xpath("//label[@class='fees-prop-header'][contains(text(),'Tax 1')]//img"));
 			tabletax1.click();
 			 driver.findElement(By.xpath("//input[@name='showTax1']")).click();
@@ -334,8 +335,8 @@ public class FeeTable extends Common_Methods{
 			 TaxName.sendKeys("SGST");
 			 
 			 WebElement tax1amount = driver.findElement(By.xpath("//input[@name='tax1Value']"));
+			 tax1amount.clear();
 				tax1amount.sendKeys("10");
-				Thread.sleep(5000);
 				Thread.sleep(4000);
 				 WebElement Tabletax2 = driver.findElement(By.xpath("//label[@class='fees-prop-header'][contains(text(),'Tax 2')]//img"));
 				 Thread.sleep(2000);
@@ -343,12 +344,13 @@ public class FeeTable extends Common_Methods{
 
 				 Tabletax2.click();
 				 WebElement ShowTax2 = driver.findElement(By.xpath("//input[@name='showTax2']"));
-				 Thread.sleep(5000);
+				 Thread.sleep(2000);
 				 ShowTax2.click();
 				 WebElement Tax2Name = driver.findElement(By.xpath("//input[@placeholder='Tax2 Name']"));
 				 Tax2Name.clear();
 				 Tax2Name.sendKeys("HGST");
-			WebElement tax2amount = driver.findElement(By.xpath("//input[@name='tax2Value']"));		
+			WebElement tax2amount = driver.findElement(By.xpath("//input[@name='tax2Value']"));	
+			tax2amount.clear();
 			tax2amount.sendKeys("10");
 			Thread.sleep(5000);
 			WebElement Row1 = driver.findElement(By.xpath("//div[@id='section_section5970']//div[6]//div[2]//div[1]"));
@@ -386,10 +388,10 @@ public class FeeTable extends Common_Methods{
 			
 			
 			
-			
+			///// Fails here due to no such element exception
 			 WebElement discountamount = driver.findElement(By.xpath("//div[@id='section_section5970']//div[@class='total-fee-calculator']//div[2]//p[1]"));
 				String DiscountName = discountamount.getText();
-				System.out.println(DiscountName);
+			//	System.out.println(DiscountName);
 				softAssertion.assertEquals(DiscountName, "TableDisc ( 10 % )");
 			
 			 WebElement Table = driver.findElement(By.xpath("//div[contains(text(),'Quantity')]"));
@@ -449,7 +451,7 @@ public class FeeTable extends Common_Methods{
 		 //System.out.println(Tax1Amount);
 		 softAssertion.assertEquals(Tax1Amount, "SGST ( 10 % )");
 
-		
+		////////Fails
 		 WebElement tax2amount = driver.findElement(By.xpath("//div[@id='section_section5970']//div[@class='fees-table-footer']//div[2]//p[1]"));
 		 String Tax2Amount = tax2amount.getText();
 		 softAssertion.assertEquals(Tax2Amount, "HGST ( 10 % )");
@@ -460,7 +462,7 @@ public class FeeTable extends Common_Methods{
 		 tableDisc.click();
 		 
 		
-		WebElement  DiscName  = driver.findElement(By.xpath("//input[@placeholder='Discount Name']"));
+		WebElement  DiscName  = driver.findElement(By.name("discountName"));
 		DiscName.clear();
 		//DiscName.sendKeys("TableDisc");
 		WebElement DiscAmount = driver.findElement(By.xpath("//input[@name='discount']"));
@@ -530,7 +532,7 @@ public class FeeTable extends Common_Methods{
 	 }
 
 
-	 @Test(priority=4)
+	 @Test(priority=4,enabled=false)
 	 public void FeeRowisoptional() throws InterruptedException {
 		 Thread.sleep(5000);
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");

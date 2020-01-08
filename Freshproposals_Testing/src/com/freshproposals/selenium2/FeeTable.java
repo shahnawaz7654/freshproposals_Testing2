@@ -281,6 +281,7 @@ public class FeeTable extends Common_Methods{	SoftAssert softAssertion= new Soft
 		 WebElement SaveBtn1 = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
 		 SaveBtn1.click();
 		 Thread.sleep(3000);
+		 //
 		 softAssertion.assertEquals(Row1Reset.getText(), "UnitQty");
 		 softAssertion.assertEquals(Row2Reset.getText(), "UnitQty");
 		 softAssertion.assertEquals(Row3Reset.getText(), "UnitQty");

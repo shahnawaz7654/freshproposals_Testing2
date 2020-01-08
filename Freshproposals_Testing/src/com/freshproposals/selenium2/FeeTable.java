@@ -17,8 +17,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.freshproposals.selenium.Common_Methods;
 
-public class FeeTable extends Common_Methods{
-	SoftAssert softAssertion= new SoftAssert();
+public class FeeTable extends Common_Methods{	SoftAssert softAssertion= new SoftAssert();
 	WebDriver driver;
 	
 	 @BeforeClass

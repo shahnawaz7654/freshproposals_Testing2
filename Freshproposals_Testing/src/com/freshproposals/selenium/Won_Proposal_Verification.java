@@ -10,7 +10,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -21,7 +23,7 @@ public class Won_Proposal_Verification extends Common_Methods {
 	String Get_Won;
 	String Verify_Won;
 	
-  @BeforeTest
+  @BeforeClass
   public void openBrowser() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -137,7 +139,7 @@ public class Won_Proposal_Verification extends Common_Methods {
 	  
   }
 	
-@AfterTest
+@AfterClass
   public void closeBrowser() throws InterruptedException {
   Thread.sleep(3000);
   driver.close();

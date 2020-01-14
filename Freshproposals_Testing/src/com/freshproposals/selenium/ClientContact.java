@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 
@@ -110,6 +111,12 @@ public class ClientContact extends Common_Methods {
 			System.out.println("Client deleted");
 			
 			}
+	
+	 @AfterClass
+	  public void closeBrowser() throws InterruptedException {
+		  Thread.sleep(3000);
+		  driver.close();
+	  }
 			
 }
 

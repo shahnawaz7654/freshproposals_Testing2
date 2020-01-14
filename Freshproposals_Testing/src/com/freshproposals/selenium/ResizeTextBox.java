@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -19,7 +20,7 @@ public class ResizeTextBox extends Common_Methods{
 	 SoftAssert Assert= new SoftAssert();
 
 	
-	 @BeforeTest
+	 @BeforeClass
 	  public void openBrowser() {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 			driver = new ChromeDriver();

@@ -11,12 +11,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class ExistingVariable extends Common_Methods{
 	WebDriver driver;
-	 @BeforeTest
+	 @BeforeClass
 	  public void openBrowser() {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 			driver = new ChromeDriver();

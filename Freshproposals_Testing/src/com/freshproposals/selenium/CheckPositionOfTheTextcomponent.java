@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -90,6 +91,12 @@ public class CheckPositionOfTheTextcomponent extends Common_Methods {
 		Assert.assertAll();
 		
 	}
+	
+	 @AfterClass
+	  public void closeBrowser() throws InterruptedException {
+		  Thread.sleep(3000);
+		  driver.close();
+	  }
 
 
 }

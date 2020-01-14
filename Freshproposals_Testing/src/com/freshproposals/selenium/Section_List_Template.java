@@ -7,7 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -17,7 +19,7 @@ public class Section_List_Template extends Common_Methods {
 	String fname = "SEL";
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
 	
-  @BeforeTest
+  @BeforeClass
   public void openBrowser() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -140,7 +142,7 @@ public class Section_List_Template extends Common_Methods {
   }
   
   
-  @AfterTest
+  @AfterClass
   public void closeBrowser() throws InterruptedException {
   Thread.sleep(3000);
   driver.close();

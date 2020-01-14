@@ -1,4 +1,4 @@
-package com.freshproposals.selenium2;
+package com.freshproposals.selenium;
 
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;

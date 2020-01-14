@@ -6,14 +6,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class X_Y_Position extends Common_Methods {
 	WebDriver driver;
 	
-	@BeforeTest
+	@BeforeClass
         public void openBrowser() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -51,7 +53,7 @@ public class X_Y_Position extends Common_Methods {
   		
 	}
   	
-  	 @AfterTest
+  	 @AfterClass
   	  public void closeBrowser() throws InterruptedException {
   	  Thread.sleep(3000);
   	  driver.close();

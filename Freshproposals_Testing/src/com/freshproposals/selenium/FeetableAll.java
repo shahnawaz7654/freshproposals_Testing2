@@ -12,13 +12,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class FeetableAll extends Common_Methods{
 	WebDriver driver;
 	private StringBuffer verificationErrors = new StringBuffer();
-	 @BeforeTest
+	 @BeforeClass
 	  public void openBrowser() {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 			driver = new ChromeDriver();
@@ -254,6 +256,12 @@ public class FeetableAll extends Common_Methods{
 		driver.findElement(By.xpath("//div[@class=\"fees-delete\"]//img")).click();
 		System.out.println("Fees Deleted successfully");
 	}
+  
+  @AfterClass
+  public void closeBrowser() throws InterruptedException {
+	  Thread.sleep(3000);
+	  driver.close();
+  }
   
   
   

@@ -11,7 +11,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -22,7 +24,7 @@ public class Lost_Proposal_Verification extends Common_Methods {
 	String Get_Lost;
 	String Verify_Lost;
 	
-  @BeforeTest
+  @BeforeClass
   public void openBrowser() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -129,7 +131,7 @@ public class Lost_Proposal_Verification extends Common_Methods {
 	  
   }
 	
-@AfterTest
+@AfterClass
   public void closeBrowser() throws InterruptedException {
   Thread.sleep(3000);
   driver.close();

@@ -10,7 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -22,7 +24,7 @@ public class F2B2 extends Common_Methods {
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
 	
 	
-  @BeforeTest
+  @BeforeClass
   public void openBrowser() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -178,7 +180,7 @@ public class F2B2 extends Common_Methods {
 //     Assert.assertTrue(text>img);
 //	  }
 //
-@AfterTest
+@AfterClass
 public void closeBrowser() throws InterruptedException {
 	  Thread.sleep(3000);
 	  driver.close();

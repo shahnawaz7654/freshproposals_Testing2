@@ -1,4 +1,4 @@
-package com.freshproposals.selenium2;
+package com.freshproposals.selenium;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,8 +14,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.freshproposals.selenium.Common_Methods;
 
-public class FontPropertiesInSection extends Common_Methods{
-	
+public class FontPropertiesinTemplate extends Common_Methods{
 	SoftAssert softAssertion= new SoftAssert();
 	WebDriver driver;
 	
@@ -39,7 +38,7 @@ public class FontPropertiesInSection extends Common_Methods{
 		}
 	 @Test(priority=1)
 	 public void FontPropertiesHeading1() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675");
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1381");
 			Thread.sleep(5000);
 
 		 WebElement textonpageH1 = driver.findElement(By.xpath("//p[contains(text(),'Heading1')]"));
@@ -72,7 +71,7 @@ public class FontPropertiesInSection extends Common_Methods{
 	 }
 	 @Test(priority=2)
 	 public void Heading1PropertiesInPreview() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675/true");
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1381/true");
 			Thread.sleep(5000);
 
 		 WebElement textonpageH1 = driver.findElement(By.xpath("//p[contains(text(),'Heading1')]"));
@@ -106,7 +105,7 @@ public class FontPropertiesInSection extends Common_Methods{
 	 }
 	 @Test(priority=3)
 	 public void FontPropertiesHeading2() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675");
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1381");
 			Thread.sleep(5000);
 
 		 WebElement textonpageH2 = driver.findElement(By.xpath("//p[contains(text(),'Heading2')]"));
@@ -140,7 +139,7 @@ public class FontPropertiesInSection extends Common_Methods{
 	 }
 	 @Test(priority=4)
 	 public void FontPropertiesHeading2Preview() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675/true");
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1381/true");
 			Thread.sleep(5000);
 
 		 WebElement textonpageH2 = driver.findElement(By.xpath("//p[contains(text(),'Heading2')]"));
@@ -174,7 +173,7 @@ public class FontPropertiesInSection extends Common_Methods{
 	 }
 	 @Test(priority=5)
 	 public void Heading3Properties() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675");
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1381");
 			Thread.sleep(5000);
 
 		 WebElement textonpageH2 = driver.findElement(By.xpath("//p[contains(text(),'Heading3')]"));
@@ -209,7 +208,7 @@ public class FontPropertiesInSection extends Common_Methods{
 	 }
 	 @Test(priority=6)
 	 public void Heading3PropertiesInPreview() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675/true");
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1381/true");
 			Thread.sleep(5000);
 
 		 WebElement textonpageH2 = driver.findElement(By.xpath("//p[contains(text(),'Heading3')]"));
@@ -244,7 +243,7 @@ public class FontPropertiesInSection extends Common_Methods{
 	 }
 	 @Test(priority=7)
 	 public void Heading4FontProperties() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675");
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1381");
 			Thread.sleep(5000);
 
 		 WebElement textonpageH2 = driver.findElement(By.xpath("//p[contains(text(),'Heading4')]"));
@@ -278,7 +277,7 @@ public class FontPropertiesInSection extends Common_Methods{
 	 }
 	 @Test(priority=8)
 	 public void Heading4FontPropertiesInPreview() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675/true");
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1381/true");
 			Thread.sleep(5000);
 
 		 WebElement textonpageH2 = driver.findElement(By.xpath("//p[contains(text(),'Heading4')]"));
@@ -312,7 +311,7 @@ public class FontPropertiesInSection extends Common_Methods{
 	 }
 	 @Test(priority=9)
 	 public void FontBodyProperties() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675");
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1381");
 			Thread.sleep(5000);
 
 		 WebElement textonpageH2 = driver.findElement(By.xpath("//p[contains(text(),'Body')]"));
@@ -347,7 +346,7 @@ public class FontPropertiesInSection extends Common_Methods{
 	 }
 	 @Test(priority=10)
 	 public void FontBodyPropertiesInPreview() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675/true");
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1381/true");
 			Thread.sleep(5000);
 
 		 WebElement textonpageH2 = driver.findElement(By.xpath("//p[contains(text(),'Body')]"));
@@ -381,7 +380,7 @@ public class FontPropertiesInSection extends Common_Methods{
 	 }
 	 @Test(priority=11)
 	 public void FontQuoteProperties() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675");
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1381");
 			Thread.sleep(5000);
 
 		 WebElement textonpageH2 = driver.findElement(By.xpath("//p[contains(text(),'Quote')]"));
@@ -417,7 +416,7 @@ public class FontPropertiesInSection extends Common_Methods{
 	 }
 	 @Test(priority=12)
 	 public void FontQuotePropertiesInPreview() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/4675/true");
+		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1381/true");
 			Thread.sleep(5000);
 
 		 WebElement textonpageH2 = driver.findElement(By.xpath("//p[contains(text(),'Quote')]"));
@@ -455,6 +454,3 @@ public class FontPropertiesInSection extends Common_Methods{
 	  }
 
 }
-	
-
-

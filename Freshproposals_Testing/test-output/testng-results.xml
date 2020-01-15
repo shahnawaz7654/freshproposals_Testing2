@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="11" passed="11">
+<testng-results skipped="0" failed="0" ignored="0" total="13" passed="13">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="69403" started-at="2020-01-08T17:03:06 IST" finished-at="2020-01-08T17:04:16 IST">
+  <suite name="Default suite" duration-ms="53312" started-at="2020-01-15T11:34:11 IST" finished-at="2020-01-15T11:35:04 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="69403" started-at="2020-01-08T17:03:06 IST" finished-at="2020-01-08T17:04:16 IST">
-      <class name="com.freshproposals.selenium.Image_Duplicate_Section">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.freshproposals.selenium.Image_Duplicate_Section@71423665]" name="openBrowser" is-config="true" duration-ms="14516" started-at="2020-01-08T17:03:07 IST" finished-at="2020-01-08T17:03:21 IST">
+    <test name="Default test" duration-ms="53312" started-at="2020-01-15T11:34:11 IST" finished-at="2020-01-15T11:35:04 IST">
+      <class name="com.freshproposals.selenium.Signature_Duplicate_Proposal">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="openBrowser" is-config="true" duration-ms="8779" started-at="2020-01-15T11:34:11 IST" finished-at="2020-01-15T11:34:20 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.freshproposals.selenium.Image_Duplicate_Section@71423665]" name="login" duration-ms="742" started-at="2020-01-08T17:03:21 IST" data-provider="User1" finished-at="2020-01-08T17:03:22 IST">
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="login" duration-ms="681" started-at="2020-01-15T11:34:20 IST" data-provider="User1" finished-at="2020-01-15T11:34:21 IST">
           <params>
             <param index="0">
               <value>
@@ -27,51 +27,59 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="open_Template()[pri:1, instance:com.freshproposals.selenium.Image_Duplicate_Section@71423665]" name="open_Template" duration-ms="13475" started-at="2020-01-08T17:03:22 IST" finished-at="2020-01-08T17:03:35 IST">
+        <test-method status="PASS" signature="open_Proposal()[pri:1, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="open_Proposal" duration-ms="7779" started-at="2020-01-15T11:34:21 IST" finished-at="2020-01-15T11:34:28 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- open_Template -->
-        <test-method status="PASS" signature="height_width()[pri:2, instance:com.freshproposals.selenium.Image_Duplicate_Section@71423665]" name="height_width" duration-ms="5487" started-at="2020-01-08T17:03:35 IST" finished-at="2020-01-08T17:03:41 IST">
+        </test-method> <!-- open_Proposal -->
+        <test-method status="PASS" signature="height_width()[pri:2, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="height_width" duration-ms="3526" started-at="2020-01-15T11:34:28 IST" finished-at="2020-01-15T11:34:32 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- height_width -->
-        <test-method status="PASS" signature="assert_width_1()[pri:3, instance:com.freshproposals.selenium.Image_Duplicate_Section@71423665]" name="assert_width_1" duration-ms="186" started-at="2020-01-08T17:03:41 IST" finished-at="2020-01-08T17:03:41 IST">
+        <test-method status="PASS" signature="assert_width_1()[pri:3, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="assert_width_1" duration-ms="103" started-at="2020-01-15T11:34:32 IST" finished-at="2020-01-15T11:34:32 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assert_width_1 -->
-        <test-method status="PASS" signature="duplicate()[pri:4, instance:com.freshproposals.selenium.Image_Duplicate_Section@71423665]" name="duplicate" duration-ms="2421" started-at="2020-01-08T17:03:41 IST" finished-at="2020-01-08T17:03:43 IST">
+        <test-method status="PASS" signature="assert_height_1()[pri:4, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="assert_height_1" duration-ms="76" started-at="2020-01-15T11:34:32 IST" finished-at="2020-01-15T11:34:32 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assert_height_1 -->
+        <test-method status="PASS" signature="duplicate()[pri:5, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="duplicate" duration-ms="2458" started-at="2020-01-15T11:34:32 IST" finished-at="2020-01-15T11:34:35 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- duplicate -->
-        <test-method status="PASS" signature="DragDrop()[pri:5, instance:com.freshproposals.selenium.Image_Duplicate_Section@71423665]" name="DragDrop" duration-ms="3465" started-at="2020-01-08T17:03:43 IST" finished-at="2020-01-08T17:03:47 IST">
+        <test-method status="PASS" signature="DragDrop()[pri:6, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="DragDrop" duration-ms="3459" started-at="2020-01-15T11:34:35 IST" finished-at="2020-01-15T11:34:38 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DragDrop -->
-        <test-method status="PASS" signature="assert_width_2()[pri:6, instance:com.freshproposals.selenium.Image_Duplicate_Section@71423665]" name="assert_width_2" duration-ms="85" started-at="2020-01-08T17:03:47 IST" finished-at="2020-01-08T17:03:47 IST">
+        <test-method status="PASS" signature="assert_width_2()[pri:7, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="assert_width_2" duration-ms="99" started-at="2020-01-15T11:34:38 IST" finished-at="2020-01-15T11:34:38 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assert_width_2 -->
-        <test-method status="PASS" signature="Save()[pri:7, instance:com.freshproposals.selenium.Image_Duplicate_Section@71423665]" name="Save" duration-ms="9523" started-at="2020-01-08T17:03:47 IST" finished-at="2020-01-08T17:03:56 IST">
+        <test-method status="PASS" signature="assert_height_2()[pri:8, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="assert_height_2" duration-ms="69" started-at="2020-01-15T11:34:38 IST" finished-at="2020-01-15T11:34:38 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assert_height_2 -->
+        <test-method status="PASS" signature="Save()[pri:9, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="Save" duration-ms="7337" started-at="2020-01-15T11:34:38 IST" finished-at="2020-01-15T11:34:46 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Save -->
-        <test-method status="PASS" signature="clear()[pri:8, instance:com.freshproposals.selenium.Image_Duplicate_Section@71423665]" name="clear" duration-ms="3340" started-at="2020-01-08T17:03:56 IST" finished-at="2020-01-08T17:04:00 IST">
+        <test-method status="PASS" signature="clear()[pri:10, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="clear" duration-ms="3378" started-at="2020-01-15T11:34:46 IST" finished-at="2020-01-15T11:34:49 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clear -->
-        <test-method status="PASS" signature="reset_sign_1()[pri:9, instance:com.freshproposals.selenium.Image_Duplicate_Section@71423665]" name="reset_sign_1" duration-ms="3409" started-at="2020-01-08T17:04:00 IST" finished-at="2020-01-08T17:04:03 IST">
+        <test-method status="PASS" signature="reset_sign_1()[pri:10, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="reset_sign_1" duration-ms="3404" started-at="2020-01-15T11:34:49 IST" finished-at="2020-01-15T11:34:52 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reset_sign_1 -->
-        <test-method status="PASS" signature="Save2()[pri:10, instance:com.freshproposals.selenium.Image_Duplicate_Section@71423665]" name="Save2" duration-ms="7527" started-at="2020-01-08T17:04:03 IST" finished-at="2020-01-08T17:04:11 IST">
+        <test-method status="PASS" signature="Save2()[pri:11, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="Save2" duration-ms="6962" started-at="2020-01-15T11:34:52 IST" finished-at="2020-01-15T11:34:59 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Save2 -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.freshproposals.selenium.Image_Duplicate_Section@71423665]" name="closeBrowser" is-config="true" duration-ms="5112" started-at="2020-01-08T17:04:11 IST" finished-at="2020-01-08T17:04:16 IST">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="closeBrowser" is-config="true" duration-ms="5109" started-at="2020-01-15T11:34:59 IST" finished-at="2020-01-15T11:35:04 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.freshproposals.selenium.Image_Duplicate_Section -->
+      </class> <!-- com.freshproposals.selenium.Signature_Duplicate_Proposal -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

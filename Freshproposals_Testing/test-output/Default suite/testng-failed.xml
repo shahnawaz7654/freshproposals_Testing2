@@ -3,21 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freshproposals.selenium.TextBox_Duplicate_Proposal">
+      <class name="com.freshproposals.selenium.Analytics_Feestable_Proposal">
         <methods>
           <include name="closeBrowser"/>
+          <include name="copyLink"/>
           <include name="openBrowser"/>
-          <include name="open_Proposal"/>
-          <include name="clear"/>
-          <include name="Save"/>
-          <include name="Save2"/>
-          <include name="DragDrop"/>
-          <include name="duplicate"/>
-          <include name="final_Result"/>
-          <include name="login"/>
-          <include name="write"/>
         </methods>
-      </class> <!-- com.freshproposals.selenium.TextBox_Duplicate_Proposal -->
+      </class> <!-- com.freshproposals.selenium.Analytics_Feestable_Proposal -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

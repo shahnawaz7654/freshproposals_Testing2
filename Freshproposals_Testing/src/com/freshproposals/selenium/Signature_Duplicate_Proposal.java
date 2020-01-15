@@ -42,7 +42,7 @@ public class Signature_Duplicate_Proposal extends Common_Methods {
 	 
 	 @Test(priority = 1)
 	 public void open_Proposal(){
-//		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1829;editor=true");
+	driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1829;editor=true");
 	 
 	 }
 	 

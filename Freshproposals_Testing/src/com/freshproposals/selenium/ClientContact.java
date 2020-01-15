@@ -6,9 +6,11 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterClass;
@@ -69,7 +71,11 @@ public class ClientContact extends Common_Methods {
 			System.out.println("New contact created");
 		}
 	@Test(priority = 3,dependsOnMethods = {"login"})	
-	public void newContactaddedintoexistingClient() {
+	public void newContactaddedintoexistingClient() throws InterruptedException {
+		Actions actions = new Actions(driver);
+		WebElement addcontact = driver.findElement(By.xpath("//div[contains(text(),'Freshproposals')]"));
+		actions.moveToElement(addcontact);
+		Thread.sleep(3000);
 			driver.findElement(By.xpath("//div[contains(text(),'Freshproposals')]//img[2]")).click();
 			WebElement ContactFNAME1 =driver.findElement(By.xpath("//input[@formcontrolname='FirstName']"));
 			ContactFNAME1.sendKeys("Chanbhau");
@@ -84,30 +90,50 @@ public class ClientContact extends Common_Methods {
 	}
 	@Test(priority=4,dependsOnMethods = {"login"})
 	public void ClientUpdated() throws InterruptedException   {
-			driver.findElement(By.xpath("//div[contains(text(),'Freshproposals')]//img[1]")).click();
+			  WebElement updateContact =driver.findElement(By.xpath("//div[contains(text(),'Freshproposals')]//img[1]"));
+			  Thread.sleep(3000);
+			updateContact.click();
 			WebElement Address =driver.findElement(By.xpath("//input[@formcontrolname='AddressLine1']"));
 			Address.clear();
 			Address.sendKeys("Kalyaninagar,opposite to Aagakhan palace");
+			Thread.sleep(5000);
 			driver.findElement(By.xpath("//button[@class='btn next-btn ml-3 float-right']")).click();
 			System.out.println("Client updated");
 			Thread.sleep(5000);
 	}
 	@Test(priority=5,dependsOnMethods = {"login"})
 	public void ContactUpdated() throws InterruptedException {
-			driver.findElement(By.xpath("//div[3]//div[2]//div[1]//span[1]//img[1]")).click();
+		WebElement updateContact=driver.findElement(By.xpath("//div[3]//div[2]//div[1]//span[1]//img[1]"));
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", updateContact);
+			
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//input[@formcontrolname='emailAddress']")).clear();
+			Thread.sleep(3000);
+
 			driver.findElement(By.xpath("//input[@formcontrolname='emailAddress']")).sendKeys("Noneofyourbusiness@yahoo.com");
 			driver.findElement(By.xpath("//input[@formcontrolname='contactNumber']")).clear();
-			driver.findElement(By.xpath("//input[@formcontrolname='contactNumber']")).sendKeys("123456789");
+			driver.findElement(By.xpath("//input[@formcontrolname='contactNumber']")).sendKeys("1234567892");
+			Thread.sleep(3000);
+
 			driver.findElement(By.xpath("//button[@id='btn-save']")).click();
-			Thread.sleep(1500);
+			Thread.sleep(3000);
 			System.out.println("Contact updated");
 	}
 	@Test(priority=6,dependsOnMethods = {"login"})
 	public void ClientDeleted() throws InterruptedException {
-			driver.findElement(By.xpath("//div[contains(text(),'Freshproposals')]//img[3]")).click();
+		Actions actions = new Actions(driver);
+		WebElement addcontact = driver.findElement(By.xpath("//div[contains(text(),'Freshproposals')]"));
+		actions.moveToElement(addcontact);
+		Thread.sleep(3000);
+	
+		 WebElement DeleteContact=driver.findElement(By.xpath("//div[contains(text(),'Freshproposals')]//img[3]"));
+			 
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", DeleteContact);
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@class='btn save-btn']")).click();
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			System.out.println("Client deleted");
 			
 			}

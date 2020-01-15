@@ -119,7 +119,7 @@ public class RectangleandLinePropertiesInTemplate extends Common_Methods{
 		  softAssertion.assertEquals(height, 402);
 		 
 	 }
-	 @Test(priority=2)
+	 @Test(priority=2,enabled=false)
 	 	public void ApplyCornerandRotation() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
 			Thread.sleep(3000);

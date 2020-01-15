@@ -45,7 +45,9 @@ public class FeeTableInProposal extends Common_Methods{
 		 Thread.sleep(5000);
 
 		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
-		 WebElement NextBtn = driver.findElement(By.linkText("Next"));
+		 Thread.sleep(3000);
+
+		 WebElement NextBtn = driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']"));
 		 NextBtn.click();
 		 Thread.sleep(3000);
 
@@ -112,7 +114,7 @@ public class FeeTableInProposal extends Common_Methods{
 			 Thread.sleep(3000);
 			 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
 			 Thread.sleep(3000);
-			 WebElement NextBtn1 = driver.findElement(By.linkText("Next"));
+			 WebElement NextBtn1 = driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']"));
 			 NextBtn1.click();
 			 WebElement SectionName2 = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
 			 SectionName2.click();
@@ -142,7 +144,7 @@ public class FeeTableInProposal extends Common_Methods{
 
 		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
 		 Thread.sleep(4000);
-		 WebElement NextBtn = driver.findElement(By.linkText("Next"));
+		 WebElement NextBtn = driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']"));
 		 NextBtn.click();
 		 Thread.sleep(3000);
 
@@ -210,7 +212,7 @@ public class FeeTableInProposal extends Common_Methods{
 
 		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
 		 Thread.sleep(4000);
-		 WebElement NextBtn1 = driver.findElement(By.linkText("Next"));
+		 WebElement NextBtn1 = driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']"));
 		 NextBtn1.click();
 		 Thread.sleep(3000);
 
@@ -318,10 +320,11 @@ public class FeeTableInProposal extends Common_Methods{
 		
 	 @Test(priority = 3,dependsOnMethods = {"login"})
 	 public void TableDiscount() throws InterruptedException {
-		 Thread.sleep(5000);
+		 Thread.sleep(2000);
 
 		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
-		 WebElement NextBtn = driver.findElement(By.linkText("Next"));
+		 Thread.sleep(3000);
+		 WebElement NextBtn = driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']"));
 		 NextBtn.click();
 		 Thread.sleep(3000);
 
@@ -335,7 +338,7 @@ public class FeeTableInProposal extends Common_Methods{
 		 
 		 WebElement ShowDisc =driver.findElement(By.xpath("//input[@name='showTableDiscount']"));
 		 ShowDisc.click();
-		WebElement  DiscName  = driver.findElement(By.xpath("//input[@placeholder='Discount Name']"));
+		WebElement  DiscName  = driver.findElement(By.name("discountName"));
 		DiscName.clear();
 		DiscName.sendKeys("TableDisc");
 		WebElement DiscAmount = driver.findElement(By.xpath("//input[@name='discount']"));
@@ -347,7 +350,7 @@ public class FeeTableInProposal extends Common_Methods{
 			WebElement tabletax1 = driver.findElement(By.xpath("//label[@class='fees-prop-header'][contains(text(),'Tax 1')]//img"));
 			tabletax1.click();
 			 driver.findElement(By.xpath("//input[@name='showTax1']")).click();
-			 WebElement TaxName = driver.findElement(By.xpath("//input[@placeholder='Tax1 Name']"));
+			 WebElement TaxName = driver.findElement(By.name("tax1Name"));
 			 TaxName.clear();
 			 TaxName.sendKeys("SGST");
 			 
@@ -363,7 +366,7 @@ public class FeeTableInProposal extends Common_Methods{
 				 WebElement ShowTax2 = driver.findElement(By.xpath("//input[@name='showTax2']"));
 				 Thread.sleep(5000);
 				 ShowTax2.click();
-				 WebElement Tax2Name = driver.findElement(By.xpath("//input[@placeholder='Tax2 Name']"));
+				 WebElement Tax2Name = driver.findElement(By.name("tax2Name"));
 				 Tax2Name.clear();
 				 Tax2Name.sendKeys("HGST");
 			WebElement tax2amount = driver.findElement(By.xpath("//input[@name='tax2Value']"));		
@@ -400,11 +403,6 @@ public class FeeTableInProposal extends Common_Methods{
 			action.doubleClick(Row2).perform();
 			WebElement DeleteRow2 = driver.findElement(By.xpath("//div[6]//div[3]//div[2]//span[2]//img[1]"));
 			DeleteRow2.click();
-
-			
-			
-			
-			
 			 WebElement discountamount = driver.findElement(By.xpath("//div[@id='section_section5970']//div[@class='total-fee-calculator']//div[2]//p[1]"));
 				String DiscountName = discountamount.getText();
 				System.out.println(DiscountName);
@@ -436,10 +434,6 @@ public class FeeTableInProposal extends Common_Methods{
 			 SaveBtn.click();
 			 Thread.sleep(3000);
 			 
-			
-			
-			 
-			 
 			 
 		 WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
 		 BackBtn.click();
@@ -451,7 +445,9 @@ public class FeeTableInProposal extends Common_Methods{
 	 }
 	 public void TableDiscountReset() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
-		 WebElement NextBtn = driver.findElement(By.linkText("Next"));
+		 Thread.sleep(3000);
+		 WebElement NextBtn = driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']"));
+		
 		 NextBtn.click();
 		 Thread.sleep(3000);
 		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
@@ -481,7 +477,7 @@ public class FeeTableInProposal extends Common_Methods{
 		 tableDisc.click();
 		 
 		
-		WebElement  DiscName  = driver.findElement(By.xpath("//input[@placeholder='Discount Name']"));
+		WebElement  DiscName  = driver.findElement(By.name("discountName"));
 		DiscName.clear();
 		//DiscName.sendKeys("TableDisc");
 		WebElement DiscAmount = driver.findElement(By.xpath("//input[@name='discount']"));
@@ -496,7 +492,7 @@ public class FeeTableInProposal extends Common_Methods{
 			WebElement tabletax1 = driver.findElement(By.xpath("//label[@class='fees-prop-header'][contains(text(),'Tax 1')]//img"));
 			tabletax1.click();
 			 driver.findElement(By.xpath("//input[@name='showTax1']")).click();
-			 WebElement TaxName = driver.findElement(By.xpath("//input[@placeholder='Tax1 Name']"));
+			 WebElement TaxName = driver.findElement(By.name("tax1Name"));
 			 TaxName.clear();	
 			 WebElement tax1Amount = driver.findElement(By.xpath("//input[@name='tax1Value']"));
 				tax1Amount.clear();
@@ -508,7 +504,7 @@ public class FeeTableInProposal extends Common_Methods{
 				 Thread.sleep(2000);
 				 Tabletax2.click();
 				
-				 WebElement Tax2Name = driver.findElement(By.xpath("//input[@placeholder='Tax2 Name']"));
+				 WebElement Tax2Name = driver.findElement(By.name("tax2Name"));
 				 Tax2Name.clear();
 			WebElement tax2Amount = driver.findElement(By.xpath("//input[@name='tax2Value']"));
 			tax2Amount.clear();
@@ -555,7 +551,9 @@ public class FeeTableInProposal extends Common_Methods{
 	 public void FeeRowisoptional() throws InterruptedException {
 		 Thread.sleep(5000);
 		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
-		 WebElement NextBtn = driver.findElement(By.linkText("Next"));
+		 Thread.sleep(3000);
+
+		 WebElement NextBtn = driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']"));
 		 NextBtn.click();
 		 Thread.sleep(3000);
 		 WebElement SectionName = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
@@ -608,7 +606,7 @@ public class FeeTableInProposal extends Common_Methods{
 		 
 		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
 		 Thread.sleep(3000);
-		 WebElement NextBtn1 = driver.findElement(By.linkText("Next"));
+		 WebElement NextBtn1 = driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']"));
 		 NextBtn1.click();
 		 Thread.sleep(3000);
 		 WebElement SectionNameReset = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[2]"));
@@ -627,48 +625,9 @@ public class FeeTableInProposal extends Common_Methods{
 		 softAssertion.assertAll();
 		 
 	 }
-	 @Test(priority=10,enabled=false)
-	 public void FeeTitleIsEditableReset() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1868");
-		 WebElement Section3 = driver.findElement(By.xpath("//div[@class='col-lg-2 p-0 fixed-sidebar']//li[3]"));
-		 Section3.click();
-		 Thread.sleep(2000);
+
 		 
-		 
-		 WebElement Textarea =driver.findElement(By.xpath("//textarea[@id='textbox_13']"));
-		
-		 Thread.sleep(2000);
-
-		 JavascriptExecutor executor = (JavascriptExecutor)driver;
-		 executor.executeScript("arguments[0].click();", Textarea);
-		 Thread.sleep(2000);
-
-		 Textarea.clear();
-		 Thread.sleep(2000);
-
-		 Textarea.sendKeys("Hey!!!! hieeee my row type is content");
-		 Thread.sleep(2000);
-
-		 WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
-		 SaveBtn.click();
-		 Thread.sleep(3000);
-		 executor.executeScript("arguments[0].click();", Textarea);
-		 Thread.sleep(3000);
-
-		 String textareatext = Textarea.getText();
-		 System.out.println("text does not contain text"+textareatext);
-		 
-		 if(textareatext.contains("Nikeeta")) {
-			 Assert.assertTrue(true);
-		 }//Hey!!!! hieeee my row type is content
-//		 }else {
-//			 Assert.assertTrue(false);
-//		 }
-//			 
-			 
-	
-		 
-	 }
+	 
 	 @AfterClass
 	 public void teardown() {
 		 driver.quit();

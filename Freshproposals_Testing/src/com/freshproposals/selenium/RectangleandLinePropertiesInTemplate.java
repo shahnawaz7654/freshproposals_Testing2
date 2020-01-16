@@ -80,8 +80,8 @@ public class RectangleandLinePropertiesInTemplate extends Common_Methods{
 			Shape.click();
 			int  width1=Shape.getSize().getWidth();
 			int height1=Shape.getSize().getHeight();
-			softAssertion.assertEquals(width1,493);
-			softAssertion.assertEquals(height1,569);	 
+			softAssertion.assertEquals(width1,491);
+			softAssertion.assertEquals(height1,567);	 
 		 this.ResetHeightandWidth();
 		 
 		 softAssertion.assertAll();
@@ -115,8 +115,8 @@ public class RectangleandLinePropertiesInTemplate extends Common_Methods{
 			Thread.sleep(2000);
 		  int width=RectangleShape.getSize().getWidth();
 		  int height=RectangleShape.getSize().getHeight();
-		  softAssertion.assertEquals(width, 252);
-		  softAssertion.assertEquals(height, 402);
+		  softAssertion.assertEquals(width, 250);
+		  softAssertion.assertEquals(height, 400);
 		 
 	 }
 	 @Test(priority=2,enabled=false)
@@ -183,11 +183,11 @@ public class RectangleandLinePropertiesInTemplate extends Common_Methods{
 			String str1 =Shape1.getCssValue("transform");
 			//System.out.println(str1);
 			softAssertion.assertEquals(str1, "matrix(6.12323e-17, 1, -1, 6.12323e-17, 0, 0)");
-			WebElement BorderRadious = driver.findElement(By.xpath("//body/app-root/app-home/div[@class='wrapper']/div[@id='content']/div[@class='apply-hidden styling-mode-effect']/app-edit-template/div[@class='editor-box template-editor']/div[@class='row']/div[@class='col-lg-8 offset-lg-2']/div[@id='scrollContainer']/div[@id='contentToConvert']/app-edit-section/div/div[@class='section-editor-box']/div[@id='scrollContainer']/div[@class='page-scalemargin-']/div[@id='section_section6468']/div[@id='section6468']/app-sections-page/a[@name='page1']/div[@class='page-wrapper']/div[@class='page effect8']/div[@id='sectionPage_6468page1']/app-fpshape/div[@class='text-element shape-element']/div[@id='page1-fpShape1213201912522970mainDivTransformSafeStyle']/div[@id='page1-fpShape1213201912522970']/div[@class='resizers']/div[1]/div[1]"));
+			WebElement BorderRadious = driver.findElement(By.xpath("//input[@name='border']"));
 			String str2 =BorderRadious.getCssValue("border-width");
 			//System.out.println("Border width"+str2);
 			softAssertion.assertEquals(str2, "10px");
-			WebElement GetShapeBorder=driver.findElement(By.xpath("//body/app-root/app-home/div[@class='wrapper']/div[@id='content']/div[@class='apply-hidden styling-mode-effect']/app-edit-template/div[@class='editor-box template-editor']/div[@class='row']/div[@class='col-lg-8 offset-lg-2']/div[@id='scrollContainer']/div[@id='contentToConvert']/app-edit-section/div/div[@class='section-editor-box']/div[@id='scrollContainer']/div[@class='page-scalemargin-']/div[@id='section_section6468']/div[@id='section6468']/app-sections-page/a[@name='page1']/div[@class='page-wrapper']/div[@class='page effect8']/div[@id='sectionPage_6468page1']/app-fpshape/div[@class='text-element shape-element']/div[@id='page1-fpShape1213201912522970mainDivTransformSafeStyle']/div[@id='page1-fpShape1213201912522970']/div[@class='resizers']/div[1]/div[1]"));
+			WebElement GetShapeBorder=driver.findElement(By.xpath("//input[@name='border']"));
 
 		String borderstyle =GetShapeBorder.getCssValue("border-style");
 		//System.out.println("BorderStyle"+borderstyle);
@@ -211,7 +211,7 @@ public class RectangleandLinePropertiesInTemplate extends Common_Methods{
 		Rectanglerotate.sendKeys("0");
 		Thread.sleep(2000);
 		
-		WebElement BorderCheckBox = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-shape-properties[1]/form[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/input[1]"));
+		WebElement BorderCheckBox = driver.findElement(By.xpath("//input[@name='border']"));
 		Thread.sleep(2000);
 		WebElement BorderWidth = driver.findElement(By.xpath("//input[@name='borderWidth']"));
 		BorderWidth.clear();
@@ -298,12 +298,12 @@ public class RectangleandLinePropertiesInTemplate extends Common_Methods{
 			Thread.sleep(2000);
 			//WebElement Length = driver.findElement(By.xpath("//input[@name='textWidth11']"));
 			int width=Line.getSize().getWidth();
-			softAssertion.assertEquals(width, 369);
+			softAssertion.assertEquals(width, 367);
 			String Rotation = Line.getCssValue("transform");
 			softAssertion.assertEquals(Rotation,"matrix(0.777146, -0.62932, 0.62932, 0.777146, 0, 0)");
 			//System.out.println(Rotation);
 			int Height=Line.getSize().getHeight();
-			softAssertion.assertEquals(Height, 22);
+			softAssertion.assertEquals(Height, 20);
 			WebElement LineBorder = driver.findElement(By.xpath("//div[@id='page1-fpShape1214201914374145mainDivTransformSafeStyle']/div[@id='page1-fpShape1214201914374145']/div[@class='resizers']/div[1]/div[1]"));
 			String LineBorderStyle=LineBorder.getCssValue("border-top-style");
 			//System.out.println("LineBorderStyle"+LineBorderStyle);
@@ -325,7 +325,7 @@ public class RectangleandLinePropertiesInTemplate extends Common_Methods{
 
 			int width=Line.getSize().getWidth();
 			//System.out.println(width);
-			softAssertion.assertEquals(width, 202);
+			softAssertion.assertEquals(width, 200);
 			WebElement RotateBox = driver.findElement(By.xpath("//input[@name='rotate']"));
 			RotateBox.clear();
 			Thread.sleep(2000);

@@ -43,6 +43,7 @@ public class RectangleandLineRepositioninProposal extends Common_Methods{
 	 public void GetURL() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1761");
 			Thread.sleep(2000);
+			driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
 
 	 }
 	@Test(priority=2)
@@ -56,7 +57,7 @@ public class RectangleandLineRepositioninProposal extends Common_Methods{
 		//System.out.println(xcord);
 		//System.out.println(ycord);
 		Assert.assertEquals(xcord, 323);
-		Assert.assertEquals(ycord, 154);
+		Assert.assertEquals(ycord, 119);
 		Actions act=new Actions(driver);	
        act.dragAndDropBy(Rectangle,x, y).build().perform();		
        Thread.sleep(3000);
@@ -79,13 +80,15 @@ public class RectangleandLineRepositioninProposal extends Common_Methods{
 			//System.out.println(xcord1);
 			//System.out.println(ycord1);
 			Assert.assertEquals(xcord1, 606);
-			Assert.assertEquals(ycord1, 453);
+			Assert.assertEquals(ycord1, 443);
 			Assert.assertAll();
 
 	}
 	@Test(priority=4)
 	public void RectangleRepositionReset() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal/1761");
+		 	Thread.sleep(3000);
+			driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
 
 		WebElement Rectangle = driver.findElement(By.xpath("//div[@id='page1-fpShape121920191581873']"));
 		Rectangle.click();
@@ -96,7 +99,7 @@ public class RectangleandLineRepositioninProposal extends Common_Methods{
 		//System.out.println(xcord);
 		//System.out.println(ycord);
 		Assert.assertEquals(xcord, 603);
-		Assert.assertEquals(ycord, 484);
+		Assert.assertEquals(ycord, 443);
 		Actions act=new Actions(driver);	
        act.dragAndDropBy(Rectangle,-x, -y).build().perform();		
        Thread.sleep(3000);
@@ -111,7 +114,7 @@ public class RectangleandLineRepositioninProposal extends Common_Methods{
 				//System.out.println(xcord1);
 				//System.out.println(ycord1);
 				Assert.assertEquals(xcord1, 323);
-				Assert.assertEquals(ycord1, 154);
+				Assert.assertEquals(ycord1, 113);
 		
 		WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
 		BackBtn.click();

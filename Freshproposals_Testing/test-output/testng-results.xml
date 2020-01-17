@@ -1,85 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="13" passed="13">
+<testng-results skipped="0" failed="0" ignored="0" total="11" passed="11">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="53312" started-at="2020-01-15T11:34:11 IST" finished-at="2020-01-15T11:35:04 IST">
+  <suite name="Default suite" duration-ms="130029" started-at="2020-01-17T17:08:40 IST" finished-at="2020-01-17T17:10:50 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="53312" started-at="2020-01-15T11:34:11 IST" finished-at="2020-01-15T11:35:04 IST">
-      <class name="com.freshproposals.selenium.Signature_Duplicate_Proposal">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="openBrowser" is-config="true" duration-ms="8779" started-at="2020-01-15T11:34:11 IST" finished-at="2020-01-15T11:34:20 IST">
+    <test name="Default test" duration-ms="130029" started-at="2020-01-17T17:08:40 IST" finished-at="2020-01-17T17:10:50 IST">
+      <class name="com.freshproposals.selenium.TempRead">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.freshproposals.selenium.TempRead@18eed359]" name="openBrowser" is-config="true" duration-ms="13860" started-at="2020-01-17T17:08:40 IST" finished-at="2020-01-17T17:08:54 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="login" duration-ms="681" started-at="2020-01-15T11:34:20 IST" data-provider="User1" finished-at="2020-01-15T11:34:21 IST">
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.freshproposals.selenium.TempRead@18eed359]" name="login" duration-ms="5515" started-at="2020-01-17T17:08:54 IST" data-provider="User2" finished-at="2020-01-17T17:09:00 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[shahnawaz@zenincloud.com]]>
+                <![CDATA[nikeeta3011@gmail.com]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Shahnawaz@123]]>
+                <![CDATA[Nikeeta@123]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="open_Proposal()[pri:1, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="open_Proposal" duration-ms="7779" started-at="2020-01-15T11:34:21 IST" finished-at="2020-01-15T11:34:28 IST">
+        <test-method status="PASS" signature="ReadTemplate()[pri:1, instance:com.freshproposals.selenium.TempRead@18eed359]" name="ReadTemplate" duration-ms="13628" started-at="2020-01-17T17:09:00 IST" finished-at="2020-01-17T17:09:13 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- open_Proposal -->
-        <test-method status="PASS" signature="height_width()[pri:2, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="height_width" duration-ms="3526" started-at="2020-01-15T11:34:28 IST" finished-at="2020-01-15T11:34:32 IST">
+        </test-method> <!-- ReadTemplate -->
+        <test-method status="PASS" signature="ReadTemplateCoverLetter()[pri:2, instance:com.freshproposals.selenium.TempRead@18eed359]" name="ReadTemplateCoverLetter" duration-ms="10405" started-at="2020-01-17T17:09:13 IST" finished-at="2020-01-17T17:09:24 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- height_width -->
-        <test-method status="PASS" signature="assert_width_1()[pri:3, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="assert_width_1" duration-ms="103" started-at="2020-01-15T11:34:32 IST" finished-at="2020-01-15T11:34:32 IST">
+        </test-method> <!-- ReadTemplateCoverLetter -->
+        <test-method status="PASS" signature="ReadTemplateExecutiveSummary()[pri:3, instance:com.freshproposals.selenium.TempRead@18eed359]" name="ReadTemplateExecutiveSummary" duration-ms="10479" started-at="2020-01-17T17:09:24 IST" finished-at="2020-01-17T17:09:34 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- assert_width_1 -->
-        <test-method status="PASS" signature="assert_height_1()[pri:4, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="assert_height_1" duration-ms="76" started-at="2020-01-15T11:34:32 IST" finished-at="2020-01-15T11:34:32 IST">
+        </test-method> <!-- ReadTemplateExecutiveSummary -->
+        <test-method status="PASS" signature="ReadTemplateAboutUs()[pri:4, instance:com.freshproposals.selenium.TempRead@18eed359]" name="ReadTemplateAboutUs" duration-ms="10435" started-at="2020-01-17T17:09:34 IST" finished-at="2020-01-17T17:09:44 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- assert_height_1 -->
-        <test-method status="PASS" signature="duplicate()[pri:5, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="duplicate" duration-ms="2458" started-at="2020-01-15T11:34:32 IST" finished-at="2020-01-15T11:34:35 IST">
+        </test-method> <!-- ReadTemplateAboutUs -->
+        <test-method status="PASS" signature="ReadTemplateProjectActivity()[pri:5, instance:com.freshproposals.selenium.TempRead@18eed359]" name="ReadTemplateProjectActivity" duration-ms="10562" started-at="2020-01-17T17:09:44 IST" finished-at="2020-01-17T17:09:55 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- duplicate -->
-        <test-method status="PASS" signature="DragDrop()[pri:6, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="DragDrop" duration-ms="3459" started-at="2020-01-15T11:34:35 IST" finished-at="2020-01-15T11:34:38 IST">
+        </test-method> <!-- ReadTemplateProjectActivity -->
+        <test-method status="PASS" signature="ReadTemplatePreview()[pri:6, instance:com.freshproposals.selenium.TempRead@18eed359]" name="ReadTemplatePreview" duration-ms="11733" started-at="2020-01-17T17:09:55 IST" finished-at="2020-01-17T17:10:07 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DragDrop -->
-        <test-method status="PASS" signature="assert_width_2()[pri:7, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="assert_width_2" duration-ms="99" started-at="2020-01-15T11:34:38 IST" finished-at="2020-01-15T11:34:38 IST">
+        </test-method> <!-- ReadTemplatePreview -->
+        <test-method status="PASS" signature="ReadTemplateCoverLetterPreview()[pri:7, instance:com.freshproposals.selenium.TempRead@18eed359]" name="ReadTemplateCoverLetterPreview" duration-ms="10339" started-at="2020-01-17T17:10:07 IST" finished-at="2020-01-17T17:10:17 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- assert_width_2 -->
-        <test-method status="PASS" signature="assert_height_2()[pri:8, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="assert_height_2" duration-ms="69" started-at="2020-01-15T11:34:38 IST" finished-at="2020-01-15T11:34:38 IST">
+        </test-method> <!-- ReadTemplateCoverLetterPreview -->
+        <test-method status="PASS" signature="ReadTemplateExecutiveSummaryPreview()[pri:8, instance:com.freshproposals.selenium.TempRead@18eed359]" name="ReadTemplateExecutiveSummaryPreview" duration-ms="10383" started-at="2020-01-17T17:10:17 IST" finished-at="2020-01-17T17:10:28 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- assert_height_2 -->
-        <test-method status="PASS" signature="Save()[pri:9, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="Save" duration-ms="7337" started-at="2020-01-15T11:34:38 IST" finished-at="2020-01-15T11:34:46 IST">
+        </test-method> <!-- ReadTemplateExecutiveSummaryPreview -->
+        <test-method status="PASS" signature="ReadTemplateAboutUsPreview()[pri:9, instance:com.freshproposals.selenium.TempRead@18eed359]" name="ReadTemplateAboutUsPreview" duration-ms="10366" started-at="2020-01-17T17:10:28 IST" finished-at="2020-01-17T17:10:38 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Save -->
-        <test-method status="PASS" signature="clear()[pri:10, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="clear" duration-ms="3378" started-at="2020-01-15T11:34:46 IST" finished-at="2020-01-15T11:34:49 IST">
+        </test-method> <!-- ReadTemplateAboutUsPreview -->
+        <test-method status="PASS" signature="ReadTemplateProjectActivityPreview()[pri:10, instance:com.freshproposals.selenium.TempRead@18eed359]" name="ReadTemplateProjectActivityPreview" duration-ms="10499" started-at="2020-01-17T17:10:38 IST" finished-at="2020-01-17T17:10:48 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clear -->
-        <test-method status="PASS" signature="reset_sign_1()[pri:10, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="reset_sign_1" duration-ms="3404" started-at="2020-01-15T11:34:49 IST" finished-at="2020-01-15T11:34:52 IST">
+        </test-method> <!-- ReadTemplateProjectActivityPreview -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.freshproposals.selenium.TempRead@18eed359]" name="teardown" is-config="true" duration-ms="1738" started-at="2020-01-17T17:10:48 IST" finished-at="2020-01-17T17:10:50 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- reset_sign_1 -->
-        <test-method status="PASS" signature="Save2()[pri:11, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="Save2" duration-ms="6962" started-at="2020-01-15T11:34:52 IST" finished-at="2020-01-15T11:34:59 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Save2 -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.freshproposals.selenium.Signature_Duplicate_Proposal@71423665]" name="closeBrowser" is-config="true" duration-ms="5109" started-at="2020-01-15T11:34:59 IST" finished-at="2020-01-15T11:35:04 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- com.freshproposals.selenium.Signature_Duplicate_Proposal -->
+        </test-method> <!-- teardown -->
+      </class> <!-- com.freshproposals.selenium.TempRead -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

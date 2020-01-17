@@ -108,8 +108,10 @@ public class ResizingOfAllComponent extends Common_Methods{
 			
 		}
 	
-		 	@Test(priority=5,enabled=false)
+		 	@Test(priority=5)
 	 	public void ResizeImage() throws InterruptedException {
+				 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1267");
+
 	 		WebElement SectionClick = driver.findElement(By.xpath("//a[contains(text(),'SeleniumImageResizeSection')]"));
 	 		SectionClick.click();
 	 		Thread.sleep(2000);
@@ -117,7 +119,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 	 		Image.click();
 	 		Thread.sleep(2000);
 	 		WebElement ImageResize = driver.findElement(By.xpath("//div[@id='page1-fpImage12182019115918']//div[@id='sgrip']"));
-	 		resize( ImageResize,0 , 353);
+	 		resize( ImageResize,0 , 222);
 	 		Thread.sleep(5000);
 	 		WebElement savebtn =  driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
 			savebtn.click();
@@ -127,9 +129,9 @@ public class ResizingOfAllComponent extends Common_Methods{
 			Thread.sleep(5000);
 	 			
 	 	}
-	 	@Test(priority=6,enabled=false)
+	 	@Test(priority=6)
 	 	public void ResizeImageVerification() throws InterruptedException {
-	 		driver.findElement(By.xpath("//div[2]//div[1]//div[2]//a[1]//img[1]")).click();
+			 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1267");
 			Thread.sleep(3000);
 	 		WebElement SectionClick = driver.findElement(By.xpath("//a[contains(text(),'SeleniumImageResizeSection')]"));
 	 		SectionClick.click();
@@ -141,11 +143,11 @@ public class ResizingOfAllComponent extends Common_Methods{
 			int HeightBefore = Image.getSize().getHeight();  
 			//System.out.println(WidthBefore);
 			//System.out.println(HeightBefore);
-			softAssertion.assertEquals(WidthBefore,227);
-		 	softAssertion.assertEquals(HeightBefore, 455);
+			softAssertion.assertEquals(WidthBefore,225);
+		 	softAssertion.assertEquals(HeightBefore, 372);
 		 	softAssertion.assertAll();
 	 	}
-	 	@Test(priority=7,enabled=false)
+	 	@Test(priority=7)
 	 	public void ResizeImage2() throws InterruptedException {
 	 		WebElement SectionClick = driver.findElement(By.xpath("//a[contains(text(),'SeleniumImageResizeSection')]"));
 	 		SectionClick.click();
@@ -164,9 +166,9 @@ public class ResizingOfAllComponent extends Common_Methods{
 			Thread.sleep(5000);
 	 		
 	 	}
-	 	@Test(priority=8,enabled=false)
+	 	@Test(priority=8)
 	 	public void ResizeImage2Verification() throws InterruptedException {
-	 		driver.findElement(By.xpath("//div[2]//div[1]//div[2]//a[1]//img[1]")).click();
+			 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1267");
 			Thread.sleep(3000);
 	 		WebElement SectionClick = driver.findElement(By.xpath("//a[contains(text(),'SeleniumImageResizeSection')]"));
 	 		SectionClick.click();
@@ -178,11 +180,11 @@ public class ResizingOfAllComponent extends Common_Methods{
 			int HeightBefore = Image.getSize().getHeight();  
 			//System.out.println(WidthBefore);
 			//System.out.println(HeightBefore);
-			softAssertion.assertEquals(WidthBefore,192);
-			softAssertion.assertEquals(HeightBefore, 361);
+			softAssertion.assertEquals(WidthBefore,188);
+			softAssertion.assertEquals(HeightBefore, 276);
 			softAssertion.assertAll();
 	 	}
-	 	@Test(priority=9,enabled=false)
+	 	@Test(priority=9)
 	 	public void ImageReResize() throws InterruptedException {
 	 		WebElement SectionClick = driver.findElement(By.xpath("//a[contains(text(),'SeleniumImageResizeSection')]"));
 	 		SectionClick.click();
@@ -191,25 +193,27 @@ public class ResizingOfAllComponent extends Common_Methods{
 	 		Image.click();
 	 		Thread.sleep(2000);
 	 		WebElement ImageResize = driver.findElement(By.xpath("//div[@id='page1-fpImage12182019115918']//div[@id='sgrip']"));
-	 		resize( ImageResize,0 , -353);
+	 		resize( ImageResize,0 , -222);
 	 		Thread.sleep(5000);
 	 		WebElement savebtn =  driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
 			savebtn.click();
 			Thread.sleep(3000);
-		/*
-		 * WebElement BackBtn = driver.findElement(By.
-		 * xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"
-		 * )); BackBtn.click(); Thread.sleep(3000);
-		 * driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1267"
-		 * ); Thread.sleep(3000);
-		 */
+		
 	 		Image.click();
 
 	 		WebElement ImageResizeTopCorner = driver.findElement(By.xpath("//div[@id='page1-fpImage12182019115918']//div[@id='nwgrip']"));
 			resize( ImageResizeTopCorner,-37 , -96);
 			Thread.sleep(5000);
-			//WebElement savebtn =  driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
 			savebtn.click();
+			
+			int WidthBefore = Image.getSize().getWidth();
+			int HeightBefore = Image.getSize().getHeight();  
+//			System.out.println(WidthBefore);
+//			System.out.println(HeightBefore);
+			softAssertion.assertEquals(WidthBefore,225);
+		 	softAssertion.assertEquals(HeightBefore, 150);
+		 	softAssertion.assertAll();
+			
 			Thread.sleep(5000);
 	 	}
 	 	@Test(priority=10)
@@ -243,7 +247,9 @@ public class ResizingOfAllComponent extends Common_Methods{
 	 	}
 	 	@Test(priority=11)
 	 	public void Rect1Verify() throws InterruptedException {
-	 		driver.findElement(By.xpath("//div[2]//div[1]//div[2]//a[1]//img[1]")).click();
+	 		//driver.findElement(By.xpath("//div[2]//div[1]//div[2]//a[1]//img[1]")).click();
+	 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1267");
+
 			Thread.sleep(3000);
 			WebElement Rectangle = driver.findElement(By.xpath("//div[@id='page1-fpShape1218201912114789']//div[@oncontextmenu]"));
 	 		Rectangle.click();
@@ -282,7 +288,9 @@ public class ResizingOfAllComponent extends Common_Methods{
 	 	}
 	 	@Test(priority=13)
 	 	public void RectangleResizeVerification() throws InterruptedException {
-	 		driver.findElement(By.xpath("//div[2]//div[1]//div[2]//a[1]//img[1]")).click();
+	 		//driver.findElement(By.xpath("//div[2]//div[1]//div[2]//a[1]//img[1]")).click();
+	 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1267");
+
 			Thread.sleep(3000);
 			WebElement Rectangle = driver.findElement(By.xpath("//div[@id='page1-fpShape1218201912114789']//div[@oncontextmenu]"));
 	 		Rectangle.click();

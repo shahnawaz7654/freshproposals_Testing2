@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freshproposals.selenium.Analytics_Feestable_Proposal">
+      <class name="com.freshproposals.selenium.RectangleandLinePropertiesInTemplate">
         <methods>
-          <include name="closeBrowser"/>
-          <include name="copyLink"/>
           <include name="openBrowser"/>
+          <include name="teardown"/>
+          <include name="ChangeRectangleWidthandHeight"/>
         </methods>
-      </class> <!-- com.freshproposals.selenium.Analytics_Feestable_Proposal -->
+      </class> <!-- com.freshproposals.selenium.RectangleandLinePropertiesInTemplate -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

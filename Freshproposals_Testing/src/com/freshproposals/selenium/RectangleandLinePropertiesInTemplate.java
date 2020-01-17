@@ -101,7 +101,7 @@ public class RectangleandLinePropertiesInTemplate extends Common_Methods{
 			RectangleShapeHeight.sendKeys("400");
 			Thread.sleep(1000);
 			Actions dragger = new Actions(driver);
-			WebElement draggablePartOfScrollbar = driver.findElement(By.xpath("//input[@name='opacity']"));
+			WebElement draggablePartOfScrollbar = driver.findElement(By.name("opacity"));
 			int numberOfPixelsToDragTheScrollbarDown = 100;
 			dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(numberOfPixelsToDragTheScrollbarDown,0).release().perform();
 			Thread.sleep(5000);

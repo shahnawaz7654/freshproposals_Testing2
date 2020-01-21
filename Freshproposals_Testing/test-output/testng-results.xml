@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
+<testng-results skipped="0" failed="0" ignored="0" total="13" passed="13">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="54814" started-at="2020-01-21T15:34:32 IST" finished-at="2020-01-21T15:35:27 IST">
+  <suite name="Default suite" duration-ms="51553" started-at="2020-01-21T17:10:21 IST" finished-at="2020-01-21T17:11:12 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="54814" started-at="2020-01-21T15:34:32 IST" finished-at="2020-01-21T15:35:27 IST">
-      <class name="com.freshproposals.selenium.TextBox_Duplicate_Template">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.freshproposals.selenium.TextBox_Duplicate_Template@3327bd23]" name="openBrowser" is-config="true" duration-ms="9045" started-at="2020-01-21T15:34:32 IST" finished-at="2020-01-21T15:34:41 IST">
+    <test name="Default test" duration-ms="51553" started-at="2020-01-21T17:10:21 IST" finished-at="2020-01-21T17:11:12 IST">
+      <class name="com.freshproposals.selenium.Rectangle_Duplicate_Proposal">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="openBrowser" is-config="true" duration-ms="8027" started-at="2020-01-21T17:10:21 IST" finished-at="2020-01-21T17:10:29 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.freshproposals.selenium.TextBox_Duplicate_Template@3327bd23]" name="login" duration-ms="629" started-at="2020-01-21T15:34:42 IST" data-provider="User1" finished-at="2020-01-21T15:34:42 IST">
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="login" duration-ms="846" started-at="2020-01-21T17:10:29 IST" data-provider="User1" finished-at="2020-01-21T17:10:29 IST">
           <params>
             <param index="0">
               <value>
@@ -27,43 +27,59 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="open_Template()[pri:1, instance:com.freshproposals.selenium.TextBox_Duplicate_Template@3327bd23]" name="open_Template" duration-ms="6158" started-at="2020-01-21T15:34:42 IST" finished-at="2020-01-21T15:34:48 IST">
+        <test-method status="PASS" signature="open_Template()[pri:1, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="open_Template" duration-ms="6123" started-at="2020-01-21T17:10:29 IST" finished-at="2020-01-21T17:10:36 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- open_Template -->
-        <test-method status="PASS" signature="write()[pri:2, instance:com.freshproposals.selenium.TextBox_Duplicate_Template@3327bd23]" name="write" duration-ms="6311" started-at="2020-01-21T15:34:48 IST" finished-at="2020-01-21T15:34:55 IST">
+        <test-method status="PASS" signature="height_width()[pri:2, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="height_width" duration-ms="3624" started-at="2020-01-21T17:10:36 IST" finished-at="2020-01-21T17:10:39 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- write -->
-        <test-method status="PASS" signature="duplicate()[pri:3, instance:com.freshproposals.selenium.TextBox_Duplicate_Template@3327bd23]" name="duplicate" duration-ms="2476" started-at="2020-01-21T15:34:55 IST" finished-at="2020-01-21T15:34:57 IST">
+        </test-method> <!-- height_width -->
+        <test-method status="PASS" signature="assert_width_1()[pri:3, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="assert_width_1" duration-ms="120" started-at="2020-01-21T17:10:39 IST" finished-at="2020-01-21T17:10:39 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assert_width_1 -->
+        <test-method status="PASS" signature="assert_height_1()[pri:4, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="assert_height_1" duration-ms="102" started-at="2020-01-21T17:10:39 IST" finished-at="2020-01-21T17:10:39 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assert_height_1 -->
+        <test-method status="PASS" signature="duplicate()[pri:5, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="duplicate" duration-ms="2430" started-at="2020-01-21T17:10:39 IST" finished-at="2020-01-21T17:10:42 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- duplicate -->
-        <test-method status="PASS" signature="DragDrop()[pri:4, instance:com.freshproposals.selenium.TextBox_Duplicate_Template@3327bd23]" name="DragDrop" duration-ms="3507" started-at="2020-01-21T15:34:57 IST" finished-at="2020-01-21T15:35:01 IST">
+        <test-method status="PASS" signature="DragDrop()[pri:6, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="DragDrop" duration-ms="3502" started-at="2020-01-21T17:10:42 IST" finished-at="2020-01-21T17:10:45 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DragDrop -->
-        <test-method status="PASS" signature="Save()[pri:5, instance:com.freshproposals.selenium.TextBox_Duplicate_Template@3327bd23]" name="Save" duration-ms="7453" started-at="2020-01-21T15:35:01 IST" finished-at="2020-01-21T15:35:08 IST">
+        <test-method status="PASS" signature="assert_width_2()[pri:7, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="assert_width_2" duration-ms="103" started-at="2020-01-21T17:10:45 IST" finished-at="2020-01-21T17:10:46 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assert_width_2 -->
+        <test-method status="PASS" signature="assert_height_2()[pri:8, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="assert_height_2" duration-ms="75" started-at="2020-01-21T17:10:46 IST" finished-at="2020-01-21T17:10:46 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assert_height_2 -->
+        <test-method status="PASS" signature="Save()[pri:9, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="Save" duration-ms="7337" started-at="2020-01-21T17:10:46 IST" finished-at="2020-01-21T17:10:53 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Save -->
-        <test-method status="PASS" signature="clear()[pri:6, instance:com.freshproposals.selenium.TextBox_Duplicate_Template@3327bd23]" name="clear" duration-ms="5871" started-at="2020-01-21T15:35:08 IST" finished-at="2020-01-21T15:35:14 IST">
+        <test-method status="PASS" signature="clear()[pri:10, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="clear" duration-ms="3362" started-at="2020-01-21T17:10:53 IST" finished-at="2020-01-21T17:10:56 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clear -->
-        <test-method status="PASS" signature="Save2()[pri:7, instance:com.freshproposals.selenium.TextBox_Duplicate_Template@3327bd23]" name="Save2" duration-ms="7156" started-at="2020-01-21T15:35:14 IST" finished-at="2020-01-21T15:35:21 IST">
+        <test-method status="PASS" signature="reset_sign_1()[pri:10, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="reset_sign_1" duration-ms="3473" started-at="2020-01-21T17:10:56 IST" finished-at="2020-01-21T17:11:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reset_sign_1 -->
+        <test-method status="PASS" signature="Save2()[pri:11, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="Save2" duration-ms="7001" started-at="2020-01-21T17:11:00 IST" finished-at="2020-01-21T17:11:07 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Save2 -->
-        <test-method status="PASS" signature="final_Result()[pri:8, instance:com.freshproposals.selenium.TextBox_Duplicate_Template@3327bd23]" name="final_Result" duration-ms="1006" started-at="2020-01-21T15:35:21 IST" finished-at="2020-01-21T15:35:22 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- final_Result -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.freshproposals.selenium.TextBox_Duplicate_Template@3327bd23]" name="closeBrowser" is-config="true" duration-ms="5098" started-at="2020-01-21T15:35:22 IST" finished-at="2020-01-21T15:35:27 IST">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="closeBrowser" is-config="true" duration-ms="5327" started-at="2020-01-21T17:11:07 IST" finished-at="2020-01-21T17:11:12 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.freshproposals.selenium.TextBox_Duplicate_Template -->
+      </class> <!-- com.freshproposals.selenium.Rectangle_Duplicate_Proposal -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

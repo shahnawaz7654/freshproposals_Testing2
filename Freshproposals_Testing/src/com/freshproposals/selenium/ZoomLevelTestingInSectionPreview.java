@@ -15,7 +15,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class ZoomLevelTesting extends Common_Methods {
+public class ZoomLevelTestingInSectionPreview extends Common_Methods {
 	WebDriver driver;
 	
 	 @BeforeClass
@@ -30,11 +30,11 @@ public class ZoomLevelTesting extends Common_Methods {
 	
 	 @Test(dataProvider = "User2" , priority = 0)
 	  
-	  public void login(String unm, String pwd) {
+	  public void login(String unm, String pwd) throws InterruptedException {
 		    driver.findElement(By.id("textbox_0")).sendKeys(unm);
 			driver.findElement(By.id("textbox_1")).sendKeys(pwd);
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
-		
+			Thread.sleep(3000);
 		}
 	 @Test(priority=1,dependsOnMethods = "login")
 	 public void selectzoom() throws InterruptedException {
@@ -44,14 +44,14 @@ public class ZoomLevelTesting extends Common_Methods {
 		WebElement ele=	driver.findElement(By.xpath("//div[@class='page-wrapper']"));
 
 		Select level=new Select(driver.findElement(By.xpath("//div[@class='editor-header-width-drop']//select")));
-		 int[] ar = new int[]{ -115,83,281,360,440,519,598 }; 
+		 int[] ar = new int[]{ 80,120,160,199,239,279,358,437,517,596 }; 
 
-		for(int i=0;i<7;i++) {
+		for(int i=0;i<10;i++) {
 		level.selectByIndex(i);
 		Thread.sleep(1000);
 		Point point = ele.getLocation();
 		 int xcord = point.getX();
-		// System.out.println("Position of the webelement from left side is "+xcord +" pixels");
+		 //System.out.println("Position of the webelement from left side is "+xcord +" pixels");
 		
 		 Assert.assertEquals(xcord,ar[i] );
 		}

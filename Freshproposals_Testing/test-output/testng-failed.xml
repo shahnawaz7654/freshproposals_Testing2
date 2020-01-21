@@ -3,17 +3,23 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freshproposals.selenium.TextBox_Duplicate_Template">
+      <class name="com.freshproposals.selenium.Rectangle_Duplicate_Proposal">
         <methods>
-          <include name="closeBrowser"/>
+          <include name="assert_width_2"/>
           <include name="openBrowser"/>
-          <include name="clear"/>
-          <include name="DragDrop"/>
-          <include name="final_Result"/>
           <include name="Save"/>
+          <include name="height_width"/>
+          <include name="reset_sign_1"/>
+          <include name="assert_width_1"/>
+          <include name="DragDrop"/>
+          <include name="duplicate"/>
           <include name="Save2"/>
+          <include name="clear"/>
+          <include name="assert_height_2"/>
+          <include name="assert_height_1"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- com.freshproposals.selenium.TextBox_Duplicate_Template -->
+      </class> <!-- com.freshproposals.selenium.Rectangle_Duplicate_Proposal -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

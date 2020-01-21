@@ -1,5 +1,7 @@
 package com.freshproposals.selenium;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -85,6 +87,7 @@ public class Rectangle_Duplicate_Proposal extends Common_Methods {
 		 action.contextClick(driver.findElement(By.xpath("//div[@id='page1-fpShape12272019111858']//div//div"))).perform();
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("//li[contains(text(),'Duplicate')]")).click();
+		
 	 
 	 }
 	 
@@ -92,7 +95,8 @@ public class Rectangle_Duplicate_Proposal extends Common_Methods {
 	 public void DragDrop() throws InterruptedException{
 		 Thread.sleep(3000);
 		 Actions action = new Actions(driver);
-		 WebElement source = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]/div[9]/div[1]"));
+		// WebElement source = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]/div[9]/div[1]/div[1]"));
+		 WebElement source = driver.findElement(By.xpath("//div[@class='resizers']//div//div"));
 		 WebElement des = driver.findElement(By.xpath("//div[@id='sectionPage_6773page1']"));
 		 action.clickAndHold(source).moveToElement(des, 100, 100).release().build().perform();
 	 
@@ -100,8 +104,8 @@ public class Rectangle_Duplicate_Proposal extends Common_Methods {
 	 
 	 @Test(priority = 7)
 	  public void assert_width_2() throws InterruptedException {
-		 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]/div[9]/div[1]")).click();
-		  String actual_reflect_width = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]/div[9]/div[1]")).getCssValue("width");
+		 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]/div[9]/div[1]/div[1]")).click();
+		  String actual_reflect_width = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]/div[9]/div[1]/div[1]")).getCssValue("width");
 		  String expected_reflect_width = width+"px";
 		  System.out.println("Awidth2 "+actual_reflect_width);
 		  System.out.println("Ereflect width2 "+expected_reflect_width);
@@ -110,8 +114,8 @@ public class Rectangle_Duplicate_Proposal extends Common_Methods {
 	 
 	 @Test(priority = 8)
 	  public void assert_height_2() throws InterruptedException {
-		 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]/div[9]/div[1]")).click();
-		  String actual_reflect_height = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]/div[9]/div[1]")).getCssValue("height");
+		 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]/div[9]/div[1]/div[1]")).click();
+		  String actual_reflect_height = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]/div[9]/div[1]/div[1]")).getCssValue("height");
 		  System.out.println("Aheight2 "+actual_reflect_height);
 		  String expected_reflect_height = height+"px";
 		  System.out.println("Ereflect height2 "+expected_reflect_height);
@@ -134,7 +138,7 @@ public class Rectangle_Duplicate_Proposal extends Common_Methods {
 	 @Test(priority = 10)
 	  public void clear() throws InterruptedException {
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]/div[9]/div[1]")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]/div[9]/div[1]/div[1]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//img[@class='img-fluid delete-section-control']")).click();
 		

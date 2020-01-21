@@ -72,7 +72,7 @@ public class TextBox_Duplicate_Proposal extends Common_Methods {
 	 public void DragDrop() throws InterruptedException{
 		 Thread.sleep(3000);
 		 Actions action = new Actions(driver);
-		 WebElement source = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fptext[2]/div[1]/div[1]/div[1]/div[9]/div[1]"));
+		 WebElement source = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fptext[2]/div[1]/div[1]/div[1]/div[9]/div[1]"));
 		 WebElement des = driver.findElement(By.xpath("//div[@id='sectionPage_6715page1']"));
 		 action.clickAndHold(source).moveToElement(des, 100, 100).release().build().perform();
 		 	 
@@ -91,7 +91,7 @@ public class TextBox_Duplicate_Proposal extends Common_Methods {
 	 @Test(priority = 6)
 	  public void clear() throws InterruptedException {
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fptext[2]/div[1]/div[1]/div[1]/div[9]/div[1]")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fptext[2]/div[1]/div[1]/div[1]/div[9]/div[1]")).click();
 		duplicate_text = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p")).getText();
 		System.out.println("Duplicate Text "+duplicate_text);
 		Thread.sleep(2000);

@@ -92,7 +92,7 @@ public class Signature_Duplicate_Template extends Common_Methods {
 	 public void DragDrop() throws InterruptedException{
 		 Thread.sleep(3000);
 		 Actions action = new Actions(driver);
-		 WebElement source = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-template[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpsignature[2]/div[1]/div[1]/div[1]"));
+		 WebElement source = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-template[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpsignature[2]/div[1]/div[1]/div[1]"));
 		 WebElement des = driver.findElement(By.xpath("//div[@id='sectionPage_6726page1']"));
 		 action.clickAndHold(source).moveToElement(des, 100, 100).release().build().perform();
 	 
@@ -100,8 +100,8 @@ public class Signature_Duplicate_Template extends Common_Methods {
 	 
 	 @Test(priority = 7)
 	  public void assert_width_2() throws InterruptedException {
-		 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-template[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpsignature[2]/div[1]/div[1]/div[1]")).click();
-		  String actual_reflect_width = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-template[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpsignature[2]/div[1]/div[1]/div[1]")).getCssValue("width");
+		 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-template[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpsignature[2]/div[1]/div[1]/div[1]")).click();
+		  String actual_reflect_width = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-template[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpsignature[2]/div[1]/div[1]/div[1]")).getCssValue("width");
 		  String expected_reflect_width = width+"px";
 		  System.out.println("Awidth2 "+actual_reflect_width);
 		  System.out.println("Ereflect width2 "+expected_reflect_width);
@@ -110,8 +110,8 @@ public class Signature_Duplicate_Template extends Common_Methods {
 	 
 	 @Test(priority = 8)
 	  public void assert_height_2() throws InterruptedException {
-		 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-template[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpsignature[2]/div[1]/div[1]/div[1]")).click();
-		  String actual_reflect_height = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-template[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpsignature[2]/div[1]/div[1]/div[1]")).getCssValue("height");
+		 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-template[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpsignature[2]/div[1]/div[1]/div[1]")).click();
+		  String actual_reflect_height = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-template[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpsignature[2]/div[1]/div[1]/div[1]")).getCssValue("height");
 		  System.out.println("Aheight2 "+actual_reflect_height);
 		  String expected_reflect_height = height+"px";
 		  System.out.println("Ereflect height2 "+expected_reflect_height);
@@ -134,7 +134,7 @@ public class Signature_Duplicate_Template extends Common_Methods {
 	 @Test(priority = 10)
 	  public void clear() throws InterruptedException {
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-template[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpsignature[2]/div[1]/div[1]/div[1]")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-template[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpsignature[2]/div[1]/div[1]/div[1]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//img[@class='img-fluid delete-section-control']")).click();
 		

@@ -61,9 +61,12 @@ public class Lost_Proposal_Verification extends Common_Methods {
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//button[@type='submit']")).click();
 	//client
-	driver.findElement(By.xpath("//*[@id=\"headingSelectClient\"]/h2/button")).click();
-	driver.findElement(By.xpath("//*[@id=\"collapseSelectClient\"]/div/div/app-clients/div[2]/div/div/div/div[2]/label/span")).click();
-	Thread.sleep(5000);
+	 driver.findElement(By.xpath("//*[@id=\"headingSelectClient\"]/h2/button")).click();
+	  Thread.sleep(1000);
+	  //search
+	  driver.findElement(By.xpath("//div[@class='client-search']//input[@placeholder=' ']")).sendKeys("Automation Client");
+	  Thread.sleep(1000);
+	  driver.findElement(By.xpath("//div[@class='card client-det']//span[@class='checkround']")).click();Thread.sleep(5000);
 	
 	//scroll window
 	JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -71,14 +74,16 @@ public class Lost_Proposal_Verification extends Common_Methods {
     Thread.sleep(2000);
 	
     //calender
-	driver.findElement(By.xpath("//img[@src='../../../assets/calendar.svg']")).click();
-	driver.findElement(By.xpath("//*[@id=\"content\"]/div/app-edit-proposal/div[1]/div/div/div/div[1]/div[5]/div[1]/div/ngb-datepicker/div[2]/div/ngb-datepicker-month-view/div[6]/div[1]/div")).click();
-	//driver.findElement(By.linkText("Advance")).click();
-	//Thread.sleep(5000);
-	
-	Thread.sleep(2000);
-	driver.findElement(By.linkText("Next")).click();
-	Thread.sleep(5000);
+    Thread.sleep(3000);
+	  driver.findElement(By.xpath("//img[@src='../../../assets/calendar.svg']")).click();
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//div[@class='ngb-dp-arrow right']//button[@class='btn btn-link ngb-dp-arrow-btn']")).click();
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//div[contains(text(),'31')]")).click();
+	  Thread.sleep(2000);
+	  //driver.findElement(By.linkText("Next")).click();
+	  driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
+	  Thread.sleep(5000);
 		
 	}
   
@@ -134,6 +139,6 @@ public class Lost_Proposal_Verification extends Common_Methods {
 @AfterClass
   public void closeBrowser() throws InterruptedException {
   Thread.sleep(3000);
-  driver.close();
+  driver.quit();
 }
 }

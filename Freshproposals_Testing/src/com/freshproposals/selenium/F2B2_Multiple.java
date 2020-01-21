@@ -54,7 +54,7 @@ public class F2B2_Multiple extends Common_Methods {
 	 
 	 action.contextClick(driver.findElement(By.xpath("//div[@class='fr-element fr-view']"))).perform();
 	 Thread.sleep(1000);
-	 driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
+	 //driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("//li[contains(text(),'Send a step backward')]")).click();
 	 
@@ -86,7 +86,7 @@ public class F2B2_Multiple extends Common_Methods {
 	 
 	 action.contextClick(driver.findElement(By.xpath("//div[@class='resizers']//img"))).perform();
 	 Thread.sleep(1000);
-	 driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
+	 //driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("//li[contains(text(),'Send to back')]")).click();
 	 
@@ -119,7 +119,7 @@ public class F2B2_Multiple extends Common_Methods {
 	 System.out.println("Before Forward Sign, Img "+B_Forward_Img);
 	 action.contextClick(driver.findElement(By.xpath("//div[@id='page2-fpSign103120191444833']"))).perform();
 	 Thread.sleep(1000);
-	 driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
+	 //driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("//li[contains(text(),'Bring a step forward')]")).click();
 	 
@@ -148,7 +148,7 @@ public class F2B2_Multiple extends Common_Methods {
 	 
 	 action.contextClick(driver.findElement(By.xpath("//div[@id='page2-fpImage1031201914441969']//div[@class='resizers']"))).perform();
 	 Thread.sleep(1000);
-	 driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
+	 //driver.findElement(By.xpath("//button[contains(text(),'Position')]")).click();
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("//li[contains(text(),'Bring to front')]")).click();
 	 
@@ -169,6 +169,6 @@ public class F2B2_Multiple extends Common_Methods {
 @AfterClass
 public void closeBrowser() throws InterruptedException {
 	  Thread.sleep(3000);
-	  driver.close();
+	  driver.quit();
 }
 }

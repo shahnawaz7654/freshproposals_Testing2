@@ -50,7 +50,7 @@ public class Image_Duplicate_Section extends Common_Methods {
 		driver.findElement(By.xpath("//div[@class='resizers']//img")).click();
 		driver.findElement(By.name("width11")).clear();
 		driver.findElement(By.name("width11")).sendKeys(width);
-		driver.findElement(By.className("default-rectangle")).click();
+		driver.findElement(By.xpath("//div[@id='sectionPage_6733page1']")).click();
 		Thread.sleep(2000);
 		
 	 }
@@ -111,7 +111,7 @@ public class Image_Duplicate_Section extends Common_Methods {
 	 
 	 @Test(priority = 8)
 	  public void clear() throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpimage[2]/div[1]/div[1]/div[1]/div[9]/img[1]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//img[@class='img-fluid delete-section-control']")).click();
@@ -124,7 +124,7 @@ public class Image_Duplicate_Section extends Common_Methods {
 		driver.findElement(By.xpath("//div[@class='resizers']//img")).click();
 		driver.findElement(By.name("width11")).clear();
 		driver.findElement(By.name("width11")).sendKeys("530");
-		driver.findElement(By.className("default-rectangle")).click();
+		driver.findElement(By.xpath("//div[@id='sectionPage_6733page1']")).click();
 	    
 		 
 	 }
@@ -142,7 +142,7 @@ public class Image_Duplicate_Section extends Common_Methods {
 	 
 	 @AfterClass
 	 public void closeBrowser() throws InterruptedException {
-	 	  Thread.sleep(3000);
+	 	  Thread.sleep(5000);
 	 	  driver.close();
 	 }
 }

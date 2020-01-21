@@ -52,18 +52,20 @@ public class Gmail_Testing extends Common_Methods{
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
 	  }
 	  
-//	  @Test(priority = 2)
-//	  public void contentLibrary() throws InterruptedException {
-//		  Thread.sleep(3000);
-//			//content library
-//		    driver.findElement(By.xpath("//button[@class='btn add-sect-btn proposal-add-sec']//i")).click();
-//			//use this//button[@class='btn add-sect-btn proposal-add-sec']//i[@class='fa fa-plus-circle']
-//		    Thread.sleep(3000);
-//		    driver.findElement(By.xpath("//img[@src='../../../assets/use-this.svg']")).click();
-//			//close content library
-//			Thread.sleep(1000);
-//			driver.findElement(By.xpath("//img[@src='../../../assets/cancel.svg']")).click();
-//	  }
+	  @Test(priority = 2)
+	  public void contentLibrary() throws InterruptedException {
+		  Thread.sleep(3000);
+		  //plus btn
+		  driver.findElement(By.xpath("//button[@class='btn add-sect-btn template-add-sec']")).click();
+		  Thread.sleep(5000);
+		  //search
+		  driver.findElement(By.xpath("//input[@placeholder='search section']")).sendKeys("content library automation");
+		  Thread.sleep(3000);
+		  //use this
+		  driver.findElement(By.xpath("//img[@class='img=fluid']")).click();
+		  Thread.sleep(3000);
+		  driver.findElement(By.xpath("//img[@class='img-fluid close-section-library']")).click();
+	  }
 	  
 	  @Test(priority = 3)
 	  public void generateProposal() throws InterruptedException {
@@ -77,8 +79,13 @@ public class Gmail_Testing extends Common_Methods{
 	  @Test(priority = 4)
 	  public void client() throws InterruptedException  {
 		  Thread.sleep(3000);
+		  //client btn
 		  driver.findElement(By.xpath("//*[@id=\"headingSelectClient\"]/h2/button")).click();
-		  driver.findElement(By.xpath("//div[11]//div[2]//label[1]//span[1]")).click();
+		  Thread.sleep(1000);
+		  //search
+		  driver.findElement(By.xpath("//div[@class='client-search']//input[@placeholder=' ']")).sendKeys("Gmail Testing");
+		  Thread.sleep(1000);
+		  driver.findElement(By.xpath("//div[@class='card client-det']//span[@class='checkround']")).click();
 		  //driver.findElement(By.xpath("//*[@id=\"collapseSelectClient\"]/div/div/app-clients/div[2]/div/div/div/div[2]/label/span")).click();
 	  }
 	  
@@ -98,7 +105,8 @@ public class Gmail_Testing extends Common_Methods{
 		  Thread.sleep(2000);
 		  driver.findElement(By.xpath("//div[contains(text(),'31')]")).click();
 		  Thread.sleep(2000);
-		  driver.findElement(By.linkText("Next")).click();
+		  //driver.findElement(By.linkText("Next")).click();
+		  driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
 	  }
 	  
 	  @Test(priority = 7)

@@ -47,7 +47,7 @@ public class Ellipse_Duplicate_Proposal extends Common_Methods {
 	 }
 	 
 	 @Test(priority = 2)
-	 public void height_width() throws InterruptedException {
+	 public void height_width() throws InterruptedException {     
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[@id='page1-fpShape122720191212622']")).click();
 		driver.findElement(By.name("textWidth11")).clear();

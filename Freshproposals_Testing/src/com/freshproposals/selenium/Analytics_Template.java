@@ -141,8 +141,6 @@ public class Analytics_Template extends Common_Methods {
 	  driver.findElement(By.xpath("//a[contains(text(),'Cover Letter')]")).click();
 	  Thread.sleep(5000);
 	  
-
-
   }
    
   
@@ -150,7 +148,7 @@ public class Analytics_Template extends Common_Methods {
   @AfterClass
   public void closeBrowser() throws InterruptedException {
 	  Thread.sleep(3000);
-	  driver.close();
+	  driver.quit();
   }
   
   

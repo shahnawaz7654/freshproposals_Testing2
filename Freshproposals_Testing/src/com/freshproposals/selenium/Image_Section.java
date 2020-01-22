@@ -108,24 +108,24 @@ public class Image_Section extends Common_Methods {
 	  
  }
   
-  @Test(priority = 6)
-  public void color() throws InterruptedException {
-	 
-  Thread.sleep(1000);
-  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
-  Thread.sleep(1000);
-  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
-  //resize(r1, 75,75);
-  Thread.sleep(1000);
-  //driver.findElement(By.className("e-hsv-color")).click();
-  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
-  Thread.sleep(1000);
-  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#000000");
-  Thread.sleep(2000);
-  driver.findElement(By.xpath("//button[@title='Apply']")).click();
-  Thread.sleep(1000);
-  }
-  
+//  @Test(priority = 6)
+//  public void color() throws InterruptedException {
+//	 
+//  Thread.sleep(1000);
+//  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
+//  Thread.sleep(1000);
+//  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
+//  //resize(r1, 75,75);
+//  Thread.sleep(1000);
+//  //driver.findElement(By.className("e-hsv-color")).click();
+//  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
+//  Thread.sleep(1000);
+//  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#000000");
+//  Thread.sleep(2000);
+//  driver.findElement(By.xpath("//button[@title='Apply']")).click();
+//  Thread.sleep(1000);
+//  }
+//  
   
   @Test(priority = 7)
   public void rotate() throws InterruptedException, AWTException {
@@ -356,19 +356,19 @@ public class Image_Section extends Common_Methods {
 		  driver.findElement(By.name("border")).click();
 		  
 		  //color
-		  Thread.sleep(1000);
-		  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
-		  Thread.sleep(1000);
-		  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
-		  //resize(r1, 75,75);
-		  Thread.sleep(1000);
-		  //driver.findElement(By.className("e-hsv-color")).click();
-		  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
-		  Thread.sleep(1000);
-		  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#ffffff");
-		  Thread.sleep(2000);
-		  driver.findElement(By.xpath("//button[@title='Apply']")).click();
-		  Thread.sleep(1000);
+//		  Thread.sleep(1000);
+//		  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
+//		  Thread.sleep(1000);
+//		  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
+//		  //resize(r1, 75,75);
+//		  Thread.sleep(1000);
+//		  //driver.findElement(By.className("e-hsv-color")).click();
+//		  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
+//		  Thread.sleep(1000);
+//		  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#ffffff");
+//		  Thread.sleep(2000);
+//		  driver.findElement(By.xpath("//button[@title='Apply']")).click();
+//		  Thread.sleep(1000);
 //		  
 
 		  Robot robot = new Robot();

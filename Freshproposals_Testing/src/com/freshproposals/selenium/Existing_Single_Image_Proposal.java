@@ -29,7 +29,6 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 	
 	String width = "420";
 	String rotate = "5";
-	String corner = "100";
 	String border_width = "10";
 	String border_style = "inset";
 	String padding_top = "30";
@@ -120,36 +119,33 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 	  Assert.assertEquals(actual_rotate,rotate);
 	  Thread.sleep(1000);
 	  
-	  Robot robot = new Robot();
-	  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+//	  Robot robot = new Robot();
+//	  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
   }
   
-  @Test(priority = 7)
-  public void color() throws InterruptedException {
-	 
-  Thread.sleep(1000);
-  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
-  Thread.sleep(1000);
-  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
-  //resize(r1, 75,75);
-  Thread.sleep(1000);
-  //driver.findElement(By.className("e-hsv-color")).click();
-  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
-  Thread.sleep(1000);
-  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#000000");
-  Thread.sleep(2000);
-  driver.findElement(By.xpath("//button[@title='Apply']")).click();
-  Thread.sleep(1000);
-  }
-  
+//  @Test(priority = 7)
+//  public void color() throws InterruptedException {
+//	 
+//  Thread.sleep(1000);
+//  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
+//  Thread.sleep(1000);
+//  //driver.findElement(By.xpath("//div[@class='e-hue-slider e-control e-slider e-lib']//div[@class='e-handle e-handle-first']")).click();
+//  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
+//  resize(r1, 75,75);
+//  Thread.sleep(1000);
+//  //driver.findElement(By.className("e-hsv-color")).click();
+//  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
+//  Thread.sleep(1000);
+//  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#000000");
+//  Thread.sleep(2000);
+//  driver.findElement(By.xpath("//button[@title='Apply']")).click();
+//  Thread.sleep(1000);
+//  }
+//  
   
   @Test(priority = 8)
   public void corner() throws InterruptedException {
 	  //corner
-//	  driver.findElement(By.name("corners")).clear();
-//	  driver.findElement(By.name("corners")).sendKeys(corner);
-//	  String actual_corner = driver.findElement(By.name("corners")).getAttribute("value");
-//	  Assert.assertEquals(actual_corner, corner);
 	  WebElement r = driver.findElement(By.name("corners"));
 	  resize(r, 50, 50);
 	  Thread.sleep(1000);
@@ -160,12 +156,12 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 //	  
 //	  //opacity
 //	  WebElement r = driver.findElement(By.name("opacity"));
-//	  resize(r,25,25);
+//	  resize(r,50,50);
 //	  //String actual_opacity = driver.findElement(By.name("opacity")).getAttribute("value");
 //	  //String expected_opacity = "64";
 //	  //Assert.assertEquals(actual_opacity, expected_opacity);
 //	 }
-//  
+  
   @Test(priority = 10)
   public void border_width() throws InterruptedException {
 	 
@@ -235,16 +231,16 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 	  Assert.assertEquals(actual_padding_right, padding_right);
   }
   
-//  @Test(priority = 16)
-//  public void greyscale() throws InterruptedException {
-//	  //grayscale
-//	  Thread.sleep(2000);
-////	  WebElement rgreyscale = driver.findElement(By.name("grayscale"));
-////	  resize(rgreyscale,50,50);
-//	  Thread.sleep(1000);
-//	  driver.findElement(By.name("flip1")).click();
-//	  
-//}
+  @Test(priority = 16)
+  public void greyscale() throws InterruptedException {
+	  //grayscale
+	  Thread.sleep(2000);
+	  WebElement rgreyscale = driver.findElement(By.name("grayscale"));
+	  resize(rgreyscale,50,50);
+	  Thread.sleep(1000);
+	  //driver.findElement(By.name("flip1")).click();
+	  
+}
 
 	 @Test(priority = 17)
 	  public void save() throws InterruptedException {
@@ -255,28 +251,28 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 		  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1058;editor=true");
 		  
 	 }
-	  
+	         
 	  @Test(priority = 19)
 	  public void reflect_rotate() {
 		  driver.findElement(By.xpath("//div[@class='resizers']//img")).click();
-		  String actual_reflect_rotate = driver.findElement(By.xpath("//div[@class='resizers']//img")).getCssValue("rotate");
+		  String actual_reflect_rotate = driver.findElement(By.xpath("//div[@class='resizers']//img")).getCssValue("transform: rotate");
 		  System.out.println("Rrotate "+actual_reflect_rotate);
 		  String expected_reflect_rotate = rotate+"px";
 		  System.out.println("reflect rotate "+expected_reflect_rotate);
 		  Assert.assertEquals(actual_reflect_rotate, expected_reflect_rotate);
 		  
+		  
 	  }
 	  
-//	  @Test(priority = 20)
-//	  public void reflect_opacity() {
-//		  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
-//		  String actual_reflect_opacity = driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).getCssValue("opacity");
-//		  System.out.println(actual_reflect_opacity);
-//		  String expected_reflect_opacity = opacity+"px";
-//		  System.out.println("reflect opacity "+expected_reflect_opacity);
-//		  Assert.assertEquals(actual_reflect_opacity, expected_reflect_opacity);
-//		  
-//	  }
+	  @Test(priority = 20)
+	  public void reflect_corner() {
+		  driver.findElement(By.xpath("//div[@class='resizers']//img")).click();
+		  String actual_reflect_corner = driver.findElement(By.xpath("//div[@class='resizers']//img")).getCssValue("border-radius");
+		  System.out.println("Rcorner"+actual_reflect_corner);
+		  String expected_reflect_corner = "76%";
+		  Assert.assertEquals(actual_reflect_corner, expected_reflect_corner);
+		  
+	  }
 	
 	  @Test(priority = 21)
 	  public void reflect_border_width() throws InterruptedException {
@@ -337,9 +333,14 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 			  Thread.sleep(1000);
 			  driver.findElement(By.name("rotate")).sendKeys("0"); 
 			  
-		  WebElement r = driver.findElement(By.name("corners"));
-		  resize(r, -100, -100);
+		  WebElement corner = driver.findElement(By.name("corners"));
+		  resize(corner, -100, -100);
 		  Thread.sleep(1000);
+		  
+//		  WebElement opacity = driver.findElement(By.name("opacity"));
+//		  resize(opacity, 0, 0);
+//		  Thread.sleep(1000);
+
 
 		  Thread.sleep(5000);
 		  //border width
@@ -351,18 +352,18 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 		  driver.findElement(By.name("border")).click();
 		  
 		  //color
-		  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
-		  Thread.sleep(1000);
-		  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
-		  //resize(r1, 75,75);
-		  Thread.sleep(1000);
-		  //driver.findElement(By.className("e-hsv-color")).click();
-		  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
-		  Thread.sleep(1000);
-		  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#ffffff");
-		  Thread.sleep(2000);
-		  driver.findElement(By.xpath("//button[@title='Apply']")).click();
-		  
+//		  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
+//		  Thread.sleep(1000);
+//		  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
+//		  //resize(r1, 75,75);
+//		  Thread.sleep(1000);
+//		  //driver.findElement(By.className("e-hsv-color")).click();
+//		  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
+//		  Thread.sleep(1000);
+//		  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#ffffff");
+//		  Thread.sleep(2000);
+//		  driver.findElement(By.xpath("//button[@title='Apply']")).click();
+//		  
 
 		  Robot robot = new Robot();
 		  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
@@ -387,8 +388,8 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 		  //resize1(r1,100,100);
 		  
 		  //greyscale		
-//		  WebElement rgreyscale = driver.findElement(By.name("grayscale"));
-//		  resize(rgreyscale,-100,-100);
+		  WebElement rgreyscale = driver.findElement(By.name("grayscale"));
+		  resize(rgreyscale,-100,-100);
 		  
         		  
 		  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();

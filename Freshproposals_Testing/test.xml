@@ -31,6 +31,9 @@
        <class name="com.freshproposals.selenium.ExistingVariable"/>
        <class name="com.freshproposals.selenium.F2B2_Multiple"/>
        <class name="com.freshproposals.selenium.F2B2"/>
+       <class name="com.freshproposals.selenium.Signature_Proposal"/>
+       <class name="com.freshproposals.selenium.Signature_Section"/>
+       <class name="com.freshproposals.selenium.Signature_Template"/>
        <class name="com.freshproposals.selenium.FontPropertiesInProposal"/>
        <class name="com.freshproposals.selenium.FontPropertiesInSection"/>
        <class name="com.freshproposals.selenium.FontPropertiesinTemplate"/>
@@ -59,9 +62,6 @@
        <class name="com.freshproposals.selenium.Signature_Duplicate_Proposal"/>
        <class name="com.freshproposals.selenium.Signature_Duplicate_Section"/>
        <class name="com.freshproposals.selenium.Signature_Duplicate_Template"/>
-       <class name="com.freshproposals.selenium.Signature_Proposal"/>
-       <class name="com.freshproposals.selenium.Signature_Section"/>
-       <class name="com.freshproposals.selenium.Signature_Template"/>
        <class name="com.freshproposals.selenium.Template_TextBox_2"/>
        <class name="com.freshproposals.selenium.TextBox_Duplicate_Proposal"/>
        <class name="com.freshproposals.selenium.TextBox_Duplicate_Section"/>

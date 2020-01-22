@@ -3,23 +3,29 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freshproposals.selenium.Rectangle_Duplicate_Proposal">
+      <class name="com.freshproposals.selenium.Image_Template">
         <methods>
-          <include name="assert_width_2"/>
+          <include name="corner"/>
+          <include name="padding_left"/>
+          <include name="Save_width"/>
+          <include name="reflect_border_width"/>
           <include name="openBrowser"/>
-          <include name="Save"/>
-          <include name="height_width"/>
-          <include name="reset_sign_1"/>
-          <include name="assert_width_1"/>
-          <include name="DragDrop"/>
-          <include name="duplicate"/>
-          <include name="Save2"/>
-          <include name="clear"/>
-          <include name="assert_height_2"/>
-          <include name="assert_height_1"/>
+          <include name="padding_bottom"/>
+          <include name="padding_right"/>
+          <include name="reflect_border_style"/>
+          <include name="width"/>
+          <include name="Reset_All"/>
+          <include name="border_width"/>
+          <include name="padding_top"/>
+          <include name="rotate"/>
+          <include name="border_style"/>
           <include name="closeBrowser"/>
+          <include name="reflect_padding"/>
+          <include name="reflect_width"/>
+          <include name="Reset_width"/>
+          <include name="save"/>
         </methods>
-      </class> <!-- com.freshproposals.selenium.Rectangle_Duplicate_Proposal -->
+      </class> <!-- com.freshproposals.selenium.Image_Template -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

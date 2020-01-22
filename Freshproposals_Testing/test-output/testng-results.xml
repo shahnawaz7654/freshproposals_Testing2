@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="13" passed="13">
+<testng-results skipped="0" failed="0" ignored="0" total="19" passed="19">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="51553" started-at="2020-01-21T17:10:21 IST" finished-at="2020-01-21T17:11:12 IST">
+  <suite name="Default suite" duration-ms="101649" started-at="2020-01-22T18:42:15 IST" finished-at="2020-01-22T18:43:57 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="51553" started-at="2020-01-21T17:10:21 IST" finished-at="2020-01-21T17:11:12 IST">
-      <class name="com.freshproposals.selenium.Rectangle_Duplicate_Proposal">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="openBrowser" is-config="true" duration-ms="8027" started-at="2020-01-21T17:10:21 IST" finished-at="2020-01-21T17:10:29 IST">
+    <test name="Default test" duration-ms="101649" started-at="2020-01-22T18:42:15 IST" finished-at="2020-01-22T18:43:57 IST">
+      <class name="com.freshproposals.selenium.Image_Section">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="openBrowser" is-config="true" duration-ms="12168" started-at="2020-01-22T18:42:15 IST" finished-at="2020-01-22T18:42:27 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="login" duration-ms="846" started-at="2020-01-21T17:10:29 IST" data-provider="User1" finished-at="2020-01-21T17:10:29 IST">
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="login" duration-ms="643" started-at="2020-01-22T18:42:27 IST" data-provider="User1" finished-at="2020-01-22T18:42:28 IST">
           <params>
             <param index="0">
               <value>
@@ -27,59 +27,83 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="open_Template()[pri:1, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="open_Template" duration-ms="6123" started-at="2020-01-21T17:10:29 IST" finished-at="2020-01-21T17:10:36 IST">
+        <test-method status="PASS" signature="openExistTemplate()[pri:1, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="openExistTemplate" duration-ms="9291" started-at="2020-01-22T18:42:28 IST" finished-at="2020-01-22T18:42:37 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- open_Template -->
-        <test-method status="PASS" signature="height_width()[pri:2, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="height_width" duration-ms="3624" started-at="2020-01-21T17:10:36 IST" finished-at="2020-01-21T17:10:39 IST">
+        </test-method> <!-- openExistTemplate -->
+        <test-method status="PASS" signature="width()[pri:2, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="width" duration-ms="4551" started-at="2020-01-22T18:42:37 IST" finished-at="2020-01-22T18:42:42 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- height_width -->
-        <test-method status="PASS" signature="assert_width_1()[pri:3, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="assert_width_1" duration-ms="120" started-at="2020-01-21T17:10:39 IST" finished-at="2020-01-21T17:10:39 IST">
+        </test-method> <!-- width -->
+        <test-method status="PASS" signature="Save_width()[pri:3, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="Save_width" duration-ms="12385" started-at="2020-01-22T18:42:42 IST" finished-at="2020-01-22T18:42:54 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- assert_width_1 -->
-        <test-method status="PASS" signature="assert_height_1()[pri:4, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="assert_height_1" duration-ms="102" started-at="2020-01-21T17:10:39 IST" finished-at="2020-01-21T17:10:39 IST">
+        </test-method> <!-- Save_width -->
+        <test-method status="PASS" signature="reflect_width()[pri:4, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="reflect_width" duration-ms="239" started-at="2020-01-22T18:42:54 IST" finished-at="2020-01-22T18:42:55 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- assert_height_1 -->
-        <test-method status="PASS" signature="duplicate()[pri:5, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="duplicate" duration-ms="2430" started-at="2020-01-21T17:10:39 IST" finished-at="2020-01-21T17:10:42 IST">
+        </test-method> <!-- reflect_width -->
+        <test-method status="PASS" signature="Reset_width()[pri:5, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="Reset_width" duration-ms="4272" started-at="2020-01-22T18:42:55 IST" finished-at="2020-01-22T18:42:59 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- duplicate -->
-        <test-method status="PASS" signature="DragDrop()[pri:6, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="DragDrop" duration-ms="3502" started-at="2020-01-21T17:10:42 IST" finished-at="2020-01-21T17:10:45 IST">
+        </test-method> <!-- Reset_width -->
+        <test-method status="PASS" signature="rotate()[pri:7, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="rotate" duration-ms="3290" started-at="2020-01-22T18:42:59 IST" finished-at="2020-01-22T18:43:02 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DragDrop -->
-        <test-method status="PASS" signature="assert_width_2()[pri:7, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="assert_width_2" duration-ms="103" started-at="2020-01-21T17:10:45 IST" finished-at="2020-01-21T17:10:46 IST">
+        </test-method> <!-- rotate -->
+        <test-method status="PASS" signature="corner()[pri:8, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="corner" duration-ms="1527" started-at="2020-01-22T18:43:02 IST" finished-at="2020-01-22T18:43:04 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- assert_width_2 -->
-        <test-method status="PASS" signature="assert_height_2()[pri:8, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="assert_height_2" duration-ms="75" started-at="2020-01-21T17:10:46 IST" finished-at="2020-01-21T17:10:46 IST">
+        </test-method> <!-- corner -->
+        <test-method status="PASS" signature="border_width()[pri:10, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="border_width" duration-ms="2329" started-at="2020-01-22T18:43:04 IST" finished-at="2020-01-22T18:43:06 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- assert_height_2 -->
-        <test-method status="PASS" signature="Save()[pri:9, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="Save" duration-ms="7337" started-at="2020-01-21T17:10:46 IST" finished-at="2020-01-21T17:10:53 IST">
+        </test-method> <!-- border_width -->
+        <test-method status="PASS" signature="border_style()[pri:11, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="border_style" duration-ms="1330" started-at="2020-01-22T18:43:06 IST" finished-at="2020-01-22T18:43:07 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Save -->
-        <test-method status="PASS" signature="clear()[pri:10, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="clear" duration-ms="3362" started-at="2020-01-21T17:10:53 IST" finished-at="2020-01-21T17:10:56 IST">
+        </test-method> <!-- border_style -->
+        <test-method status="PASS" signature="padding_top()[pri:12, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="padding_top" duration-ms="2358" started-at="2020-01-22T18:43:07 IST" finished-at="2020-01-22T18:43:10 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clear -->
-        <test-method status="PASS" signature="reset_sign_1()[pri:10, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="reset_sign_1" duration-ms="3473" started-at="2020-01-21T17:10:56 IST" finished-at="2020-01-21T17:11:00 IST">
+        </test-method> <!-- padding_top -->
+        <test-method status="PASS" signature="padding_left()[pri:13, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="padding_left" duration-ms="1191" started-at="2020-01-22T18:43:10 IST" finished-at="2020-01-22T18:43:11 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- reset_sign_1 -->
-        <test-method status="PASS" signature="Save2()[pri:11, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="Save2" duration-ms="7001" started-at="2020-01-21T17:11:00 IST" finished-at="2020-01-21T17:11:07 IST">
+        </test-method> <!-- padding_left -->
+        <test-method status="PASS" signature="padding_bottom()[pri:14, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="padding_bottom" duration-ms="1208" started-at="2020-01-22T18:43:11 IST" finished-at="2020-01-22T18:43:12 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Save2 -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.freshproposals.selenium.Rectangle_Duplicate_Proposal@3327bd23]" name="closeBrowser" is-config="true" duration-ms="5327" started-at="2020-01-21T17:11:07 IST" finished-at="2020-01-21T17:11:12 IST">
+        </test-method> <!-- padding_bottom -->
+        <test-method status="PASS" signature="padding_right()[pri:15, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="padding_right" duration-ms="180" started-at="2020-01-22T18:43:12 IST" finished-at="2020-01-22T18:43:12 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- padding_right -->
+        <test-method status="PASS" signature="save()[pri:17, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="save" duration-ms="7456" started-at="2020-01-22T18:43:12 IST" finished-at="2020-01-22T18:43:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- save -->
+        <test-method status="PASS" signature="reflect_border_width()[pri:21, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="reflect_border_width" duration-ms="5569" started-at="2020-01-22T18:43:20 IST" finished-at="2020-01-22T18:43:25 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reflect_border_width -->
+        <test-method status="PASS" signature="reflect_border_style()[pri:22, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="reflect_border_style" duration-ms="5127" started-at="2020-01-22T18:43:25 IST" finished-at="2020-01-22T18:43:30 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reflect_border_style -->
+        <test-method status="PASS" signature="reflect_padding()[pri:23, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="reflect_padding" duration-ms="5182" started-at="2020-01-22T18:43:30 IST" finished-at="2020-01-22T18:43:36 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reflect_padding -->
+        <test-method status="PASS" signature="Reset_All()[pri:24, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="Reset_All" duration-ms="16097" started-at="2020-01-22T18:43:36 IST" finished-at="2020-01-22T18:43:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Reset_All -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.freshproposals.selenium.Image_Section@3108bc]" name="closeBrowser" is-config="true" duration-ms="5111" started-at="2020-01-22T18:43:52 IST" finished-at="2020-01-22T18:43:57 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.freshproposals.selenium.Rectangle_Duplicate_Proposal -->
+      </class> <!-- com.freshproposals.selenium.Image_Section -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

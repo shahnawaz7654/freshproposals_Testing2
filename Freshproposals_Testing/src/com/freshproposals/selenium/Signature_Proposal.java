@@ -61,8 +61,7 @@ public class Signature_Proposal extends Common_Methods {
 	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1109;editor=true");
 	  Thread.sleep(3000);
 	  driver.findElement(By.id("page1-fpSign115201911423648")).click();
-	  
-  }
+	  }
   
   @Test(priority = 2)
   public void width() throws InterruptedException {

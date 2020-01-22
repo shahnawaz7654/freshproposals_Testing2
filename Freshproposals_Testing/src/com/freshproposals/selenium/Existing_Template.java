@@ -68,12 +68,13 @@ public class Existing_Template extends Common_Methods {
 	  public void width() throws InterruptedException {
 		
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[1]/div/ejs-numerictextbox/span/input[1]")).clear();
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[1]/div/ejs-numerictextbox/span/input[1]")).sendKeys(width);
-	  String actual_width =  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[1]/div/ejs-numerictextbox/span/input[1]")).getAttribute("value");
-
-	  Assert.assertEquals(actual_width,width);
+//	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[1]/div/ejs-numerictextbox/span/input[1]")).clear();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[1]/div/ejs-numerictextbox/span/input[1]")).sendKeys(width);
+//	  String actual_width =  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[1]/div/ejs-numerictextbox/span/input[1]")).getAttribute("value");
+//
+//	  Assert.assertEquals(actual_width,width);
+	  driver.findElement(By.xpath("//ejs-numerictextbox[@class='ng-pristine ng-valid e-lib ng-touched']//input[@class='ng-untouched ng-pristine ng-valid e-control e-numerictextbox e-lib e-input']")).clear();
 	  }
 	  
 	  @Test(priority = 3)

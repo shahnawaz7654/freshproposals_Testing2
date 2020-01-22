@@ -108,23 +108,23 @@ public class Image_Template extends Common_Methods {
 	  
  }
   
-  @Test(priority = 6)
-  public void color() throws InterruptedException {
-	 
-  Thread.sleep(1000);
-  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
-  Thread.sleep(1000);
-  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
-  //resize(r1, 75,75);
-  Thread.sleep(1000);
-  //driver.findElement(By.className("e-hsv-color")).click();
-  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
-  Thread.sleep(1000);
-  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#000000");
-  Thread.sleep(2000);
-  driver.findElement(By.xpath("//button[@title='Apply']")).click();
-  Thread.sleep(1000);
-  }
+//  @Test(priority = 6)
+//  public void color() throws InterruptedException {
+//	 
+//  Thread.sleep(1000);
+//  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
+//  Thread.sleep(1000);
+//  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
+//  //resize(r1, 75,75);
+//  Thread.sleep(1000);
+//  //driver.findElement(By.className("e-hsv-color")).click();
+//  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
+//  Thread.sleep(1000);
+//  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#000000");
+//  Thread.sleep(2000);
+//  driver.findElement(By.xpath("//button[@title='Apply']")).click();
+//  Thread.sleep(1000);
+//  }
   
   
   @Test(priority = 7)
@@ -237,16 +237,16 @@ public class Image_Template extends Common_Methods {
 	  Assert.assertEquals(actual_padding_right, padding_right);
   }
   
-  @Test(priority = 16)
-  public void flip() throws InterruptedException {
-	  //grayscale
-//	  Thread.sleep(2000);
-//	  WebElement rgreyscale = driver.findElement(By.name("grayscale"));
-//	  resize(rgreyscale,100,100);
-	  Thread.sleep(1000);
-	  driver.findElement(By.name("flip1")).click();
-	  
-}
+//  @Test(priority = 16)
+//  public void flip() throws InterruptedException {
+//	  //grayscale
+////	  Thread.sleep(2000);
+////	  WebElement rgreyscale = driver.findElement(By.name("grayscale"));
+////	  resize(rgreyscale,100,100);
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.name("flip1")).click();
+//	  
+//}
 	  
 	  @Test(priority = 17)
 	  public void save() throws InterruptedException {
@@ -353,18 +353,18 @@ public class Image_Template extends Common_Methods {
 		  driver.findElement(By.name("border")).click();
 		  
 		  //color
-		  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
-		  Thread.sleep(1000);
-		  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
-		  //resize(r1, 75,75);
-		  Thread.sleep(1000);
-		  //driver.findElement(By.className("e-hsv-color")).click();
-		  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
-		  Thread.sleep(1000);
-		  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#ffffff");
-		  Thread.sleep(2000);
-		  driver.findElement(By.xpath("//button[@title='Apply']")).click();
-		  Thread.sleep(1000);
+//		  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
+//		  Thread.sleep(1000);
+//		  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
+//		  //resize(r1, 75,75);
+//		  Thread.sleep(1000);
+//		  //driver.findElement(By.className("e-hsv-color")).click();
+//		  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
+//		  Thread.sleep(1000);
+//		  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#ffffff");
+//		  Thread.sleep(2000);
+//		  driver.findElement(By.xpath("//button[@title='Apply']")).click();
+//		  Thread.sleep(1000);
 
 		  Robot robot = new Robot();
 		  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
@@ -385,7 +385,7 @@ public class Image_Template extends Common_Methods {
 		  driver.findElement(By.name("padding")).click();
 		  
 		  Thread.sleep(1000);
-		  driver.findElement(By.name("flip1")).click();
+		  //driver.findElement(By.name("flip1")).click();
 		  
 		  //opacity
 //		  WebElement r = driver.findElement(By.name("opacity"));

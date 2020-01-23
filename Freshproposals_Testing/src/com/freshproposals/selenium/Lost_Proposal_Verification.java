@@ -120,6 +120,8 @@ public class Lost_Proposal_Verification extends Common_Methods {
   driver.switchTo().window(tabs.get(1));
   Thread.sleep(7000);
   driver.findElement(By.xpath("//button[contains(text(),'Reject')]")).click();
+  //ok btn
+  driver.findElement(By.xpath("//button[@class='btn save-btn']")).click();
  
   }
   

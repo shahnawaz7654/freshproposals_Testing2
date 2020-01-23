@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -66,20 +67,16 @@ public class Existing_Template extends Common_Methods {
 	  
 	  @Test(priority = 2)
 	  public void width() throws InterruptedException {
-		
 	  Thread.sleep(1000);
-//	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[1]/div/ejs-numerictextbox/span/input[1]")).clear();
-//	  Thread.sleep(1000);
-//	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[1]/div/ejs-numerictextbox/span/input[1]")).sendKeys(width);
-//	  String actual_width =  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[1]/div/ejs-numerictextbox/span/input[1]")).getAttribute("value");
-//
-//	  Assert.assertEquals(actual_width,width);
-	  driver.findElement(By.xpath("//ejs-numerictextbox[@class='ng-pristine ng-valid e-lib ng-touched']//input[@class='ng-untouched ng-pristine ng-valid e-control e-numerictextbox e-lib e-input']")).clear();
-	  }
+	  driver.findElement(By.xpath("//div[@class='row']//div[1]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).clear();
+	  driver.findElement(By.xpath("//div[@class='row']//div[1]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).sendKeys(width);
+	  Thread.sleep(1000);
+	  String actual_width = driver.findElement(By.xpath("//div[@class='row']//div[1]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).getAttribute("value");
+	  Assert.assertEquals(actual_width, width);
+ }
 	  
 	  @Test(priority = 3)
       public void height() throws InterruptedException {
-		
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[2]/div/ejs-numerictextbox/span/input[1]")).clear();
 	  Thread.sleep(1000);
@@ -140,84 +137,90 @@ public class Existing_Template extends Common_Methods {
 	  @Test(priority = 8)
       public void rotate() throws InterruptedException {
 	
-	  Thread.sleep(1000);	  
-	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-text-properties[1]/form[1]/div[1]/div[1]/div[1]/ngb-accordion[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/ejs-numerictextbox[1]/span[1]/input[1]")).clear();
+	  Thread.sleep(1000);	
+	  driver.findElement(By.xpath("//body//div[@class='wrapper']//div//div[3]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).clear();
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-text-properties[1]/form[1]/div[1]/div[1]/div[1]/ngb-accordion[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/ejs-numerictextbox[1]/span[1]/input[1]")).sendKeys(rotate); 
-	  String actual_rotate = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-text-properties[1]/form[1]/div[1]/div[1]/div[1]/ngb-accordion[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/ejs-numerictextbox[1]/span[1]/input[1]")).getAttribute("value"); 
+	  driver.findElement(By.xpath("//body//div[@class='wrapper']//div//div[3]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).sendKeys(rotate); 
+	  String actual_rotate = driver.findElement(By.xpath("//body//div[@class='wrapper']//div//div[3]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).getAttribute("value"); 
 	  
 	  Assert.assertEquals(actual_rotate,rotate);
 	  }
 	  
-	  @Test(priority = 9)
-      public void color() throws InterruptedException {
-		
-	  Thread.sleep(1000);	  
-	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-text-properties[1]/form[1]/div[1]/div[1]/div[1]/ngb-accordion[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
-	  Thread.sleep(1000);
-	  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-hue-slider e-control e-slider e-lib']//div[@class='e-handle e-handle-first']"));
-	  resize(r1, 75,75);
-	  Thread.sleep(1000);
-	  driver.findElement(By.className("e-hsv-color")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//button[@title='Apply']")).click();
-	  }
-	  
-	  public void resize(WebElement elementToResize, int xOffset, int yOffset) {
-		try {
-			if (elementToResize.isDisplayed()) {
-				Actions action = new Actions(driver);
-				action.clickAndHold(elementToResize).moveByOffset(xOffset, yOffset).release().build().perform();
-			} else {
-				System.out.println("Element was not displayed to drag");
-			}
-		} catch (StaleElementReferenceException e) {
-			System.out.println("Element with " + elementToResize + "is not attached to the page document "	+ e.getStackTrace());
-		} catch (NoSuchElementException e) {
-			System.out.println("Element " + elementToResize + " was not found in DOM " + e.getStackTrace());
-		} catch (Exception e) {
-			System.out.println("Unable to resize" + elementToResize + " - "	+ e.getStackTrace());
-		}
-	  }
-	  
-	  @Test(priority = 10)
-      public void opacity() throws InterruptedException {
-	  
-	  Thread.sleep(1000);
-	  WebElement r = driver.findElement(By.name("opacity"));
- 	  resize2(r,25,25);
- 	  String actual_opacity = driver.findElement(By.name("opacity")).getAttribute("value");
- 	  System.out.println(actual_opacity);
- 	  Assert.assertEquals(actual_opacity, opacity);
- 	  Thread.sleep(1000);
- 	  
-	  }
-	  public void resize2(WebElement elementToResize, int xOffset, int yOffset) {
-			try {
-				if (elementToResize.isDisplayed()) {
-					Actions action = new Actions(driver);
-					action.clickAndHold(elementToResize).moveByOffset(xOffset, yOffset).release().build().perform();
-				} else {
-					System.out.println("Element was not displayed to drag");
-				}
-			} catch (StaleElementReferenceException e) {
-				System.out.println("Element with " + elementToResize + "is not attached to the page document "	+ e.getStackTrace());
-			} catch (NoSuchElementException e) {
-				System.out.println("Element " + elementToResize + " was not found in DOM " + e.getStackTrace());
-			} catch (Exception e) {
-				System.out.println("Unable to resize" + elementToResize + " - "	+ e.getStackTrace());
-			}
-	  }
-	  
+//	  @Test(priority = 9)
+//      public void color() throws InterruptedException {
+//		
+//	  Thread.sleep(1000);	  
+//	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-text-properties[1]/form[1]/div[1]/div[1]/div[1]/ngb-accordion[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
+//	  Thread.sleep(1000);
+//	  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-hue-slider e-control e-slider e-lib']//div[@class='e-handle e-handle-first']"));
+//	  resize(r1, 75,75);
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.className("e-hsv-color")).click();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.xpath("//button[@title='Apply']")).click();
+//	  }
+//	  
+//	  public void resize(WebElement elementToResize, int xOffset, int yOffset) {
+//		try {
+//			if (elementToResize.isDisplayed()) {
+//				Actions action = new Actions(driver);
+//				action.clickAndHold(elementToResize).moveByOffset(xOffset, yOffset).release().build().perform();
+//			} else {
+//				System.out.println("Element was not displayed to drag");
+//			}
+//		} catch (StaleElementReferenceException e) {
+//			System.out.println("Element with " + elementToResize + "is not attached to the page document "	+ e.getStackTrace());
+//		} catch (NoSuchElementException e) {
+//			System.out.println("Element " + elementToResize + " was not found in DOM " + e.getStackTrace());
+//		} catch (Exception e) {
+//			System.out.println("Unable to resize" + elementToResize + " - "	+ e.getStackTrace());
+//		}
+//	  }
+//	  
+//	  @Test(priority = 10)
+//      public void opacity() throws InterruptedException {
+//	  
+//	  Thread.sleep(1000);
+//	  WebElement r = driver.findElement(By.name("opacity"));
+// 	  resize2(r,25,25);
+// 	  String actual_opacity = driver.findElement(By.name("opacity")).getAttribute("value");
+// 	  System.out.println(actual_opacity);
+// 	  Assert.assertEquals(actual_opacity, opacity);
+// 	  Thread.sleep(1000);
+// 	  
+//	  }
+//	  public void resize2(WebElement elementToResize, int xOffset, int yOffset) {
+//			try {
+//				if (elementToResize.isDisplayed()) {
+//					Actions action = new Actions(driver);
+//					action.clickAndHold(elementToResize).moveByOffset(xOffset, yOffset).release().build().perform();
+//				} else {
+//					System.out.println("Element was not displayed to drag");
+//				}
+//			} catch (StaleElementReferenceException e) {
+//				System.out.println("Element with " + elementToResize + "is not attached to the page document "	+ e.getStackTrace());
+//			} catch (NoSuchElementException e) {
+//				System.out.println("Element " + elementToResize + " was not found in DOM " + e.getStackTrace());
+//			} catch (Exception e) {
+//				System.out.println("Unable to resize" + elementToResize + " - "	+ e.getStackTrace());
+//			}
+//	  }
+//	  
 	  @Test(priority = 11)
-      public void border_Width() throws InterruptedException {
-	 
-      driver.findElement(By.name("border")).click();
-      Thread.sleep(1000);
+      public void border_Width() throws InterruptedException, AWTException {
+		  
+       Robot robot = new Robot();
+       robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+       Thread.sleep(2000);
 	   //border width
-	  driver.findElement(By.xpath("//div[@class='row']//div[@class='row']//input[@class='ng-untouched ng-pristine ng-valid e-control e-numerictextbox e-lib e-input']")).clear();
-	  driver.findElement(By.xpath("//div[@class='row']//div[@class='row']//input[@class='ng-untouched ng-pristine ng-valid e-control e-numerictextbox e-lib e-input']")).sendKeys(border_width);
-	  String actual_border_width =  driver.findElement(By.xpath("//div[@class='row']//div[@class='row']//input[@class='ng-untouched ng-pristine ng-valid e-control e-numerictextbox e-lib e-input']")).getAttribute("value"); 
+      WebElement borderCheckbox =driver.findElement(By.xpath("//input[@name='border']"));
+      JavascriptExecutor executor = (JavascriptExecutor)driver;
+      executor.executeScript("arguments[0].click();", borderCheckbox);
+
+      
+      driver.findElement(By.xpath("//div[@id='config-panel-one']//div[2]//div[2]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).clear();
+      driver.findElement(By.xpath("//div[@id='config-panel-one']//div[2]//div[2]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).sendKeys(border_width);
+	  String actual_border_width =  driver.findElement(By.xpath("//div[@id='config-panel-one']//div[2]//div[2]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).getAttribute("value"); 
 	  Assert.assertEquals(actual_border_width, border_width);
 	  Thread.sleep(1000);
 	  }
@@ -252,66 +255,66 @@ public class Existing_Template extends Common_Methods {
 	  driver.findElement(By.name("paddingRight")).sendKeys(padding_right);
 	 }
 	  
-////	  @Test(priority = 10)
-////      public void paragraphStyle() throws InterruptedException {
-////	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
-////	  Thread.sleep(2000);
-////	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
-////	  Thread.sleep(1000);
-////	  driver.findElement(By.linkText("Heading 1")).click();
-////	  String actual_heading =  driver.findElement(By.linkText("Heading 1")).getAttribute("title");
-////	  String expected_heading = "Heading 1";
-////	  Assert.assertEquals(actual_heading,expected_heading);
-////	  
-////	  }
+//	  @Test(priority = 10)
+//      public void paragraphStyle() throws InterruptedException {
+//	  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
+//	  Thread.sleep(2000);
+//	  driver.findElement(By.xpath("//button[starts-with(@id,'paragraphStyle')]")).click();
+//	  Thread.sleep(1000);
+//	  driver.findElement(By.linkText("Heading 1")).click();
+//	  String actual_heading =  driver.findElement(By.linkText("Heading 1")).getAttribute("title");
+//	  String expected_heading = "Heading 1";
+//	  Assert.assertEquals(actual_heading,expected_heading);
+//	  
+//	  }
 //
-////	  @Test(priority = 11)
-////      public void setting() throws InterruptedException {
-////	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-template-properties[1]/form[1]/div[1]/div[2]/img[1]")).click();
-////	  driver.findElement(By.xpath("//img[@src='../../../../../assets/setting-icon.svg']")).click();
-////	  Thread.sleep(2000);
-////	  //driver.findElement(By.xpath("//span[contains(text(),'TEXT SETTING')]")).click();
-////	  }
+//	  @Test(priority = 11)
+//      public void setting() throws InterruptedException {
+//	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-template-properties[1]/form[1]/div[1]/div[2]/img[1]")).click();
+//	  driver.findElement(By.xpath("//img[@src='../../../../../assets/setting-icon.svg']")).click();
+//	  Thread.sleep(2000);
+//	  //driver.findElement(By.xpath("//span[contains(text(),'TEXT SETTING')]")).click();
+//	  }
 //
-////	  @Test(priority = 12)
-////      public void font_Size() throws InterruptedException {
-////	  Thread.sleep(2000);
-////	  Select select = new Select(driver.findElement(By.name("fontSize")));
-////	  select.selectByIndex(15);
-////	  Thread.sleep(2000);
-////  }
-////	  
-////	  @Test(priority = 13)
-////      public void BIU() throws InterruptedException {
-////
-////	  //underline
-////	  driver.findElement(By.xpath("//i[@class='fa fa-underline pt-2']")).click();
-////	  //bold
-////	  driver.findElement(By.xpath("//i[@class='fa fa-bold']")).click();
-////	  //italic
-////	  driver.findElement(By.xpath("//i[@name='fontStyle']")).click();
-////	  Thread.sleep(2000);
-////	  }
-////	  
-////	  @Test(priority = 14)
-////      public void align() throws InterruptedException {
-////
-////	  driver.findElement(By.xpath("//img[@src='../../../../../assets/align-table-left.svg']")).click();
-////	  Thread.sleep(2000);
-////	  driver.findElement(By.xpath("//img[@src='../../../../../assets/align-table-right.svg']")).click();
-////	  Thread.sleep(2000);
-////	  driver.findElement(By.xpath("//img[@src='../../../../../assets/align-table-center.svg']")).click();
-////	  Thread.sleep(2000);
-////	  driver.findElement(By.xpath("//img[@src='../../../../../assets/align-table-justify.svg']")).click();
-////	  Thread.sleep(2000);
-////	  }
-////	  
-////	  @Test(priority = 15)
-////      public void write() throws InterruptedException {
-////
-////	 driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).sendKeys(" I am from Selenium, How are you ???");
-////	  }
-////	  
+//	  @Test(priority = 12)
+//      public void font_Size() throws InterruptedException {
+//	  Thread.sleep(2000);
+//	  Select select = new Select(driver.findElement(By.name("fontSize")));
+//	  select.selectByIndex(15);
+//	  Thread.sleep(2000);
+//  }
+//	  
+//	  @Test(priority = 13)
+//      public void BIU() throws InterruptedException {
+//
+//	  //underline
+//	  driver.findElement(By.xpath("//i[@class='fa fa-underline pt-2']")).click();
+//	  //bold
+//	  driver.findElement(By.xpath("//i[@class='fa fa-bold']")).click();
+//	  //italic
+//	  driver.findElement(By.xpath("//i[@name='fontStyle']")).click();
+//	  Thread.sleep(2000);
+//	  }
+//	  
+//	  @Test(priority = 14)
+//      public void align() throws InterruptedException {
+//
+//	  driver.findElement(By.xpath("//img[@src='../../../../../assets/align-table-left.svg']")).click();
+//	  Thread.sleep(2000);
+//	  driver.findElement(By.xpath("//img[@src='../../../../../assets/align-table-right.svg']")).click();
+//	  Thread.sleep(2000);
+//	  driver.findElement(By.xpath("//img[@src='../../../../../assets/align-table-center.svg']")).click();
+//	  Thread.sleep(2000);
+//	  driver.findElement(By.xpath("//img[@src='../../../../../assets/align-table-justify.svg']")).click();
+//	  Thread.sleep(2000);
+//	  }
+//	  
+//	  @Test(priority = 15)
+//      public void write() throws InterruptedException {
+//
+//	 driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).sendKeys(" I am from Selenium, How are you ???");
+//	  }
+//	  
 	  @Test(priority = 16)
 	  public void save() throws InterruptedException {
 		  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
@@ -334,17 +337,17 @@ public class Existing_Template extends Common_Methods {
 		  
 	  }
 	  
-	  @Test(priority = 20)
-	  public void reflect_opacity() {
-		  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
-		  String actual_reflect_opacity = driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).getCssValue("opacity");
-		  System.out.println(actual_reflect_opacity);
-		  String expected_reflect_opacity = opacity+"px";
-		  System.out.println("reflect opacity "+expected_reflect_opacity);
-		  Assert.assertEquals(actual_reflect_opacity, expected_reflect_opacity);
-		  
-	  }
-	
+//	  @Test(priority = 20)
+//	  public void reflect_opacity() {
+//		  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
+//		  String actual_reflect_opacity = driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).getCssValue("opacity");
+//		  System.out.println(actual_reflect_opacity);
+//		  String expected_reflect_opacity = opacity+"px";
+//		  System.out.println("reflect opacity "+expected_reflect_opacity);
+//		  Assert.assertEquals(actual_reflect_opacity, expected_reflect_opacity);
+//		  
+//	  }
+//	
 	  @Test(priority = 21)
 	  public void reflect_border_width() throws InterruptedException {
 		  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
@@ -372,10 +375,10 @@ public class Existing_Template extends Common_Methods {
 	  @Test(priority = 23)
 	  public void reflect_padding() throws InterruptedException {
 		  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
-		  String actual_reflect_padding_top = driver.findElement(By.id("froalapage1-fpText9302019191351")).getCssValue("padding-top");
-		  String actual_reflect_padding_left = driver.findElement(By.id("froalapage1-fpText9302019191351")).getCssValue("padding-left");
-		  String actual_reflect_padding_bottom = driver.findElement(By.id("froalapage1-fpText9302019191351")).getCssValue("padding-bottom");
-		  String actual_reflect_padding_right = driver.findElement(By.id("froalapage1-fpText9302019191351")).getCssValue("padding-right");
+		  String actual_reflect_padding_top = driver.findElement(By.id("froalapage1-fpText1230201915515218")).getCssValue("padding-top");
+		  String actual_reflect_padding_left = driver.findElement(By.id("froalapage1-fpText1230201915515218")).getCssValue("padding-left");
+		  String actual_reflect_padding_bottom = driver.findElement(By.id("froalapage1-fpText1230201915515218")).getCssValue("padding-bottom");
+		  String actual_reflect_padding_right = driver.findElement(By.id("froalapage1-fpText1230201915515218")).getCssValue("padding-right");
 		  System.out.println("reflect_top = "+actual_reflect_padding_top);
 		  System.out.println("reflect_left = "+actual_reflect_padding_left);
 		  System.out.println("reflect_bottom = "+actual_reflect_padding_bottom);
@@ -394,50 +397,51 @@ public class Existing_Template extends Common_Methods {
 	  }
 	
 	 
-	  
-	  
 	  @Test(priority = 24)
 	  public void Reset_All() throws InterruptedException, AWTException {
           Thread.sleep(1000);
-		      driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
+		  driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).click();
 	
 	     //rotate
 		  Thread.sleep(1000);	  
-		  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[4]/div/ejs-numerictextbox/span/input[1]")).clear();
+		  driver.findElement(By.xpath("//body//div[@class='wrapper']//div//div[3]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).clear();
 		  Thread.sleep(1000);
-		  driver.findElement(By.xpath("//*[@id=\"config-panel-one\"]/div/div/div/div[4]/div/ejs-numerictextbox/span/input[1]")).sendKeys("0"); 
+		  driver.findElement(By.xpath("//body//div[@class='wrapper']//div//div[3]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).sendKeys("0"); 
+		  
+		  Robot robot = new Robot();
+		  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 
 		  Thread.sleep(5000);
 		  //border width
-		  driver.findElement(By.xpath("//div[@class='row']//div[@class='row']//input[@class='ng-untouched ng-pristine ng-valid e-control e-numerictextbox e-lib e-input']")).clear();
-		  driver.findElement(By.xpath("//div[@class='row']//div[@class='row']//input[@class='ng-untouched ng-pristine ng-valid e-control e-numerictextbox e-lib e-input']")).sendKeys("0");
+		  driver.findElement(By.xpath("//div[@id='config-panel-one']//div[2]//div[2]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).clear();
+		  driver.findElement(By.xpath("//div[@id='config-panel-one']//div[2]//div[2]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).sendKeys("0");
 		  
 		  Thread.sleep(3000);
 		  Select select = new Select(driver.findElement(By.name("borderStyle")));
 		  select.selectByIndex(2);
 		  driver.findElement(By.name("border")).click();
 		  
-		  //color
-		  Thread.sleep(1000);	  
-		  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-text-properties[1]/form[1]/div[1]/div[1]/div[1]/ngb-accordion[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
-		  Thread.sleep(1000);
-		  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-hue-slider e-control e-slider e-lib']//div[@class='e-handle e-handle-first']"));
-		  resize3(r1, 5,5);
-		  Thread.sleep(1000);
-		  driver.findElement(By.className("e-hsv-color")).click();
-		  Thread.sleep(1000);
-		  driver.findElement(By.xpath("//button[@title='Apply']")).click();
+//		  //color
+//		  Thread.sleep(1000);	  
+//		  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-text-properties[1]/form[1]/div[1]/div[1]/div[1]/ngb-accordion[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
+//		  Thread.sleep(1000);
+//		  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-hue-slider e-control e-slider e-lib']//div[@class='e-handle e-handle-first']"));
+//		  resize3(r1, 5,5);
+//		  Thread.sleep(1000);
+//		  driver.findElement(By.className("e-hsv-color")).click();
+//		  Thread.sleep(1000);
+//		  driver.findElement(By.xpath("//button[@title='Apply']")).click();
 		  
 		  
 			//opacity
 			
-			 Thread.sleep(1000);
-			  WebElement r = driver.findElement(By.name("opacity"));
-		 	  resize4(r,100,100);
+//			 Thread.sleep(1000);
+//			  WebElement r = driver.findElement(By.name("opacity"));
+//		 	  resize4(r,100,100);
+//		 	  
 		 	  
-		 	  
-		  Robot robot = new Robot();
-		  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+		  Robot robot1 = new Robot();
+		  robot1.keyPress(KeyEvent.VK_PAGE_DOWN);
 		  
 		 
 		  driver.findElement(By.name("paddingTop")).clear();
@@ -493,7 +497,7 @@ public class Existing_Template extends Common_Methods {
 							}
 					 }
 	  
-//	  
+  
   
   @AfterClass
   public void closeBrowser() throws InterruptedException {

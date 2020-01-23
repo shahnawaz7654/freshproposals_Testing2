@@ -161,6 +161,6 @@ public class Gmail_Testing extends Common_Methods{
 	 @AfterClass
 	  public void closeBrowser() throws InterruptedException {
 		  Thread.sleep(3000);
-		  driver.close();
+		  driver.quit();
 	  }
 }

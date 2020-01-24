@@ -36,7 +36,6 @@ public class FeeTable extends Common_Methods{	SoftAssert softAssertion= new Soft
 			driver.findElement(By.id("textbox_1")).sendKeys(pwd);
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
 			Thread.sleep(5000);
-		/////////
 		}
 	 @Test(priority=5,dependsOnMethods = {"login"})
 	 public void AddRowRowDiscountandChangeType() throws InterruptedException {

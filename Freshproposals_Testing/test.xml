@@ -7,6 +7,7 @@
        <class name="com.freshproposals.selenium.Image_DragDrop_Position_Proposal"/>
        <class name="com.freshproposals.selenium.Image_DragDrop_Position_Section"/>
        <class name="com.freshproposals.selenium.Image_DragDrop_Position_Template"/>
+       <class name="com.freshproposals.selenium.AddVariablesandVerify"/>
        <class name="com.freshproposals.selenium.RectangleandLinePropertiesInProposal"/>
        <class name="com.freshproposals.selenium.RectangleandLinepropertiesInSection"/>
        <class name="com.freshproposals.selenium.RectangleandLinePropertiesInTemplate"/>
@@ -21,6 +22,7 @@
        <class name="com.freshproposals.selenium.TempRead"/>
        <class name="com.freshproposals.selenium.Email_Template"/>
        <class name="com.freshproposals.selenium.Collapse_Controls"/>
+       <class name="com.freshproposals.selenium.UpdatedVariables"/>
        <class name="com.freshproposals.selenium.CheckPositionOfTheTextcomponent"/>
        <class name="com.freshproposals.selenium.Existing_Single_Image_Proposal"/>
        <class name="com.freshproposals.selenium.Existing_Template"/>
@@ -46,8 +48,6 @@
        <class name="com.freshproposals.selenium.RectangleandLineRepositioninProposal"/>
        <class name="com.freshproposals.selenium.RectangleAndLineRepositionTemplate"/>
        <class name="com.freshproposals.selenium.RectangleRepositionInSection"/>
-       <class name="com.freshproposals.selenium.RepeaterAll"/>
-       <class name="com.freshproposals.selenium.Repeter"/>
        <class name="com.freshproposals.selenium.ResizeTextBox"/>
        <class name="com.freshproposals.selenium.ResizingOfAllComponent"/>
        <class name="com.freshproposals.selenium.Section_List_Proposal"/>
@@ -65,7 +65,6 @@
        <class name="com.freshproposals.selenium.TextBox_Top_Properties_Template"/>
        <class name="com.freshproposals.selenium.TextBox_Top_Properties"/>
        <class name="com.freshproposals.selenium.UseThis_Checkversions"/>
-       <class name="com.freshproposals.selenium.variables"/>
        <class name="com.freshproposals.selenium.Verify_Color"/>
        <class name="com.freshproposals.selenium.Verify_Position_with_Preview"/>
        <class name="com.freshproposals.selenium.Won_Proposal_Verification"/>
@@ -79,7 +78,6 @@
        <class name="com.freshproposals.selenium.Ellipse_Duplicate_Proposal"/>
        <class name="com.freshproposals.selenium.Ellipse_Duplicate_Section"/>
        <class name="com.freshproposals.selenium.Ellipse_Duplicate_Template"/>
-       <class name="com.freshproposals.selenium.FeetableAll"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

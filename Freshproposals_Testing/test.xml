@@ -21,11 +21,7 @@
        <class name="com.freshproposals.selenium.TempRead"/>
        <class name="com.freshproposals.selenium.Email_Template"/>
        <class name="com.freshproposals.selenium.Collapse_Controls"/>
-       <class name="com.freshproposals.selenium.Check_Versions"/>
        <class name="com.freshproposals.selenium.CheckPositionOfTheTextcomponent"/>
-       <class name="com.freshproposals.selenium.Ellipse_Duplicate_Proposal"/>
-       <class name="com.freshproposals.selenium.Ellipse_Duplicate_Section"/>
-       <class name="com.freshproposals.selenium.Ellipse_Duplicate_Template"/>
        <class name="com.freshproposals.selenium.Existing_Single_Image_Proposal"/>
        <class name="com.freshproposals.selenium.Existing_Template"/>
        <class name="com.freshproposals.selenium.ExistingVariable"/>
@@ -79,6 +75,10 @@
        <class name="com.freshproposals.selenium.Analytics_Proposal"/>
        <class name="com.freshproposals.selenium.Analytics_Tabchange_Proposal"/>
        <class name="com.freshproposals.selenium.Analytics_Template"/>
+       <class name="com.freshproposals.selenium.Check_Versions"/>
+       <class name="com.freshproposals.selenium.Ellipse_Duplicate_Proposal"/>
+       <class name="com.freshproposals.selenium.Ellipse_Duplicate_Section"/>
+       <class name="com.freshproposals.selenium.Ellipse_Duplicate_Template"/>
        <class name="com.freshproposals.selenium.FeetableAll"/>
     </classes>
   </test> <!-- Test -->

@@ -82,13 +82,13 @@ public class Send_Proposal_Temp extends Common_Methods{
 	  driver.findElement(By.xpath("//*[@id=\"headingSelectClient\"]/h2/button")).click();
 	  Thread.sleep(1000);
 	  //search
-	  driver.findElement(By.xpath("//input[@placeholder='Search by Name']")).sendKeys("Automation Client");
+	  //driver.findElement(By.xpath("//input[@placeholder='Search by Name']")).sendKeys("Automation Client");
 	  Thread.sleep(1000);
 	  //srch btn
-	  driver.findElement(By.xpath("//div[@class='form-group']//button[1]//img[1]")).click();
+	  //driver.findElement(By.xpath("//div[@class='form-group']//button[1]//img[1]")).click();
+	  driver.findElement(By.xpath("//div[@class='row client-content mt-3']//div[2]//div[2]//label[1]//span[1]")).click();
 	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//div[@class='card client-det']//span[@class='checkround']")).click();
-	  //driver.findElement(By.xpath("//*[@id=\"collapseSelectClient\"]/div/div/app-clients/div[2]/div/div/div/div[2]/label/span")).click();
+	 
   }
   
   @Test(priority = 5)

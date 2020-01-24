@@ -33,7 +33,7 @@ public class Email_Template extends Common_Methods {
   
   @Test(dataProvider = "User1" , priority = 0)
   
-  public void login(String unm, String pwd) {
+  public void login(String unm, String pwd) throws InterruptedException {
 	    driver.findElement(By.id("textbox_0")).sendKeys(unm);
 		driver.findElement(By.id("textbox_1")).sendKeys(pwd);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();

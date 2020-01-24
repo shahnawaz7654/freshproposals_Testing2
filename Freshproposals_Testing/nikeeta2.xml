@@ -20,6 +20,7 @@
         <class name="com.freshproposals.selenium.FontPropertiesinTemplate"/>
          <class name="com.freshproposals.selenium.ExistingVariable"/>
           <class name="com.freshproposals.selenium.ZoomLevelTestingInSectionPreview"/>
+                  <class name="com.freshproposals.selenium.UpdatedVariables"/>
         
        
         

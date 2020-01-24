@@ -3,6 +3,7 @@ package com.freshproposals.selenium;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,6 +20,8 @@ import com.freshproposals.selenium.Common_Methods;
 public class RectangleandLinepropertiesInSection extends Common_Methods{
 	SoftAssert softAssertion= new SoftAssert();
 	WebDriver driver;
+	JavascriptExecutor executor = (JavascriptExecutor)driver;
+
 	String width ="491";
 	String height ="567";
 	 @BeforeClass
@@ -115,7 +118,7 @@ public class RectangleandLinepropertiesInSection extends Common_Methods{
 			BackBtn.click();
 			Thread.sleep(3000);
 	 }
-	 @Test(priority=2)
+	 @Test(priority=2,enabled=false)
 	 	public void RectangleRotationandBorder() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/6468");
 			Thread.sleep(3000);
@@ -128,8 +131,10 @@ public class RectangleandLinepropertiesInSection extends Common_Methods{
 		Rectanglerotate.sendKeys("90");
 		Thread.sleep(2000);
 		//input[@name='rotate']
-		WebElement BorderCheckBox = driver.findElement(By.xpath("//input[@name='border']"));
-		BorderCheckBox.click();
+		
+		WebElement BorderCheckBox = driver.findElement(By.name("border"));
+		executor.executeScript("arguments[0].click();", BorderCheckBox);
+		//BorderCheckBox.click();
 		Thread.sleep(2000);
 		//BorderCheckBox.click();
 		Thread.sleep(2000);
@@ -209,7 +214,7 @@ public class RectangleandLinepropertiesInSection extends Common_Methods{
 			Thread.sleep(3000);
 	 }
 	 
-		 @Test(priority=3)
+		 @Test(priority=3,enabled=false)
 		 public void LineProperties() throws InterruptedException {
 			 driver.get("http://beta1.freshproposals.com/home/sections/editSection/6499");
 			
@@ -311,7 +316,7 @@ public class RectangleandLinepropertiesInSection extends Common_Methods{
 			BackBtn.click();
 			Thread.sleep(3000);
 		 }
-		 @Test(priority =4)
+		 @Test(priority =4,enabled=false)
 		 public void ChangeRectangleWidthandHeight() throws InterruptedException {
 			driver.get("http://beta1.freshproposals.com/home/sections/editSection/6468");
 			Thread.sleep(3000);

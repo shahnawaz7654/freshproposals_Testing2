@@ -60,30 +60,23 @@ public class Lost_Proposal_Verification extends Common_Methods {
 	driver.findElement(By.name("name")).sendKeys(fname+" DashLostVal "+timestamp);
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//button[@type='submit']")).click();
-	//client
+	 //client btn
 	 driver.findElement(By.xpath("//*[@id=\"headingSelectClient\"]/h2/button")).click();
-	  Thread.sleep(1000);
-	  //search
-	  driver.findElement(By.xpath("//div[@class='client-search']//input[@placeholder=' ']")).sendKeys("Automation Client");
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//div[@class='card client-det']//span[@class='checkround']")).click();Thread.sleep(5000);
-	
-	//scroll window
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-    js.executeScript("window.scrollBy(0,1000)");
-    Thread.sleep(2000);
-	
-    //calender
-    Thread.sleep(3000);
+	  Thread.sleep(5000);
+	  //driver.findElement(By.xpath("//div[@class='row client-content mt-3']//div[2]//div[2]//label[1]//span[1]")).click();
+	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/app-clients[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/label[1]/span[1]")).click();
+	  Thread.sleep(3000);
+	  JavascriptExecutor js = (JavascriptExecutor) driver;
+	  js.executeScript("window.scrollBy(0,1000)");
+
+	  Thread.sleep(3000);
 	  driver.findElement(By.xpath("//img[@src='../../../assets/calendar.svg']")).click();
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//div[@class='ngb-dp-arrow right']//button[@class='btn btn-link ngb-dp-arrow-btn']")).click();
 	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//div[contains(text(),'31')]")).click();
+	  driver.findElement(By.xpath("//div[contains(text(),'15')]")).click();
 	  Thread.sleep(2000);
-	  //driver.findElement(By.linkText("Next")).click();
 	  driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
-	  Thread.sleep(5000);
 		
 	}
   
@@ -102,26 +95,29 @@ public class Lost_Proposal_Verification extends Common_Methods {
   
   @Test(priority = 4)
   public void Send_and_Copy() throws InterruptedException {
-  Thread.sleep(2000);
-  //driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1219;editor=true");
-  driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
-  //link
-  Thread.sleep(2000);
-  driver.findElement(By.xpath("//img[@src='../../../assets/link-icon-blue.svg']")).click();
-  //copy link
-  Thread.sleep(2000);
-  
-  driver.findElement(By.id("basic-addon2")).click();
-  Thread.sleep(2000);
-  driver.findElement(By.xpath("//input[@class='form-control']")).click();
-  driver.findElement(By.xpath("//input[@class='form-control']")).getText();
-  ((JavascriptExecutor)driver).executeScript("window.open()");
-  ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-  driver.switchTo().window(tabs.get(1));
-  Thread.sleep(7000);
-  driver.findElement(By.xpath("//button[contains(text(),'Reject')]")).click();
-  //ok btn
-  driver.findElement(By.xpath("//button[@class='btn save-btn']")).click();
+	  //next
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+	  //link
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//img[@src='../../../assets/link-icon-blue.svg']")).click();
+	  Thread.sleep(2000);
+	  
+	  String copy_text = driver.findElement(By.xpath("//div[@class='card-body ng-star-inserted']//input")).getAttribute("value");
+	  System.out.println(copy_text);
+	  Thread.sleep(2000);
+	  
+	  ((JavascriptExecutor)driver).executeScript("window.open()");
+   	  ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+ 	  driver.switchTo().window(tabs.get(1));
+ 	  driver.get(copy_text);
+	  Thread.sleep(7000);
+	  driver.findElement(By.xpath("//button[contains(text(),'Reject')]")).click();
+	  //ok btn
+	  driver.findElement(By.xpath("//button[@class='btn save-btn']")).click();
+	  //driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/app-modal[1]/div[1]/div[2]/button[1]")).click();
+	  driver.findElement(By.cssSelector("body.modal-open:nth-child(2) ngb-modal-window.modal.fade.show.d-block.modal-holder:nth-child(15) div.modal-dialog div.modal-content app-modal:nth-child(1) div:nth-child(1) div.modal-footer > button.btn.save-btn:nth-child(1)")).click();
+	  Thread.sleep(5000);
  
   }
   
@@ -134,7 +130,6 @@ public class Lost_Proposal_Verification extends Common_Methods {
 	  
 	  Assert.assertNotEquals(Get_Lost, Verify_Lost);
 	  
-
 	  
   }
 	

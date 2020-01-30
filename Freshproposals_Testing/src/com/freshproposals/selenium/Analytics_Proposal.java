@@ -67,6 +67,7 @@ public class Analytics_Proposal extends Common_Methods {
   
   @Test(priority = 7)
   public void getData() throws InterruptedException {
+	  Thread.sleep(5000);
 	  driver.get("http://beta1.freshproposals.com/home/proposals/summary/1169");
 		Thread.sleep(1000);
 	    driver.findElement(By.id("ngb-tab-2")).click();

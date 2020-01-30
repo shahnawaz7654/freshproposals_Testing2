@@ -50,6 +50,8 @@
        <class name="com.freshproposals.selenium.RectangleRepositionInSection"/>
        <class name="com.freshproposals.selenium.ResizeTextBox"/>
        <class name="com.freshproposals.selenium.ResizingOfAllComponent"/>
+       <class name="com.freshproposals.selenium.Push_Proposal"/>
+       <class name="com.freshproposals.selenium.Push_Template"/>
        <class name="com.freshproposals.selenium.Section_List_Proposal"/>
        <class name="com.freshproposals.selenium.Section_List_Template"/>
        <class name="com.freshproposals.selenium.Select_Search_Tab"/>
@@ -70,14 +72,13 @@
        <class name="com.freshproposals.selenium.Won_Proposal_Verification"/>
        <class name="com.freshproposals.selenium.X_Y_Position"/>
        <class name="com.freshproposals.selenium.ZoomLevelTesting"/>
-       <class name="com.freshproposals.selenium.Analytics_Feestable_Proposal"/>
-       <class name="com.freshproposals.selenium.Analytics_Proposal"/>
-       <class name="com.freshproposals.selenium.Analytics_Tabchange_Proposal"/>
-       <class name="com.freshproposals.selenium.Analytics_Template"/>
-       <class name="com.freshproposals.selenium.Check_Versions"/>
        <class name="com.freshproposals.selenium.Ellipse_Duplicate_Proposal"/>
        <class name="com.freshproposals.selenium.Ellipse_Duplicate_Section"/>
        <class name="com.freshproposals.selenium.Ellipse_Duplicate_Template"/>
+       <class name="com.freshproposals.selenium.Analytics_Template_Scratch"/>
+       <class name="com.freshproposals.selenium.Analytics_Feestable_Proposal"/>
+       <class name="com.freshproposals.selenium.Analytics_Proposal"/>
+       <class name="com.freshproposals.selenium.Analytics_Tabchange_Proposal"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

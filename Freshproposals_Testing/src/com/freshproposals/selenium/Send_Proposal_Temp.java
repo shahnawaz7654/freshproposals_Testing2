@@ -57,9 +57,6 @@ public class Send_Proposal_Temp extends Common_Methods{
 	  //search
 	  driver.findElement(By.xpath("//input[@placeholder='search section']")).sendKeys("content library automation");
 	  Thread.sleep(3000);
-	  //search btn
-	  driver.findElement(By.xpath("//app-sections-library//button[1]//img[1]")).click();
-	  Thread.sleep(2000);
 	  //use this
 	  driver.findElement(By.xpath("//img[@class='img=fluid']")).click();
 	  Thread.sleep(3000);
@@ -86,7 +83,7 @@ public class Send_Proposal_Temp extends Common_Methods{
 	  Thread.sleep(1000);
 	  //srch btn
 	  //driver.findElement(By.xpath("//div[@class='form-group']//button[1]//img[1]")).click();
-	  driver.findElement(By.xpath("//div[@class='row client-content mt-3']//div[2]//div[2]//label[1]//span[1]")).click();
+	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/app-clients[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/label[1]/span[1]")).click();
 	  Thread.sleep(2000);
 	 
   }
@@ -105,7 +102,7 @@ public class Send_Proposal_Temp extends Common_Methods{
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//div[@class='ngb-dp-arrow right']//button[@class='btn btn-link ngb-dp-arrow-btn']")).click();
 	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//div[contains(text(),'31')]")).click();
+	  driver.findElement(By.xpath("//div[contains(text(),'15')]")).click();
 	  Thread.sleep(2000);
 	  //driver.findElement(By.linkText("Next")).click();
 	  driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();

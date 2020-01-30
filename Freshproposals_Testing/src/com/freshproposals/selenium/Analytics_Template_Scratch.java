@@ -1,5 +1,8 @@
 package com.freshproposals.selenium;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,7 +23,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class Analytics_Template extends Common_Methods {
+public class Analytics_Template_Scratch extends Common_Methods {
 	WebDriver driver;
 	String fname = "SEL";
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
@@ -30,22 +33,8 @@ public class Analytics_Template extends Common_Methods {
 	String view;
 	String average;
 	String lastview;
-	String g_time;
-	String g_view;
-	String g_average;
-	String g_lastview;
-	int g_conversion_time;
-	int conversion_time;
-	int total_time;
-	int expected_total_time;
-	int g_view_int;
-	int view_int; 
-	int total_view;
-	int total_average_time;
-	int expected_total_average_time;
-	
-	
-	
+	String e_time = "2 m 10 s";
+	String e_view = "1";
 	
   @BeforeClass
   public void openBrowser() {
@@ -67,9 +56,10 @@ public class Analytics_Template extends Common_Methods {
 	}
   
   @Test(priority = 1)
-  public void openTemplate() throws InterruptedException {
-	  Thread.sleep(1000);
-	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1151");
+  public void createTemplate() throws InterruptedException {
+	  Thread.sleep(3000);
+	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1574");
+	  
 	  
   }
   
@@ -85,9 +75,11 @@ public class Analytics_Template extends Common_Methods {
   @Test(priority = 3)
   public void client() throws InterruptedException  {
 	  Thread.sleep(3000);
+	  //client btn
 	  driver.findElement(By.xpath("//*[@id=\"headingSelectClient\"]/h2/button")).click();
-	  //driver.findElement(By.xpath("//*[@id=\"collapseSelectClient\"]/div/div/app-clients/div[2]/div/div/div/div[2]/label/span")).click();
-	  driver.findElement(By.xpath("//body//div[@class='col-lg-10 offset-lg-1']//div[@class='col-lg-10 offset-lg-1']//div[1]//div[2]//label[1]//span[1]")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.xpath("//div[@class='row client-content mt-3']//div[2]//div[2]//label[1]//span[1]")).click();
+	  Thread.sleep(2000);
   }
   
   @Test(priority = 4)
@@ -104,48 +96,93 @@ public class Analytics_Template extends Common_Methods {
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//div[@class='ngb-dp-arrow right']//button[@class='btn btn-link ngb-dp-arrow-btn']")).click();
 	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//div[contains(text(),'31')]")).click();
+	  driver.findElement(By.xpath("//div[contains(text(),'15')]")).click();
 	  Thread.sleep(2000);
-	  driver.findElement(By.linkText("Next")).click();
+	  driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
   }
   
   @Test(priority = 6)
-  public void copyLink() throws InterruptedException {
+  public void copyLink() throws InterruptedException, AWTException {
 	  //next
-	  Thread.sleep(2000);
+	  Thread.sleep(3000);
 	  driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
 	  //link
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//img[@src='../../../assets/link-icon-blue.svg']")).click();
-	  //copy link
 	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//input[@class='form-control']")).click();
-	  String copy_text = driver.findElement(By.xpath("//input[@class='form-control']")).getText();
+	  
+	  String copy_text = driver.findElement(By.xpath("//div[@class='card-body']//input")).getAttribute("value");
 	  System.out.println(copy_text);
 	  Thread.sleep(2000);
-	  driver.findElement(By.id("basic-addon2")).click();
-	  Thread.sleep(2000);
+	  
 	  ((JavascriptExecutor)driver).executeScript("window.open()");
    	  ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
  	  driver.switchTo().window(tabs.get(1));
-// 	  
-// 	//Switch to new window opened
-// 	  for(String winHandle : driver.getWindowHandles()){ driver.switchTo().window(winHandle); }
-//
-// 	
-// 	  Actions actions = new Actions(driver);
-//      actions.sendKeys(Keys.chord(Keys.LEFT_CONTROL, "v")).build().perform(); 
-//      
-// 	  
+ 	  driver.get(copy_text);
+	  
+	  Thread.sleep(60000);
+	  
+	  driver.findElement(By.xpath("//a[contains(text(),'Second Page')]")).click();
+	  
+	  
+	  Thread.sleep(60000);
+	  
+	  driver.findElement(By.xpath("//a[contains(text(),'Third Page')]")).click();
+	  
+	  Thread.sleep(10000);
+	  
+	  driver.close();
+	  driver.switchTo().window(tabs.get(0));
+
+  }
+  
+  @Test(priority = 7)
+  public void Summary() throws InterruptedException {
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//img[@src='../../../assets/cancel-round.svg']")).click();
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//a[@class='email-template-back']")).click();
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//ul[@class='nav left-navbar']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]")).click();
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//img[@src='../../assets/proposal-summary-icon.png']")).click();
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//a[@id='ngb-tab-2']")).click();
+  }
+  
+  @Test(priority = 8)
+  public void getSummaryData() throws InterruptedException {
 	  Thread.sleep(5000);
-	  driver.findElement(By.xpath("//a[contains(text(),'Cover Letter')]")).click();
-	  Thread.sleep(5000);
+	  time =  driver.findElement(By.className("proposal-analytics-timespent-value")).getText();
+	  System.out.println("A TOTAL TIME SPENT VIEWING " +  time);
+	  //times viewed
+	  view = driver.findElement(By.cssSelector("div.wrapper div.main:nth-child(5) div.apply-hidden.styling-mode-effect div.proposal-summary div.container:nth-child(3) div.tabs-underlined.proposal-summary-tab div.tab-content div.tab-pane.active div.proposal-analytics div.row.proposal-analytics-box:nth-child(2) div.proposal-analytics-box-timespent div.proposal-analytics-timespent div:nth-child(2) > div.proposal-analytics-timespent-value")).getText();
+	  System.out.println("A TIMES VIEWED " + view);
+	  //average time
+	  average = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[3]/div[2]")).getText();
+	  System.out.println("A AVERAGE TIME VIEWING " + average);				
+	  //time since last view
+	  lastview = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[4]/div[2]")).getText();
+	  System.out.println("A TIME SINCE LAST VIEWED " + lastview);
+
+  }
+  
+  @Test(priority = 9)
+  public void Assert_time() throws InterruptedException {
+	  Thread.sleep(2000);
+	  Assert.assertEquals(time, e_time);
 	  
   }
-   
   
-    
-  @AfterClass
+  @Test(priority = 10)
+  public void Assert_view() throws InterruptedException {
+	  Thread.sleep(2000);
+	  Assert.assertEquals(view, e_view);
+	  
+  }
+  
+ 
+   @AfterClass
   public void closeBrowser() throws InterruptedException {
 	  Thread.sleep(3000);
 	  driver.quit();

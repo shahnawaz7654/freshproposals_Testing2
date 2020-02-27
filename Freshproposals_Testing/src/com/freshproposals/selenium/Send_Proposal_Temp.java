@@ -39,10 +39,8 @@ public class Send_Proposal_Temp extends Common_Methods{
   
   @Test(priority = 1)
   public void createTemplate() throws InterruptedException {
-		driver.findElement(By.linkText("TEMPLATES")).click();
-		Thread.sleep(3000);
-		//template name
-		driver.findElement(By.linkText("Create your Template")).click();
+	    Thread.sleep(5000);
+		driver.findElement(By.xpath("//img[@src='../../assets/add-section-icon.png']")).click();
 		driver.findElement(By.name("name")).sendKeys(fname+" CLTempSend "+timestamp);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -52,10 +50,10 @@ public class Send_Proposal_Temp extends Common_Methods{
   public void contentLibrary() throws InterruptedException {
 	  Thread.sleep(3000);
 	  //plus btn
-	  driver.findElement(By.xpath("//button[@class='btn add-sect-btn template-add-sec']")).click();
+	  driver.findElement(By.xpath("//button[@class='btn add-sect-btn template-add-sec ng-star-inserted']")).click();
 	  Thread.sleep(5000);
 	  //search
-	  driver.findElement(By.xpath("//input[@placeholder='search section']")).sendKeys("content library automation");
+	  driver.findElement(By.xpath("//input[@placeholder='search section']")).sendKeys("Design");
 	  Thread.sleep(3000);
 	  //use this
 	  driver.findElement(By.xpath("//img[@class='img=fluid']")).click();
@@ -76,14 +74,7 @@ public class Send_Proposal_Temp extends Common_Methods{
   public void client() throws InterruptedException  {
 	  Thread.sleep(3000);
 	  //client btn
-	  driver.findElement(By.xpath("//*[@id=\"headingSelectClient\"]/h2/button")).click();
-	  Thread.sleep(1000);
-	  //search
-	  //driver.findElement(By.xpath("//input[@placeholder='Search by Name']")).sendKeys("Automation Client");
-	  Thread.sleep(1000);
-	  //srch btn
-	  //driver.findElement(By.xpath("//div[@class='form-group']//button[1]//img[1]")).click();
-	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/app-clients[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/label[1]/span[1]")).click();
+	  driver.findElement(By.xpath("//div[@class='row client-content mt-3 ng-star-inserted']//div[2]//div[2]//label[1]//span[1]")).click();
 	  Thread.sleep(2000);
 	 
   }
@@ -111,8 +102,9 @@ public class Send_Proposal_Temp extends Common_Methods{
   @Test(priority = 7)
   public void sendEmail() throws InterruptedException {
 	  //next
-	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+	  Thread.sleep(5000);
+	  driver.findElement(By.xpath("1")).click();
+	  Thread.sleep(5000);
       driver.findElement(By.xpath("//div[@class='card']//input")).sendKeys("Selenium Subject");
 	  driver.findElement(By.xpath("//div[@class='fr-box fr-basic fr-top']//div[@class='fr-element fr-view']"))
 	  .sendKeys("Lorem Ipsum is simply dummy text of the printing and typesetting industry. "

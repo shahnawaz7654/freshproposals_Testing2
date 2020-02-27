@@ -43,7 +43,8 @@ public class Rectangle_Duplicate_Proposal extends Common_Methods {
 		}
 	 
 	 @Test(priority = 1)
-	 public void open_Template(){
+	 public void open_Template() throws InterruptedException{
+		 Thread.sleep(5000);
 		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1847;editor=true");
 	 
 	 }
@@ -95,8 +96,8 @@ public class Rectangle_Duplicate_Proposal extends Common_Methods {
 	 public void DragDrop() throws InterruptedException{
 		 Thread.sleep(3000);
 		 Actions action = new Actions(driver);
-		// WebElement source = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]/div[9]/div[1]/div[1]"));
-		 WebElement source = driver.findElement(By.xpath("//div[@class='resizers']//div//div"));
+		 WebElement source = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]/div[9]/div[1]/div[1]"));
+		 //WebElement source = driver.findElement(By.xpath("//div[@class='resizers']//div//div"));
 		 WebElement des = driver.findElement(By.xpath("//div[@id='sectionPage_6773page1']"));
 		 action.clickAndHold(source).moveToElement(des, 100, 100).release().build().perform();
 	 

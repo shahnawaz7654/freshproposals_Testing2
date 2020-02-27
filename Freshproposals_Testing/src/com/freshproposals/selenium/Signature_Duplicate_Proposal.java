@@ -41,7 +41,8 @@ public class Signature_Duplicate_Proposal extends Common_Methods {
 		}
 	 
 	 @Test(priority = 1)
-	 public void open_Proposal(){
+	 public void open_Proposal() throws InterruptedException{
+		 Thread.sleep(5000);
 	driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1829;editor=true");
 	 
 	 }

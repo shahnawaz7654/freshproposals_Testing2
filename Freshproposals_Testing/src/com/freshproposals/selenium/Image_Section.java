@@ -238,16 +238,16 @@ public class Image_Section extends Common_Methods {
 	  Assert.assertEquals(actual_padding_right, padding_right);
   }
   
-//  @Test(priority = 16)
-//  public void greyscale() throws InterruptedException {
-//	  //grayscale
-//	  Thread.sleep(2000);
-//	  WebElement rgreyscale = driver.findElement(By.name("grayscale"));
-//	  resize(rgreyscale,100,100);
-//	  Thread.sleep(1000);
-//	  driver.findElement(By.name("flip1")).click();
-//	  
-//}
+  @Test(priority = 16)
+  public void greyscale() throws InterruptedException {
+	  //grayscale
+	  Thread.sleep(2000);
+	  WebElement rgreyscale = driver.findElement(By.name("grayscale"));
+	  resize(rgreyscale,100,100);
+	  Thread.sleep(1000);
+	  //driver.findElement(By.name("flip1")).click();
+	  
+}
 
 	  
 	  
@@ -346,7 +346,8 @@ public class Image_Section extends Common_Methods {
 			  resize(r, -100, -100);
 			  Thread.sleep(1000);
 
-		  Thread.sleep(5000);
+			  Robot robot = new Robot();
+			  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 		  //border width
 		  driver.findElement(By.name("borderWidth")).clear();
 		  driver.findElement(By.name("borderWidth")).sendKeys("0");
@@ -371,8 +372,8 @@ public class Image_Section extends Common_Methods {
 //		  Thread.sleep(1000);
 //		  
 
-		  Robot robot = new Robot();
-		  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+		  Robot robot1 = new Robot();
+		  robot1.keyPress(KeyEvent.VK_PAGE_DOWN);
 		  
 		 
 		  driver.findElement(By.name("paddingTop")).clear();
@@ -394,8 +395,8 @@ public class Image_Section extends Common_Methods {
 //		  resize(r,25,25);
 //		  
 //		  //greyscale
-//		  WebElement rgreyscale = driver.findElement(By.name("grayscale"));
-//		  resize(rgreyscale,-100,-100);
+		  WebElement rgreyscale = driver.findElement(By.name("grayscale"));
+		  resize(rgreyscale,-100,-100);
 		  
          		  
 		  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();

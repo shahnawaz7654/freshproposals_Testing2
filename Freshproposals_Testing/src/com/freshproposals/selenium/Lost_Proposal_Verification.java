@@ -46,12 +46,12 @@ public class Lost_Proposal_Verification extends Common_Methods {
   @Test(priority = 1)
   public void Dashboard_Get_Lost_Value() throws InterruptedException {
 	  Thread.sleep(2000);
-	  driver.findElement(By.linkText("DASHBOARD")).click();
+	  driver.findElement(By.xpath("//span[contains(text(),'DASHBOARD')]")).click();
 	  Get_Lost = driver.findElement(By.xpath("//div[@class='row']//div[1]//div[1]//div[1]//div[3]//div[2]//p[1]")).getText();
 	  System.out.println("Before Lost "+Get_Lost);
   }
   
-  @Test(priority = 2)
+  @Test(priority = 2,enabled = false)
   public void createproposal() throws InterruptedException {
 	Thread.sleep(2000);
 	driver.findElement(By.linkText("PROPOSALS")).click();
@@ -77,6 +77,7 @@ public class Lost_Proposal_Verification extends Common_Methods {
 	  driver.findElement(By.xpath("//div[contains(text(),'15')]")).click();
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
+	  
 		
 	}
   

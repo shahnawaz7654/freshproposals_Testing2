@@ -44,6 +44,7 @@ public class F2B2 extends Common_Methods {
  
  @Test(priority = 1)
  public void Backward() throws InterruptedException {
+	 Thread.sleep(5000);
 	 driver.get("http://beta1.freshproposals.com/home/sections/editSection/4775");
 	 Thread.sleep(2000);
 	 Actions action = new Actions(driver);

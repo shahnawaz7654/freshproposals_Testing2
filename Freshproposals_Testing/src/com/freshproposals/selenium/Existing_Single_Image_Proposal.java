@@ -119,8 +119,8 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 	  Assert.assertEquals(actual_rotate,rotate);
 	  Thread.sleep(1000);
 	  
-//	  Robot robot = new Robot();
-//	  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+	  Robot robot = new Robot();
+	  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
   }
   
 //  @Test(priority = 7)
@@ -163,9 +163,10 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 //	 }
   
   @Test(priority = 10)
-  public void border_width() throws InterruptedException {
+  public void border_width() throws InterruptedException, AWTException {
 	 
 	  //border
+	  Thread.sleep(1000);
 	  driver.findElement(By.name("border")).click();
 	  Thread.sleep(1000);
       //border width
@@ -232,8 +233,10 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
   }
   
   @Test(priority = 16)
-  public void greyscale() throws InterruptedException {
+  public void greyscale() throws InterruptedException, AWTException {
 	  //grayscale
+	  Robot robot = new Robot();
+	  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 	  Thread.sleep(2000);
 	  WebElement rgreyscale = driver.findElement(By.name("grayscale"));
 	  resize(rgreyscale,50,50);
@@ -341,7 +344,8 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 //		  resize(opacity, 0, 0);
 //		  Thread.sleep(1000);
 
-
+		  Robot robot = new Robot();
+		  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 		  Thread.sleep(5000);
 		  //border width
 		  driver.findElement(By.name("borderWidth")).clear();
@@ -365,8 +369,8 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 //		  driver.findElement(By.xpath("//button[@title='Apply']")).click();
 //		  
 
-		  Robot robot = new Robot();
-		  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+		  Robot robot1 = new Robot();
+		  robot1.keyPress(KeyEvent.VK_PAGE_DOWN);
 		  
 		 
 		  driver.findElement(By.name("paddingTop")).clear();

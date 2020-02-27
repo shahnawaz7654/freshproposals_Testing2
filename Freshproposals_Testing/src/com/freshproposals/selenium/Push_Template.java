@@ -46,6 +46,7 @@ public class Push_Template extends Common_Methods {
  
   @Test(priority = 1)
   public void createTemplate() throws InterruptedException {
+	    Thread.sleep(3000);
 		driver.findElement(By.xpath("//span[contains(text(),'TEMPLATES')]")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.linkText("Create your Template")).click();

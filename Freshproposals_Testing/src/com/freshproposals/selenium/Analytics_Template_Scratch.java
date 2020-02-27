@@ -76,9 +76,10 @@ public class Analytics_Template_Scratch extends Common_Methods {
   public void client() throws InterruptedException  {
 	  Thread.sleep(3000);
 	  //client btn
-	  driver.findElement(By.xpath("//*[@id=\"headingSelectClient\"]/h2/button")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//div[@class='row client-content mt-3']//div[2]//div[2]//label[1]//span[1]")).click();
+	  //driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/h2[1]/button[1]")).click();
+	  //Thread.sleep(1000);
+	  //driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/app-clients[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/label[1]/span[1]")).click();
+	  driver.findElement(By.xpath("//div[@class='row client-content mt-3 ng-star-inserted']//div[2]//div[2]//label[1]//span[1]")).click();
 	  Thread.sleep(2000);
   }
   
@@ -105,7 +106,7 @@ public class Analytics_Template_Scratch extends Common_Methods {
   public void copyLink() throws InterruptedException, AWTException {
 	  //next
 	  Thread.sleep(3000);
-	  driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+	  driver.findElement(By.xpath("//button[@class='nav-link btn next-btn ng-star-inserted']")).click();
 	  //link
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//img[@src='../../../assets/link-icon-blue.svg']")).click();

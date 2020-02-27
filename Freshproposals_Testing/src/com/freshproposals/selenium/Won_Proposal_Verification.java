@@ -44,15 +44,15 @@ public class Won_Proposal_Verification extends Common_Methods {
   
   @Test(priority = 1)
   public void Dashboard_Get_Won_Value() throws InterruptedException {
-	  Thread.sleep(2000);
-	  driver.findElement(By.linkText("DASHBOARD")).click();
+	  Thread.sleep(5000);
+	  driver.findElement(By.xpath("//span[contains(text(),'DASHBOARD')]")).click();
 	  Get_Won = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-dashboard[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/p[1]")).getText();
 	  System.out.println("Before Won "+Get_Won);
   }
   
   @Test(priority = 2)
   public void generateProposal() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		driver.findElement(By.xpath("//span[contains(text(),'PROPOSALS')]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.linkText("Start From Scratch")).click();

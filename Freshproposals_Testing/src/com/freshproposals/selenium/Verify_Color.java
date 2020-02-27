@@ -36,7 +36,7 @@ public class Verify_Color extends Common_Methods {
  
  @Test(priority = 1)
  public void verify_Color() throws InterruptedException {
-	 Thread.sleep(1000);
+	 Thread.sleep(5000);
 	 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1163;editor=true");
 	 Thread.sleep(1000);
 	if(driver.findElement(By.id("page1-fpText111320191728746mainDivTransformSafeStyle")).isSelected()) {

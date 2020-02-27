@@ -9,6 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -43,11 +44,9 @@ public class Gmail_Testing extends Common_Methods{
 	  
 	  @Test(priority = 1)
 	  public void createTemplate() throws InterruptedException {
-			driver.findElement(By.linkText("TEMPLATES")).click();
-			Thread.sleep(3000);
-			//template name
-			driver.findElement(By.linkText("Create your Template")).click();
-			driver.findElement(By.name("name")).sendKeys(fname+" GmailTestingTemp "+timestamp);
+		  Thread.sleep(5000);
+			driver.findElement(By.xpath("//img[@src='../../assets/add-section-icon.png']")).click();
+			driver.findElement(By.name("name")).sendKeys(fname+" CLTempSend "+timestamp);
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
 	  }
@@ -56,7 +55,7 @@ public class Gmail_Testing extends Common_Methods{
 	  public void contentLibrary() throws InterruptedException {
 		  Thread.sleep(3000);
 		  //plus btn
-		  driver.findElement(By.xpath("//button[@class='btn add-sect-btn template-add-sec']")).click();
+		  driver.findElement(By.xpath("//button[@class='btn add-sect-btn template-add-sec ng-star-inserted']")).click();
 		  Thread.sleep(5000);
 		  //search
 		  driver.findElement(By.xpath("//input[@placeholder='search section']")).sendKeys("content library automation");
@@ -80,13 +79,8 @@ public class Gmail_Testing extends Common_Methods{
 	  public void client() throws InterruptedException  {
 		  Thread.sleep(3000);
 		  //client btn
-		  driver.findElement(By.xpath("//*[@id=\"headingSelectClient\"]/h2/button")).click();
-		  Thread.sleep(1000);
-		  //search
-		  driver.findElement(By.xpath("//div[@class='client-search']//input[@placeholder=' ']")).sendKeys("Gmail Testing");
-		  Thread.sleep(1000);
-		  driver.findElement(By.xpath("//div[@class='card client-det']//span[@class='checkround']")).click();
-		  //driver.findElement(By.xpath("//*[@id=\"collapseSelectClient\"]/div/div/app-clients/div[2]/div/div/div/div[2]/label/span")).click();
+		  driver.findElement(By.xpath("//div[@class='row client-content mt-3 ng-star-inserted']//div[2]//div[2]//label[1]//span[1]")).click();
+		  Thread.sleep(2000);
 	  }
 	  
 	  @Test(priority = 5)
@@ -101,9 +95,10 @@ public class Gmail_Testing extends Common_Methods{
 		  Thread.sleep(3000);
 		  driver.findElement(By.xpath("//img[@src='../../../assets/calendar.svg']")).click();
 		  Thread.sleep(2000);
-		  driver.findElement(By.xpath("//div[@class='ngb-dp-arrow right']//button[@class='btn btn-link ngb-dp-arrow-btn']")).click();
-		  Thread.sleep(2000);
-		  driver.findElement(By.xpath("//div[contains(text(),'31')]")).click();
+		  Select select = new Select(driver.findElement(By.xpath("//body//select[2]")));
+		  select.selectByValue("2021");
+		  Thread.sleep(1000);
+		  driver.findElement(By.xpath("//div[contains(text(),'15')]")).click();
 		  Thread.sleep(2000);
 		  //driver.findElement(By.linkText("Next")).click();
 		  driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
@@ -156,6 +151,7 @@ public class Gmail_Testing extends Common_Methods{
 		 driver.findElement(By.xpath("/html[1]/body[1]/div[7]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[4]/div[2]/div[1]/table[1]/tbody[1]/tr[1]")).click();
 		 Thread.sleep(2000);
 		 driver.findElement(By.linkText("View Our Business Proposal")).click();
+		 Thread.sleep(2000);
 	 }
 	 
 	 @AfterClass

@@ -41,6 +41,7 @@ public class Page_Up_Properties extends Common_Methods {
   
   @Test(priority = 1)
   public void Properties() throws InterruptedException, AWTException {
+	  Thread.sleep(5000);
 	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1283;editor=true");
 	  Thread.sleep(2000);
 	  //driver.findElement(By.xpath("//div[@id='collapseExample']//div[2]//a[1]")).click();

@@ -60,6 +60,7 @@ public class Collapse_Controls extends Common_Methods {
   
   @Test(priority = 1)
   public void grid() throws InterruptedException {
+	  Thread.sleep(5000);
 	  //driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/759");
 	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1151;editor=true");
 	  

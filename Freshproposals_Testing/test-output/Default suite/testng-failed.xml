@@ -7,8 +7,9 @@
         <methods>
           <include name="Send_and_Copy"/>
           <include name="closeBrowser"/>
+          <include name="createproposal"/>
           <include name="openBrowser"/>
-          <include name="Dashboard_Verify_Lost_Value"/>
+          <include name="Dashboard_Get_Lost_Value"/>
         </methods>
       </class> <!-- com.freshproposals.selenium.Lost_Proposal_Verification -->
     </classes>

@@ -39,7 +39,8 @@ public class Image_Duplicate_Proposal extends Common_Methods {
 		}
 	 
 	 @Test(priority = 1)
-	 public void open_Template(){
+	 public void open_Template() throws InterruptedException{
+		 Thread.sleep(5000);
 		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1830;editor=true");
 	 
 	 }

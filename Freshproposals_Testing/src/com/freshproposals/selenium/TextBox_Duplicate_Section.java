@@ -40,7 +40,8 @@ public class TextBox_Duplicate_Section extends Common_Methods {
 		}
 	 
 	 @Test(priority = 1)
-	 public void open_Template(){
+	 public void open_Template() throws InterruptedException{
+		 Thread.sleep(5000);
 		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/6718");
 	 
 	 }

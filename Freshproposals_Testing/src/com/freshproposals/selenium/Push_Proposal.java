@@ -10,6 +10,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
@@ -47,7 +48,8 @@ public class Push_Proposal extends Common_Methods {
  
   @Test(priority = 1)
   public void createproposal() throws InterruptedException {
-		driver.findElement(By.linkText("PROPOSALS")).click();
+	    Thread.sleep(3000);
+		driver.findElement(By.xpath("app-home.ng-star-inserted:nth-child(2) div.wrapper div:nth-child(2) div.sidebar div.sidebar-scroll ul:nth-child(1) > li.proposals.is-active")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.linkText("Start From Scratch")).click();
 		driver.findElement(By.name("name")).sendKeys(fname+" CVProp "+timestamp);
@@ -68,15 +70,15 @@ public class Push_Proposal extends Common_Methods {
 		
 	    //calender
 	    Thread.sleep(3000);
-	    driver.findElement(By.xpath("//img[@src='../../../assets/calendar.svg']")).click();
-	    Thread.sleep(2000);
-	    driver.findElement(By.xpath("//div[@class='ngb-dp-arrow right']//button[@class='btn btn-link ngb-dp-arrow-btn']")).click();
-	    Thread.sleep(2000);
-	    driver.findElement(By.xpath("//div[contains(text(),'15')]")).click();
-	    Thread.sleep(2000);
-	    //driver.findElement(By.linkText("Next")).click();
-	    driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
-	    Thread.sleep(5000);
+	  driver.findElement(By.xpath("//img[@src='../../../assets/calendar.svg']")).click();
+	  Thread.sleep(2000);
+	  Select select = new Select(driver.findElement(By.xpath("//body//select[2]")));
+	  select.selectByValue("2021");
+	  Thread.sleep(1000);
+	  driver.findElement(By.xpath("//div[contains(text(),'15')]")).click();
+	  Thread.sleep(2000);
+	  //driver.findElement(By.linkText("Next")).click();
+	  driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
 	
 	}
   

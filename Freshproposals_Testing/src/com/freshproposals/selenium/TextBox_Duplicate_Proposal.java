@@ -40,7 +40,8 @@ public class TextBox_Duplicate_Proposal extends Common_Methods {
 		}
 	 
 	 @Test(priority = 1)
-	 public void open_Proposal(){
+	 public void open_Proposal() throws InterruptedException{
+		 Thread.sleep(5000);
 		 driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1824;editor=true");
 	 
 	 }
@@ -90,7 +91,7 @@ public class TextBox_Duplicate_Proposal extends Common_Methods {
 	 
 	 @Test(priority = 6)
 	  public void clear() throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[1]/app-edit-section[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fptext[2]/div[1]/div[1]/div[1]/div[9]/div[1]")).click();
 		duplicate_text = driver.findElement(By.xpath("//div[@class='fr-element fr-view']//p")).getText();
 		System.out.println("Duplicate Text "+duplicate_text);
@@ -99,6 +100,7 @@ public class TextBox_Duplicate_Proposal extends Common_Methods {
 		Thread.sleep(2000);
 		driver.findElement(By.id("froalapage1-fpText12242019155138100")).click();		
 		driver.findElement(By.xpath("//div[@class='fr-element fr-view']")).clear();
+		Thread.sleep(2000);
 		
 	 }
 	 

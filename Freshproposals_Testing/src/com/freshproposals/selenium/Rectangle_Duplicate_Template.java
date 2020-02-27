@@ -41,7 +41,8 @@ public class Rectangle_Duplicate_Template extends Common_Methods {
 		}
 	 
 	 @Test(priority = 1)
-	 public void open_Template(){
+	 public void open_Template() throws InterruptedException{
+		 Thread.sleep(5000);
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1353");
 	 
 	 }

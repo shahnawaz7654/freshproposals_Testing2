@@ -42,6 +42,7 @@ public class UseThis_Checkversions extends Common_Methods {
   
   @Test(priority = 1)
   public void UseThisProp() throws InterruptedException, AWTException {
+	  Thread.sleep(5000);
 	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1693;editor=true#section6445");
 	  Thread.sleep(2000);
 	  driver.findElement(By.className("sectionlist-name")).click();

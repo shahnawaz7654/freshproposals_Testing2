@@ -46,7 +46,7 @@ public class Page_Up_Properties extends Common_Methods {
 	  Thread.sleep(2000);
 	  //driver.findElement(By.xpath("//div[@id='collapseExample']//div[2]//a[1]")).click();
 	  Thread.sleep(2000);
-	  driver.findElement(By.className("default-rectangle")).click();
+	  driver.findElement(By.xpath("//div[@id='sectionPage_5277page1']//div[@class='default-rectangle']")).click();
 	  Robot robot = new Robot();
 	  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 	  robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
@@ -56,7 +56,7 @@ public class Page_Up_Properties extends Common_Methods {
 	  Thread.sleep(3000);
 	  
 	  //move up
-	  driver.findElement(By.xpath("//a[@name='page2']//div[@class='deletIconpage']//div[2]")).click();
+	  driver.findElement(By.xpath("//a[@name='page2']//div[@class='page-wrapper']//div[1]//img[1]")).click();
 	  Thread.sleep(1000);
 	  robot.keyPress(KeyEvent.VK_PAGE_UP);
 	  robot.keyRelease(KeyEvent.VK_PAGE_UP);
@@ -78,7 +78,7 @@ public class Page_Up_Properties extends Common_Methods {
 	  robot.keyRelease(KeyEvent.VK_PAGE_UP);
 	  
 	  //move down
-	  driver.findElement(By.xpath("//a[@name='page1']//div[@class='deletIconpage']//div[2]")).click();
+	  driver.findElement(By.xpath("//a[@name='page2']//div[@class='deletIconpage ng-star-inserted']//div[2]//img[1]")).click();
 	  Thread.sleep(2000);
 	  
 	  robot.keyPress(KeyEvent.VK_PAGE_UP);
@@ -99,9 +99,9 @@ public class Page_Up_Properties extends Common_Methods {
 	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1283;editor=true");
 	  Thread.sleep(3000);
 	  //add page
-	  driver.findElement(By.xpath("//img[@src='../../assets/add-icon.svg']")).click();
+	  driver.findElement(By.xpath("//li[@class='nav-item example-box active']//div[@class='add-section']")).click();
 	  Thread.sleep(2000);
-	  driver.findElement(By.className("default-rectangle")).click();
+	  driver.findElement(By.xpath("//div[@id='sectionPage_5277page1']//div[@class='default-rectangle']")).click();
 	  Thread.sleep(2000);
 	  
 	  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
@@ -120,19 +120,23 @@ public class Page_Up_Properties extends Common_Methods {
 	  robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
 	  Thread.sleep(1000);
 	  
-	  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
-	  robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+//	  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+//	  robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
 	  Thread.sleep(1000);
 	  
 	  //delete
-	  driver.findElement(By.xpath("//a[@name='page4']//div[5]")).click();
+	  driver.findElement(By.xpath("//a[@name='page3']//div[4]//img[1]")).click();
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+	  driver.findElement(By.xpath("//button[@class='btn save-btn']")).click();
 	  
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
+	  Thread.sleep(2000);
+	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1283;editor=true");
 	  
-	  
-	  
-	 }
+	   }
   
   @AfterClass
   public void closeBrowser() throws InterruptedException {

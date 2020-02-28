@@ -3,15 +3,23 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freshproposals.selenium.Lost_Proposal_Verification">
+      <class name="com.freshproposals.selenium.Signature_Duplicate_Section">
         <methods>
-          <include name="Send_and_Copy"/>
+          <include name="assert_height_2"/>
+          <include name="assert_height_1"/>
           <include name="closeBrowser"/>
-          <include name="createproposal"/>
+          <include name="assert_width_1"/>
+          <include name="DragDrop"/>
+          <include name="duplicate"/>
+          <include name="Save2"/>
+          <include name="clear"/>
+          <include name="reset_sign_1"/>
+          <include name="assert_width_2"/>
           <include name="openBrowser"/>
-          <include name="Dashboard_Get_Lost_Value"/>
+          <include name="Save"/>
+          <include name="height_width"/>
         </methods>
-      </class> <!-- com.freshproposals.selenium.Lost_Proposal_Verification -->
+      </class> <!-- com.freshproposals.selenium.Signature_Duplicate_Section -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

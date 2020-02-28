@@ -37,28 +37,28 @@ public class Select_Search_Tab extends Common_Methods {
 
   @Test(priority = 1)
   public void Select() throws InterruptedException {
-	 driver.findElement(By.linkText("PROPOSALS")).click();
-	 Thread.sleep(10000);
-	 Select select = new Select(driver.findElement(By.xpath("//div[@id='content']//div[2]//div[1]//select[1]")));
-	 Thread.sleep(2000);
-	 
-	 select.selectByVisibleText("Completed");
-	 String actual_completed = select.getFirstSelectedOption().getText();
-	 String expected_completed = "Completed";
-	 Assert.assertEquals(actual_completed, expected_completed);
 	 Thread.sleep(3000);
-	 
-	 select.selectByVisibleText("Pending");
-	 String actual_pending = select.getFirstSelectedOption().getText();
-	 String expected_pending = "Pending";
-	 Assert.assertEquals(actual_pending, expected_pending);
-	 Thread.sleep(1000);
-	 
-	 select.selectByVisibleText("All");
-	 String actual_all = select.getFirstSelectedOption().getText();
-	 String expected_all = "All";
-	 Assert.assertEquals(actual_all, expected_all);
-	  
+	 driver.findElement(By.xpath("//input[@placeholder='Search Template']")).click();
+//	 Select select = new Select(driver.findElement(By.xpath("//div[@id='content']//div[2]//div[1]//select[1]")));
+//	 Thread.sleep(2000);
+//	 
+//	 select.selectByVisibleText("Completed");
+//	 String actual_completed = select.getFirstSelectedOption().getText();
+//	 String expected_completed = "Completed";
+//	 Assert.assertEquals(actual_completed, expected_completed);
+//	 Thread.sleep(3000);
+//	 
+//	 select.selectByVisibleText("Pending");
+//	 String actual_pending = select.getFirstSelectedOption().getText();
+//	 String expected_pending = "Pending";
+//	 Assert.assertEquals(actual_pending, expected_pending);
+//	 Thread.sleep(1000);
+//	 
+//	 select.selectByVisibleText("All");
+//	 String actual_all = select.getFirstSelectedOption().getText();
+//	 String expected_all = "All";
+//	 Assert.assertEquals(actual_all, expected_all);
+//	  
   }
   
   @Test(priority = 2)

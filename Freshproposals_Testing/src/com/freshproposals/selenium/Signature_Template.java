@@ -58,6 +58,7 @@ public class Signature_Template extends Common_Methods {
   
   @Test(priority = 1)
   public void open_Proposal() throws InterruptedException {
+	  Thread.sleep(5000);
 	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1380");
 	  Thread.sleep(3000);
 	  driver.findElement(By.id("page1-fpSign122020117298")).click();

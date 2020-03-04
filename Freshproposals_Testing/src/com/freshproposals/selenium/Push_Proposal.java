@@ -18,8 +18,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.paulhammant.ngwebdriver.NgWebDriver;
+
 public class Push_Proposal extends Common_Methods {
 	WebDriver driver;
+	//NgWebDriver ngDriver;
 	String fname = "SEL";
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
 	
@@ -35,6 +38,10 @@ public class Push_Proposal extends Common_Methods {
 		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
 		driver.get("http://beta1.freshproposals.com");
+		
+//		ngDriver = new NgWebDriver((JavascriptExecutor) driver);
+//		ngDriver.waitForAngularRequestsToFinish();
+		
 	}
   
   @Test(dataProvider = "User1" , priority = 0)
@@ -49,8 +56,8 @@ public class Push_Proposal extends Common_Methods {
   @Test(priority = 1)
   public void createproposal() throws InterruptedException {
 	    Thread.sleep(3000);
-		driver.findElement(By.xpath("app-home.ng-star-inserted:nth-child(2) div.wrapper div:nth-child(2) div.sidebar div.sidebar-scroll ul:nth-child(1) > li.proposals.is-active")).click();
-		Thread.sleep(3000);
+	    driver.findElement(By.linkText("PROPOSALS")).click();
+	    Thread.sleep(3000);
 		driver.findElement(By.linkText("Start From Scratch")).click();
 		driver.findElement(By.name("name")).sendKeys(fname+" CVProp "+timestamp);
 		Thread.sleep(1000);

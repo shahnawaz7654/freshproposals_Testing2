@@ -16,14 +16,17 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.paulhammant.ngwebdriver.NgWebDriver;
+
 public class Won_Proposal_Verification extends Common_Methods {
 	WebDriver driver;
+	NgWebDriver ngDriver;
 	String fname = "SEL";
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
 	String Get_Won;
 	String Verify_Won;
 	
-  @BeforeClass
+  @BeforeClass 
   public void openBrowser() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -31,6 +34,9 @@ public class Won_Proposal_Verification extends Common_Methods {
 		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
 		driver.get("http://beta1.freshproposals.com");
+		
+		ngDriver = new NgWebDriver((JavascriptExecutor) driver);
+		ngDriver.waitForAngularRequestsToFinish();
 	}
   
   @Test(dataProvider = "User1" , priority = 0)
@@ -53,20 +59,17 @@ public class Won_Proposal_Verification extends Common_Methods {
   @Test(priority = 2)
   public void generateProposal() throws InterruptedException {
 		Thread.sleep(10000);
-		driver.findElement(By.xpath("//span[contains(text(),'PROPOSALS')]")).click();
+		driver.findElement(By.linkText("PROPOSALS")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.linkText("Start From Scratch")).click();
+		driver.findElement(By.xpath("//img[@src='../../assets/add-section-icon.png']")).click();
 		driver.findElement(By.name("name")).sendKeys(fname+" DashWonVal "+timestamp);
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 	 
 	  Thread.sleep(3000);
 	  //client btn
-	  driver.findElement(By.xpath("//*[@id=\"headingSelectClient\"]/h2/button")).click();
-	  Thread.sleep(5000);
-	  //driver.findElement(By.xpath("//div[@class='row client-content mt-3']//div[2]//div[2]//label[1]//span[1]")).click();
-	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/app-clients[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/label[1]/span[1]")).click();
-	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("//div[@class='row client-content mt-3 ng-star-inserted']//div[2]//div[2]//label[1]//span[1]")).click();
+      Thread.sleep(3000);
 	  JavascriptExecutor js = (JavascriptExecutor) driver;
 	  js.executeScript("window.scrollBy(0,1000)");
 
@@ -97,7 +100,7 @@ public class Won_Proposal_Verification extends Common_Methods {
   public void Send_and_Copy() throws InterruptedException {										
 	  //next
 	  Thread.sleep(3000);
-	  driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+	  driver.findElement(By.xpath("//button[starts-with(@class,'nav-link btn next-btn')]")).click();
 	  //link
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//img[@src='../../../assets/link-icon-blue.svg']")).click();

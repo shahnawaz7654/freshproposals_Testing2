@@ -4,5 +4,26 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/user/Downloads/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/animal-sniffer-annotations-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/byte-buddy-1.8.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/checker-compat-qual-2.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/error_prone_annotations-2.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/guava-25.0-jre.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/j2objc-annotations-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/jsr305-1.3.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/ngwebdriver-1.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/okhttp-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/okio-1.14.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/selenium-api-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/selenium-chrome-driver-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/selenium-edge-driver-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/selenium-firefox-driver-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/selenium-ie-driver-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/selenium-java-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/selenium-opera-driver-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/selenium-remote-driver-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/selenium-safari-driver-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/New folder (4)/selenium-support-3.141.59.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -31,7 +31,7 @@ public class Push_Template extends Common_Methods {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
+	    driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
 		driver.get("http://beta1.freshproposals.com");
 	}
   
@@ -46,10 +46,8 @@ public class Push_Template extends Common_Methods {
  
   @Test(priority = 1)
   public void createTemplate() throws InterruptedException {
-	    Thread.sleep(3000);
-		driver.findElement(By.xpath("//span[contains(text(),'TEMPLATES')]")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.linkText("Create your Template")).click();
+		driver.findElement(By.xpath("//img[@src='../../assets/add-section-icon.png']")).click();
 		driver.findElement(By.name("name")).sendKeys(fname+" CVTemp "+timestamp);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -59,7 +57,7 @@ public class Push_Template extends Common_Methods {
   
   @Test(priority = 2)
   public void TemplateVersion() throws InterruptedException {
-	//Thread.sleep(3000);
+	Thread.sleep(10000);
 	//driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=2374;editor=true");
 	Thread.sleep(2000);
 	driver.findElement(By.xpath("//li[@class='nav-item example-box active']//a[@class='sectionlist-name'][contains(text(),'New Section')]")).click();
@@ -68,8 +66,8 @@ public class Push_Template extends Common_Methods {
 	Thread.sleep(2000);
 	driver.findElement(By.xpath("//li[@class='nav-item example-box active']//button[@class='dropdown-item'][contains(text(),'Rename')]")).click();
 	Thread.sleep(2000);
-	driver.findElement(By.xpath("//div[@class='rename-section']//input[@name='sectionNametxt']")).clear();
-	driver.findElement(By.xpath("//div[@class='rename-section']//input[@name='sectionNametxt']")).sendKeys(fname+" CV_SECName "+timestamp);
+	driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/div[1]/input[1]")).clear();
+	driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/div[1]/input[1]")).sendKeys(fname+" CV_SECName "+timestamp);
 	Thread.sleep(2000);
 	t_name = driver.findElement(By.xpath("//div[@class='rename-section']//input[@name='sectionNametxt']")).getAttribute("value");
 	System.out.println("P NAME = "+t_name);

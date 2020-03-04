@@ -40,8 +40,8 @@ public class Section_List_Proposal extends Common_Methods {
   
   @Test(priority = 1)
   public void nameProposal() throws InterruptedException {
-	    Thread.sleep(2000);
-	    driver.findElement(By.linkText("PROPOSALS")).click();
+	    Thread.sleep(3000);
+	    driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1]")).click();
 	    Thread.sleep(2000);
 		driver.findElement(By.linkText("Start From Scratch")).click();
 		Thread.sleep(1000);

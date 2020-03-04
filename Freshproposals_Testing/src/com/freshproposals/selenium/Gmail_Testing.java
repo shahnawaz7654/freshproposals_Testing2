@@ -108,7 +108,7 @@ public class Gmail_Testing extends Common_Methods{
 	  public void sendEmail() throws InterruptedException {
 		  //next
 		  Thread.sleep(2000);
-		  driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		  driver.findElement(By.xpath("//button[@class='nav-link btn next-btn ng-star-inserted']")).click();
 	      driver.findElement(By.xpath("//div[@class='card']//input")).sendKeys("Selenium Subject");
 	      System.out.println(driver.findElement(By.xpath("//div[@class='card']//input")).getText());
 		  driver.findElement(By.xpath("//div[@class='fr-box fr-basic fr-top']//div[@class='fr-element fr-view']"))

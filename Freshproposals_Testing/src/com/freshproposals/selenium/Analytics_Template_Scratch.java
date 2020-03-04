@@ -106,7 +106,7 @@ public class Analytics_Template_Scratch extends Common_Methods {
   public void copyLink() throws InterruptedException, AWTException {
 	  //next
 	  Thread.sleep(3000);
-	  driver.findElement(By.xpath("//button[@class='nav-link btn next-btn ng-star-inserted']")).click();
+	  driver.findElement(By.cssSelector("app-home.ng-star-inserted:nth-child(2) div.wrapper:nth-child(2) div.main-no-sidebar:nth-child(5) div.apply-hidden.styling-mode-effect app-edit-proposal.ng-star-inserted:nth-child(2) div.editor-box:nth-child(1) div.section-editor-header div:nth-child(1) ul.nav.btn-wrapper.float-right:nth-child(2) li.nav-item > button.nav-link.btn.next-btn.ng-star-inserted")).click();
 	  //link
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//img[@src='../../../assets/link-icon-blue.svg']")).click();

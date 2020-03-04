@@ -103,7 +103,7 @@ public class Send_Proposal_Temp extends Common_Methods{
   public void sendEmail() throws InterruptedException {
 	  //next
 	  Thread.sleep(5000);
-	  driver.findElement(By.xpath("1")).click();
+	  driver.findElement(By.xpath("//button[@class='nav-link btn next-btn ng-star-inserted']")).click();
 	  Thread.sleep(5000);
       driver.findElement(By.xpath("//div[@class='card']//input")).sendKeys("Selenium Subject");
 	  driver.findElement(By.xpath("//div[@class='fr-box fr-basic fr-top']//div[@class='fr-element fr-view']"))

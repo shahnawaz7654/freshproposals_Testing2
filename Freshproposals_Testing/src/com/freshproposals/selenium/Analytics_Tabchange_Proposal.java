@@ -87,9 +87,12 @@ public class Analytics_Tabchange_Proposal extends Common_Methods {
   @Test(priority = 2)
   public void copyLink() throws InterruptedException {
 	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1169;editor=true");
+	 
 	  //next
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+	  //save
+	  driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[3]/button[1]")).click();
 	  //link
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//img[@src='../../../assets/link-icon-blue.svg']")).click();

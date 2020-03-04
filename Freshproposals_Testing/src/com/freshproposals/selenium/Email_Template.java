@@ -42,7 +42,7 @@ public class Email_Template extends Common_Methods {
   
   @Test(priority = 1)
   public void createEmailTemplate() throws InterruptedException {
-	  driver.findElement(By.linkText("SETTINGS")).click();
+	  driver.findElement(By.xpath("//li[@class='settings']")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//p[contains(text(),'Email Template')]")).click();
 		Thread.sleep(2000);

@@ -43,14 +43,14 @@ public class Ellipse_Duplicate_Section extends Common_Methods {
 	 @Test(priority = 1)
 	 public void open_Template() throws InterruptedException{
 		 Thread.sleep(5000);
-		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/6777");
+		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/15711");
 	 
 	 }
 	 
 	 @Test(priority = 2)
 	 public void height_width() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[@id='page1-fpShape122720191415198']")).click();
+		driver.findElement(By.xpath("//div[@class='resizers']")).click();
 		driver.findElement(By.name("textWidth11")).clear();
 		driver.findElement(By.name("textWidth11")).sendKeys(width);
 	    driver.findElement(By.name("height11")).clear();
@@ -61,8 +61,8 @@ public class Ellipse_Duplicate_Section extends Common_Methods {
 	 
 	 @Test(priority = 3)
 	  public void assert_width_1() throws InterruptedException {
-		 driver.findElement(By.xpath("//div[@id='page1-fpShape122720191415198']")).click();
-		  String actual_reflect_width = driver.findElement(By.xpath("//div[@id='page1-fpShape122720191415198']")).getCssValue("width");
+		 driver.findElement(By.xpath("//div[@class='resizers']")).click();
+		  String actual_reflect_width = driver.findElement(By.xpath("//div[@class='resizers']")).getCssValue("width");
 		  String expected_reflect_width = width+"px";
 		  System.out.println("Awidth "+actual_reflect_width);
 		  System.out.println("Ereflect width "+expected_reflect_width);
@@ -71,8 +71,8 @@ public class Ellipse_Duplicate_Section extends Common_Methods {
 	 
 	 @Test(priority = 4)
 	  public void assert_height_1() throws InterruptedException {
-		 driver.findElement(By.xpath("//div[@id='page1-fpShape122720191415198']")).click();
-		  String actual_reflect_height = driver.findElement(By.xpath("//div[@id='page1-fpShape122720191415198']")).getCssValue("height");
+		 driver.findElement(By.xpath("//div[@class='resizers']")).click();
+		  String actual_reflect_height = driver.findElement(By.xpath("//div[@class='resizers']")).getCssValue("height");
 		  System.out.println("Aheight "+actual_reflect_height);
 		  String expected_reflect_height = height+"px";
 		  System.out.println("Ereflect height "+expected_reflect_height);
@@ -83,7 +83,7 @@ public class Ellipse_Duplicate_Section extends Common_Methods {
 	 public void duplicate() throws InterruptedException{
 		 Thread.sleep(1000);
 		 Actions action = new Actions(driver);
-		 action.contextClick(driver.findElement(By.xpath("//div[@id='page1-fpShape122720191415198']"))).perform();
+		 action.contextClick(driver.findElement(By.xpath("//div[@class='resizers']"))).perform();
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("//li[contains(text(),'Duplicate')]")).click();
 	 
@@ -93,16 +93,16 @@ public class Ellipse_Duplicate_Section extends Common_Methods {
 	 public void DragDrop() throws InterruptedException{
 		 Thread.sleep(3000);
 		 Actions action = new Actions(driver);
-		 WebElement source = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]"));
-		 WebElement des = driver.findElement(By.xpath("//div[@id='sectionPage_6777page1']"));
+		 WebElement source = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpellipse[2]/div[1]/div[1]/div[1]/div[9]/div[1]"));
+		 WebElement des = driver.findElement(By.xpath("//div[@id='sectionPage_15711page1']"));
 		 action.clickAndHold(source).moveToElement(des, 100, 100).release().build().perform();
 	 
 	 }
 	 
 	 @Test(priority = 7)
 	  public void assert_width_2() throws InterruptedException {
-		 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]")).click();
-		  String actual_reflect_width = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]")).getCssValue("width");
+		 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpellipse[2]/div[1]/div[1]/div[1]/div[9]/div[1]")).click();
+		  String actual_reflect_width = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpellipse[2]/div[1]/div[1]/div[1]/div[9]/div[1]")).getCssValue("width");
 		  String expected_reflect_width = width+"px";
 		  System.out.println("Awidth2 "+actual_reflect_width);
 		  System.out.println("Ereflect width2 "+expected_reflect_width);
@@ -111,8 +111,8 @@ public class Ellipse_Duplicate_Section extends Common_Methods {
 	 
 	 @Test(priority = 8)
 	  public void assert_height_2() throws InterruptedException {
-		 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]")).click();
-		  String actual_reflect_height = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]")).getCssValue("height");
+		 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpellipse[2]/div[1]/div[1]/div[1]/div[9]/div[1]")).click();
+		  String actual_reflect_height = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpellipse[2]/div[1]/div[1]/div[1]/div[9]/div[1]")).getCssValue("height");
 		  System.out.println("Aheight2 "+actual_reflect_height);
 		  String expected_reflect_height = height+"px";
 		  System.out.println("Ereflect height2 "+expected_reflect_height);
@@ -127,7 +127,7 @@ public class Ellipse_Duplicate_Section extends Common_Methods {
 		  Thread.sleep(3000);
 		  driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
 		  Thread.sleep(3000);
-		  driver.get("http://beta1.freshproposals.com/home/sections/editSection/6777");
+		  driver.get("http://beta1.freshproposals.com/home/sections/editSection/15711");
 		  
 	 }
 	 
@@ -135,7 +135,7 @@ public class Ellipse_Duplicate_Section extends Common_Methods {
 	 @Test(priority = 10)
 	  public void clear() throws InterruptedException {
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpshape[2]/div[1]/div[1]/div[1]")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-section[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/app-sections-page[1]/a[1]/div[1]/div[1]/div[1]/app-fpellipse[2]/div[1]/div[1]/div[1]/div[9]/div[1]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//img[@class='img-fluid delete-section-control']")).click();
 		
@@ -144,7 +144,7 @@ public class Ellipse_Duplicate_Section extends Common_Methods {
 	 @Test(priority = 10)
 	  public void reset_sign_1() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[@id='page1-fpShape122720191415198']")).click();
+		driver.findElement(By.xpath("//div[@class='resizers']")).click();
 		driver.findElement(By.name("textWidth11")).clear();
 		driver.findElement(By.name("textWidth11")).sendKeys("400");
 	    driver.findElement(By.name("height11")).clear();
@@ -158,7 +158,7 @@ public class Ellipse_Duplicate_Section extends Common_Methods {
 		  Thread.sleep(3000);
 		  driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
 		  Thread.sleep(3000);
-		  driver.get("http://beta1.freshproposals.com/home/sections/editSection/6777");
+		  driver.get("http://beta1.freshproposals.com/home/sections/editSection/15711");
 		  
 	 }
 	 

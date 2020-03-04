@@ -40,11 +40,14 @@ public class ClientContact extends Common_Methods {
 	@Test(priority=1,dependsOnMethods = {"login"})
 	  public void CreateNewClient() throws InterruptedException {
 			
-			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-			WebElement Client =driver.findElement(By.xpath("//li[@class='clients']"));
-			Client.click();
+			//driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			WebElement Client =driver.findElement(By.xpath("//span[contains(text(),'CLIENTS')]"));
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", Client);
+
+			//Client.click();
 			Thread.sleep(5000);
-			WebElement Button = driver.findElement(By.xpath("//div[@class='btn add-client-btn']//img"));
+			WebElement Button = driver.findElement(By.xpath("//div[@class='btn add-client-btn ng-star-inserted']"));
 			Button.click();
 			driver.findElement(By.xpath("//input[@formcontrolname='Name']")).sendKeys("Freshproposals");
 			driver.findElement(By.xpath("//input[@formcontrolname='WebSiteUrl']")).sendKeys("www.freshproposals.com");

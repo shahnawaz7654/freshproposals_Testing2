@@ -44,207 +44,81 @@ public class RectangleandLinePropertiesInTemplate extends Common_Methods{
 		}
 	 
 	
-	 @Test(priority =4)
-	 public void ChangeRectangleWidthandHeight() throws InterruptedException {
-		driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
-		Thread.sleep(3000);
-		WebElement Shape = driver.findElement(By.id("page1-fpShape1213201912522970"));
-		Thread.sleep(2000);
-		Shape.click();
-		WebElement RectangleShapeWidth = driver.findElement(By.xpath("//input[@name='textWidth11']"));
-		RectangleShapeWidth.clear();
-		Thread.sleep(2000);
-		RectangleShapeWidth.sendKeys(width);
-		WebElement RectangleShapeHeight = driver.findElement(By.xpath("//input[@name='height11']"));
-		RectangleShapeHeight.clear();
-		Thread.sleep(2000);
-		RectangleShapeHeight.sendKeys(height);
-		Actions dragger = new Actions(driver);
-		WebElement draggablePartOfScrollbar = driver.findElement(By.name("opacity"));
-		int numberOfPixelsToDragTheScrollbarDown = -45;
-		
-		dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(0,numberOfPixelsToDragTheScrollbarDown).release().perform();
-		Thread.sleep(5000);
-		
-		WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
-		 SaveBtn.click();
-			Thread.sleep(3000);
-
-		this.VerifyHeightandWidth();
-	 }
-	 public void VerifyHeightandWidth() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
-			Thread.sleep(3000);
-			WebElement Shape = driver.findElement(By.id("page1-fpShape1213201912522970"));
-			Thread.sleep(2000);
-			Shape.click();
-			int  width1=Shape.getSize().getWidth();
-			int height1=Shape.getSize().getHeight();
-			softAssertion.assertEquals(width1,491);
-			softAssertion.assertEquals(height1,567);	 
-		 this.ResetHeightandWidth();
-		 
-		 softAssertion.assertAll();
-	 }
-	 public void ResetHeightandWidth() throws InterruptedException {
-			Thread.sleep(3000);
-			WebElement Shape = driver.findElement(By.id("page1-fpShape1213201912522970"));
-			Thread.sleep(2000);
-			Shape.click();
-			WebElement RectangleShapeWidth = driver.findElement(By.xpath("//input[@name='textWidth11']"));
-			RectangleShapeWidth.clear();
-			Thread.sleep(2000);
-			RectangleShapeWidth.sendKeys("250");
-			WebElement RectangleShapeHeight = driver.findElement(By.xpath("//input[@name='height11']"));
-			RectangleShapeHeight.clear();
-			Thread.sleep(1000);
-			RectangleShapeHeight.sendKeys("400");
-			Thread.sleep(1000);
-			Actions dragger = new Actions(driver);
-			WebElement draggablePartOfScrollbar = driver.findElement(By.name("opacity"));
-			int numberOfPixelsToDragTheScrollbarDown = 100;
-			dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(numberOfPixelsToDragTheScrollbarDown,0).release().perform();
-			Thread.sleep(5000);
-			WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
-			SaveBtn.click();
-			Thread.sleep(5000);
-			
-			driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
-			Thread.sleep(3000);
-			WebElement RectangleShape = driver.findElement(By.id("page1-fpShape1213201912522970"));
-			Thread.sleep(2000);
-		  int width=RectangleShape.getSize().getWidth();
-		  int height=RectangleShape.getSize().getHeight();
-		  softAssertion.assertEquals(width, 250);
-		  softAssertion.assertEquals(height, 400);
-		 
-	 }
-	 @Test(priority=2,enabled=false)
-	 	public void ApplyCornerandRotation() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
-			Thread.sleep(3000);
-		 WebElement Rectangle = driver.findElement(By.id("page1-fpShape1213201912522970"));
-			Thread.sleep(2000);
-			Rectangle.click();
-	//	 WebElement Shape = driver.findElement(By.xpath("//div[@id='section_section6468']//div[9]//div[1]"));
+//	 @Test(priority =4)
+//	 public void ChangeRectangleWidthandHeight() throws InterruptedException {
+//		driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
+//		Thread.sleep(3000);
+//		WebElement Shape = driver.findElement(By.id("page1-fpShape1213201912522970"));
+//		Thread.sleep(2000);
+//		Shape.click();
+//		WebElement RectangleShapeWidth = driver.findElement(By.xpath("//input[@name='textWidth11']"));
+//		RectangleShapeWidth.clear();
+//		Thread.sleep(2000);
+//		RectangleShapeWidth.sendKeys(width);
+//		WebElement RectangleShapeHeight = driver.findElement(By.xpath("//input[@name='height11']"));
+//		RectangleShapeHeight.clear();
+//		Thread.sleep(2000);
+//		RectangleShapeHeight.sendKeys(height);
+//		Actions dragger = new Actions(driver);
+//		WebElement draggablePartOfScrollbar = driver.findElement(By.name("opacity"));
+//		int numberOfPixelsToDragTheScrollbarDown = -45;
+//		
+//		dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(0,numberOfPixelsToDragTheScrollbarDown).release().perform();
+//		Thread.sleep(5000);
+//		
+//		WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+//		 SaveBtn.click();
+//			Thread.sleep(3000);
+//
+//		this.VerifyHeightandWidth();
+//	 }
+//	 public void VerifyHeightandWidth() throws InterruptedException {
+//		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
+//			Thread.sleep(3000);
+//			WebElement Shape = driver.findElement(By.id("page1-fpShape1213201912522970"));
+//			Thread.sleep(2000);
+//			Shape.click();
+//			int  width1=Shape.getSize().getWidth();
+//			int height1=Shape.getSize().getHeight();
+//			softAssertion.assertEquals(width1,491);
+//			softAssertion.assertEquals(height1,567);	 
+//		 this.ResetHeightandWidth();
+//		 
+//		 softAssertion.assertAll();
+//	 }
+//	 public void ResetHeightandWidth() throws InterruptedException {
+//			Thread.sleep(3000);
+//			WebElement Shape = driver.findElement(By.id("page1-fpShape1213201912522970"));
+//			Thread.sleep(2000);
+//			Shape.click();
+//			WebElement RectangleShapeWidth = driver.findElement(By.xpath("//input[@name='textWidth11']"));
+//			RectangleShapeWidth.clear();
+//			Thread.sleep(2000);
+//			RectangleShapeWidth.sendKeys("250");
+//			WebElement RectangleShapeHeight = driver.findElement(By.xpath("//input[@name='height11']"));
+//			RectangleShapeHeight.clear();
+//			Thread.sleep(1000);
+//			RectangleShapeHeight.sendKeys("400");
+//			Thread.sleep(1000);
 //			Actions dragger = new Actions(driver);
-//		 WebElement RectangleShapeCorner = driver.findElement(By.xpath("//input[@name='corners']"));
-//		 
-//		 
-//	
-//			int numberOfPixelsToDragTheScrollbarDown =10;
-//			Thread.sleep(2000);
-//
-//			dragger.moveToElement(RectangleShapeCorner).clickAndHold().moveByOffset(numberOfPixelsToDragTheScrollbarDown,0).release().build().perform();
-//			//dragger.perform();
+//			WebElement draggablePartOfScrollbar = driver.findElement(By.name("opacity"));
+//			int numberOfPixelsToDragTheScrollbarDown = 100;
+//			dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(numberOfPixelsToDragTheScrollbarDown,0).release().perform();
 //			Thread.sleep(5000);
+//			WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+//			SaveBtn.click();
+//			Thread.sleep(5000);
+//			
+//			driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
+//			Thread.sleep(3000);
+//			WebElement RectangleShape = driver.findElement(By.id("page1-fpShape1213201912522970"));
 //			Thread.sleep(2000);
-//
-//
-//		Thread.sleep(2000);
-//		String str = Shape.getCssValue("border-radius");
-//		System.out.println(str);
-//		//Assert.assertEquals(Sir, "45px");
-//		WebElement Shape1 = driver.findElement(By.xpath("//div[@id='page1-fpShape1213201912522970']"));
-		WebElement Rectanglerotate=driver.findElement(By.xpath("//input[@name='rotate']"));
-		Rectanglerotate.clear();
-		Thread.sleep(1000);
-		Rectanglerotate.sendKeys("90");
-		Thread.sleep(2000);
-		//input[@name='rotate']
-		WebElement BorderCheckBox = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-shape-properties[1]/form[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/input[1]"));
-		BorderCheckBox.click();
-		Thread.sleep(2000);
-		//BorderCheckBox.click();
-		Thread.sleep(2000);
-		WebElement BorderWidth = driver.findElement(By.xpath("//input[@name='borderWidth']"));
-		BorderWidth.clear();
-		Thread.sleep(2000);
-		BorderWidth.sendKeys("10");
-		Thread.sleep(1000);
-		Select dropdown = new Select(driver.findElement(By.name("borderStyle")));
-		dropdown.selectByIndex(3);
-		Thread.sleep(1000);
-
-		WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
-		SaveBtn.click();
-		Thread.sleep(3000);
-		WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
-		BackBtn.click();
-		Thread.sleep(3000);
-		this.verifyApplyCornerandRotation();
-		this.ResetApplyCornerandRotation();
-	 }
-	 public void verifyApplyCornerandRotation() throws InterruptedException {
-		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
-			Thread.sleep(3000);
-			WebElement Shape1 = driver.findElement(By.xpath("//div[@id='page1-fpShape1213201912522970']"));
-					
-			String str1 =Shape1.getCssValue("transform");
-			//System.out.println(str1);
-			softAssertion.assertEquals(str1, "matrix(6.12323e-17, 1, -1, 6.12323e-17, 0, 0)");
-			WebElement BorderRadious = driver.findElement(By.xpath("//input[@name='border']"));
-			String str2 =BorderRadious.getCssValue("border-width");
-			//System.out.println("Border width"+str2);
-			softAssertion.assertEquals(str2, "10px");
-			WebElement GetShapeBorder=driver.findElement(By.xpath("//input[@name='border']"));
-
-		String borderstyle =GetShapeBorder.getCssValue("border-style");
-		//System.out.println("BorderStyle"+borderstyle);
-		softAssertion.assertEquals(borderstyle, "double");
-	 }
-		public void ResetApplyCornerandRotation() throws InterruptedException {
-		 WebElement Shape = driver.findElement(By.xpath("//div[9]//div[1]"));
-		 Shape.click();
-		 Thread.sleep(3000);
-//		 WebElement RectangleShapeCorner = driver.findElement(By.xpath("//input[@name='corners']"));
-//		RectangleShapeCorner.clear();
-//		Thread.sleep(2000);
-//		RectangleShapeCorner.sendKeys("0");
-//		Thread.sleep(2000);
-//		String str = Shape.getCssValue("border-radius");
-//		Assert.assertEquals(str, "0px");
-		
-		WebElement Rectanglerotate=driver.findElement(By.xpath("//input[@name='rotate']"));
-		Rectanglerotate.clear();
-		Thread.sleep(2000);
-		Rectanglerotate.sendKeys("0");
-		Thread.sleep(2000);
-		
-		WebElement BorderCheckBox = driver.findElement(By.xpath("//input[@name='border']"));
-		Thread.sleep(2000);
-		WebElement BorderWidth = driver.findElement(By.xpath("//input[@name='borderWidth']"));
-		BorderWidth.clear();
-		Thread.sleep(2000);
-		BorderWidth.sendKeys("0");
-		Select dropdown = new Select(driver.findElement(By.name("borderStyle")));
-		dropdown.selectByIndex(2);
-		Thread.sleep(1000);
-		BorderCheckBox.click();
-		Thread.sleep(2000);
-
-		WebElement GetShapeBorder=driver.findElement(By.xpath("//body/app-root/app-home/div[@class='wrapper']/div[@id='content']/div[@class='apply-hidden styling-mode-effect']/app-edit-template/div[@class='editor-box template-editor']/div[@class='row']/div[@class='col-lg-8 offset-lg-2']/div[@id='scrollContainer']/div[@id='contentToConvert']/app-edit-section/div/div[@class='section-editor-box']/div[@id='scrollContainer']/div[@class='page-scalemargin-']/div[@id='section_section6468']/div[@id='section6468']/app-sections-page/a[@name='page1']/div[@class='page-wrapper']/div[@class='page effect8']/div[@id='sectionPage_6468page1']/app-fpshape/div[@class='text-element shape-element']/div[@id='page1-fpShape1213201912522970mainDivTransformSafeStyle']/div[@id='page1-fpShape1213201912522970']/div[@class='resizers']/div[1]/div[1]"));
-		String borderstyle =GetShapeBorder.getCssValue("border-style");
-		softAssertion.assertEquals(borderstyle, "solid");
-		Thread.sleep(1000);
-		WebElement SaveBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
-		SaveBtn.click();
-		Thread.sleep(3000);
-
-		driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
-		Thread.sleep(3000);
-		WebElement Shape1 = driver.findElement(By.xpath("//div[@id='page1-fpShape1213201912522970']"));
-		  WebElement BorderRadious = driver.findElement(By.xpath("//body/app-root/app-home/div[@class='wrapper']/div[@id='content']/div[@class='apply-hidden styling-mode-effect']/app-edit-template/div[@class='editor-box template-editor']/div[@class='row']/div[@class='col-lg-8 offset-lg-2']/div[@id='scrollContainer']/div[@id='contentToConvert']/app-edit-section/div/div[@class='section-editor-box']/div[@id='scrollContainer']/div[@class='page-scalemargin-']/div[@id='section_section6468']/div[@id='section6468']/app-sections-page/a[@name='page1']/div[@class='page-wrapper']/div[@class='page effect8']/div[@id='sectionPage_6468page1']/app-fpshape/div[@class='text-element shape-element']/div[@id='page1-fpShape1213201912522970mainDivTransformSafeStyle']/div[@id='page1-fpShape1213201912522970']/div[@class='resizers']/div[1]/div[1]"));
-		  String str1 =Shape1.getCssValue("transform"); System.out.println("transform is"+str1);
-		  softAssertion.assertEquals(str1, "matrix(1, 0, 0, 1, 0, 0)");
-		  String str2 =BorderRadious.getCssValue("border-width");
-
-		//System.out.println("Border width"+str2);
-		  softAssertion.assertEquals(str2, "0px");
-			Thread.sleep(3000);
-
-	 }
-	 
+//		  int width=RectangleShape.getSize().getWidth();
+//		  int height=RectangleShape.getSize().getHeight();
+//		  softAssertion.assertEquals(width, 250);
+//		  softAssertion.assertEquals(height, 400);
+//		 
+//	 }
 	 @Test(priority=3)
 	 public void LineProperties() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1250");
@@ -372,7 +246,7 @@ public class RectangleandLinePropertiesInTemplate extends Common_Methods{
 			WebElement Section3 = driver.findElement(By.xpath("//a[contains(text(),'New1')]"));
 			Section3.click();
 			Thread.sleep(2000);
-			WebElement textbox = driver.findElement(By.xpath("//body/app-root/app-home/div[@class='wrapper']/div[@id='content']/div[@class='apply-hidden styling-mode-effect']/app-edit-template/div[@class='editor-box template-editor']/div[@class='row']/div[@class='col-lg-8 offset-lg-2']/div[@id='scrollContainer']/div[@id='contentToConvert']/app-edit-section/div/div[@class='section-editor-box']/div[@id='scrollContainer']/div[@class='page-scalemargin-']/div[@id='section_section6857']/div[@id='section6857']/app-sections-page/a[@name='page1']/div[@class='page-wrapper']/div[@class='page effect8']/div[@id='sectionPage_6857page1']/app-fpshape/div[@class='text-element shape-element']/div[@id='page1-fpShape123020191702710mainDivTransformSafeStyle']/div[@id='page1-fpShape123020191702710']/div[@class='resizers']/div[1]/div[1]"));
+			WebElement textbox = driver.findElement(By.xpath("v/div[@class='section-editor-box']/div[@id='scrollContainer']/div[@class='page-scalemargin-']/div[@id='section_section6857']/div[@id='section6857']/app-sections-page/a[@name='page1']/div[@class='page-wrapper']/div[@class='page effect8']/div[@id='sectionPage_6857page1']/app-fpshape/div[@class='text-element shape-element']/div[@id='page1-fpShape123020191702710mainDivTransformSafeStyle']/div[@id='page1-fpShape123020191702710']/div[@class='resizers']/div[1]/div[1]"));
 			textbox.click();
 			Thread.sleep(2000);
 			WebElement  BackgroundColor = driver.findElement(By.xpath("//span[@class='e-btn-icon e-icons e-caret']"));

@@ -22,9 +22,7 @@ WebDriver driver;
 SoftAssert softAssertion= new SoftAssert();
 JavascriptExecutor executor = (JavascriptExecutor)driver;
 
-String[] expectedonpage1 = new String[] {"","Freshproposal","nikeeta3011@gmail.com","9189677456","Mrs.dont","Kalyaninagar Pune,411212","Pune","Maharashtra","India","Freshproposals.com","Fresh proposals.com","Natasha","Sharma","nikeeta@zenincloud.com","Kalyaninagar Pune,411212","","1234567890","Selenium","2289","Jan 25, 2029","","1","Nikeeta Shelar"};
-String[] expectedonpage2 = new String[] {"","Freshproposal","nikeeta3011@gmail.com","9189677456","Mrs.dont","Kalyaninagar Pune,411212","Pune","Maharashtra","India","Freshproposals.com","Fresh proposals.com","Natasha","Sharma","nikeeta@zenincloud.com","Kalyaninagar Pune,411212","","1234567890","Selenium","2289","Jan 25, 2029","","2","Nikeeta Shelar"};
-	
+String[] expectedonpage1 = new String[] {"","Freshproposal","nikeeta3011@gmail.com","9189677456","Mrs.dont","Kalyaninagar Pune,411212","Pune","Maharashtra","India","Freshproposals.com","Fresh proposals.com","Natasha","Sharma","nikeeta@zenincloud.com","Kalyaninagar Pune,411212","9999999999","1234567890","Selenium","2289","Jan 25, 2029","","1","Nikeeta Shelar"};	
 
 @BeforeClass
 	  public void openBrowser() {
@@ -51,8 +49,8 @@ String[] expectedonpage2 = new String[] {"","Freshproposal","nikeeta3011@gmail.c
 		nextBtn.click();
 		driver.findElement(By.id("page1-fpText12320201625678mainDivTransformSafeStyle")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[@class='btn btn-link']")).click();
-		driver.findElement(By.xpath("//button[contains(text(),'Variables')]")).click();
+		driver.findElement(By.xpath("//button[@class='btn btn-link ng-star-inserted']")).click();
+		driver.findElement(By.xpath("//button[@class='btn btn-link collapsed ng-star-inserted']")).click();
 		List<WebElement> variables=driver.findElements(By.xpath("//ul[@id='collapseVariable']//li"));
 		int numofvariables=variables.size();
 		System.out.println(numofvariables);
@@ -66,13 +64,13 @@ String[] expectedonpage2 = new String[] {"","Freshproposal","nikeeta3011@gmail.c
 		WebElement SaveBtn = driver.findElement(By.xpath("//li[@class='nav-item']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
 		SaveBtn.click();
 		Thread.sleep(3000);
-		WebElement CopyPage= driver.findElement(By.xpath("//div[@id='section_section8453']//div[3]//img[1]"));
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
-		executor.executeScript("arguments[0].click();", CopyPage);
-	//	CopyPage.click();
-		Thread.sleep(3000);
-		SaveBtn.click();
-		Thread.sleep(3000);
+//		WebElement CopyPage= driver.findElement(By.xpath("//div[@id='section_section8453']//div[3]//img[1]"));
+//		JavascriptExecutor executor = (JavascriptExecutor)driver;
+//		executor.executeScript("arguments[0].click();", CopyPage);
+//	//	CopyPage.click();
+//		Thread.sleep(3000);
+//		SaveBtn.click();
+//		Thread.sleep(3000);
 
 		}
 	@Test(priority=2)
@@ -86,15 +84,7 @@ String[] expectedonpage2 = new String[] {"","Freshproposal","nikeeta3011@gmail.c
 			String Actual =variables.get(j).getText();
 			softAssertion.assertEquals(Actual, expectedonpage1[j]);
 		}
-		List<WebElement> variablesonpage2=driver.findElements(By.xpath("//div[starts-with(@id,'page2-fpText')]//p"));
-		int var2 = variablesonpage2.size();
-		for(int page2=0;page2<var2;page2++) {
-			System.out.println(variablesonpage2.get(page2).getText());
-			String Actualonpage2 =variablesonpage2.get(page2).getText();
-			softAssertion.assertEquals(Actualonpage2, expectedonpage2[page2]);
-
-
-		}
+		
 		softAssertion.assertAll();
 		
 	}
@@ -105,18 +95,14 @@ String[] expectedonpage2 = new String[] {"","Freshproposal","nikeeta3011@gmail.c
 		WebElement nextBtn = driver.findElement(By.xpath("//button[contains(text(),'Next')]"));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", nextBtn);
-		//nextBtn.click();
 		Thread.sleep(2000);
-
 		driver.findElement(By.id("page1-fpText12320201625678mainDivTransformSafeStyle")).click();
 		Thread.sleep(1000);
 		 WebElement textbox=driver.findElement(By.id("page1-fpText12320201625678mainDivTransformSafeStyle"));
 		 textbox.click();
- 
-		 Robot   rbt= new Robot();
+		Robot   rbt= new Robot();
 		rbt.keyPress(KeyEvent.VK_CONTROL);
 		rbt.keyPress(KeyEvent.VK_A);
-
 		rbt.keyRelease(KeyEvent.VK_CONTROL);
 		rbt.keyRelease(KeyEvent.VK_A);
 		rbt.keyPress(KeyEvent.VK_CONTROL);
@@ -125,15 +111,6 @@ String[] expectedonpage2 = new String[] {"","Freshproposal","nikeeta3011@gmail.c
 		rbt.keyRelease(KeyEvent.VK_DELETE);
 		Thread.sleep(3000);
 		WebElement SaveBtn = driver.findElement(By.xpath("//li[@class='nav-item']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
-		SaveBtn.click();
-		Thread.sleep(3000);
-		WebElement deletepage =driver.findElement(By.xpath("//a[@name='page2']//div[4]//img[1]"));
-		executor.executeScript("arguments[0].click();", deletepage);
-		//deletepage.click();
-		Thread.sleep(1000);
-		WebElement AcceptPopup = driver.findElement(By.xpath("//button[@class='btn save-btn']"));
-		AcceptPopup.click();
-		Thread.sleep(2000);
 		SaveBtn.click();
 		Thread.sleep(3000);
 	}

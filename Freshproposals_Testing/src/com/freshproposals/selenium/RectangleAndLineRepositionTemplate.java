@@ -60,13 +60,14 @@ public class RectangleAndLineRepositionTemplate extends Common_Methods {
         act.dragAndDropBy(Rectangle,x, y).build().perform();		
         Thread.sleep(3000);
        
-		WebElement SaveBtn=driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+		WebElement SaveBtn=driver.findElement(By.xpath("//button[@class='nav-link btn send-btn ng-star-inserted']"));
 		SaveBtn.click();
 		Thread.sleep(3000);
-		WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+		WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav ng-star-inserted']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
 		BackBtn.click();
 		Assert.assertAll();
 	}
+	
 	@Test(priority=3)
 	public void RectangleRepositionVerification() throws InterruptedException {
 		driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1270/true");
@@ -99,18 +100,15 @@ public class RectangleAndLineRepositionTemplate extends Common_Methods {
 		Actions act=new Actions(driver);	
         act.dragAndDropBy(Rectangle,-x, -y).build().perform();		
         Thread.sleep(3000);
-       
-		WebElement SaveBtn=driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+        WebElement SaveBtn=driver.findElement(By.xpath("//button[@class='nav-link btn send-btn ng-star-inserted']"));
 		SaveBtn.click();
 		Thread.sleep(4000);
-		WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+		WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav ng-star-inserted']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+
 		BackBtn.click();
 		Assert.assertAll();
 		
 	}
-	
-	
-	
 @AfterClass
 public void teardown() {
 	driver.quit();

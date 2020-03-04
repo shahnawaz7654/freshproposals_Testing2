@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -62,7 +61,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 			WebElement savebtn =  driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
 			savebtn.click();
 			Thread.sleep(4000);
-			WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+			WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav ng-star-inserted']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
 			BackBtn.click();
 			Thread.sleep(4000);
 		 
@@ -101,7 +100,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 				int Height = textblock.getSize().getHeight();   
 				softAssertion.assertEquals(Width,50);
 				softAssertion.assertEquals(Height,50);
-				WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+				WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav ng-star-inserted']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
 				BackBtn.click();
 				Thread.sleep(2000);
 				
@@ -124,7 +123,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 	 		WebElement savebtn =  driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
 			savebtn.click();
 			Thread.sleep(3000);
-			WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+			WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav ng-star-inserted']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
 			BackBtn.click();
 			Thread.sleep(5000);
 	 			
@@ -132,10 +131,10 @@ public class ResizingOfAllComponent extends Common_Methods{
 	 	@Test(priority=6)
 	 	public void ResizeImageVerification() throws InterruptedException {
 			 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1267");
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 	 		WebElement SectionClick = driver.findElement(By.xpath("//a[contains(text(),'SeleniumImageResizeSection')]"));
 	 		SectionClick.click();
-	 		Thread.sleep(2000);
+	 		Thread.sleep(3000);
 	 		WebElement Image = driver.findElement(By.xpath("//div[@id='page1-fpImage12182019115918']//img"));
 	 		Image.click();
 	 		Thread.sleep(2000);
@@ -161,7 +160,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 	 		WebElement savebtn =  driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
 			savebtn.click();
 			Thread.sleep(5000);
-			WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+			WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav ng-star-inserted']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
 			BackBtn.click();
 			Thread.sleep(5000);
 	 		
@@ -219,6 +218,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 	 	@Test(priority=10)
 	 	public void RectangleResize() throws InterruptedException {
 	 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1267");
+	 		 Thread.sleep(5000);
 	 	WebElement Section3 = driver.findElement(By.xpath("//a[contains(text(),'SeleniumRectangleResizeSection')]"));
 	 	Section3.click();
 	 	Thread.sleep(2000);
@@ -228,8 +228,8 @@ public class ResizingOfAllComponent extends Common_Methods{
 		int HeightBefore = Rectangle.getSize().getHeight();  
 		//System.out.println(WidthBefore);
 		//System.out.println(HeightBefore);
-		softAssertion.assertEquals(WidthBefore,246);
-	 	softAssertion.assertEquals(HeightBefore, 125);
+		softAssertion.assertEquals(WidthBefore,171);
+	 	softAssertion.assertEquals(HeightBefore, 50);
  		Thread.sleep(2000);
  		WebElement RectResize = driver.findElement(By.xpath("//div[@id='page1-fpShape1218201912114789']//div[@id='segrip']"));
  		resize( RectResize,113, 353);
@@ -237,7 +237,7 @@ public class ResizingOfAllComponent extends Common_Methods{
  		WebElement savebtn =  driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
 		savebtn.click();
 		Thread.sleep(3000);
-		WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+		WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav ng-star-inserted']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
 		//BackBtn.click();
 		Thread.sleep(3000);
 		BackBtn.click();
@@ -250,15 +250,15 @@ public class ResizingOfAllComponent extends Common_Methods{
 	 		//driver.findElement(By.xpath("//div[2]//div[1]//div[2]//a[1]//img[1]")).click();
 	 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1267");
 
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			WebElement Rectangle = driver.findElement(By.xpath("//div[@id='page1-fpShape1218201912114789']//div[@oncontextmenu]"));
 	 		Rectangle.click();
 	 		int WidthAfterResizing = Rectangle.getSize().getWidth();
 			int HeightAfterResizing = Rectangle.getSize().getHeight();  
 			//System.out.println(WidthAfterResizing);
 			//System.out.println(HeightAfterResizing);
-			softAssertion.assertEquals(WidthAfterResizing,359);
-		 	softAssertion.assertEquals(HeightAfterResizing,478);
+			softAssertion.assertEquals(WidthAfterResizing,284);
+		 	softAssertion.assertEquals(HeightAfterResizing,403);
 	 		Thread.sleep(3000);
 			softAssertion.assertAll();
 
@@ -268,6 +268,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 	 	
 	 	@Test(priority=12)
 	 	public void Rect2() throws InterruptedException {
+	 		Thread.sleep(5000);
 	 		WebElement Section3 = driver.findElement(By.xpath("//a[contains(text(),'SeleniumRectangleResizeSection')]"));
 		 	Section3.click();
 		 	Thread.sleep(2000);
@@ -278,7 +279,7 @@ public class ResizingOfAllComponent extends Common_Methods{
 	 		resize( RectResize2,121,0);
 	 		Thread.sleep(1000);
 	 		WebElement savebtn =  driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
-			WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+			WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav ng-star-inserted']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
 			savebtn.click();
 	 		Thread.sleep(5000);
 	 		BackBtn.click();
@@ -298,8 +299,8 @@ public class ResizingOfAllComponent extends Common_Methods{
 			int HeightAfterResizing = Rectangle.getSize().getHeight();  
 			System.out.println(WidthAfterResizing);
 			System.out.println(HeightAfterResizing);
-			softAssertion.assertEquals(WidthAfterResizing,238);
-		 	softAssertion.assertEquals(HeightAfterResizing,478);
+			softAssertion.assertEquals(WidthAfterResizing,163);
+		 	softAssertion.assertEquals(HeightAfterResizing,403);
 	 		Thread.sleep(3000);
 			softAssertion.assertAll();
 
@@ -309,15 +310,15 @@ public class ResizingOfAllComponent extends Common_Methods{
 	 	public void RectangleReResize() throws InterruptedException {
 	 		WebElement Section3 = driver.findElement(By.xpath("//a[contains(text(),'SeleniumRectangleResizeSection')]"));
 		 	Section3.click();
-		 	Thread.sleep(2000);
+		 	Thread.sleep(5000);
 	 		WebElement Rectangle = driver.findElement(By.xpath("//div[@id='page1-fpShape1218201912114789']//div[@oncontextmenu]"));
 	 		Rectangle.click();
 	 		int WidthBefore = Rectangle.getSize().getWidth();
 			int HeightBefore = Rectangle.getSize().getHeight();  
 			//System.out.println(WidthBefore);
 			//System.out.println(HeightBefore);
-			softAssertion.assertEquals(WidthBefore,238);
-		 	softAssertion.assertEquals(HeightBefore,478);
+			softAssertion.assertEquals(WidthBefore,163);
+		 	softAssertion.assertEquals(HeightBefore,403);
 	 		Thread.sleep(2000);
 	 		WebElement RectResize = driver.findElement(By.xpath("//div[@id='page1-fpShape1218201912114789']//div[@id='segrip']"));
 	 		resize( RectResize,-113, -353);
@@ -329,8 +330,8 @@ public class ResizingOfAllComponent extends Common_Methods{
 			int HeightAfterResizing = Rectangle.getSize().getHeight();  
 			//System.out.println(WidthAfterResizing);
 			//System.out.println(HeightAfterResizing);
-			softAssertion.assertEquals(WidthAfterResizing,125);
-		 	softAssertion.assertEquals(HeightAfterResizing,125);
+			softAssertion.assertEquals(WidthAfterResizing,50);
+		 	softAssertion.assertEquals(HeightAfterResizing,50);
 			//Thread.sleep(3000);
 			Rectangle.click();
 			Thread.sleep(2000);
@@ -343,8 +344,8 @@ public class ResizingOfAllComponent extends Common_Methods{
 			int HeightAfterReresizing = Rectangle.getSize().getHeight();  
 			//System.out.println(WidthAfterReresizing);
 			//System.out.println(HeightAfterReresizing);
-			softAssertion.assertEquals(WidthAfterReresizing,246);
-		 	softAssertion.assertEquals(HeightAfterReresizing,125);
+			softAssertion.assertEquals(WidthAfterReresizing,171);
+		 	softAssertion.assertEquals(HeightAfterReresizing,50);
 			Thread.sleep(3000);
 			softAssertion.assertAll();
 

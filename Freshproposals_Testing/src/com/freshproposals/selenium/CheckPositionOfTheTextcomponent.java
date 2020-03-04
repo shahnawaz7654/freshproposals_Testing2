@@ -47,8 +47,8 @@ public class CheckPositionOfTheTextcomponent extends Common_Methods {
 		int ycord =point.getY();
 		System.out.println(xcord);
 		System.out.println(ycord);
-		//Assert.assertEquals(xcord, 292);
-		//Assert.assertEquals(ycord, 96);
+		Assert.assertEquals(xcord, 296);
+		Assert.assertEquals(ycord, 76);
 		Actions act=new Actions(driver);	
         act.dragAndDropBy(textbox,100, 100).build().perform();		
         Thread.sleep(3000);
@@ -57,10 +57,10 @@ public class CheckPositionOfTheTextcomponent extends Common_Methods {
 		int ycord1 =point1.getY();
 		System.out.println(xcord1);
 		System.out.println(ycord1);
-		//Assert.assertEquals(xcord1, 392);
-		//Assert.assertEquals(ycord1, 196);
+		Assert.assertEquals(xcord1, 396);
+		Assert.assertEquals(ycord1, 176);
 		Thread.sleep(3000);
-		WebElement SaveBtn=driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+		WebElement SaveBtn=driver.findElement(By.xpath("//button[@class='nav-link btn send-btn ng-star-inserted']"));
 		SaveBtn.click();
 		Thread.sleep(3000);
 		driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1138");
@@ -71,22 +71,22 @@ public class CheckPositionOfTheTextcomponent extends Common_Methods {
         Point point2=textbox2.getLocation();
          int xcord2 = point2.getX();
 		int ycord2 =point2.getY();
-		//System.out.println(xcord2);
-		//System.out.println(ycord2);
-		Assert.assertEquals(xcord2, 292);
-		Assert.assertEquals(ycord2, 96);
-		WebElement SaveBtn2=driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+		System.out.println(xcord2);
+		System.out.println(ycord2);
+		Assert.assertEquals(xcord2, 296);
+		Assert.assertEquals(ycord2, 76);
+		WebElement SaveBtn2=driver.findElement(By.xpath("//button[@class='nav-link btn send-btn ng-star-inserted']"));
 		
 		SaveBtn2.click();
 		Thread.sleep(3000);
 		driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1138/true");
 		int xcord3 = point2.getX();
 		int ycord3 =point2.getY();
-		//System.out.println(xcord3);
-		//System.out.println(ycord3);
+		System.out.println(xcord3);
+		System.out.println(ycord3);
 		
-		Assert.assertEquals(xcord3, 292);
-		Assert.assertEquals(ycord3, 96);
+		Assert.assertEquals(xcord3, 296);
+		Assert.assertEquals(ycord3, 76);
 		//driver.quit();
 		Assert.assertAll();
 		

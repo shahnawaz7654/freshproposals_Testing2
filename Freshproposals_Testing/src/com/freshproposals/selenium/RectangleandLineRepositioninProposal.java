@@ -56,16 +56,16 @@ public class RectangleandLineRepositioninProposal extends Common_Methods{
 		int ycord =point.getY();
 		//System.out.println(xcord);
 		//System.out.println(ycord);
-		Assert.assertEquals(xcord, 323);
+		Assert.assertEquals(xcord, 327);
 		Assert.assertEquals(ycord, 119);
 		Actions act=new Actions(driver);	
        act.dragAndDropBy(Rectangle,x, y).build().perform();		
        Thread.sleep(3000);
       
-		WebElement SaveBtn=driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+		WebElement SaveBtn=driver.findElement(By.xpath("//li[@class='nav-item']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
 		SaveBtn.click();
 		Thread.sleep(3000);
-		WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+		WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav left-navbar']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
 		BackBtn.click();
 		Assert.assertAll();
 	}
@@ -79,8 +79,8 @@ public class RectangleandLineRepositioninProposal extends Common_Methods{
 			int ycord1 =point1.getY();
 			//System.out.println(xcord1);
 			//System.out.println(ycord1);
-			Assert.assertEquals(xcord1, 606);
-			Assert.assertEquals(ycord1, 443);
+			Assert.assertEquals(xcord1, 605);
+			Assert.assertEquals(ycord1, 413);
 			Assert.assertAll();
 
 	}
@@ -98,13 +98,13 @@ public class RectangleandLineRepositioninProposal extends Common_Methods{
 		int ycord =point.getY();
 		//System.out.println(xcord);
 		//System.out.println(ycord);
-		Assert.assertEquals(xcord, 603);
+		Assert.assertEquals(xcord, 607);
 		Assert.assertEquals(ycord, 443);
 		Actions act=new Actions(driver);	
        act.dragAndDropBy(Rectangle,-x, -y).build().perform();		
        Thread.sleep(3000);
       
-		WebElement SaveBtn=driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
+		WebElement SaveBtn=driver.findElement(By.xpath("//li[@class='nav-item']//button[@class='nav-link btn send-btn'][contains(text(),'Save')]"));
 		SaveBtn.click();
 		Thread.sleep(4000);
 			Point point1=Rectangle.getLocation();
@@ -113,10 +113,10 @@ public class RectangleandLineRepositioninProposal extends Common_Methods{
 		
 				//System.out.println(xcord1);
 				//System.out.println(ycord1);
-				Assert.assertEquals(xcord1, 323);
+				Assert.assertEquals(xcord1, 327);
 				Assert.assertEquals(ycord1, 113);
 		
-		WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
+		WebElement BackBtn = driver.findElement(By.xpath("//ul[@class='nav left-navbar']//button[@class='nav-link btn back-btn'][contains(text(),'Back')]"));
 		BackBtn.click();
 		Assert.assertAll();
 		

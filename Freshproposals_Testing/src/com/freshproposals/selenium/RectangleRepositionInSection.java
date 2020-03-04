@@ -55,7 +55,7 @@ public class RectangleRepositionInSection extends Common_Methods {
 		int ycord =point.getY();
 		System.out.println(xcord);
 		System.out.println(ycord);
-		Assert.assertEquals(xcord, 323);
+		Assert.assertEquals(xcord, 325);
 		Assert.assertEquals(ycord, 113);
 		Actions act=new Actions(driver);	
       act.dragAndDropBy(Rectangle,x, y).build().perform();		
@@ -78,7 +78,7 @@ public class RectangleRepositionInSection extends Common_Methods {
 			int ycord1 =point1.getY();
 			//System.out.println(xcord1);
 			//System.out.println(ycord1);
-			Assert.assertEquals(xcord1, 603);
+			Assert.assertEquals(xcord1, 718);
 			Assert.assertEquals(ycord1, 443);
 			Assert.assertAll();
 
@@ -98,7 +98,7 @@ public class RectangleRepositionInSection extends Common_Methods {
 		int ycord =point.getY();
 		//System.out.println(xcord);
 		//System.out.println(ycord);
-		Assert.assertEquals(xcord, 603);
+		Assert.assertEquals(xcord, 605);
 		Assert.assertEquals(ycord, 443);
 		Actions act=new Actions(driver);	
       act.dragAndDropBy(Rectangle,-x, -y).build().perform();		

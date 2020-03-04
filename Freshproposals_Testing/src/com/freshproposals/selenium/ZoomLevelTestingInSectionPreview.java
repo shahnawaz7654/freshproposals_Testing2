@@ -39,19 +39,19 @@ public class ZoomLevelTestingInSectionPreview extends Common_Methods {
 	 @Test(priority=1,dependsOnMethods = "login")
 	 public void selectzoom() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/5020/true");
-		 driver.findElement(By.xpath("//div[@class='collapse-preview-controls roatate']")).click();
+		 driver.findElement(By.xpath("//div[@class='collapse-preview-controls roatate ng-star-inserted']")).click();
 		 Thread.sleep(2000);
 		WebElement ele=	driver.findElement(By.xpath("//div[@class='page-wrapper']"));
 
 		Select level=new Select(driver.findElement(By.xpath("//div[@class='editor-header-width-drop']//select")));
-		 int[] ar = new int[]{ 80,120,160,199,239,279,358,437,517,596 }; 
+		 int[] ar = new int[]{195,235,275,314,354,394,473,552,632,711 }; 
 
 		for(int i=0;i<10;i++) {
 		level.selectByIndex(i);
 		Thread.sleep(1000);
 		Point point = ele.getLocation();
 		 int xcord = point.getX();
-		 //System.out.println("Position of the webelement from left side is "+xcord +" pixels");
+		 System.out.println("Position of the webelement from left side is "+xcord +" pixels");
 		
 		 Assert.assertEquals(xcord,ar[i] );
 		}

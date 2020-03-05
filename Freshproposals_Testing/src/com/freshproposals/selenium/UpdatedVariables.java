@@ -92,13 +92,13 @@ String [] expectedAfterUpdating = new String[] {"ICT Networks","nikeeta3011@gmai
 			WebElement SaveBtn = driver.findElement(By.xpath("//button[contains(text(),'Save')]"));
 			SaveBtn.click();
 			Thread.sleep(5000);
-			//this.updatedProfileReset();
 			
 			
 		}
 		@Test(priority=3)
 		public void UpdateCompanyProfile() throws InterruptedException {
 			driver.get("http://beta1.freshproposals.com/home");
+			Thread.sleep(5000);
 		WebElement SettingTab =	driver.findElement(By.xpath("//span[contains(text(),'SETTINGS')]"));
 		SettingTab.click();
 		Thread.sleep(5000);
@@ -141,7 +141,7 @@ String [] expectedAfterUpdating = new String[] {"ICT Networks","nikeeta3011@gmai
 		SaveBtn.click();
 		Thread.sleep(3000);
 		
-		//this.ResetCompanyProfile();
+	
 
 		
 		}

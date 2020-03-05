@@ -3,13 +3,11 @@ package com.freshproposals.selenium;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -62,7 +60,7 @@ public class FeeTable extends Common_Methods{	SoftAssert softAssertion= new Soft
 		 WebElement Price = driver.findElement(By.xpath("//div[@class='rectangle selected']//div[@id='contentInside1']//input[@name='feePrice']"));
 		 Price.clear();
 		 Price.sendKeys("10000");
-		 Thread.sleep(13000);
+		 Thread.sleep(10000);
 			SecondRow2.click();
 		WebElement AddRowDiscount =driver.findElement(By.xpath("//div[@class='fees-library-tab-content ng-star-inserted']//img[@class='img-fluid']"));
 	AddRowDiscount.click();
@@ -294,9 +292,9 @@ public class FeeTable extends Common_Methods{	SoftAssert softAssertion= new Soft
 		DiscAmount.clear();
 		DiscAmount.sendKeys("10");
 		Thread.sleep(1000);
-		 tableDisc.click();
-			Thread.sleep(2000);
-			WebElement Discount = driver.findElement(By.xpath("//div[@class='fees-table-footer']//div[2]"));
+		tableDisc.click();
+		Thread.sleep(2000);
+		WebElement Discount = driver.findElement(By.xpath("//div[@class='fees-table-footer']//div[2]"));
 			String DiscountAmount=Discount.getText();
 			softAssertion.assertEquals(DiscountAmount, "TableDisc ( 10 % ) 1,000.00");
 			System.out.println(DiscountAmount);
@@ -475,10 +473,9 @@ public class FeeTable extends Common_Methods{	SoftAssert softAssertion= new Soft
 
 	 @Test(priority=4)
 	 public void FeeRowisoptional() throws InterruptedException {
-		 Thread.sleep(5000);
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
 		
-		 Thread.sleep(4000);
+		 Thread.sleep(5000);
 		 WebElement Row6 = driver.findElement(By.xpath("//div[@id='content']//div[5]//div[2]"));
 	
 	 Thread.sleep(3000);

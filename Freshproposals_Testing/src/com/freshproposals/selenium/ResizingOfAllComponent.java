@@ -247,7 +247,6 @@ public class ResizingOfAllComponent extends Common_Methods{
 	 	}
 	 	@Test(priority=11)
 	 	public void Rect1Verify() throws InterruptedException {
-	 		//driver.findElement(By.xpath("//div[2]//div[1]//div[2]//a[1]//img[1]")).click();
 	 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1267");
 
 			Thread.sleep(5000);

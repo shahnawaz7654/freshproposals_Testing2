@@ -79,7 +79,7 @@ public class Gmail_Testing extends Common_Methods{
 	  public void client() throws InterruptedException  {
 		  Thread.sleep(3000);
 		  //client btn
-		  driver.findElement(By.xpath("//div[@class='row client-content mt-3 ng-star-inserted']//div[2]//div[2]//label[1]//span[1]")).click();
+		  driver.findElement(By.xpath("//div[6]//div[2]//label[1]//span[1]")).click();
 		  Thread.sleep(2000);
 	  }
 	  
@@ -107,7 +107,7 @@ public class Gmail_Testing extends Common_Methods{
 	  @Test(priority = 7)
 	  public void sendEmail() throws InterruptedException {
 		  //next
-		  Thread.sleep(2000);
+		  Thread.sleep(10000);
 		  driver.findElement(By.xpath("//button[@class='nav-link btn next-btn ng-star-inserted']")).click();
 	      driver.findElement(By.xpath("//div[@class='card']//input")).sendKeys("Selenium Subject");
 	      System.out.println(driver.findElement(By.xpath("//div[@class='card']//input")).getText());
@@ -119,7 +119,9 @@ public class Gmail_Testing extends Common_Methods{
 					+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s");
 		  Thread.sleep(2000);
 		  //send btn
-		  driver.findElement(By.linkText("Send")).click();
+		  driver.findElement(By.xpath("//img[@src='../../../assets/send-button.svg']")).click();
+		  Thread.sleep(10000);
+		  
 		 
 	  }
 	  
@@ -146,9 +148,10 @@ public class Gmail_Testing extends Common_Methods{
 	 @Test(priority = 9)
 	 public void Search() throws InterruptedException {
 		 Thread.sleep(2000);
-		 driver.findElement(By.name("q")).sendKeys("Selenium Subject" + Keys.ENTER);
+		 //driver.findElement(By.name("q")).sendKeys("Selenium Subject" + Keys.ENTER);
 		 Thread.sleep(2000);
-		 driver.findElement(By.xpath("/html[1]/body[1]/div[7]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[4]/div[2]/div[1]/table[1]/tbody[1]/tr[1]")).click();
+		 //driver.findElement(By.xpath("/html[1]/body[1]/div[7]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[4]/div[2]/div[1]/table[1]/tbody[1]/tr[1]")).click();
+		 driver.findElement(By.xpath("/html[1]/body[1]/div[10]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[3]/div[1]/table[1]/tbody[1]/tr[1]")).click();
 		 Thread.sleep(2000);
 		 driver.findElement(By.linkText("View Our Business Proposal")).click();
 		 Thread.sleep(2000);

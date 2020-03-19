@@ -55,19 +55,17 @@ public class Push_Proposal extends Common_Methods {
  
   @Test(priority = 1)
   public void createproposal() throws InterruptedException {
-	    Thread.sleep(3000);
+	    Thread.sleep(10000);
 	    driver.findElement(By.linkText("PROPOSALS")).click();
-	    Thread.sleep(3000);
-		driver.findElement(By.linkText("Start From Scratch")).click();
+	    Thread.sleep(10000);
+	    driver.findElement(By.xpath("//img[@src='../../assets/add-section-icon.png']")).click();
 		driver.findElement(By.name("name")).sendKeys(fname+" CVProp "+timestamp);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		//client
 		Thread.sleep(3000);
 	    //client btn
-		driver.findElement(By.xpath("//*[@id=\"headingSelectClient\"]/h2/button")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@class='row client-content mt-3']//div[2]//div[2]//label[1]//span[1]")).click();
+	    driver.findElement(By.xpath("//div[@class='row client-content mt-3 ng-star-inserted']//div[2]//div[2]//label[1]//span[1]")).click();
      	Thread.sleep(2000);
 		
 		//scroll window
@@ -93,16 +91,16 @@ public class Push_Proposal extends Common_Methods {
   public void ProposalVersion() throws InterruptedException {
 	//Thread.sleep(3000);
 	//driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=2374;editor=true");
-	Thread.sleep(2000);
+	Thread.sleep(10000);
 	driver.findElement(By.xpath("//li[@class='nav-item example-box active']//a[@class='sectionlist-name'][contains(text(),'New Section')]")).click();
-	Thread.sleep(2000);
+	Thread.sleep(10000);
 	driver.findElement(By.xpath("//li[@class='nav-item example-box active']//button[@id='dropdownBasic1']//img")).click();
-	Thread.sleep(2000);
+	Thread.sleep(10000);
 	driver.findElement(By.xpath("//li[@class='nav-item example-box active']//button[@class='dropdown-item'][contains(text(),'Rename')]")).click();
-	Thread.sleep(2000);
+	Thread.sleep(10000);
 	driver.findElement(By.xpath("//div[@class='rename-section']//input[@name='sectionNametxt']")).clear();
 	driver.findElement(By.xpath("//div[@class='rename-section']//input[@name='sectionNametxt']")).sendKeys(fname+" CV_SECName "+timestamp);
-	Thread.sleep(2000);
+	Thread.sleep(10000);
 	p_name = driver.findElement(By.xpath("//div[@class='rename-section']//input[@name='sectionNametxt']")).getAttribute("value");
 	System.out.println("P NAME = "+p_name);
 	driver.findElement(By.xpath("//div[@class='rename-section']//div//img[@class='img-fluid']")).click();

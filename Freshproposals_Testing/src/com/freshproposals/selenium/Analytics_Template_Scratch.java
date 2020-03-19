@@ -24,9 +24,10 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class Analytics_Template_Scratch extends Common_Methods {
+	//Custom_Common_Methods CCM =  new Custom_Common_Methods();
 	WebDriver driver;
-	String fname = "SEL";
-	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
+	//String fname = "SEL";
+	//String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
 	
 	//variables
 	String time;
@@ -52,67 +53,37 @@ public class Analytics_Template_Scratch extends Common_Methods {
 	    driver.findElement(By.id("textbox_0")).sendKeys(unm);
 		driver.findElement(By.id("textbox_1")).sendKeys(pwd);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
-	
 	}
   
   @Test(priority = 1)
   public void createTemplate() throws InterruptedException {
-	  Thread.sleep(3000);
+	  Thread.sleep(10000);
 	  driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1574");
+	  Thread.sleep(5000);
 	  
-	  
-  }
+	}
   
-  @Test(priority = 2)
+  @Test(priority = 2 )
   public void generateProposal() throws InterruptedException {
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[contains(text(), 'Generate Proposal' )]")).click();
-		driver.findElement(By.name("name")).sendKeys(fname+" TempPropAnalytics "+timestamp);
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
-	  }
-  
-  @Test(priority = 3)
-  public void client() throws InterruptedException  {
-	  Thread.sleep(3000);
-	  //client btn
-	  //driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/h2[1]/button[1]")).click();
-	  //Thread.sleep(1000);
-	  //driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/app-clients[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/label[1]/span[1]")).click();
-	  driver.findElement(By.xpath("//div[@class='row client-content mt-3 ng-star-inserted']//div[2]//div[2]//label[1]//span[1]")).click();
-	  Thread.sleep(2000);
+	   generateProposalButton(driver);
+	   proposalName(driver);
+	   client(driver);
+	   scrollWindow(driver);
+	   calender(driver);
   }
   
-  @Test(priority = 4)
-  public void scrollWindow() throws InterruptedException  {
-	  Thread.sleep(3000);
-	  JavascriptExecutor js = (JavascriptExecutor) driver;
-	  js.executeScript("window.scrollBy(0,1000)");
-  }
-  
-  @Test(priority = 5)
-  public void calender() throws InterruptedException  {
-	  Thread.sleep(3000);
-	  driver.findElement(By.xpath("//img[@src='../../../assets/calendar.svg']")).click();
-	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//div[@class='ngb-dp-arrow right']//button[@class='btn btn-link ngb-dp-arrow-btn']")).click();
-	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//div[contains(text(),'15')]")).click();
-	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
-  }
-  
+
   @Test(priority = 6)
   public void copyLink() throws InterruptedException, AWTException {
 	  //next
-	  Thread.sleep(3000);
-	  driver.findElement(By.cssSelector("app-home.ng-star-inserted:nth-child(2) div.wrapper:nth-child(2) div.main-no-sidebar:nth-child(5) div.apply-hidden.styling-mode-effect app-edit-proposal.ng-star-inserted:nth-child(2) div.editor-box:nth-child(1) div.section-editor-header div:nth-child(1) ul.nav.btn-wrapper.float-right:nth-child(2) li.nav-item > button.nav-link.btn.next-btn.ng-star-inserted")).click();
+	  Thread.sleep(12000);
+	  driver.findElement(By.id("btnSendMail")).click();
 	  //link
-	  Thread.sleep(2000);
+	  Thread.sleep(7000);
 	  driver.findElement(By.xpath("//img[@src='../../../assets/link-icon-blue.svg']")).click();
-	  Thread.sleep(2000);
+	  Thread.sleep(3000);
 	  
-	  String copy_text = driver.findElement(By.xpath("//div[@class='card-body']//input")).getAttribute("value");
+	  String copy_text = driver.findElement(By.xpath("//div[@class='card-body ng-star-inserted']//input")).getAttribute("value");
 	  System.out.println(copy_text);
 	  Thread.sleep(2000);
 	  

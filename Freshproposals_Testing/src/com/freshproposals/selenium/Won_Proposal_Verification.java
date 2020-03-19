@@ -50,8 +50,8 @@ public class Won_Proposal_Verification extends Common_Methods {
   
   @Test(priority = 1)
   public void Dashboard_Get_Won_Value() throws InterruptedException {
-	  Thread.sleep(5000);
-	  driver.findElement(By.xpath("//span[contains(text(),'DASHBOARD')]")).click();
+	  Thread.sleep(9000);
+	  driver.findElement(By.id("linkDashboard")).click();
 	  Get_Won = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-dashboard[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/p[1]")).getText();
 	  System.out.println("Before Won "+Get_Won);
   }
@@ -99,8 +99,9 @@ public class Won_Proposal_Verification extends Common_Methods {
   @Test(priority = 4)
   public void Send_and_Copy() throws InterruptedException {										
 	  //next
-	  Thread.sleep(3000);
-	  driver.findElement(By.xpath("//button[starts-with(@class,'nav-link btn next-btn')]")).click();
+	  Thread.sleep(10000);
+	  //driver.findElement(By.xpath("//button[starts-with(@class,'nav-link btn next-btn')]")).click();
+	  driver.findElement(By.id("btnSendMail")).click();
 	  //link
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//img[@src='../../../assets/link-icon-blue.svg']")).click();
@@ -116,7 +117,7 @@ public class Won_Proposal_Verification extends Common_Methods {
  	  driver.get(copy_text);
 
 	  Thread.sleep(7000);
-	  driver.findElement(By.xpath("//div[@class='tool-list-button-group']//button[@class='btn tool-list-save'][contains(text(),'Accept')]")).click();
+	  driver.findElement(By.xpath("//div[@class='tool-list-button-group ng-star-inserted']//button[@class='btn tool-list-save'][contains(text(),'Accept')]")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("Vishal");
 	  Thread.sleep(1000);

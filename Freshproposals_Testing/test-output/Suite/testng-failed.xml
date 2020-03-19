@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Analytics(failed)">
+    <classes>
+      <class name="com.freshproposals.selenium.Image_Duplicate_Proposal">
+        <methods>
+          <include name="open_Template"/>
+          <include name="closeBrowser"/>
+          <include name="assert_width_1"/>
+          <include name="duplicate"/>
+          <include name="Save2"/>
+          <include name="clear"/>
+          <include name="login"/>
+          <include name="DragDrop"/>
+          <include name="reset_sign_1"/>
+          <include name="Save"/>
+          <include name="height_width"/>
+          <include name="assert_width_2"/>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Image_Duplicate_Proposal -->
+      <class name="com.freshproposals.selenium.Image_Duplicate_Template">
+        <methods>
+          <include name="open_Template"/>
+          <include name="closeBrowser"/>
+          <include name="DragDrop"/>
+          <include name="assert_width_1"/>
+          <include name="clear"/>
+          <include name="Save2"/>
+          <include name="login"/>
+          <include name="duplicate"/>
+          <include name="height_width"/>
+          <include name="Save"/>
+          <include name="reset_sign_1"/>
+          <include name="openBrowser"/>
+          <include name="assert_width_2"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Image_Duplicate_Template -->
+      <class name="com.freshproposals.selenium.TextBox_Duplicate_Template">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="openBrowser"/>
+          <include name="open_Template"/>
+          <include name="clear"/>
+          <include name="DragDrop"/>
+          <include name="duplicate"/>
+          <include name="final_Result"/>
+          <include name="Save"/>
+          <include name="Save2"/>
+          <include name="write"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.TextBox_Duplicate_Template -->
+      <class name="com.freshproposals.selenium.Signature_Duplicate_Proposal">
+        <methods>
+          <include name="assert_height_2"/>
+          <include name="assert_width_1"/>
+          <include name="assert_height_1"/>
+          <include name="assert_width_2"/>
+          <include name="open_Proposal"/>
+          <include name="clear"/>
+          <include name="Save2"/>
+          <include name="DragDrop"/>
+          <include name="duplicate"/>
+          <include name="login"/>
+          <include name="height_width"/>
+          <include name="Save"/>
+          <include name="closeBrowser"/>
+          <include name="reset_sign_1"/>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Signature_Duplicate_Proposal -->
+      <class name="com.freshproposals.selenium.Image_DragDrop_Position_Proposal">
+        <methods>
+          <include name="openBrowser"/>
+          <include name="Get_Position"/>
+          <include name="DragDrop_Get_Position"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Image_DragDrop_Position_Proposal -->
+      <class name="com.freshproposals.selenium.Rectangle_Duplicate_Template">
+        <methods>
+          <include name="login"/>
+          <include name="DragDrop"/>
+          <include name="duplicate"/>
+          <include name="clear"/>
+          <include name="Save2"/>
+          <include name="assert_height_2"/>
+          <include name="closeBrowser"/>
+          <include name="assert_height_1"/>
+          <include name="reset_sign_1"/>
+          <include name="assert_width_2"/>
+          <include name="openBrowser"/>
+          <include name="assert_width_1"/>
+          <include name="height_width"/>
+          <include name="open_Template"/>
+          <include name="Save"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Rectangle_Duplicate_Template -->
+      <class name="com.freshproposals.selenium.Signature_Duplicate_Section">
+        <methods>
+          <include name="assert_height_2"/>
+          <include name="assert_height_1"/>
+          <include name="closeBrowser"/>
+          <include name="assert_width_1"/>
+          <include name="DragDrop"/>
+          <include name="duplicate"/>
+          <include name="login"/>
+          <include name="Save2"/>
+          <include name="open_Template"/>
+          <include name="clear"/>
+          <include name="reset_sign_1"/>
+          <include name="assert_width_2"/>
+          <include name="openBrowser"/>
+          <include name="Save"/>
+          <include name="height_width"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Signature_Duplicate_Section -->
+      <class name="com.freshproposals.selenium.Image_DragDrop_Position_Section">
+        <methods>
+          <include name="Get_Position"/>
+          <include name="closeBrowser"/>
+          <include name="DragDrop_Get_Position"/>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Image_DragDrop_Position_Section -->
+      <class name="com.freshproposals.selenium.Image_Duplicate_Section">
+        <methods>
+          <include name="open_Template"/>
+          <include name="closeBrowser"/>
+          <include name="assert_width_1"/>
+          <include name="login"/>
+          <include name="clear"/>
+          <include name="DragDrop"/>
+          <include name="duplicate"/>
+          <include name="Save2"/>
+          <include name="openBrowser"/>
+          <include name="reset_sign_1"/>
+          <include name="height_width"/>
+          <include name="assert_width_2"/>
+          <include name="Save"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Image_Duplicate_Section -->
+      <class name="com.freshproposals.selenium.Signature_DragDrop_Position_Section">
+        <methods>
+          <include name="openBrowser"/>
+          <include name="Get_Position"/>
+          <include name="DragDrop_Get_Position"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Signature_DragDrop_Position_Section -->
+      <class name="com.freshproposals.selenium.Signature_DragDrop_Position_Proposal">
+        <methods>
+          <include name="Get_Position"/>
+          <include name="DragDrop_Get_Position"/>
+          <include name="closeBrowser"/>
+          <include name="Reset"/>
+          <include name="login"/>
+          <include name="DragDrop"/>
+          <include name="openBrowser"/>
+          <include name="openExistTemplate"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Signature_DragDrop_Position_Proposal -->
+      <class name="com.freshproposals.selenium.Ellipse_Duplicate_Proposal">
+        <methods>
+          <include name="Save"/>
+          <include name="assert_width_2"/>
+          <include name="reset_sign_1"/>
+          <include name="openBrowser"/>
+          <include name="height_width"/>
+          <include name="DragDrop"/>
+          <include name="duplicate"/>
+          <include name="Save2"/>
+          <include name="clear"/>
+          <include name="login"/>
+          <include name="assert_width_1"/>
+          <include name="assert_height_2"/>
+          <include name="closeBrowser"/>
+          <include name="assert_height_1"/>
+          <include name="open_Template"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Ellipse_Duplicate_Proposal -->
+      <class name="com.freshproposals.selenium.Rectangle_Duplicate_Proposal">
+        <methods>
+          <include name="assert_width_2"/>
+          <include name="openBrowser"/>
+          <include name="Save"/>
+          <include name="height_width"/>
+          <include name="reset_sign_1"/>
+          <include name="assert_width_1"/>
+          <include name="DragDrop"/>
+          <include name="duplicate"/>
+          <include name="login"/>
+          <include name="Save2"/>
+          <include name="clear"/>
+          <include name="open_Template"/>
+          <include name="assert_height_2"/>
+          <include name="assert_height_1"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Rectangle_Duplicate_Proposal -->
+      <class name="com.freshproposals.selenium.Ellipse_Duplicate_Section">
+        <methods>
+          <include name="height_width"/>
+          <include name="Save"/>
+          <include name="reset_sign_1"/>
+          <include name="assert_width_2"/>
+          <include name="openBrowser"/>
+          <include name="assert_width_1"/>
+          <include name="assert_height_1"/>
+          <include name="assert_height_2"/>
+          <include name="login"/>
+          <include name="closeBrowser"/>
+          <include name="open_Template"/>
+          <include name="DragDrop"/>
+          <include name="duplicate"/>
+          <include name="Save2"/>
+          <include name="clear"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Ellipse_Duplicate_Section -->
+      <class name="com.freshproposals.selenium.Ellipse_Duplicate_Template">
+        <methods>
+          <include name="DragDrop"/>
+          <include name="duplicate"/>
+          <include name="Save2"/>
+          <include name="clear"/>
+          <include name="login"/>
+          <include name="openBrowser"/>
+          <include name="assert_width_1"/>
+          <include name="assert_height_2"/>
+          <include name="closeBrowser"/>
+          <include name="assert_height_1"/>
+          <include name="height_width"/>
+          <include name="open_Template"/>
+          <include name="Save"/>
+          <include name="assert_width_2"/>
+          <include name="reset_sign_1"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Ellipse_Duplicate_Template -->
+      <class name="com.freshproposals.selenium.Rectangle_Duplicate_Section">
+        <methods>
+          <include name="Save2"/>
+          <include name="DragDrop"/>
+          <include name="duplicate"/>
+          <include name="clear"/>
+          <include name="login"/>
+          <include name="assert_width_1"/>
+          <include name="assert_height_1"/>
+          <include name="assert_width_2"/>
+          <include name="assert_height_2"/>
+          <include name="open_Template"/>
+          <include name="Save"/>
+          <include name="height_width"/>
+          <include name="reset_sign_1"/>
+          <include name="openBrowser"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Rectangle_Duplicate_Section -->
+      <class name="com.freshproposals.selenium.TextBox_Duplicate_Section">
+        <methods>
+          <include name="login"/>
+          <include name="closeBrowser"/>
+          <include name="open_Template"/>
+          <include name="DragDrop"/>
+          <include name="duplicate"/>
+          <include name="write"/>
+          <include name="clear"/>
+          <include name="before_save_result"/>
+          <include name="openBrowser"/>
+          <include name="Save"/>
+          <include name="Save2"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.TextBox_Duplicate_Section -->
+      <class name="com.freshproposals.selenium.Signature_Duplicate_Template">
+        <methods>
+          <include name="assert_height_2"/>
+          <include name="assert_width_1"/>
+          <include name="assert_height_1"/>
+          <include name="clear"/>
+          <include name="Save2"/>
+          <include name="DragDrop"/>
+          <include name="duplicate"/>
+          <include name="closeBrowser"/>
+          <include name="assert_width_2"/>
+          <include name="height_width"/>
+          <include name="Save"/>
+          <include name="reset_sign_1"/>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.Signature_Duplicate_Template -->
+      <class name="com.freshproposals.selenium.TextBox_Duplicate_Proposal">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="openBrowser"/>
+          <include name="clear"/>
+          <include name="DragDrop"/>
+          <include name="write"/>
+        </methods>
+      </class> <!-- com.freshproposals.selenium.TextBox_Duplicate_Proposal -->
+    </classes>
+  </test> <!-- Analytics(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -40,10 +40,9 @@ public class Section_List_Template extends Common_Methods {
   @Test(priority = 1)
 //enabled = false
   public void createtemplate() throws InterruptedException {
-		driver.findElement(By.linkText("TEMPLATES")).click();
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		//template name
-		driver.findElement(By.linkText("Create your Template")).click();
+		driver.findElement(By.xpath("//img[@src='../../assets/add-section-icon.png']")).click();
 		driver.findElement(By.name("name")).sendKeys(fname+" SLTemp "+timestamp);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -72,9 +71,11 @@ public class Section_List_Template extends Common_Methods {
   @Test(priority = 3)
   public void rename() throws InterruptedException {
 	  //driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/754");
+	  Thread.sleep(15000);
+	  driver.findElement(By.xpath("//li[@class='nav-item example-box active']//a[@class='sectionlist-name'][contains(text(),'New Section')]")).click();	
 	  Thread.sleep(5000);
-	  //add page
 	  driver.findElement(By.xpath("//img[@src='../../assets/add-icon.svg']")).click();
+	  Thread.sleep(5000);
 	  driver.findElement(By.xpath("//img[@src='../../assets/add-icon.svg']")).click();
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath(" //button[@id='dropdownBasic1'] //img")).click();

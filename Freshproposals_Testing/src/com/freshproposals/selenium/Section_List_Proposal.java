@@ -40,10 +40,10 @@ public class Section_List_Proposal extends Common_Methods {
   
   @Test(priority = 1)
   public void nameProposal() throws InterruptedException {
-	    Thread.sleep(3000);
-	    driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1]")).click();
+	    Thread.sleep(10000);
+	    driver.findElement(By.id("linkProposals")).click();
 	    Thread.sleep(2000);
-		driver.findElement(By.linkText("Start From Scratch")).click();
+		driver.findElement(By.xpath("//img[@src='../../assets/add-section-icon.png']")).click();
 		Thread.sleep(1000);
 	    driver.findElement(By.name("name")).sendKeys(fname+" SLProp "+timestamp);
 		Thread.sleep(3000);
@@ -54,9 +54,9 @@ public class Section_List_Proposal extends Common_Methods {
   @Test(priority = 2)
   public void client() throws InterruptedException  {
 	  Thread.sleep(3000);
-	  driver.findElement(By.xpath("//*[@id=\"headingSelectClient\"]/h2/button")).click();
-	  //driver.findElement(By.xpath("//*[@id=\"collapseSelectClient\"]/div/div/app-clients/div[2]/div/div/div/div[2]/label/span")).click();
-	  driver.findElement(By.xpath("//body//div[@class='col-lg-10 offset-lg-1']//div[@class='col-lg-10 offset-lg-1']//div[1]//div[2]//label[1]//span[1]")).click();
+	  //client btn
+	  driver.findElement(By.xpath("//div[@class='row client-content mt-3 ng-star-inserted']//div[2]//div[2]//label[1]//span[1]")).click();
+	  Thread.sleep(2000);
   }
   
   @Test(priority = 3)
@@ -75,25 +75,30 @@ public class Section_List_Proposal extends Common_Methods {
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//div[contains(text(),'31')]")).click();
 	  Thread.sleep(2000);
-	  driver.findElement(By.linkText("Next")).click();
+	  driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
   }
   
   @Test(priority = 5)
   public void rename() throws InterruptedException {
 	  //driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/754");
+	  Thread.sleep(15000);
+	  driver.findElement(By.xpath("//li[@class='nav-item example-box active']//a[@class='sectionlist-name'][contains(text(),'New Section')]")).click();
 	  Thread.sleep(5000);
 	  //add page
-	  driver.findElement(By.xpath("//img[@src='../../assets/add-icon.svg']")).click();
-	  driver.findElement(By.xpath("//img[@src='../../assets/add-icon.svg']")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath(" //button[@id='dropdownBasic1'] //img")).click();
+	  driver.findElement(By.xpath("//li[@class='nav-item example-box active']//div[@class='add-section']")).click();
+	  Thread.sleep(5000);
+	  driver.findElement(By.xpath("//li[@class='nav-item example-box active']//div[@class='add-section']")).click();
+	  Thread.sleep(3000);
+	  //driver.findElement(By.xpath("//div[@class='d-inline-block show dropdown']//button[@id='dropdownBasic1']//img")).click();
+	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-template[1]/div[1]/div[2]/div[1]/div[2]/div[1]/ul[1]/li[2]/div[2]/div[1]/button[1]/img[1]")).click();
 	  Thread.sleep(2000);
 	  //rename
-	  driver.findElement(By.xpath("//button[contains(text(),'Rename')]")).click();
-	  Thread.sleep(1000);
+	  driver.findElement(By.xpath("//li[@class='nav-item example-box active']//button[@class='dropdown-item'][contains(text(),'Rename')]")).click();
+	  Thread.sleep(3000);
 	  //name change
-	  driver.findElement(By.xpath("//li[1]//input[1]")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
-	  driver.findElement(By.xpath("//li[1]//input[1]")).sendKeys(fname+" SECName "+timestamp);
+	  driver.findElement(By.id("renameSection1")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/div[1]/input[1]")).sendKeys(fname+" SECName "+timestamp);
 	  driver.findElement(By.xpath("//div[@class='rename-section']//div//img[@class='img-fluid']")).click();
 	  Thread.sleep(5000);
 	  //save
@@ -102,8 +107,8 @@ public class Section_List_Proposal extends Common_Methods {
 	  //back
 	  driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
 	  //reopen
-	  Thread.sleep(3000);
-	  driver.findElement(By.xpath("//img[@src='../../assets/edit-pen-blue.svg']")).click();
+	  Thread.sleep(5000);
+	  driver.findElement(By.xpath("//img[@src='../../assets/edit-section-icon.png']")).click();
 	
 	 
 	 
@@ -111,10 +116,13 @@ public class Section_List_Proposal extends Common_Methods {
   
   @Test(priority = 6)
   public void copy() throws InterruptedException {
-	  driver.findElement(By.xpath("//img[@src='../../assets/add-icon.svg']")).click();
+	  Thread.sleep(5000);
+	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]")).click();
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/div[2]/div[1]/button[1]/img[1]")).click();
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath(" //button[@id='dropdownBasic1'] //img")).click();
-	  driver.findElement(By.xpath(" //button[contains(text(),'Make a Copy')]")).click();
+	
+	  driver.findElement(By.xpath("//li[@class='nav-item example-box active']//button[@class='dropdown-item'][contains(text(),'Make a Copy')]")).click();
 	  Thread.sleep(2000); 
 	  //save
 	  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
@@ -122,22 +130,23 @@ public class Section_List_Proposal extends Common_Methods {
 	  //back
 	  driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
 	  //reopen
-	  Thread.sleep(3000);
-	  driver.findElement(By.xpath("//img[@src='../../assets/edit-pen-blue.svg']")).click();
+	  Thread.sleep(10000);
+	  driver.findElement(By.xpath("//img[@src='../../assets/edit-section-icon.png']")).click();
 	  
   }
   
   @Test(priority = 7)
   public void delete() throws InterruptedException {
-	  driver.findElement(By.xpath("//img[@src='../../assets/add-icon.svg']")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath(" //button[@id='dropdownBasic1'] //img")).click();
+	  Thread.sleep(5000);
+	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]")).click();
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-edit-proposal[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/div[2]/div[1]/button[1]/img[1]")).click();
 	  Thread.sleep(1000);
 	 
-      driver.findElement(By.xpath("//button[contains(text(),'Delete')]")).click();
+      driver.findElement(By.xpath("//li[@class='nav-item example-box active']//button[@class='dropdown-item'][contains(text(),'Delete')]")).click();
 	  //ok button
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+	  driver.findElement(By.xpath("//button[@class='btn save-btn']")).click();
 	  Thread.sleep(2000);
 	//save
 	  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
@@ -146,7 +155,7 @@ public class Section_List_Proposal extends Common_Methods {
 	  driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
 	  //reopen
 	  Thread.sleep(3000);
-	  driver.findElement(By.xpath("//img[@src='../../assets/edit-pen-blue.svg']")).click();
+	  driver.findElement(By.xpath("//img[@src='../../assets/edit-section-icon.png']")).click();
 	  
   }
 

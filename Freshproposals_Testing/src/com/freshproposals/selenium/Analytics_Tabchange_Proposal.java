@@ -103,19 +103,19 @@ public class Analytics_Tabchange_Proposal extends Common_Methods {
 	  ((JavascriptExecutor)driver).executeScript("window.open()");
    	  ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
  	  driver.switchTo().window(tabs.get(1));
- 	  driver.get("https://beta.freshproposals.com/home/viewproposal/352/2c36943b-43bf-43cf-9fa1-a3f92dc9b1dc");
-	  Thread.sleep(5000);
+ 	  driver.get("http://beta1.freshproposals.com/home/viewproposal/1169/304f7a3c-8497-4a5b-a86b-e8ba9af2c62d");
+	  Thread.sleep(60000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 2')]")).click();
-	  Thread.sleep(5000);
+	  Thread.sleep(60000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 3')]")).click();
-	  Thread.sleep(5000);
+	  Thread.sleep(60000);
 	//shift main tab
 	  driver.switchTo().window(tabs.get(0));
 	//shift temporary tab
-   	Thread.sleep(5000);
+   	Thread.sleep(30000);
 	driver.switchTo().window(tabs.get(1));
 	//open analytics tab
-	Thread.sleep(5000);
+	Thread.sleep(30000);
 //	//open analytics tab
 	driver.get("http://beta1.freshproposals.com/home/proposals/summary/1169");
 	Thread.sleep(1000);

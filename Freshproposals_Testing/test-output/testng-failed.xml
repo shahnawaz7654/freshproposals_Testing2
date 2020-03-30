@@ -3,16 +3,23 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freshproposals.selenium.Analytics_Template_Scratch">
+      <class name="com.freshproposals.selenium.Signature_Proposal">
         <methods>
-          <include name="closeBrowser"/>
-          <include name="Assert_view"/>
-          <include name="getSummaryData"/>
           <include name="openBrowser"/>
-          <include name="Assert_time"/>
-          <include name="Summary"/>
+          <include name="signatureReflectCorner"/>
+          <include name="signatureReflectPadding"/>
+          <include name="signatureResetAll"/>
+          <include name="signatureBorderStyle"/>
+          <include name="signaturePaddingTtop"/>
+          <include name="signaturePaddingLleft"/>
+          <include name="signatureSignee"/>
+          <include name="signatureReflectBorderStyle"/>
+          <include name="signatureReflectBorderWidth"/>
+          <include name="signaturePaddingRight"/>
+          <include name="signaturePadingBottom"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- com.freshproposals.selenium.Analytics_Template_Scratch -->
+      </class> <!-- com.freshproposals.selenium.Signature_Proposal -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -20,14 +20,8 @@ import org.testng.annotations.Test;
 
 public class Analytics_Feestable_Proposal extends Common_Methods {
 	WebDriver driver;
-	String fname = "SEL";
-	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
 	
 	//variables
-		String time;
-		String view;
-		String average;
-		String lastview;
 		String g_time;
 		String g_view;
 		String g_average;

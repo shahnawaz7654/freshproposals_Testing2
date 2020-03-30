@@ -20,14 +20,8 @@ import org.testng.annotations.Test;
 
 public class Analytics_Tabchange_Proposal extends Common_Methods {
 	WebDriver driver;
-	String fname = "SEL";
-	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
 	
 	//variables
-		String time;
-		String view;
-		String average;
-		String lastview;
 		String g_time;
 		String g_view;
 		String g_average;
@@ -66,21 +60,22 @@ public class Analytics_Tabchange_Proposal extends Common_Methods {
   public void getData() throws InterruptedException {
 	  Thread.sleep(5000);
 	  driver.get("http://beta1.freshproposals.com/home/proposals/summary/1169");
-		Thread.sleep(1000);
-	    driver.findElement(By.id("ngb-tab-2")).click();
-	    //get time
-	    Thread.sleep(5000);
-	    g_time =  driver.findElement(By.className("proposal-analytics-timespent-value")).getText();
-		System.out.println("B TOTAL TIME SPENT VIEWING " +  g_time);
-		//times viewed
-		g_view = driver.findElement(By.cssSelector("div.wrapper div.main:nth-child(5) div.apply-hidden.styling-mode-effect div.proposal-summary div.container:nth-child(3) div.tabs-underlined.proposal-summary-tab div.tab-content div.tab-pane.active div.proposal-analytics div.row.proposal-analytics-box:nth-child(2) div.proposal-analytics-box-timespent div.proposal-analytics-timespent div:nth-child(2) > div.proposal-analytics-timespent-value")).getText();
-		System.out.println("B TIMES VIEWED " + g_view);
-		//average time
-		g_average = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[3]/div[2]")).getText();
-		System.out.println("B AVERAGE TIME VIEWING " + g_average);				
-		//time since last view
-		g_lastview = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[4]/div[2]")).getText();
-		System.out.println("B TIME SINCE LAST VIEWED " + g_lastview);
+	Thread.sleep(1000);
+	driver.findElement(By.id("ngb-tab-2")).click();
+	//get time
+	Thread.sleep(5000);
+	g_time =  driver.findElement(By.className("proposal-analytics-timespent-value")).getText();
+	System.out.println("B TOTAL TIME SPENT VIEWING " +  g_time);
+	//times viewed
+	g_view = driver.findElement(By.cssSelector("div.wrapper div.main:nth-child(5) div.apply-hidden.styling-mode-effect div.proposal-summary div.container:nth-child(3) div.tabs-underlined.proposal-summary-tab div.tab-content div.tab-pane.active div.proposal-analytics div.row.proposal-analytics-box:nth-child(2) div.proposal-analytics-box-timespent div.proposal-analytics-timespent div:nth-child(2) > div.proposal-analytics-timespent-value")).getText();
+	System.out.println("B TIMES VIEWED " + g_view);
+	//average time
+	g_average = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[3]/div[2]")).getText();
+	System.out.println("B AVERAGE TIME VIEWING " + g_average);				
+	//time since last view
+	g_lastview = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[4]/div[2]")).getText();
+	System.out.println("B TIME SINCE LAST VIEWED " + g_lastview);
+
   }
    
   
@@ -104,11 +99,11 @@ public class Analytics_Tabchange_Proposal extends Common_Methods {
    	  ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
  	  driver.switchTo().window(tabs.get(1));
  	  driver.get("http://beta1.freshproposals.com/home/viewproposal/1169/304f7a3c-8497-4a5b-a86b-e8ba9af2c62d");
-	  Thread.sleep(60000);
+	  Thread.sleep(10000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 2')]")).click();
-	  Thread.sleep(60000);
+	  Thread.sleep(5000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 3')]")).click();
-	  Thread.sleep(60000);
+	  Thread.sleep(5000);
 	//shift main tab
 	  driver.switchTo().window(tabs.get(0));
 	//shift temporary tab
@@ -120,19 +115,8 @@ public class Analytics_Tabchange_Proposal extends Common_Methods {
 	driver.get("http://beta1.freshproposals.com/home/proposals/summary/1169");
 	Thread.sleep(1000);
     driver.findElement(By.id("ngb-tab-2")).click();
-    //get time
-    Thread.sleep(5000);
-    time =  driver.findElement(By.className("proposal-analytics-timespent-value")).getText();
-	System.out.println("TOTAL TIME SPENT VIEWING " +  time);
-	//times viewed
-	view = driver.findElement(By.cssSelector("div.wrapper div.main:nth-child(5) div.apply-hidden.styling-mode-effect div.proposal-summary div.container:nth-child(3) div.tabs-underlined.proposal-summary-tab div.tab-content div.tab-pane.active div.proposal-analytics div.row.proposal-analytics-box:nth-child(2) div.proposal-analytics-box-timespent div.proposal-analytics-timespent div:nth-child(2) > div.proposal-analytics-timespent-value")).getText();
-	System.out.println("TIMES VIEWED " + view);
-	//average time
-	average = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[3]/div[2]")).getText();
-	System.out.println("AVERAGE TIME VIEWING " + average);				
-	//time since last view
-	lastview = driver.findElement(By.xpath("//*[@id=\"ngb-tab-2-panel\"]/app-proposal-analytics/div/div[2]/div[2]/div/div[4]/div[2]")).getText();
-	System.out.println("TIME SINCE LAST VIEWED " + lastview);
+    
+    getSummaryData(driver);
 	
 	
 	   //compare g_time

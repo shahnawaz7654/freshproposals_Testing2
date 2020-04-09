@@ -1,23 +1,18 @@
 package com.freshproposals.selenium;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Send_Proposal_Temp extends Common_Methods{
 	WebDriver driver;
 	String unm;
 	String pwd;
+	
 	
   @BeforeClass
   public void openBrowser() {

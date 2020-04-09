@@ -21,6 +21,7 @@ public class FeeTable extends Common_Methods{	SoftAssert softAssertion= new Soft
 	WebDriver driver;
 	String unm;
 	String pwd;
+	//cmnt
 	
 	 @BeforeClass
 	  public void openBrowser() {

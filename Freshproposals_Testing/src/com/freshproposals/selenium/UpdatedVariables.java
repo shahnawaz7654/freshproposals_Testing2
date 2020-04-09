@@ -15,6 +15,8 @@ import org.testng.asserts.SoftAssert;
 
 public class UpdatedVariables extends Common_Methods{
 	WebDriver driver;
+	String unm;
+	String pwd;
 	 SoftAssert softAssertion= new SoftAssert();
 String [] expected = new String[] {"Freshproposal","nikeeta3011@gmail.com","9189677456","Mrs.dont","Kalyaninagar Pune,411212","Pune","Maharashtra","India","Freshproposals.com","Fresh proposals.com","Natasha","nikeeta@zenincloud.com","Kalyaninagar Pune,411212","9999999999","1234567890","1","Nikeeta Shelar","SeleniumVariable","2212","Jan 27, 2029",""};
 String [] expectedAfterUpdating = new String[] {"ICT Networks","nikeeta3011@gmail.com","6123455678","title","L10/ 153 Walker St North Sydney NSW, 2060","Walker","Sydney","Australia","www.ictnetworks.com.au","CALIBREONE","SAM","megan@speakersinstitute.com","4-8 Angas Street Kent Town SA 5067","9999999999","9876543210","1","NICK Vijucic","SeleniumVariable","2212","Jan 27, 2029",""};
@@ -26,19 +28,16 @@ String [] expectedAfterUpdating = new String[] {"ICT Networks","nikeeta3011@gmai
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-			driver.get("http://beta1.freshproposals.com");
+			openURL(driver);
 		}
-	 @Test(dataProvider = "User2" , priority = 0)
-	  
-	  public void login(String unm, String pwd) throws InterruptedException {
-		    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-			driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
-		Thread.sleep(5000);
-		}
+	 @Test(dataProvider = "User2", priority = 0)
+	 public void SetUnmPwd(String unm, String pwd) {
+      login(unm, pwd, driver);
+	}
 	
 	 @Test(priority=1)
 	 public void Variable() throws InterruptedException {
+		 Thread.sleep(5000);
 		 driver.get("http://beta1.freshproposals.com/home/viewproposal/2212/preview/proposals");
 			Thread.sleep(5000);
 

@@ -18,8 +18,8 @@ import org.testng.annotations.Test;
 
 public class Email_Template extends Common_Methods {
 	WebDriver driver;
-	String fname = "SEL";
-	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
+	String unm;
+	String pwd;
 	
   @BeforeClass
   public void openBrowser() {
@@ -28,17 +28,14 @@ public class Email_Template extends Common_Methods {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-		driver.get("http://beta1.freshproposals.com");
+		openURL(driver);
 	}
   
-  @Test(dataProvider = "User1" , priority = 0)
-  
-  public void login(String unm, String pwd) throws InterruptedException {
-	    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-		driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
-		//driver.get(url);
-	}
+  @Test(dataProvider = "User1", priority = 0)
+	public void SetUnmPwd(String unm, String pwd) {
+    login(unm, pwd, driver);
+}
+
   
   @Test(priority = 1)
   public void createEmailTemplate() throws InterruptedException {

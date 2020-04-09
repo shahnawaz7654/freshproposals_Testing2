@@ -19,6 +19,8 @@ import com.freshproposals.selenium.Common_Methods;
 
 public class FeeTable extends Common_Methods{	SoftAssert softAssertion= new SoftAssert();
 	WebDriver driver;
+	String unm;
+	String pwd;
 	
 	 @BeforeClass
 	  public void openBrowser() {
@@ -27,16 +29,12 @@ public class FeeTable extends Common_Methods{	SoftAssert softAssertion= new Soft
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-			driver.get("http://beta1.freshproposals.com");
+			openURL(driver);
 		}
-	 @Test(dataProvider = "User2" , priority = 0)
-	  
-	  public void login(String unm, String pwd) throws InterruptedException {
-		    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-			driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
-			Thread.sleep(5000);
-		}
+	 @Test(dataProvider = "User2", priority = 0)
+	 public void SetUnmPwd(String unm, String pwd) {
+      login(unm, pwd, driver);
+	}
 	 @Test(priority=2,dependsOnMethods = {"login"})
 	 public void AddRowRowDiscountandChangeType() throws InterruptedException {
 		 Thread.sleep(5000);

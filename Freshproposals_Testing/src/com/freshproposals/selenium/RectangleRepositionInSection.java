@@ -18,6 +18,8 @@ import com.freshproposals.selenium.Common_Methods;
 public class RectangleRepositionInSection extends Common_Methods {
 	//http://beta1.freshproposals.com/home/sections/editSection/6594
 	WebDriver driver;
+	String unm;
+	String pwd;
 	 SoftAssert Assert= new SoftAssert();
 	 int x = 280;
 	 int y = 330;
@@ -29,18 +31,16 @@ public class RectangleRepositionInSection extends Common_Methods {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-			driver.get("http://beta1.freshproposals.com");
+			openURL(driver);
 		}
 	 
-	 @Test(dataProvider = "User2" , priority = 0)
-	  public void login(String unm, String pwd) throws InterruptedException {
-		    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-			driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
-			Thread.sleep(5000);
-		}
+	 @Test(dataProvider = "User2", priority = 0)
+	 public void SetUnmPwd(String unm, String pwd) {
+      login(unm, pwd, driver);
+	}
 	 @Test(priority=1)
 	 public void GetURL() throws InterruptedException {
+		 Thread.sleep(5000);
 		 driver.get("http://beta1.freshproposals.com/home/sections/editSection/6594");
 			Thread.sleep(2000);
 

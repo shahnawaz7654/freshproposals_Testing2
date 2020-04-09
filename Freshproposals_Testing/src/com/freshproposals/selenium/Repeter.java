@@ -17,6 +17,8 @@ import org.testng.annotations.Test;
 
 public class Repeter extends Common_Methods{
 	WebDriver driver;
+	String unm;
+	String pwd;
 	
 	 @BeforeClass
 	  public void openBrowser() {
@@ -25,18 +27,15 @@ public class Repeter extends Common_Methods{
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-			driver.get("http://beta1.freshproposals.com");
+			openURL(driver);
 		}
-	 @Test(dataProvider = "User2" , priority = 0)
-	  
-	  public void login(String unm, String pwd) {
-		    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-			driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
-		
-		}
+	 @Test(dataProvider = "User2", priority = 0)
+	 public void SetUnmPwd(String unm, String pwd) {
+      login(unm, pwd, driver);
+	}
 	 @Test(priority=1)
 	 public void verifyRepeter() throws InterruptedException {
+		 Thread.sleep(5000);
 		driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1201");
 	String text =driver.findElement(By.xpath("//div[@id='froalapage1-fpText126201914515090']//span[contains(text(),'Freshproposals')]")).getCssValue("font-size");
 	Assert.assertEquals(text, "28px");

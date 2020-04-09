@@ -16,6 +16,8 @@ import org.testng.annotations.Test;
 
 public class Send_Proposal_Temp extends Common_Methods{
 	WebDriver driver;
+	String unm;
+	String pwd;
 	
   @BeforeClass
   public void openBrowser() {
@@ -24,22 +26,17 @@ public class Send_Proposal_Temp extends Common_Methods{
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-		driver.get("http://beta1.freshproposals.com");
-	  //startBrowser(driver);
-	 
+		openURL(driver);	 
 	}
   
- @Test(dataProvider = "User1" , priority = 0)
-  
-  public void login(String unm, String pwd) {
-	    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-		driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
+  @Test(dataProvider = "User1", priority = 0)
+	 public void SetUnmPwd(String unm, String pwd) {
+     login(unm, pwd, driver);
 	}
   
   @Test(priority = 1)
   public void extendsMethods() throws InterruptedException {
-	   createTemlate(driver);
+	   createTemplate(driver);
 	   contentLibrary(driver);
 	   generateProposalButton(driver);
 	   proposalName(driver);
@@ -47,24 +44,10 @@ public class Send_Proposal_Temp extends Common_Methods{
 	   scrollWindow(driver);
 	   calender(driver);
 	   sendNextButton(driver);
+	   sendEmail(driver);
 	   
   }
   
-  @Test(priority = 2)
-  public void sendEmail() throws InterruptedException {
-	  Thread.sleep(5000);
-      driver.findElement(By.xpath("//input[@placeholder='Subject']")).sendKeys("Selenium Subject");
-	  driver.findElement(By.xpath("//div[@class='fr-box fr-basic fr-top']//div[@class='fr-element fr-view']"))
-	  .sendKeys("Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
-				+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
-				+ " when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-				+ "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-				+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s");
-	  Thread.sleep(2000);
-	  //send btn
-	  driver.findElement(By.linkText("Send")).click();
- 
-  }
   
   @AfterClass
   public void closeBrowser() throws InterruptedException {

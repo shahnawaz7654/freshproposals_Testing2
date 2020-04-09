@@ -19,11 +19,11 @@ import org.testng.annotations.Test;
 
 public class Push_Template extends Common_Methods {
 	WebDriver driver;
-	String fname = "SEL";
-	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
+	String unm;
+	String pwd;
 	
-	String t_name;
-	String ct_t_name;
+	String Proposal_SectionName;
+	String Content_SectionName;
 	
   @BeforeClass
   public void openBrowser() {
@@ -32,15 +32,12 @@ public class Push_Template extends Common_Methods {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 	    driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-		driver.get("http://beta1.freshproposals.com");
+		openURL(driver);
 	}
   
-  @Test(dataProvider = "User1" , priority = 0)
-  
-  public void login(String unm, String pwd) {
-	    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-		driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
+  @Test(dataProvider = "User1", priority = 0)
+	 public void SetUnmPwd(String unm, String pwd) {
+     login(unm, pwd, driver);
 	}
   
  
@@ -57,46 +54,74 @@ public class Push_Template extends Common_Methods {
   
   @Test(priority = 2)
   public void TemplateVersion() throws InterruptedException {
-	Thread.sleep(10000);
-	//driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=2374;editor=true");
-	Thread.sleep(2000);
-	driver.findElement(By.xpath("//li[@class='nav-item example-box active']//a[@class='sectionlist-name'][contains(text(),'New Section')]")).click();
-	Thread.sleep(2000);
-	driver.findElement(By.xpath("//li[@class='nav-item example-box active']//button[@id='dropdownBasic1']//img")).click();
-	Thread.sleep(2000);
-	driver.findElement(By.xpath("//li[@class='nav-item example-box active']//button[@class='dropdown-item'][contains(text(),'Rename')]")).click();
-	Thread.sleep(10000);
-	driver.findElement(By.xpath("//input[@id='renameSection1']")).click();
-	driver.findElement(By.id("renameSection1")).sendKeys(fname+" CV_SECName "+timestamp);
-	Thread.sleep(2000);
-	t_name = driver.findElement(By.xpath("//div[@class='rename-section']//input[@name='sectionNametxt']")).getAttribute("value");
-	System.out.println("P NAME = "+t_name);
-	driver.findElement(By.xpath("//div[@class='rename-section']//div//img[@class='img-fluid']")).click();
-	Thread.sleep(2000);
-	driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
-	Thread.sleep(2000);
-	driver.findElement(By.xpath("//button[contains(text(),'Push')]")).click();
-	Thread.sleep(2000);
-	driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
-	Thread.sleep(2000);
-	driver.findElement(By.xpath("//span[contains(text(),'CONTENT LIBRARY')]")).click();
-	Thread.sleep(2000);
-	driver.findElement(By.xpath("//img[@src='../../assets/edit-section-icon.png']")).click();
-	Thread.sleep(2000);
-	driver.findElement(By.xpath("//img[@src='../../../../../assets/edit-tool-list.png']")).click();
-	Thread.sleep(2000);
-	driver.findElement(By.xpath("//input[@name='sectionNametxt']")).click();
-	ct_t_name= driver.findElement(By.xpath("//input[@name='sectionNametxt']")).getAttribute("value");
-	//abc.click();
-	System.out.println("CT NAME "+ct_t_name);
-    
+//	Thread.sleep(10000);
+//	//driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=2374;editor=true");
+//	Thread.sleep(2000);
+//	driver.findElement(By.xpath("//li[@class='nav-item example-box active']//a[@class='sectionlist-name'][contains(text(),'New Section')]")).click();
+//	Thread.sleep(2000);
+//	driver.findElement(By.xpath("//li[@class='nav-item example-box active']//button[@id='dropdownBasic1']//img")).click();
+//	Thread.sleep(2000);
+//	driver.findElement(By.xpath("//li[@class='nav-item example-box active']//button[@class='dropdown-item'][contains(text(),'Rename')]")).click();
+//	Thread.sleep(10000);
+//	driver.findElement(By.xpath("//input[@id='renameSection1']")).click();
+//	driver.findElement(By.id("renameSection1")).sendKeys(fname+" CV_SECName "+timestamp);
+//	Thread.sleep(2000);
+//	t_name = driver.findElement(By.xpath("//div[@class='rename-section']//input[@name='sectionNametxt']")).getAttribute("value");
+//	System.out.println("P NAME = "+t_name);
+//	driver.findElement(By.xpath("//div[@class='rename-section']//div//img[@class='img-fluid']")).click();
+//	Thread.sleep(2000);
+//	driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+//	Thread.sleep(2000);
+//	driver.findElement(By.xpath("//button[contains(text(),'Push')]")).click();
+//	Thread.sleep(2000);
+//	driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
+//	Thread.sleep(2000);
+//	driver.findElement(By.xpath("//span[contains(text(),'CONTENT LIBRARY')]")).click();
+//	Thread.sleep(2000);
+//	driver.findElement(By.xpath("//img[@src='../../assets/edit-section-icon.png']")).click();
+//	Thread.sleep(2000);
+//	driver.findElement(By.xpath("//img[@src='../../../../../assets/edit-tool-list.png']")).click();
+//	Thread.sleep(2000);
+//	driver.findElement(By.xpath("//input[@name='sectionNametxt']")).click();
+//	ct_t_name= driver.findElement(By.xpath("//input[@name='sectionNametxt']")).getAttribute("value");
+//	//abc.click();
+//	System.out.println("CT NAME "+ct_t_name);
+	  Thread.sleep(5000);
+		driver.findElement(By.xpath("//li[@class='nav-item example-box active']//a[@class='sectionlist-name'][contains(text(),'New Section')]")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//li[@class='nav-item example-box active']//button[@id='dropdownBasic1']//img")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//li[@class='nav-item example-box active']//button[@class='dropdown-item'][contains(text(),'Rename')]")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.name("sectionNametxt")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
+	    driver.findElement(By.id("renameSection1")).sendKeys(fname+" SECName "+timestamp);
+	    Proposal_SectionName = driver.findElement(By.id("renameSection1")).getAttribute("value");
+	    System.out.println("Proposal Section Name = " +Proposal_SectionName);
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//div[@class='rename-section']//div//img[@class='img-fluid']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[contains(text(),'Push')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[contains(text(),'Back')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'CONTENT LIBRARY')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//img[@src='../../assets/edit-section-icon.png']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//img[@src='../../../../../assets/edit-tool-list.png']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@name='sectionNametxt']")).click();
+		Content_SectionName= driver.findElement(By.xpath("//input[@name='sectionNametxt']")).getAttribute("value");
+		//abc.click();
+		System.out.println("Content Section Name = " +Proposal_SectionName);
   }
   
   @Test(priority = 3)
   public void Assert_Temp() throws InterruptedException {
 	  Thread.sleep(2000);
-	  Assert.assertEquals(t_name, ct_t_name);
-	  
+	  Assert.assertEquals(Proposal_SectionName,Content_SectionName);
   }
   
   @AfterClass

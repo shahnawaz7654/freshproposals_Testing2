@@ -23,11 +23,12 @@ import com.paulhammant.ngwebdriver.NgWebDriver;
 public class Push_Proposal extends Common_Methods {
 	WebDriver driver;
 	//NgWebDriver ngDriver;
-	String fname = "SEL";
-	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
+	String unm;
+	String pwd;
 	
-	String p_name;
-	String ct_p_name;
+	String Proposal_SectionName;
+	String Content_SectionName;
+	
 	
 	
   @BeforeClass
@@ -37,72 +38,40 @@ public class Push_Proposal extends Common_Methods {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-		driver.get("http://beta1.freshproposals.com");
-		
-//		ngDriver = new NgWebDriver((JavascriptExecutor) driver);
-//		ngDriver.waitForAngularRequestsToFinish();
+		openURL(driver);
 		
 	}
   
-  @Test(dataProvider = "User1" , priority = 0)
-  
-  public void login(String unm, String pwd) {
-	    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-		driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
+  @Test(dataProvider = "User1", priority = 0)
+	 public void SetUnmPwd(String unm, String pwd) {
+     login(unm, pwd, driver);
 	}
   
  
   @Test(priority = 1)
-  public void createproposal() throws InterruptedException {
-	    Thread.sleep(10000);
-	    driver.findElement(By.linkText("PROPOSALS")).click();
-	    Thread.sleep(10000);
-	    driver.findElement(By.xpath("//img[@src='../../assets/add-section-icon.png']")).click();
-		driver.findElement(By.name("name")).sendKeys(fname+" CVProp "+timestamp);
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
-		//client
-		Thread.sleep(3000);
-	    //client btn
-	    driver.findElement(By.xpath("//div[@class='row client-content mt-3 ng-star-inserted']//div[2]//div[2]//label[1]//span[1]")).click();
-     	Thread.sleep(2000);
-		
-		//scroll window
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-	    js.executeScript("window.scrollBy(0,1000)");
-	    Thread.sleep(2000);
-		
-	    //calender
-	    Thread.sleep(3000);
-	  driver.findElement(By.xpath("//img[@src='../../../assets/calendar.svg']")).click();
-	  Thread.sleep(2000);
-	  Select select = new Select(driver.findElement(By.xpath("//body//select[2]")));
-	  select.selectByValue("2021");
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//div[contains(text(),'15')]")).click();
-	  Thread.sleep(2000);
-	  //driver.findElement(By.linkText("Next")).click();
-	  driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
+  public void ExtendsMethods() throws InterruptedException {
+	 createProposal(driver);
+	 proposalName(driver);
+	 client(driver);
+	 scrollWindow(driver);
+	 calender(driver);
 	
 	}
   
   @Test(priority = 2)
   public void ProposalVersion() throws InterruptedException {
-	//Thread.sleep(3000);
-	//driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=2374;editor=true");
-	Thread.sleep(10000);
+	Thread.sleep(5000);
 	driver.findElement(By.xpath("//li[@class='nav-item example-box active']//a[@class='sectionlist-name'][contains(text(),'New Section')]")).click();
-	Thread.sleep(10000);
+	Thread.sleep(5000);
 	driver.findElement(By.xpath("//li[@class='nav-item example-box active']//button[@id='dropdownBasic1']//img")).click();
-	Thread.sleep(10000);
+	Thread.sleep(5000);
 	driver.findElement(By.xpath("//li[@class='nav-item example-box active']//button[@class='dropdown-item'][contains(text(),'Rename')]")).click();
-	Thread.sleep(10000);
-	driver.findElement(By.xpath("//div[@class='rename-section']//input[@name='sectionNametxt']")).clear();
-	driver.findElement(By.xpath("//div[@class='rename-section']//input[@name='sectionNametxt']")).sendKeys(fname+" CV_SECName "+timestamp);
-	Thread.sleep(10000);
-	p_name = driver.findElement(By.xpath("//div[@class='rename-section']//input[@name='sectionNametxt']")).getAttribute("value");
-	System.out.println("P NAME = "+p_name);
+	Thread.sleep(5000);
+	driver.findElement(By.id("renameSection1")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
+    driver.findElement(By.id("renameSection1")).sendKeys(fname+" SECName "+timestamp);
+    Proposal_SectionName = driver.findElement(By.id("renameSection1")).getAttribute("value");
+    System.out.println("Proposal Section Name = " +Proposal_SectionName);
+	Thread.sleep(5000);
 	driver.findElement(By.xpath("//div[@class='rename-section']//div//img[@class='img-fluid']")).click();
 	Thread.sleep(2000);
 	driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
@@ -118,16 +87,16 @@ public class Push_Proposal extends Common_Methods {
 	driver.findElement(By.xpath("//img[@src='../../../../../assets/edit-tool-list.png']")).click();
 	Thread.sleep(2000);
 	driver.findElement(By.xpath("//input[@name='sectionNametxt']")).click();
-	ct_p_name= driver.findElement(By.xpath("//input[@name='sectionNametxt']")).getAttribute("value");
+	Content_SectionName= driver.findElement(By.xpath("//input[@name='sectionNametxt']")).getAttribute("value");
 	//abc.click();
-	System.out.println("CT NAME "+ct_p_name);
+	System.out.println("Content Section Name = " +Proposal_SectionName);
     
   }
   
   @Test(priority = 3)
   public void Assert_Prop() throws InterruptedException {
 	  Thread.sleep(2000);
-	  Assert.assertEquals(p_name, ct_p_name);
+	  Assert.assertEquals(Proposal_SectionName,Content_SectionName);
 	  
   }
   

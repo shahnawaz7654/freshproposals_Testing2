@@ -19,8 +19,8 @@ import org.testng.annotations.Test;
 
 public class Lost_Proposal_Verification extends Common_Methods {
 	WebDriver driver;
-	String fname = "SEL";
-	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
+	String unm;
+	String pwd;
 	String Get_Lost;
 	String Verify_Lost;
 	
@@ -31,16 +31,12 @@ public class Lost_Proposal_Verification extends Common_Methods {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-		driver.get("http://beta1.freshproposals.com");
+		openURL(driver);
 	}
   
-  @Test(dataProvider = "User1" , priority = 0)
-  
-  public void login(String unm, String pwd) {
-	    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-		driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
-	
+  @Test(dataProvider = "User1", priority = 0)
+	 public void SetUnmPwd(String unm, String pwd) {
+   login(unm, pwd, driver);
 	}
   
   @Test(priority = 1)
@@ -52,53 +48,18 @@ public class Lost_Proposal_Verification extends Common_Methods {
   }
   
   @Test(priority = 2)
-  public void createproposal() throws InterruptedException {
-	Thread.sleep(2000);
-	driver.findElement(By.linkText("PROPOSALS")).click();
-	Thread.sleep(3000);
-	driver.findElement(By.xpath("//img[@src='../../assets/add-section-icon.png']")).click();
-	driver.findElement(By.name("name")).sendKeys(fname+" DashLostVal "+timestamp);
-	Thread.sleep(1000);
-	driver.findElement(By.xpath("//button[@type='submit']")).click();
-	 Thread.sleep(3000);
-	  //client btn
-	  driver.findElement(By.xpath("//div[@class='row client-content mt-3 ng-star-inserted']//div[2]//div[2]//label[1]//span[1]")).click();
-	  Thread.sleep(2000);
-	  JavascriptExecutor js = (JavascriptExecutor) driver;
-	  js.executeScript("window.scrollBy(0,1000)");
-
-	  Thread.sleep(3000);
-	  driver.findElement(By.xpath("//img[@src='../../../assets/calendar.svg']")).click();
-	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//div[@class='ngb-dp-arrow right']//button[@class='btn btn-link ngb-dp-arrow-btn']")).click();
-	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//div[contains(text(),'15')]")).click();
-	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
-	  
-		
-	}
-  
-  @Test(enabled = false)
-  public void contentLibrary() throws InterruptedException {
-	  Thread.sleep(3000);
-	  //plus btn
-	  driver.findElement(By.xpath("//button[@class='btn add-sect-btn template-add-sec ng-star-inserted']")).click();
-	  Thread.sleep(5000);
-	  //search
-	  driver.findElement(By.xpath("//input[@placeholder='search section']")).sendKeys("Design");
-	  Thread.sleep(3000);
-	  //use this
-	  driver.findElement(By.xpath("//img[@class='img=fluid']")).click();
-	  Thread.sleep(3000);
-	  driver.findElement(By.xpath("//img[@class='img-fluid close-section-library']")).click();
+  public void proposalMethods() throws InterruptedException {
+	 createProposal(driver);
+	 proposalName(driver);
+	 client(driver);
+	 scrollWindow(driver);
+	 calender(driver);
+	 PcontentLibrary(driver);
+	 sendNextButton(driver);
   }
   
   @Test(priority = 4)
   public void Send_and_Copy() throws InterruptedException {
-	  //next
-	  Thread.sleep(5000);
-	  driver.findElement(By.xpath("//button[@class='nav-link btn next-btn ng-star-inserted']")).click();
 	  //link
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//img[@src='../../../assets/link-icon-blue.svg']")).click();

@@ -68,14 +68,15 @@ public class Common_Methods {
 		
 		return credentials;
 	  }
+	  
+public void login(String unm, String pwd, WebDriver driver) {
+    driver.findElement(By.id("email")).sendKeys(unm);
+	driver.findElement(By.id("passwordTXT")).sendKeys(pwd);
+	driver.findElement(By.xpath("//button[@type='submit']")).click();
+}
 
 	  
-public void startBrowser(WebDriver driver) {
-	System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
-	driver = new ChromeDriver();
-	driver.manage().window().maximize();
-	driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
-	driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
+public void openURL(WebDriver driver) {
 	driver.get("http://beta1.freshproposals.com");
 }
 
@@ -83,6 +84,13 @@ public void startBrowser(WebDriver driver) {
 public void quitBrowser(WebDriver driver) throws InterruptedException {
 	Thread.sleep(3000);
 	driver.quit();
+}
+
+public void createProposal(WebDriver driver) throws InterruptedException {
+	Thread.sleep(10000);
+	driver.findElement(By.id("linkProposals")).click();
+	Thread.sleep(5000);
+	driver.findElement(By.xpath("//img[@src='../../assets/add-section-icon.png']")).click();
 }
 	  
 	  
@@ -93,7 +101,7 @@ public void generateProposalButton(WebDriver driver) {
 	 
 public void proposalName(WebDriver driver) throws InterruptedException {
 	Thread.sleep(3000);
-	driver.findElement(By.name("name")).sendKeys(fname+" TempPropAnalytics "+timestamp);
+	driver.findElement(By.name("name")).sendKeys(fname+" Proposal "+timestamp);
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("//button[@type='submit']")).click();
 }
@@ -132,19 +140,20 @@ public void sendNextButton(WebDriver driver) throws InterruptedException {
 }
 
 
-public void createTemlate(WebDriver driver) throws InterruptedException {
+public void createTemplate(WebDriver driver) throws InterruptedException {
 	Thread.sleep(5000);
 	driver.findElement(By.xpath("//img[@src='../../assets/add-section-icon.png']")).click();
-	driver.findElement(By.name("name")).sendKeys(fname+" CLTempSend "+timestamp);
+	driver.findElement(By.name("name")).sendKeys(fname+" Template "+timestamp);
 	Thread.sleep(2000);
 	driver.findElement(By.xpath("//button[@type='submit']")).click();
 }
 
-
+//template
 public void contentLibrary(WebDriver driver) throws InterruptedException {
 	Thread.sleep(3000);
 	//plus btn
-	driver.findElement(By.xpath("//button[@class='btn add-sect-btn template-add-sec ng-star-inserted']")).click();
+	//driver.findElement(By.xpath("//button[@class='btn add-sect-btn template-add-sec ng-star-inserted']")).click();
+	driver.findElement(By.id("onboardingAddSection")).click();
 	Thread.sleep(5000);
 	//search
 	driver.findElement(By.xpath("//input[@placeholder='search section']")).sendKeys("Design");
@@ -154,6 +163,35 @@ public void contentLibrary(WebDriver driver) throws InterruptedException {
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("//img[@class='img-fluid close-section-library']")).click();
 } 
+
+public void PcontentLibrary(WebDriver driver) throws InterruptedException {
+	Thread.sleep(3000);
+	//plus btn
+	driver.findElement(By.xpath("//button[@class='btn add-sect-btn proposal-add-sec']")).click();
+	Thread.sleep(5000);
+	//search
+	driver.findElement(By.xpath("//input[@placeholder='search section']")).sendKeys("Design");
+	Thread.sleep(3000);
+	//use this
+	driver.findElement(By.xpath("//img[@class='img=fluid']")).click();
+	Thread.sleep(3000);
+	driver.findElement(By.xpath("//img[@class='img-fluid close-section-library']")).click();
+} 
+
+public void sendEmail(WebDriver driver) throws InterruptedException {
+	Thread.sleep(5000);
+    driver.findElement(By.xpath("//input[@placeholder='Subject']")).sendKeys("Selenium Subject");
+	  driver.findElement(By.xpath("//div[@class='fr-box fr-basic fr-top']//div[@class='fr-element fr-view']"))
+	  .sendKeys("Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+				+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+				+ " when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+				+ "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+				+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s");
+	  Thread.sleep(2000);
+	  //send btn
+	  driver.findElement(By.linkText("Send")).click();
+	  Thread.sleep(5000);
+}
 
 
 public void analyticsCopyLink(WebDriver driver) throws InterruptedException {
@@ -275,7 +313,8 @@ public void signatureRotate(WebDriver driver) throws InterruptedException {
 public void signatureColor(WebDriver driver) throws InterruptedException {
 	 //color   
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-signature-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]\n")).click();
+	  //driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-signature-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]\n")).click();
+	  driver.findElement(By.xpath("//span[@class='e-btn-icon e-icons e-caret']")).click();
 	  Thread.sleep(1000);
 	  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
 	  //resize(r1, 75,75);
@@ -447,28 +486,47 @@ public void signatureReflectPadding(WebDriver driver) throws InterruptedExceptio
 }
 
 public void signatureResetAll(WebDriver driver) throws InterruptedException, AWTException {
-    Thread.sleep(1000);
+       Thread.sleep(1000);
 	   driver.findElement(By.id("page1-fpSign115201911423648")).click();
 	   
 	  Thread.sleep(1000);
 	  driver.findElement(By.name("corners")).clear();
 	  driver.findElement(By.name("corners")).sendKeys("0");
 	  
+	  Thread.sleep(1000);
 	  driver.findElement(By.name("rotate")).clear();
 	  driver.findElement(By.name("rotate")).sendKeys("0");
-
 	  
+	  //color
+	  Thread.sleep(1000);
+	  driver.findElement(By.xpath("//span[@class='e-btn-icon e-icons e-caret']")).click();
+	  Thread.sleep(1000);
+	  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
+	  //resize(r1, 75,75);
+	  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
+	  Thread.sleep(1000);
+	  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#ffffff");
+	  Thread.sleep(2000);
+	  //driver.findElement(By.className("e-hsv-color")).click();
+	  driver.findElement(By.xpath("//span[@class='e-handler']")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.xpath("//button[@class='e-btn e-css e-flat e-primary e-small e-apply']")).click();
+	  Thread.sleep(1000);
+
+	  Thread.sleep(1000);
 	  driver.findElement(By.name("borderWidth")).clear();
 	  driver.findElement(By.name("borderWidth")).sendKeys("0");
 	  
+	  Thread.sleep(1000);
 	  Select select = new Select(driver.findElement(By.name("borderStyle")));
 	  select.selectByIndex(2);
 	  Thread.sleep(3000);
 	  driver.findElement(By.name("border")).click();
 
-    Robot robot = new Robot();
+      Robot robot = new Robot();
 	  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 	  
+	  Thread.sleep(1000);
 	  driver.findElement(By.name("paddingTop")).clear();
 	  driver.findElement(By.name("paddingTop")).sendKeys("0");
 	  Thread.sleep(1000);
@@ -494,21 +552,7 @@ public void signatureResetAll(WebDriver driver) throws InterruptedException, AWT
 //	  driver.findElement(By.xpath("//button[@title='Apply']")).click();
 //	  Thread.sleep(1000);
 	  
-	  //color
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-signature-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/button[2]\n")).click();
-	  Thread.sleep(1000);
-	  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
-	  //resize(r1, 75,75);
-	  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#ffffff");
-	  Thread.sleep(2000);
-	  //driver.findElement(By.className("e-hsv-color")).click();
-	  driver.findElement(By.xpath("//span[@class='e-handler']")).click();
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//button[@class='e-btn e-css e-flat e-primary e-small e-apply']")).click();
-	  Thread.sleep(1000);
+	 
 	  
 	  driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
 	  

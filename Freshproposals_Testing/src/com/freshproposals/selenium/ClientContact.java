@@ -19,6 +19,8 @@ import org.testng.annotations.BeforeClass;
 
 public class ClientContact extends Common_Methods {
 	WebDriver driver;
+	String unm;
+	String pwd;
 	 @BeforeClass
 	  public void openBrowser() {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Selenium\\chromedriver.exe");
@@ -26,20 +28,16 @@ public class ClientContact extends Common_Methods {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-			driver.get("http://beta1.freshproposals.com");
+			openURL(driver);
 		}
 	  
-	  @Test(dataProvider = "User2" , priority = 0)
-	  
-	  public void login(String unm, String pwd) throws InterruptedException {
-		    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-			driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
-		Thread.sleep(4000);
-		}
+	 @Test(dataProvider = "User2", priority = 0)
+	 	public void SetUnmPwd(String unm, String pwd) {
+		 login(unm, pwd, driver);
+}
 	@Test(priority=1,dependsOnMethods = {"login"})
 	  public void CreateNewClient() throws InterruptedException {
-			
+			Thread.sleep(5000);
 			//driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			WebElement Client =driver.findElement(By.xpath("//span[contains(text(),'CLIENTS')]"));
 			JavascriptExecutor executor = (JavascriptExecutor)driver;

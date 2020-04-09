@@ -16,7 +16,9 @@ import org.testng.asserts.SoftAssert;
 
 public class CheckPositionOfTheTextcomponent extends Common_Methods {
 	WebDriver driver;
-	 SoftAssert Assert= new SoftAssert();
+	String unm;
+	String pwd;
+	SoftAssert Assert= new SoftAssert();
 
 	 @BeforeClass
 	  public void openBrowser() {
@@ -25,21 +27,16 @@ public class CheckPositionOfTheTextcomponent extends Common_Methods {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-			driver.get("http://beta1.freshproposals.com");
+			openURL(driver);
 		}
-	 @Test(dataProvider = "User2" , priority = 0)
-	  
-	  public void login(String unm, String pwd) throws InterruptedException {
-		    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-			driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
-			Thread.sleep(5000);
-
-		}
-	
+	 @Test(dataProvider = "User2", priority = 0)
+	 public void SetUnmPwd(String unm, String pwd) {
+     login(unm, pwd, driver);
+}
 	
 	@Test(priority=1)
 	public void TextComponentPosition() throws InterruptedException {
+		Thread.sleep(5000);
 		driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1138");
 		WebElement textbox = driver.findElement(By.xpath("//div[@id='page1-fpText1129201912312833mainDivTransformSafeStyle']"));
 		Point point=textbox.getLocation();

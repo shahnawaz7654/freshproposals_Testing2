@@ -18,6 +18,8 @@ import com.freshproposals.selenium.Common_Methods;
 
 public class TempRead  extends Common_Methods {
 	WebDriver driver;
+	String unm;
+	String pwd;
 	 SoftAssert Assert= new SoftAssert();
 
 	 @BeforeClass
@@ -29,16 +31,13 @@ public class TempRead  extends Common_Methods {
 			driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
 			driver.get("http://beta1.freshproposals.com");
 		}
-	 @Test(dataProvider = "User2" , priority = 0)
-	  
-	  public void login(String unm, String pwd) throws InterruptedException {
-		    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-			driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
-		Thread.sleep(5000);
-		}
+	 @Test(dataProvider = "User2", priority = 0)
+	 public void SetUnmPwd(String unm, String pwd) {
+      login(unm, pwd, driver);
+	}
 	 @Test(priority=1)
-	 public void ReadTemplate() {
+	 public void ReadTemplate() throws InterruptedException {
+		 Thread.sleep(5000);
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1110");
 		 //Page1
 		 //In Height and Width there is a difference of 2px due to locator

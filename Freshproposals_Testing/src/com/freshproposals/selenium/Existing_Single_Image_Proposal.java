@@ -24,8 +24,8 @@ import org.testng.annotations.Test;
 
 public class Existing_Single_Image_Proposal extends Common_Methods {
 	WebDriver driver;
-	String fname = "SEL";
-	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
+	String unm;
+	String pwd;
 	
 	String width = "420";
 	String rotate = "5";
@@ -44,16 +44,13 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-		driver.get("http://beta1.freshproposals.com");
+		openURL(driver);
 	}
   
- @Test(dataProvider = "User1" , priority = 0)
-  
-  public void login(String unm, String pwd) {
-	    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-		driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
-	}
+  @Test(dataProvider = "User1", priority = 0)
+ 	public void SetUnmPwd(String unm, String pwd) {
+     login(unm, pwd, driver);
+ }
 	
   @Test(priority = 1)
   public void openExistTemplate() throws InterruptedException {
@@ -119,17 +116,27 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 	  Assert.assertEquals(actual_rotate,rotate);
 	  Thread.sleep(1000);
 	  
-	  Robot robot = new Robot();
-	  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
   }
   
-//  @Test(priority = 7)
-//  public void color() throws InterruptedException {
-//	 
-//  Thread.sleep(1000);
-//  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
-//  Thread.sleep(1000);
-//  //driver.findElement(By.xpath("//div[@class='e-hue-slider e-control e-slider e-lib']//div[@class='e-handle e-handle-first']")).click();
+  @Test(priority = 7)
+  public void corner() throws InterruptedException {
+	  //corner
+	  WebElement r = driver.findElement(By.name("cornersApply"));
+	  resize(r, 50, 50);
+	  Thread.sleep(1000);
+  }
+  
+  @Test(priority = 8)
+  public void color() throws InterruptedException {
+	 
+  Thread.sleep(1000);
+  driver.findElement(By.xpath("//span[@class='e-btn-icon e-icons e-caret']")).click();
+  Thread.sleep(1000);
+  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
+  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#000000");
+  Thread.sleep(2000);
+  driver.findElement(By.xpath("//button[@class='e-btn e-css e-flat e-primary e-small e-apply']")).click();
+  //driver.findElement(By.xpath("//div[@class='e-hue-slider e-control e-slider e-lib']//div[@class='e-handle e-handle-first']")).click();
 //  WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
 //  resize(r1, 75,75);
 //  Thread.sleep(1000);
@@ -140,31 +147,29 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 //  Thread.sleep(2000);
 //  driver.findElement(By.xpath("//button[@title='Apply']")).click();
 //  Thread.sleep(1000);
-//  }
-//  
-  
-  @Test(priority = 8)
-  public void corner() throws InterruptedException {
-	  //corner
-	  WebElement r = driver.findElement(By.name("corners"));
-	  resize(r, 50, 50);
-	  Thread.sleep(1000);
   }
   
-//  @Test(priority = 9)
-//  public void opacity() {
-//	  
-//	  //opacity
-//	  WebElement r = driver.findElement(By.name("opacity"));
-//	  resize(r,50,50);
-//	  //String actual_opacity = driver.findElement(By.name("opacity")).getAttribute("value");
-//	  //String expected_opacity = "64";
-//	  //Assert.assertEquals(actual_opacity, expected_opacity);
-//	 }
+  
+  
+  
+  @Test(priority = 9)
+  public void opacity() throws InterruptedException {
+	  
+	  //opacity
+	  Thread.sleep(2000);
+	  WebElement r = driver.findElement(By.name("opacity"));
+	  resize(r,50,50);
+	  //String actual_opacity = driver.findElement(By.name("opacity")).getAttribute("value");
+	  //String expected_opacity = "64";
+	  //Assert.assertEquals(actual_opacity, expected_opacity);
+	 }
   
   @Test(priority = 10)
   public void border_width() throws InterruptedException, AWTException {
 	 
+	  Robot robot = new Robot();
+	  robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+	  
 	  //border
 	  Thread.sleep(1000);
 	  driver.findElement(By.name("border")).click();

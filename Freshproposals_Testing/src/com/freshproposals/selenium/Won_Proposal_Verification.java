@@ -20,9 +20,8 @@ import com.paulhammant.ngwebdriver.NgWebDriver;
 
 public class Won_Proposal_Verification extends Common_Methods {
 	WebDriver driver;
-	NgWebDriver ngDriver;
-	String fname = "SEL";
-	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
+	String unm;
+	String pwd;
 	String Get_Won;
 	String Verify_Won;
 	
@@ -33,75 +32,37 @@ public class Won_Proposal_Verification extends Common_Methods {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-		driver.get("http://beta1.freshproposals.com");
+		openURL(driver);
 		
-		ngDriver = new NgWebDriver((JavascriptExecutor) driver);
-		ngDriver.waitForAngularRequestsToFinish();
 	}
   
-  @Test(dataProvider = "User1" , priority = 0)
-  
-  public void login(String unm, String pwd) {
-	    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-		driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
-	
-	}
+  @Test(dataProvider = "User1", priority = 0)
+	 public void SetUnmPwd(String unm, String pwd){
+      login(unm, pwd, driver);
+	 }
   
   @Test(priority = 1)
   public void Dashboard_Get_Won_Value() throws InterruptedException {
-	  Thread.sleep(9000);
+	  Thread.sleep(10000);
 	  driver.findElement(By.id("linkDashboard")).click();
 	  Get_Won = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-dashboard[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/p[1]")).getText();
 	  System.out.println("Before Won "+Get_Won);
   }
   
   @Test(priority = 2)
-  public void generateProposal() throws InterruptedException {
-		Thread.sleep(10000);
-		driver.findElement(By.linkText("PROPOSALS")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//img[@src='../../assets/add-section-icon.png']")).click();
-		driver.findElement(By.name("name")).sendKeys(fname+" DashWonVal "+timestamp);
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
-	 
-	  Thread.sleep(3000);
-	  //client btn
-	  driver.findElement(By.xpath("//div[@class='row client-content mt-3 ng-star-inserted']//div[2]//div[2]//label[1]//span[1]")).click();
-      Thread.sleep(3000);
-	  JavascriptExecutor js = (JavascriptExecutor) driver;
-	  js.executeScript("window.scrollBy(0,1000)");
-
-	  Thread.sleep(3000);
-	  driver.findElement(By.xpath("//img[@src='../../../assets/calendar.svg']")).click();
-	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//div[@class='ngb-dp-arrow right']//button[@class='btn btn-link ngb-dp-arrow-btn']")).click();
-	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//div[contains(text(),'15')]")).click();
-	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
+  public void proposalMethods() throws InterruptedException {
+	 createProposal(driver);
+	 proposalName(driver);
+	 client(driver);
+	 scrollWindow(driver);
+	 calender(driver);
+	 PcontentLibrary(driver);
+	 sendNextButton(driver);
   }
 		
-  
-  @Test(enabled = false)
-  public void contentLibrary() throws InterruptedException {
-	  Thread.sleep(3000);
-	  //plus btn
-	  driver.findElement(By.xpath("//button[@class='btn add-sect-btn template-add-sec']")).click(); 
-	  Thread.sleep(5000);
-	  //use this
-	  driver.findElement(By.xpath("//img[@class='img=fluid']")).click();      
-	  Thread.sleep(3000);
-	  driver.findElement(By.xpath("//img[@class='img-fluid close-section-library']")).click();
-  }
       
   @Test(priority = 4)
   public void Send_and_Copy() throws InterruptedException {										
-	  //next
-	  Thread.sleep(10000);
-	  //driver.findElement(By.xpath("//button[starts-with(@class,'nav-link btn next-btn')]")).click();
-	  driver.findElement(By.id("btnSendMail")).click();
 	  //link
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//img[@src='../../../assets/link-icon-blue.svg']")).click();

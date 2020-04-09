@@ -20,8 +20,8 @@ import net.bytebuddy.asm.Advice.Enter;
 
 public class Gmail_Testing extends Common_Methods{
 	WebDriver driver;
-	String fname = "SEL";
-	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
+	String unm;
+	String pwd;
 	
 	 @BeforeClass
 	  public void openBrowser() {
@@ -30,104 +30,32 @@ public class Gmail_Testing extends Common_Methods{
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-		driver.get("http://beta1.freshproposals.com");
+		openURL(driver);
 	
 	}
 	 
-	 @Test(dataProvider = "User1" , priority = 0)
-	  
-	  public void login(String unm, String pwd) {
-		    driver.findElement(By.id("textbox_0")).sendKeys(unm);
-			driver.findElement(By.id("textbox_1")).sendKeys(pwd);
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
-		}
+	 @Test(dataProvider = "User1", priority = 0)
+	 public void SetUnmPwd(String unm, String pwd) {
+         login(unm, pwd, driver);
+	 }
 	  
 	  @Test(priority = 1)
-	  public void createTemplate() throws InterruptedException {
-		  Thread.sleep(5000);
-			driver.findElement(By.xpath("//img[@src='../../assets/add-section-icon.png']")).click();
-			driver.findElement(By.name("name")).sendKeys(fname+" CLTempSend "+timestamp);
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
-	  }
-	  
-	  @Test(priority = 2)
-	  public void contentLibrary() throws InterruptedException {
+	  public void ExtendsMethods() throws InterruptedException {
+		  createTemplate(driver);
+		  contentLibrary(driver);
+		  generateProposalButton(driver);
+		  proposalName(driver);
+		  //Automation Client
 		  Thread.sleep(3000);
-		  //plus btn
-		  driver.findElement(By.xpath("//button[@class='btn add-sect-btn template-add-sec ng-star-inserted']")).click();
-		  Thread.sleep(5000);
-		  //search
-		  driver.findElement(By.xpath("//input[@placeholder='search section']")).sendKeys("content library automation");
-		  Thread.sleep(3000);
-		  //use this
-		  driver.findElement(By.xpath("//img[@class='img=fluid']")).click();
-		  Thread.sleep(3000);
-		  driver.findElement(By.xpath("//img[@class='img-fluid close-section-library']")).click();
-	  }
-	  
-	  @Test(priority = 3)
-	  public void generateProposal() throws InterruptedException {
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//button[contains(text(), 'Generate Proposal' )]")).click();
-			driver.findElement(By.name("name")).sendKeys(fname+" GmailTestingProp "+timestamp);
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
-		  }
-	  
-	  @Test(priority = 4)
-	  public void client() throws InterruptedException  {
-		  Thread.sleep(3000);
-		  //client btn
-		  driver.findElement(By.xpath("//div[6]//div[2]//label[1]//span[1]")).click();
-		  Thread.sleep(2000);
-	  }
-	  
-	  @Test(priority = 5)
-	  public void scrollWindow() throws InterruptedException  {
-		  Thread.sleep(3000);
-		  JavascriptExecutor js = (JavascriptExecutor) driver;
-		  js.executeScript("window.scrollBy(0,1000)");
-	  }
-	  
-	  @Test(priority = 6)
-	  public void calender() throws InterruptedException  {
-		  Thread.sleep(3000);
-		  driver.findElement(By.xpath("//img[@src='../../../assets/calendar.svg']")).click();
-		  Thread.sleep(2000);
-		  Select select = new Select(driver.findElement(By.xpath("//body//select[2]")));
-		  select.selectByValue("2021");
-		  Thread.sleep(1000);
-		  driver.findElement(By.xpath("//div[contains(text(),'15')]")).click();
-		  Thread.sleep(2000);
-		  //driver.findElement(By.linkText("Next")).click();
-		  driver.findElement(By.xpath("//button[@class='btn send-btn mt-3']")).click();
-	  }
-	  
-	  @Test(priority = 7)
-	  public void sendEmail() throws InterruptedException {
-		  //next
-		  Thread.sleep(10000);
-		  driver.findElement(By.xpath("//button[@class='nav-link btn next-btn ng-star-inserted']")).click();
-	      driver.findElement(By.xpath("//div[@class='card']//input")).sendKeys("Selenium Subject");
-	      System.out.println(driver.findElement(By.xpath("//div[@class='card']//input")).getText());
-		  driver.findElement(By.xpath("//div[@class='fr-box fr-basic fr-top']//div[@class='fr-element fr-view']"))
-		  .sendKeys("Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
-					+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
-					+ " when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-					+ "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-					+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s");
-		  Thread.sleep(2000);
-		  //send btn
-		  driver.findElement(By.xpath("//img[@src='../../../assets/send-button.svg']")).click();
-		  Thread.sleep(10000);
+		  driver.findElement(By.xpath("//div[@id='content']//div[5]//div[2]//label[1]//span[1]")).click();
+		  scrollWindow(driver);
+		  calender(driver);
+		  sendNextButton(driver);
+		  sendEmail(driver);
 		  
-		 
 	  }
-	  
-
 	 
-	 @Test(priority = 8)
+	 @Test(priority = 2)
 	 public void Gmail_login() {
 		 driver.get("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin");
          
@@ -145,7 +73,7 @@ public class Gmail_Testing extends Common_Methods{
 		 driver.findElement(By.id("passwordNext")).click();
 	 }
 	 
-	 @Test(priority = 9)
+	 @Test(priority = 3)
 	 public void Search() throws InterruptedException {
 		 Thread.sleep(2000);
 		 //driver.findElement(By.name("q")).sendKeys("Selenium Subject" + Keys.ENTER);
@@ -159,7 +87,7 @@ public class Gmail_Testing extends Common_Methods{
 	 
 	 @AfterClass
 	  public void closeBrowser() throws InterruptedException {
-		  Thread.sleep(3000);
-		  driver.quit();
+		 quitBrowser(driver);
 	  }
+	  
 }

@@ -35,7 +35,7 @@ public class ClientContact extends Common_Methods {
 	 	public void SetUnmPwd(String unm, String pwd) {
 		 login(unm, pwd, driver);
 }
-	@Test(priority=1,dependsOnMethods = {"login"})
+	@Test(priority=1)
 	  public void CreateNewClient() throws InterruptedException {
 			Thread.sleep(5000);
 			//driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
@@ -58,7 +58,7 @@ public class ClientContact extends Common_Methods {
 			driver.findElement(By.xpath("//button[contains(text(),'Add')]")).click();
 			System.out.println("New Client Created");
 			}
-	@Test(priority = 2,dependsOnMethods = {"login"})
+	@Test(priority = 2)
 	public void CreatenewContact() throws InterruptedException {
 			WebElement ContactFNAME =driver.findElement(By.xpath("//input[@formcontrolname='FirstName']"));
 			ContactFNAME.sendKeys("DHAN");
@@ -71,7 +71,7 @@ public class ClientContact extends Common_Methods {
 			driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
 			System.out.println("New contact created");
 		}
-	@Test(priority = 3,dependsOnMethods = {"login"})	
+	@Test(priority = 3)	
 	public void newContactaddedintoexistingClient() throws InterruptedException {
 		Actions actions = new Actions(driver);
 		WebElement addcontact = driver.findElement(By.xpath("//div[contains(text(),'Freshproposals')]"));
@@ -89,7 +89,7 @@ public class ClientContact extends Common_Methods {
 			driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
 			System.out.println("New contact added into the existing client");
 	}
-	@Test(priority=4,dependsOnMethods = {"login"})
+	@Test(priority=4)
 	public void ClientUpdated() throws InterruptedException   {
 			  WebElement updateContact =driver.findElement(By.xpath("//div[contains(text(),'Freshproposals')]//img[1]"));
 			  Thread.sleep(3000);
@@ -102,7 +102,7 @@ public class ClientContact extends Common_Methods {
 			System.out.println("Client updated");
 			Thread.sleep(5000);
 	}
-	@Test(priority=5,dependsOnMethods = {"login"})
+	@Test(priority=5)
 	public void ContactUpdated() throws InterruptedException {
 		WebElement updateContact=driver.findElement(By.xpath("//div[3]//div[2]//div[1]//span[1]//img[1]"));
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -121,7 +121,7 @@ public class ClientContact extends Common_Methods {
 			Thread.sleep(3000);
 			System.out.println("Contact updated");
 	}
-	@Test(priority=6,dependsOnMethods = {"login"})
+	@Test(priority=6)
 	public void ClientDeleted() throws InterruptedException {
 		Actions actions = new Actions(driver);
 		WebElement addcontact = driver.findElement(By.xpath("//div[contains(text(),'Freshproposals')]"));

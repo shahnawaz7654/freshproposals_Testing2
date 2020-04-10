@@ -5,6 +5,7 @@
     <classes>
       <class name="com.freshproposals.selenium.Gmail_Testing">
         <methods>
+          <include name="SetUnmPwd" invocation-numbers="0"/>
           <include name="openBrowser"/>
           <include name="Gmail_login"/>
           <include name="Search"/>

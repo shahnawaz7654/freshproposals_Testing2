@@ -36,7 +36,7 @@ public class FeeTable extends Common_Methods{	SoftAssert softAssertion= new Soft
 	 public void SetUnmPwd(String unm, String pwd) {
       login(unm, pwd, driver);
 	}
-	 @Test(priority=2,dependsOnMethods = {"login"})
+	 @Test(priority=2)
 	 public void AddRowRowDiscountandChangeType() throws InterruptedException {
 		 Thread.sleep(5000);
 
@@ -114,7 +114,7 @@ public class FeeTable extends Common_Methods{	SoftAssert softAssertion= new Soft
 				softAssertion.assertAll();
 		 }
 
-	 @Test(priority=1,dependsOnMethods = {"login"})
+	 @Test(priority=1)
 	 public  void SelectRowType() throws InterruptedException {
 		 Thread.sleep(5000);
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
@@ -274,7 +274,7 @@ public class FeeTable extends Common_Methods{	SoftAssert softAssertion= new Soft
 		 softAssertion.assertAll();
 	 }	 
 		
-	 @Test(priority = 5,dependsOnMethods = {"login"})
+	 @Test(priority = 5)
 	 public void TableDiscount() throws InterruptedException {
 		 driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/1143");
 		 	Thread.sleep(5000);

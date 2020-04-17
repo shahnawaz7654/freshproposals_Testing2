@@ -3,16 +3,32 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.freshproposals.selenium.Gmail_Testing">
+      <class name="com.freshproposals.selenium.Image_Section">
         <methods>
+          <include name="border_style"/>
+          <include name="border_width"/>
+          <include name="rotate"/>
+          <include name="Reset_All"/>
+          <include name="reflect_border_style"/>
+          <include name="color"/>
+          <include name="greyscale"/>
+          <include name="Reset_width"/>
+          <include name="save"/>
+          <include name="openExistTemplate"/>
+          <include name="padding_top"/>
+          <include name="reflect_width"/>
           <include name="SetUnmPwd" invocation-numbers="0"/>
+          <include name="reflect_padding"/>
+          <include name="padding_left"/>
+          <include name="Save_width"/>
+          <include name="width"/>
+          <include name="reflect_border_width"/>
           <include name="openBrowser"/>
-          <include name="Gmail_login"/>
-          <include name="Search"/>
-          <include name="ExtendsMethods"/>
+          <include name="padding_bottom"/>
           <include name="closeBrowser"/>
+          <include name="padding_right"/>
         </methods>
-      </class> <!-- com.freshproposals.selenium.Gmail_Testing -->
+      </class> <!-- com.freshproposals.selenium.Image_Section -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

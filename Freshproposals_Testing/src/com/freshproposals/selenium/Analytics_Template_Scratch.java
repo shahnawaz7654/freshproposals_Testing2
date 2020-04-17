@@ -31,7 +31,7 @@ public class Analytics_Template_Scratch extends Common_Methods {
 	
 	//variables
 	
-	String e_time = "2 m 10 s";
+	String e_time = "3 m 10 s";
 	String e_view = "1";
 	
   @BeforeClass
@@ -70,7 +70,7 @@ public class Analytics_Template_Scratch extends Common_Methods {
   }
   
   
-  @Test(priority = 4)
+  @Test(priority = 3)
   public void Summary() throws InterruptedException {
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//img[@src='../../../assets/cancel-round.svg']")).click();
@@ -84,20 +84,20 @@ public class Analytics_Template_Scratch extends Common_Methods {
 	  driver.findElement(By.xpath("//a[@id='ngb-tab-2']")).click();
   }
   
-  @Test(priority = 5)
+  @Test(priority = 4)
   public void extendsMethods2() throws InterruptedException {
 	 getSummaryData(driver);
 
   }
   
-  @Test(priority = 6)
+  @Test(priority = 5)
   public void Assert_time() throws InterruptedException {
 	  Thread.sleep(2000);
 	  Assert.assertEquals(time, e_time);
 	  
   }
   
-  @Test(priority = 7)
+  @Test(priority = 6)
   public void Assert_view() throws InterruptedException {
 	  Thread.sleep(2000);
 	  Assert.assertEquals(view, e_view);

@@ -54,7 +54,7 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 	
   @Test(priority = 1)
   public void openExistTemplate() throws InterruptedException {
-	  Thread.sleep(3000);
+	  Thread.sleep(7000);
 	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1058;editor=true");
 	}
   
@@ -118,13 +118,13 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 	  
   }
   
-  @Test(priority = 7)
-  public void corner() throws InterruptedException {
-	  //corner
-	  WebElement r = driver.findElement(By.name("cornersApply"));
-	  resize(r, 50, 50);
-	  Thread.sleep(1000);
-  }
+//  @Test(priority = 7)
+//  public void corner() throws InterruptedException {
+//	  //corner
+//	  WebElement r = driver.findElement(By.name("cornersApply"));
+//	  resize(r, 50, 50);
+//	  Thread.sleep(1000);
+//  }
   
   @Test(priority = 8)
   public void color() throws InterruptedException {
@@ -152,17 +152,17 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
   
   
   
-  @Test(priority = 9)
-  public void opacity() throws InterruptedException {
-	  
-	  //opacity
-	  Thread.sleep(2000);
-	  WebElement r = driver.findElement(By.name("opacity"));
-	  resize(r,50,50);
-	  //String actual_opacity = driver.findElement(By.name("opacity")).getAttribute("value");
-	  //String expected_opacity = "64";
-	  //Assert.assertEquals(actual_opacity, expected_opacity);
-	 }
+//  @Test(priority = 9)
+//  public void opacity() throws InterruptedException {
+//	  
+//	  //opacity
+//	  Thread.sleep(2000);
+//	  WebElement r = driver.findElement(By.name("opacity"));
+//	  resize(r,50,50);
+//	  //String actual_opacity = driver.findElement(By.name("opacity")).getAttribute("value");
+//	  //String expected_opacity = "64";
+//	  //Assert.assertEquals(actual_opacity, expected_opacity);
+//	 }
   
   @Test(priority = 10)
   public void border_width() throws InterruptedException, AWTException {
@@ -260,27 +260,27 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 		  
 	 }
 	         
-	  @Test(priority = 19)
-	  public void reflect_rotate() {
-		  driver.findElement(By.xpath("//div[@class='resizers']//img")).click();
-		  String actual_reflect_rotate = driver.findElement(By.xpath("//div[@class='resizers']//img")).getCssValue("transform: rotate");
-		  System.out.println("Rrotate "+actual_reflect_rotate);
-		  String expected_reflect_rotate = rotate+"px";
-		  System.out.println("reflect rotate "+expected_reflect_rotate);
-		  Assert.assertEquals(actual_reflect_rotate, expected_reflect_rotate);
-		  
-		  
-	  }
+//	  @Test(priority = 19)
+//	  public void reflect_rotate() {
+//		  driver.findElement(By.xpath("//div[@class='resizers']//img")).click();
+//		  String actual_reflect_rotate = driver.findElement(By.xpath("//div[@class='resizers']//img")).getCssValue("transform: rotate");
+//		  System.out.println("Rrotate "+actual_reflect_rotate);
+//		  String expected_reflect_rotate = rotate+"px";
+//		  System.out.println("reflect rotate "+expected_reflect_rotate);
+//		  Assert.assertEquals(actual_reflect_rotate, expected_reflect_rotate);
+//		  
+//		  
+//	  }
 	  
-	  @Test(priority = 20)
-	  public void reflect_corner() {
-		  driver.findElement(By.xpath("//div[@class='resizers']//img")).click();
-		  String actual_reflect_corner = driver.findElement(By.xpath("//div[@class='resizers']//img")).getCssValue("border-radius");
-		  System.out.println("Rcorner"+actual_reflect_corner);
-		  String expected_reflect_corner = "76%";
-		  Assert.assertEquals(actual_reflect_corner, expected_reflect_corner);
-		  
-	  }
+//	  @Test(priority = 20)
+//	  public void reflect_corner() {
+//		  driver.findElement(By.xpath("//div[@class='resizers']//img")).click();
+//		  String actual_reflect_corner = driver.findElement(By.xpath("//div[@class='resizers']//img")).getCssValue("border-radius");
+//		  System.out.println("Rcorner"+actual_reflect_corner);
+//		  String expected_reflect_corner = "76%";
+//		  Assert.assertEquals(actual_reflect_corner, expected_reflect_corner);
+//		  
+//	  }
 	
 	  @Test(priority = 21)
 	  public void reflect_border_width() throws InterruptedException {
@@ -340,10 +340,22 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 		      driver.findElement(By.name("rotate")).clear();
 			  Thread.sleep(1000);
 			  driver.findElement(By.name("rotate")).sendKeys("0"); 
+			  Thread.sleep(3000);
 			  
-		  WebElement corner = driver.findElement(By.name("corners"));
-		  resize(corner, -100, -100);
-		  Thread.sleep(1000);
+			  //color
+			  Thread.sleep(1000);
+			  driver.findElement(By.xpath("//span[@class='e-btn-icon e-icons e-caret']")).click();
+			  Thread.sleep(1000);
+			  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
+			  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#ffffff");
+			  Thread.sleep(2000);
+			  driver.findElement(By.xpath("//button[@class='e-btn e-css e-flat e-primary e-small e-apply']")).click();
+			  Thread.sleep(2000);
+
+			  
+//		  WebElement corner = driver.findElement(By.name("corners"));
+//		  resize(corner, 100, 100);
+//		  Thread.sleep(1000);
 		  
 //		  WebElement opacity = driver.findElement(By.name("opacity"));
 //		  resize(opacity, 0, 0);
@@ -360,20 +372,7 @@ public class Existing_Single_Image_Proposal extends Common_Methods {
 		  select.selectByIndex(2);
 		  driver.findElement(By.name("border")).click();
 		  
-		  //color
-//		  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/app-image-properties[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]")).click();
-//		  Thread.sleep(1000);
-//		  //WebElement r1 = driver.findElement(By.xpath("//div[@class='e-handle e-handle-first']"));
-//		  //resize(r1, 75,75);
-//		  Thread.sleep(1000);
-//		  //driver.findElement(By.className("e-hsv-color")).click();
-//		  driver.findElement(By.xpath("//input[@class='e-hex']")).clear();
-//		  Thread.sleep(1000);
-//		  driver.findElement(By.xpath("//input[@class='e-hex']")).sendKeys("#ffffff");
-//		  Thread.sleep(2000);
-//		  driver.findElement(By.xpath("//button[@title='Apply']")).click();
-//		  
-
+		 
 		  Robot robot1 = new Robot();
 		  robot1.keyPress(KeyEvent.VK_PAGE_DOWN);
 		  

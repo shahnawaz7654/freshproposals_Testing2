@@ -95,7 +95,8 @@ public void createProposal(WebDriver driver) throws InterruptedException {
 	  
 	  
 public void generateProposalButton(WebDriver driver) {
-	driver.findElement(By.xpath("//button[contains(text(), 'Generate Proposal' )]")).click();
+	//driver.findElement(By.xpath("//button[contains(text(), 'Generate Proposal' )]")).click();
+	  driver.findElement(By.id("onboardingGenProposal")).click();
 }
 	  
 	 
@@ -209,11 +210,11 @@ public void analyticsCopyLink(WebDriver driver) throws InterruptedException {
     driver.switchTo().window(tabs.get(1));
     driver.get(copy_text);
     //section
-    Thread.sleep(5000);
+    Thread.sleep(60000);
 	driver.findElement(By.xpath("//a[contains(text(),'Second Page')]")).click();
-    Thread.sleep(5000);
+    Thread.sleep(60000);
     driver.findElement(By.xpath("//a[contains(text(),'Third Page')]")).click();
-    Thread.sleep(5000);
+    Thread.sleep(70000);
     driver.close();
 	driver.switchTo().window(tabs.get(0));
 }

@@ -87,9 +87,12 @@ public class Analytics_Proposal extends Common_Methods {
   public void copyLink() throws InterruptedException {
 	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1169;editor=true");
 	  //next
+	  Thread.sleep(5000);
+	  save(driver);
+	  Thread.sleep(2000);
+	  save(driver);
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
-	  //link
 	  Thread.sleep(2000);
 	  driver.findElement(By.xpath("//img[@src='../../../assets/link-icon-blue.svg']")).click();
 	  //copy link
@@ -100,11 +103,11 @@ public class Analytics_Proposal extends Common_Methods {
    	  ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
  	  driver.switchTo().window(tabs.get(1));
  	  driver.get("http://beta1.freshproposals.com/home/viewproposal/1169/304f7a3c-8497-4a5b-a86b-e8ba9af2c62d");
-	  Thread.sleep(5000);
+	  Thread.sleep(60000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 2')]")).click();
-	  Thread.sleep(1000);
+	  Thread.sleep(60000);
 	  driver.findElement(By.xpath("//a[contains(text(),'Analytics Section 3')]")).click();
-	  Thread.sleep(1000);
+	  Thread.sleep(70000);
 //		//open analytics tab
 	driver.get("http://beta1.freshproposals.com/home/proposals/summary/1169");
 	Thread.sleep(1000);

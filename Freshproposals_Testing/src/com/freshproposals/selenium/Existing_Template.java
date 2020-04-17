@@ -65,8 +65,8 @@ public class Existing_Template extends Common_Methods {
 	  @Test(priority = 2)
 	  public void width() throws InterruptedException {
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//div[@class='row']//div[1]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).clear();
-	  driver.findElement(By.xpath("//div[@class='row']//div[1]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).sendKeys(width);
+	  driver.findElement(By.name("textWidth11")).clear();
+	  driver.findElement(By.name("textWidth11")).sendKeys(width);
 	  Thread.sleep(1000);
 	  String actual_width = driver.findElement(By.xpath("//div[@class='row']//div[1]//div[1]//ejs-numerictextbox[1]//span[1]//input[1]")).getAttribute("value");
 	  Assert.assertEquals(actual_width, width);

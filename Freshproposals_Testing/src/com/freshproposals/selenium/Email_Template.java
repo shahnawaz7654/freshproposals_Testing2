@@ -39,19 +39,20 @@ public class Email_Template extends Common_Methods {
   
   @Test(priority = 1)
   public void createEmailTemplate() throws InterruptedException {
-	  driver.findElement(By.xpath("//li[@class='settings']")).click();
+	    Thread.sleep(10000);
+	    driver.findElement(By.id("linkSettings")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//p[contains(text(),'Email Template')]")).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//img[@src='../../../assets/add-plus-button.svg']")).click();
 		//driver.findElement(By.xpath("//p[contains(text(),'Add')]")).click();
 		Thread.sleep(2000);
-		Select select = new Select(driver.findElement(By.xpath("//*[@id=\"content\"]/div/app-email-template/div/div/div/form/div/div/div/div/div[1]/div[1]/div[2]/select")));
-		select.selectByIndex(0);
+		Select select = new Select(driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-email-template[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/select[1]")));
+		select.selectByVisibleText("Initiating Email");
 		String actual_type =  select.getFirstSelectedOption().getText();
 		String expected_type = "Initiating Email";
 		Assert.assertEquals(actual_type, expected_type);
-		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("I am Initiating Email");
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[5]/div[1]/app-email-template[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/input[1]")).sendKeys("I am Initiating Email");
       
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[starts-with(@id,'bold')]")).click();

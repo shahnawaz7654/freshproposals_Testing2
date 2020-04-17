@@ -60,18 +60,18 @@ public class Collapse_Controls extends Common_Methods {
 	  Thread.sleep(5000);
 	  //driver.get("http://beta1.freshproposals.com/home/templates/editTemplate/759");
 	  driver.get("http://beta1.freshproposals.com/home/proposals/editProposal;proposalId=1151;editor=true");
-	  
+	  //arrow
 	  Thread.sleep(2000);
-	  driver.findElement(By.xpath("//img[@src='../../assets/right-arrow-blue.svg']")).click();
+	  driver.findElement(By.id("previewcontrolsimg")).click();
 	  //grid
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//ejs-switch[@id='grid']//span[@class='e-switch-handle']")).click();
+	  //Thread.sleep(1000);
+	  //driver.findElement(By.xpath("//ejs-switch[@id='grid']//span[@class='e-switch-handle']")).click();
       //full screen
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//ejs-switch[@id='fullscreen']//span[@class='e-switch-handle']")).click();
+	  driver.findElement(By.xpath("//span[@class='e-switch-handle']")).click();
 	  //preview
-	  Thread.sleep(1000);
-	  driver.findElement(By.xpath("//ejs-switch[@id='preview']//span[@class='e-switch-handle']")).click();
+	  //Thread.sleep(1000);
+	  //driver.findElement(By.xpath("//ejs-switch[@id='preview']//span[@class='e-switch-handle']")).click();
 	 
   }
   

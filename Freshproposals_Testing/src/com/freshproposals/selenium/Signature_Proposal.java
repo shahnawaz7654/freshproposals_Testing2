@@ -78,7 +78,8 @@ public class Signature_Proposal extends Common_Methods {
     signatureReflectBorderWidth(driver);
     signatureReflectBorderStyle(driver);
 	signatureReflectPadding(driver);
-    signatureResetAll(driver);  }
+    signatureResetAll(driver); 
+    }
 
   
   @AfterClass
